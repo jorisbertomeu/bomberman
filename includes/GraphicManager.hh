@@ -26,7 +26,7 @@ private:
 public:
   explicit		GraphicManager();
   virtual		~GraphicManager();
-  bool			initialize(glm::vec2, std::string name);
+  bool			initialize(const glm::vec2 &, const std::string &);
 };
 
 #endif			/* _GRAPHICMANAGER_HH_ */

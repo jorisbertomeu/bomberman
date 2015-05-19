@@ -24,12 +24,12 @@ protected:
   GraphicManager	_GraphicManager;
 
 public:
-  explicit		RenderManager(void);
-  virtual		~RenderManager(void);
-  bool			initialize(glm::vec2, std::string name);
+  explicit		RenderManager();
+  virtual		~RenderManager();
+  bool			initialize(const glm::vec2 &, const std::string &);
   bool			start();
   bool			update();
-  void			draw(const AScene &scene);
+  void			draw(const AScene &);
 };
 
 #endif			/* _RENDERMANAGER_HH */
