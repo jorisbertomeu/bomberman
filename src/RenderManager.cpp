@@ -25,7 +25,7 @@ bool	RenderManager::update()
 
 }
 
-void	RenderManager::draw(const AScene &scene)
+void	RenderManager::draw(AScene *scene)
 {
 
 }
