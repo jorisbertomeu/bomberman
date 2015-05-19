@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 19 11:22:43 2015 Joris Bertomeu
+## Last update Tue May 19 12:05:40 2015 Joris Bertomeu
 ##
 
 CXX		=	clang++ -Iincludes
@@ -16,6 +16,10 @@ RM		=	rm -f
 
 SRC		=	src/main.cpp				\
 			src/core/GameEngine.cpp			\
+			src/GraphicManager.cpp			\
+			src/RenderManager.cpp			\
+			src/SoundManager.cpp			\
+			src/TextureManager.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 
