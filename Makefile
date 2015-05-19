@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 19 09:43:38 2015 Joris Bertomeu
+## Last update Tue May 19 11:22:43 2015 Joris Bertomeu
 ##
 
 CXX		=	clang++ -Iincludes
@@ -27,7 +27,6 @@ $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
 		$(CC) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGL -lGLEW -ldl -lrt -lfbxsdk -lSDL2 -lpthread
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
-		export LD_LIBRARY_PATH=$(pwd)"/LibBomberman_linux_x64"
 
 clean:
 		@echo -e "\t->>> SUPPRESSION DES .o <<<-"
