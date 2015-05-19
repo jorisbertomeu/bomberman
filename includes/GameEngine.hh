@@ -5,20 +5,13 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:27:41 2015 Joris Bertomeu
-// Last update Tue May 19 14:48:36 2015 Joris Bertomeu
+// Last update Tue May 19 15:15:45 2015 Joris Bertomeu
 //
 
 #ifndef		_GAMEENGINE_HH_
 # define	_GAMEENGINE_HH_
 
 # include	<Game.hh>
-# include	<Clock.hh>
-# include	<Input.hh>
-# include	<SdlContext.hh>
-# include	<Geometry.hh>
-# include	<Texture.hh>
-# include	<BasicShader.hh>
-# include	<Model.hh>
 
 # include	<stdexcept>
 # include	<iostream>

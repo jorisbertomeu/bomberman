@@ -44,6 +44,6 @@ bool	GameEngine::run()
 {
   this->_renderManager.start();
   while (this->update()) {
-
+    
   }
 }

@@ -5,13 +5,15 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:19:02 2015 Joris Bertomeu
-// Last update Tue May 19 14:33:31 2015 Joris Bertomeu
+// Last update Tue May 19 15:17:30 2015 Joris Bertomeu
 //
 
 #ifndef		_PARAMETERS_HH_
 # define	_PARAMETERS_HH_
 
 # include	<stdexcept>
+# include	<glm/glm.hpp>
+# include	<glm/gtc/matrix_transform.hpp>
 
 class		Parameters
 {
