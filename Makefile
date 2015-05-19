@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 19 13:20:13 2015 Joris Bertomeu
+## Last update Tue May 19 13:38:45 2015 Joris Bertomeu
 ##
 
 CXX		=	clang++ -Iincludes
@@ -25,6 +25,7 @@ SRC		=	src/main.cpp				\
 			src/CameraManager.cpp			\
 			src/InputManager.cpp			\
 			src/SceneFactory.cpp			\
+			src/AScene.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 
