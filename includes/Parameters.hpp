@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:19:02 2015 Joris Bertomeu
-// Last update Tue May 19 10:34:44 2015 Joris Bertomeu
+// Last update Tue May 19 14:33:31 2015 Joris Bertomeu
 //
 
 #ifndef		_PARAMETERS_HH_
@@ -38,6 +38,10 @@ public:
     //PENSER A CHECK QUE C'EST UNE TAILLE VALIDE
     this->_width = atoi(this->_argv[1]);
     this->_height = atoi(this->_argv[2]);
+  }
+
+  glm::vec2		getSize() const {
+    return (glm::vec2((float) this->_width, (float) this->_height));
   }
 };
 

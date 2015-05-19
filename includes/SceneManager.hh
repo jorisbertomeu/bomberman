@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Tue May 19 13:18:43 2015 Joris Bertomeu
+// Last update Tue May 19 14:50:20 2015 Joris Bertomeu
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -34,8 +34,8 @@ public:
   virtual			~SceneManager();
   bool				loadSceneFromFile(SCENE_TYPE,
 						  const std::string &);
-  bool				setCurrentMap(AScene &);
-  AScene			&getCurrentMap() const;
+  bool				setCurrentScene(AScene &);
+  AScene			*getCurrentScene() const;
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

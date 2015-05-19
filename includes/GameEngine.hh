@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:27:41 2015 Joris Bertomeu
-// Last update Tue May 19 11:23:42 2015 Joris Bertomeu
+// Last update Tue May 19 14:48:36 2015 Joris Bertomeu
 //
 
 #ifndef		_GAMEENGINE_HH_
@@ -25,12 +25,14 @@
 
 # include	<Parameters.hpp>
 # include	<RenderManager.hh>
+# include	<GameContext.hh>
 
 class		GameEngine : public gdl::Game
 {
 protected:
   Parameters	_parameters;
   RenderManager	_renderManager;
+  GameContext	_gameContext;
 
 public:
   explicit	GameEngine(int ac, char **argv);
