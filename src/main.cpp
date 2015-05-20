@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:26:22 2015 Joris Bertomeu
-// Last update Tue May 19 10:32:27 2015 Joris Bertomeu
+// Last update Wed May 20 11:57:07 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
