@@ -5,12 +5,13 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue May 19 13:01:49 2015 Joris Bertomeu
+// Last update Tue May 19 14:57:30 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
 
-SceneManager::SceneManager()
+SceneManager::SceneManager() :
+  _currentScene(NULL)
 {
 
 }
@@ -26,12 +27,12 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
 
 }
 
-bool	SceneManager::setCurrentMap(AScene &scene)
+bool	SceneManager::setCurrentScene(AScene &scene)
 {
 
 }
 
-AScene	&getCurrentMap()
+AScene	*SceneManager::getCurrentScene() const
 {
-
+  return (this->_currentScene);
 }

@@ -27,7 +27,7 @@ bool	RenderManager::initialize(const glm::vec2 &windowSize, const std::string &n
 
 bool	RenderManager::start()
 {
-
+  
 }
 
 bool	RenderManager::update()

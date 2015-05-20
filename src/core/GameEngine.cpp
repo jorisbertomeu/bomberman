@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed May 20 11:54:52 2015 Geoffrey Merran
+// Last update Wed May 20 16:04:11 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -26,20 +26,21 @@ GameEngine::~GameEngine()
 
 bool	GameEngine::initialize()
 {
-
+  this->_renderManager.initialize(this->_parameters.getSize(), std::string("Bomberman"));
+  this->_gameContext.initialize(&(this->_renderManager));
 }
 
 bool	GameEngine::update()
 {
-
+  this->_renderManager.update();
 }
 
 void	GameEngine::draw()
 {
-
+  this->_renderManager.draw(this->_gameContext.getCurrentScene());
 }
 
 bool	GameEngine::run()
 {
-
+  this->_renderManager.start();
 }
