@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Thu May 21 17:10:28 2015 Jérémy Mediavilla
-## Last update Thu May 21 17:31:53 2015 Jérémy Mediavilla
+## Last update Fri May 22 15:49:35 2015 Jérémy Mediavilla
 ##
 
 NAME		=	xmlParser
@@ -16,7 +16,7 @@ OBJ		=	$(SRC:.c=.o)
 
 RM		=	rm -f
 
-CFLAGS		+=	-pedantic -g -Wall -Wextra -Werror -ansi
+CFLAGS		+=	-pedantic -g -Wall -Wextra -Werror
 
 $(NAME):	$(OBJ)
 		gcc $(OBJ) -o $(NAME) `xml2-config --cflags` `xml2-config --libs`
