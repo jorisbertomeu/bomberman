@@ -5,12 +5,12 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Tue May 19 15:18:43 2015 Joris Bertomeu
+// Last update Mon May 25 17:21:56 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
 
-GameEngine::GameEngine(int ac, char **argv)
+GameEngine::GameEngine(int ac, char **argv) : _running(1)
 {
   try {
     this->_parameters.setParameters(ac, argv);
@@ -33,6 +33,7 @@ bool	GameEngine::initialize()
 bool	GameEngine::update()
 {
   this->_renderManager.update();
+  _running = 0;
 }
 
 void	GameEngine::draw()
@@ -43,7 +44,10 @@ void	GameEngine::draw()
 bool	GameEngine::run()
 {
   this->_renderManager.start();
-  while (this->update()) {
-
-  }
+  while (this->_running)
+    {
+      this->update();
+      sleep(1);
+    }
+  this->_renderManager.stop();
 }

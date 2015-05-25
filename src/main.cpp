@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:26:22 2015 Joris Bertomeu
-// Last update Wed May 20 16:04:02 2015 Geoffrey Merran
+// Last update Mon May 25 17:10:00 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -21,5 +21,6 @@ int	main(int ac, char *argv[])
     std::cerr << e.what() << std::endl;
     return (-1);
   }
+  gameEngine->run();
   delete gameEngine;
 }

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:00:56 2015 Joris Bertomeu
-// Last update Tue May 19 15:15:27 2015 Joris Bertomeu
+// Last update Mon May 25 16:28:11 2015 Geoffrey Merran
 //
 
 #ifndef		_GRAPHICCONTEXT_HH_
@@ -22,13 +22,11 @@ private:
   gdl::BasicShader	_shaders;
 
 public:
-  explicit	GraphicContext(void) {
+  explicit		GraphicContext(void);
+  virtual		~GraphicContext(void);
 
-  }
+  gdl::SdlContext&	getSdlContext();
 
-  virtual	~GraphicContext(void) {
-
-  }
 };
 
 #endif		/* _GRAPHICCONTEXT_HH_ */
