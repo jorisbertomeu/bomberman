@@ -5,10 +5,10 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Wed May 20 11:56:45 2015 Geoffrey Merran
+## Last update Wed May 20 16:13:34 2015 Geoffrey Merran
 ##
 
-CXX		=	clang++ -Iincludes
+CXX		=	g++ -Iincludes
 
 CXXFLAGS	+=	-W -Wextra -Wall -ansi -pedantic -O3 -I./LibBomberman_linux_x64/includes/
 
