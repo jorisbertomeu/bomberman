@@ -35,7 +35,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CC) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGL -lGLEW -ldl -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm
+		$(CC) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:
