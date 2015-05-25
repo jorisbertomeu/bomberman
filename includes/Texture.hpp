@@ -5,13 +5,15 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Tue May 19 11:25:25 2015 Joris Bertomeu
+// Last update Tue May 19 15:15:12 2015 Joris Bertomeu
 //
 
 #ifndef		_TEXTURE_HPP_
 # define	_TEXTURE_HPP_
 
 # include	<string>
+# include	<Model.hh>
+# include	<Texture.hh>
 
 class		Texture
 {

@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Wed May 20 16:13:34 2015 Geoffrey Merran
+## Last update Mon May 25 16:08:25 2015 Geoffrey Merran
 ##
 
 CXX		=	g++ -Iincludes
@@ -15,7 +15,7 @@ CXXFLAGS	+=	-W -Wextra -Wall -ansi -pedantic -O3 -I./LibBomberman_linux_x64/incl
 RM		=	rm -f
 
 SRC		=	src/main.cpp				\
-			src/core/GameEngine.cpp			\
+			src/GameEngine.cpp			\
 			src/GraphicManager.cpp			\
 			src/RenderManager.cpp			\
 			src/SoundManager.cpp			\
@@ -35,7 +35,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CC) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGL -lGLEW -ldl -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++
+		$(CC) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:
