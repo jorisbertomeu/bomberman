@@ -1,11 +1,11 @@
 //
 // AEntity.hh for  in /home/parallels/Tek2/CPP/bomberman/includes
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Thu May 28 14:46:57 2015 Nicolas Adès
+// Last update Mon May 25 22:35:25 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -35,11 +35,11 @@ protected:
   EntityType	_type;
 
 public:
-  explicit		AEntity(glm::vec3 pos, EntityType type);
-  virtual		~AEntity();
-  virtual glm::vec3	getPos();
+  explicit			AEntity(glm::vec3 pos, EntityType type);
+  virtual			~AEntity();
+  virtual glm::vec3		getPos();
   virtual AEntity::EntityType	getType();
-  virtual void		setPos(const glm::vec3 &);
+  virtual void			setPos(const glm::vec3 &);
 
 };
 
