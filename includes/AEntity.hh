@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue May 26 12:37:00 2015 Nicolas Adès
+// Last update Tue May 26 15:09:04 2015 Nicolas Adès
 //
 
 #ifndef _AENTITY_H_

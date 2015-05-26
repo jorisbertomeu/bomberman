@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:33:04 2015 Nicolas Adès
-// Last update Tue May 26 12:46:19 2015 Nicolas Adès
+// Last update Tue May 26 15:11:53 2015 Nicolas Adès
 //
 
 #ifndef _PHYSICSOLID_H_
