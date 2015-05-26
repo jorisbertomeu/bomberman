@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Tue May 26 08:50:43 2015 Joris Bertomeu
+// Last update Tue May 26 09:08:55 2015 Joris Bertomeu
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -37,6 +37,7 @@ public:
 						  const std::string &);
   bool				setCurrentScene(Scene &);
   Scene				*getCurrentScene() const;
+  void				addEntityToCurrentScene(AEntity *);
 };
 
 #endif				/* _SCENEMANAGER_HH_ */
