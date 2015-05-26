@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Tue Jun  2 10:20:17 2015 Geoffrey Merran
+// Last update Wed Jun  3 13:11:48 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -28,7 +28,7 @@ bool	GameEngine::initialize()
 {
   if (!this->_renderManager.initialize(this->_parameters.getSize(), std::string("Bomberman")))
     return (false);
-  if (!this->_gameContext.initialize(&(this->_renderManager)))
+  if (!this->_gameContext.initialize(&(this->_renderManager), this->_parameters.getSize()))
     return (false);
   return (true);
 }
@@ -36,14 +36,13 @@ bool	GameEngine::initialize()
 bool	GameEngine::update()
 {
   this->_renderManager.update();
-  _running = 0;
   return (true);
 }
 
 void	GameEngine::draw()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glClearColor(0.90f, 0.90f, 0.90f, 1.0f);
+  glClearColor(1.00f, 1.00f, 1.00f, 1.0f);
   glClearDepth(1.0f);
   this->_renderManager.draw(this->_gameContext.getCurrentScene());
 }
@@ -52,11 +51,25 @@ bool	GameEngine::run()
 {
   this->_renderManager.start();
   this->_gameContext.addScene("XMLfiles/ArchitectureXML.xml");
+
+  SDL_Event	event;
   while (this->_running)
     {
+      SDL_PollEvent(&event);
+      switch (event.type)
+	{
+	case SDL_QUIT:
+	  this->_running = 0;
+	case SDL_KEYDOWN:
+	  switch (event.key.keysym.sym)
+	    {
+	    case SDLK_ESCAPE:
+	      this->_running = 0;
+	    }
+	}
       this->update();
       this->draw();
-      sleep(1);
+      usleep(100000);
     }
   this->_renderManager.stop();
   return (true);
