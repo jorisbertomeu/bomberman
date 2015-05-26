@@ -5,24 +5,21 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Thu May 21 17:10:28 2015 Jérémy Mediavilla
-## Last update Tue May 26 16:53:42 2015 Jérémy Mediavilla
+## Last update Fri May 22 15:49:35 2015 Jérémy Mediavilla
 ##
-
-CXX		=	clang++
 
 NAME		=	xmlParser
 
-SRC		=	ParserXML.cpp			\
-			main.cpp			\
+SRC		=	main.c			\
 
-OBJ		=	$(SRC:.cpp=.o)
+OBJ		=	$(SRC:.c=.o)
 
 RM		=	rm -f
 
-CXXFLAGS	+=	-pedantic -g3 -Wall -Wextra -Werror
+CFLAGS		+=	-pedantic -g -Wall -Wextra -Werror
 
 $(NAME):	$(OBJ)
-		$(CXX) $(OBJ) -o $(NAME) `xml2-config --cflags` `xml2-config --libs`
+		gcc $(OBJ) -o $(NAME) `xml2-config --cflags` `xml2-config --libs`
 
 all:		$(NAME)
 
