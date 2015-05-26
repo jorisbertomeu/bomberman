@@ -5,18 +5,19 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 26 11:56:13 2015 Nicolas Adès
+## Last update Tue May 26 12:12:06 2015 Nicolas Adès
 ##
 
-CXX		=	g++ -Iincludes
+CC		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -ansi -pedantic -O3 -I./LibBomberman_linux_x64/includes/
+CXXFLAGS	+=	-W -Wextra -Wall -ansi -pedantic -O3 -I./LibBomberman_linux_x64/includes/ -Iincludes
 
 RM		=	rm -f
 
 SRC		=	src/main.cpp				\
 			src/GameEngine.cpp			\
 			src/GraphicManager.cpp			\
+			src/GraphicContext.cpp			\
 			src/RenderManager.cpp			\
 			src/SoundManager.cpp			\
 			src/TextureManager.cpp			\
@@ -42,7 +43,6 @@ $(NOM):		$(OBJ)
 clean:
 		@echo -e "\t->>> SUPPRESSION DES .o <<<-"
 		$(RM) $(OBJ)
-		$(RM) $(OBJ_LOADING)
 
 fclean:		clean
 		$(RM) $(NOM)

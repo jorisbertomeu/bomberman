@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Tue May 19 14:32:18 2015 Joris Bertomeu
+// Last update Mon May 25 17:22:54 2015 Geoffrey Merran
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -26,9 +26,11 @@ protected:
 public:
   explicit		RenderManager();
   virtual		~RenderManager();
+
   bool			initialize(const glm::vec2 &, const std::string &);
   bool			start();
   bool			update();
+  void			stop();
   void			draw(AScene *);
 };
 
