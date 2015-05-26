@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Mon May 25 16:08:25 2015 Geoffrey Merran
+## Last update Tue May 26 11:56:13 2015 Nicolas Adès
 ##
 
 CXX		=	g++ -Iincludes
@@ -26,6 +26,7 @@ SRC		=	src/main.cpp				\
 			src/InputManager.cpp			\
 			src/SceneFactory.cpp			\
 			src/AScene.cpp				\
+			src/AEntity.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 
