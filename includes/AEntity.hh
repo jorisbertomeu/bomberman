@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue May 26 12:10:11 2015 Nicolas Adès
+// Last update Tue May 26 12:37:00 2015 Nicolas Adès
 //
 
 #ifndef _AENTITY_H_
@@ -34,6 +34,7 @@ public:
   virtual AEntity::EntityType	getType();
   virtual void		setPos(const glm::vec3 &);
 
+protected:
   glm::vec3	_pos;
   EntityType	_type;
 };

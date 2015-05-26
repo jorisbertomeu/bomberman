@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 26 12:12:06 2015 Nicolas Adès
+## Last update Tue May 26 12:47:32 2015 Nicolas Adès
 ##
 
 CC		=	g++
@@ -28,6 +28,9 @@ SRC		=	src/main.cpp				\
 			src/SceneFactory.cpp			\
 			src/AScene.cpp				\
 			src/AEntity.cpp				\
+			src/ASolid.cpp				\
+			src/PhysicSolid.cpp			\
+			src/HitBox.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 
