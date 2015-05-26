@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Tue May 19 11:17:24 2015 Joris Bertomeu
+// Last update Tue May 26 17:35:37 2015 Geoffrey Merran
 //
 
 #ifndef		_SOUND_HH_
@@ -19,7 +19,7 @@ class		Sound
 
 public:
   explicit	Sound(const std::string &filename) {
-
+    (void) filename;
   }
 
   virtual	~Sound()  {

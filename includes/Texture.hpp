@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Tue May 19 15:15:12 2015 Joris Bertomeu
+// Last update Tue May 26 17:37:18 2015 Geoffrey Merran
 //
 
 #ifndef		_TEXTURE_HPP_
@@ -22,7 +22,7 @@ private:
 
 public:
   explicit	Texture(const std::string &filename) {
-
+    (void) filename;
   }
 
   virtual	~Texture(void) {

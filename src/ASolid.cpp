@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Tue May 26 15:43:24 2015 Nicolas Adès
+// Last update Tue May 26 17:50:23 2015 Geoffrey Merran
 //
 
 #include <ASolid.hh>
@@ -23,6 +23,7 @@ ASolid::~ASolid()
 bool		ASolid::checkColision(ASolid *solid)
 {
   (void) solid;
+  return (true);
 }
 
 float		ASolid::getFriction() const
