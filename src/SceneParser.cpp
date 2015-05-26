@@ -1,11 +1,11 @@
 //
 // SceneParser.cpp for  in /home/mediav_j/mabm/bomberman/includes
-// 
+//
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-// 
+//
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 15:39:30 2015 Jérémy Mediavilla
+// Last update Tue May 26 08:12:56 2015 Joris Bertomeu
 //
 
 #include "SceneParser.hh"
@@ -144,7 +144,7 @@ Scene		SceneParser::getScene()
 				atof(this->_parser.getValueOf("y").c_str()),
 				atof(this->_parser.getValueOf("z").c_str())));
       this->_parser.setPreviousNode();
-      newScene.addEntity(*entity);
+      newScene.addEntity(entity);
     }
   return (newScene);
 }

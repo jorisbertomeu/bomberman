@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue Jun  2 15:35:46 2015 Jérémy Mediavilla
+// Last update Tue May 26 07:56:52 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -24,11 +24,13 @@ SceneManager::~SceneManager()
 bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
 					const std::string &filename)
 {
-  SceneParser	newScene;
+  SceneParser	newSceneParser;
+  Scene		newScene;
 
-  newScene.load(filename);
+  newSceneParser.load(filename);
   // this->_scenes.insert(this->_scenes.begin(), std::pair<SceneManager::SCENE_TYPE, Scene>(type, newScene.getScene()));
-  newScene.getScene();
+  newScene = newSceneParser.getScene();
+  newScene.listAllEntities();
   (void)type;
   return (true);
 }
