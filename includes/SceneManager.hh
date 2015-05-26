@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Wed Jun  3 16:39:42 2015 Geoffrey Merran
+// Last update Tue May 26 08:50:43 2015 Joris Bertomeu
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -27,8 +27,8 @@ public:
     }				SCENE_TYPE;
 
 private:
-  std::map<SCENE_TYPE, Scene>	_scenes;
-  Scene			*_currentScene;
+  std::map<SCENE_TYPE, Scene*>	_scenes;
+  Scene				*_currentScene;
 
 public:
   explicit			SceneManager();

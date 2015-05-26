@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue May 26 08:12:56 2015 Joris Bertomeu
+// Last update Tue May 26 08:53:24 2015 Joris Bertomeu
 //
 
 #include "SceneParser.hh"
@@ -30,9 +30,9 @@ bool		SceneParser::load(const std::string &filename)
   return (true);
 }
 
-Scene		SceneParser::getScene()
+Scene		*SceneParser::getScene()
 {
-  Scene		newScene;
+  Scene		*newScene = new Scene();
   AEntity	*entity;
 
   this->_parser.setNode("scene");
@@ -144,7 +144,7 @@ Scene		SceneParser::getScene()
 				atof(this->_parser.getValueOf("y").c_str()),
 				atof(this->_parser.getValueOf("z").c_str())));
       this->_parser.setPreviousNode();
-      newScene.addEntity(entity);
+      newScene->addEntity(entity);
     }
   return (newScene);
 }

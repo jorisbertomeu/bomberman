@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:58 2015 Jérémy Mediavilla
-## Last update Wed Jun  3 16:25:42 2015 Geoffrey Merran
+## Last update Tue May 26 08:54:36 2015 Joris Bertomeu
 ##
 #!/bin/bash
 
@@ -13,7 +13,7 @@ export LD_LIBRARY_PATH=`pwd`/LibBomberman_linux_x64/libs
 file=$(pwd)"/bomberman"
 if [ -f "$file" ]
 then
-    $(pwd)/bomberman "$@"
+    valgrind $(pwd)/bomberman "$@"
 else
     echo "Executable '$file' not found, I will try to recompile it .."; make -C re; $(pwd)"/run.sh"
 fi
