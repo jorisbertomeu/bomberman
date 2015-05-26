@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue May 26 09:10:07 2015 Joris Bertomeu
+// Last update Tue May 26 09:52:09 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -13,12 +13,17 @@
 SceneManager::SceneManager() :
   _currentScene(NULL)
 {
-
+  this->_renderManager = NULL;
 }
 
 SceneManager::~SceneManager()
 {
 
+}
+
+void	SceneManager::setRenderManager(RenderManager *rm)
+{
+  this->_renderManager = rm;
 }
 
 bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
@@ -28,7 +33,7 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   Scene		*newScene = new Scene();
 
   newSceneParser.load(filename);
-  newScene = newSceneParser.getScene();
+  newScene = newSceneParser.getScene(this->_renderManager);
   newScene->listAllEntities();
   this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
   this->_currentScene = newScene;

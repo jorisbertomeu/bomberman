@@ -20,6 +20,18 @@
       <file>assets/textures/floor_grass.tga</file>
     </texture>
   </texture_pack>
+  <model_pack>
+    <model>
+      <id>idBombermanModel</id>
+      <online>0</online>
+      <file>assets/models/marvin.fbx</file>
+    </model>
+    <model>
+      <id>idBombModel</id>
+      <online>0</online>
+      <file>assets/models/bomb.fbx</file>
+    </model>
+  </model_pack>
   <sound_pack>
     <sound>
       <id>JUMP_SOUND</id>
@@ -73,6 +85,7 @@
       <health>200</health>
       <type>BOMBERMAN</type>
       <name>TONY</name>
+      <model>idBombermanModel</model>
       <texture>a54564564564564607e0ebe2db1f4e</texture>
       <position>
         <x>0</x>
@@ -99,6 +112,7 @@
       <health>200</health>
       <type>BOMBERMAN</type>
       <name>TOTO</name>
+      <model>idBombModel</model>
       <texture>a54564564564564607e0ebe2db1f4e</texture>
       <position>
         <x>-400</x>

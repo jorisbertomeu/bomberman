@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:45:20 2015 Joris Bertomeu
-// Last update Wed Jun  3 16:34:56 2015 Geoffrey Merran
+// Last update Tue May 26 09:51:19 2015 Joris Bertomeu
 //
 
 #ifndef		_GAMECONTEXT_HH_
@@ -23,6 +23,7 @@ private:
   CameraManager	_cameraManager;
   InputManager	_inputManager;
   SceneFactory	_sceneFactory;
+  RenderManager	*_renderManager;
 
 public:
   explicit	GameContext();

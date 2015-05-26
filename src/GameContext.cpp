@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Wed Jun  3 16:35:31 2015 Geoffrey Merran
+// Last update Tue May 26 09:49:15 2015 Joris Bertomeu
 //
 
 #include	<GameContext.hh>
@@ -22,6 +22,8 @@ GameContext::~GameContext()
 
 bool	GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
 {
+  this->_renderManager = rm;
+  this->_sceneManager.setRenderManager(rm);
   this->_cameraManager.initialize(rm, windowSize);
   return (true);
 }

@@ -1,11 +1,11 @@
 //
 // AEntity.cpp for  in /home/parallels/Tek2/CPP/bomberman/src
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Wed Jun  3 17:40:58 2015 Geoffrey Merran
+// Last update Tue May 26 10:27:42 2015 Joris Bertomeu
 //
 
 #include <AEntity.hh>
@@ -53,4 +53,9 @@ glm::mat4	       	AEntity::getTransformation()
   transform = glm::rotate(transform, this->_rotation.z, glm::vec3(0, 0, 1));
   transform = glm::scale(transform, this->_scale);
   return (transform);
+}
+
+void			AEntity::setModelId(const std::string &model)
+{
+  this->_modelId = model;
 }

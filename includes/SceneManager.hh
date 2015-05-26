@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Tue May 26 09:08:55 2015 Joris Bertomeu
+// Last update Tue May 26 09:46:29 2015 Joris Bertomeu
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -16,6 +16,7 @@
 
 # include			<Scene.hh>
 # include			<SceneParser.hh>
+# include			<RenderManager.hh>
 
 class				SceneManager
 {
@@ -29,6 +30,7 @@ public:
 private:
   std::map<SCENE_TYPE, Scene*>	_scenes;
   Scene				*_currentScene;
+  RenderManager			*_renderManager;
 
 public:
   explicit			SceneManager();
@@ -38,6 +40,7 @@ public:
   bool				setCurrentScene(Scene &);
   Scene				*getCurrentScene() const;
   void				addEntityToCurrentScene(AEntity *);
+  void				setRenderManager(RenderManager *);
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

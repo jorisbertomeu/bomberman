@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 17:22:02 2015 Jérémy Mediavilla
+// Last update Tue May 26 10:26:32 2015 Joris Bertomeu
 //
 
 #include "SceneParser.hh"
@@ -30,7 +30,7 @@ bool		SceneParser::load(const std::string &filename)
   return (true);
 }
 
-Scene		*SceneParser::getScene()
+Scene		*SceneParser::getScene(RenderManager *rm)
 {
   Scene		*newScene = new Scene();
   AEntity	*entity;
@@ -74,7 +74,14 @@ Scene		*SceneParser::getScene()
       std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
     }
-
+  this->_parser.resetNode();
+  this->_parser.setNode("model_pack");
+  while (this->_parser.foreach("model"))
+    {
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
+      rm->getModelManager().addModel(this->_parser.getValueOf("model"), this->_parser.getValueOf("id"));
+    }
   this->_parser.resetNode();
   this->_parser.setNode("scene");
   std::cout << std::endl << "COMMON :" << std::endl;
@@ -156,6 +163,7 @@ Scene		*SceneParser::getScene()
 	}
       this->_parser.setPreviousNode();
       entity->setHealth((atoi(this->_parser.getValueOf("health").c_str())));
+      entity->setModelId(std::string(this->_parser.getValueOf("model").c_str()));
       entity->setTexture(std::string(this->_parser.getValueOf("texture").c_str()));
       this->_parser.setNode("size");
       if (this->_parser.checkMultipleTag() == false)

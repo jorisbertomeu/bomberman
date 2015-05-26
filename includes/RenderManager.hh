@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Wed Jun  3 16:32:46 2015 Geoffrey Merran
+// Last update Tue May 26 10:29:05 2015 Joris Bertomeu
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -37,6 +37,7 @@ public:
   bool			update();
   void			stop();
   void			draw(Scene *);
+
 
   GraphicManager	getGraphicManager() const;
   ModelManager		getModelManager() const;

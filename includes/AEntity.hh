@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun  3 16:02:22 2015 Geoffrey Merran
+// Last update Tue May 26 10:28:16 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -40,6 +40,7 @@ protected:
   glm::vec3			_rotation;
   glm::vec3			_scale;
 
+  std::string			_modelId;
   EntityType			_type;
 
 public:
@@ -50,6 +51,7 @@ public:
   virtual void			setPos(const glm::vec3 &);
   virtual void			draw(const RenderManager & rm);
   virtual glm::mat4	       	getTransformation();
+  virtual void			setModelId(const std::string &);
 };
 
 #endif // _AENTITY_H_
