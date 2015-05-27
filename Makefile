@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 26 17:35:15 2015 Geoffrey Merran
+## Last update Wed May 27 13:01:51 2015 Nicolas Adès
 ##
 
 CXX		=	g++
@@ -31,6 +31,7 @@ SRC		=	src/main.cpp				\
 			src/ASolid.cpp				\
 			src/PhysicSolid.cpp			\
 			src/HitBox.cpp				\
+			src/Bomberman.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 
