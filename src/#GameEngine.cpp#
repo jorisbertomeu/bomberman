@@ -54,6 +54,7 @@ bool	GameEngine::run()
   SDL_Event	event;
   while (this->_running)
     {
+
       this->update();
       this->draw();
     }
