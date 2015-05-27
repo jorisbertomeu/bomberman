@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:33:04 2015 Nicolas Adès
-// Last update Tue May 26 15:11:53 2015 Nicolas Adès
+// Last update Wed May 27 13:22:52 2015 Nicolas Adès
 //
 
 #ifndef _PHYSICSOLID_H_
@@ -15,6 +15,10 @@
 
 class		PhysicSolid : public ASolid
 {
+protected:
+  glm::vec3	_acceleration;
+  float		_weight;
+
 public:
   PhysicSolid();
   ~PhysicSolid();
@@ -23,9 +27,6 @@ public:
   float		getWeight();
   void		setWeight(const float &);
 
-protected:
-  glm::vec3	_acceleration;
-  float		_weight;
 };
 
 #endif // _PHYSICSOLID_H_

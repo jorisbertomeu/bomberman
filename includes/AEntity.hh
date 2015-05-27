@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue May 26 15:09:04 2015 Nicolas Adès
+// Last update Wed May 27 13:22:38 2015 Nicolas Adès
 //
 
 #ifndef _AENTITY_H_
@@ -28,15 +28,18 @@ public:
       BOMB		= 3,
       WOOD_WALL		= 4
     };
+
+protected:
+  glm::vec3	_pos;
+  EntityType	_type;
+
+public:
   explicit		AEntity();
   virtual		~AEntity();
   virtual glm::vec3	getPos();
   virtual AEntity::EntityType	getType();
   virtual void		setPos(const glm::vec3 &);
 
-protected:
-  glm::vec3	_pos;
-  EntityType	_type;
 };
 
 #endif // _AENTITY_H_
