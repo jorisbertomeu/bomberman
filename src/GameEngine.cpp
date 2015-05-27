@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed May 27 04:33:36 2015 Joris Bertomeu
+// Last update Wed May 27 08:11:18 2015 Joris Bertomeu
 //
 
 #include <GameEngine.hh>
@@ -35,7 +35,8 @@ bool	GameEngine::initialize()
 
 bool	GameEngine::update()
 {
-  this->_renderManager.update();
+  this->_renderManager.update(this->_input);
+  this->_gameContext.updateScene(this->_input);
   return (true);
 }
 
@@ -45,13 +46,12 @@ void	GameEngine::draw()
   glClearColor(0.50f, 0.50f, 0.50f, 1.0f);
   glClearDepth(1.0f);
   this->_renderManager.draw(this->_gameContext.getCurrentScene());
+  this->_renderManager.delay();
 }
 
 bool	GameEngine::run()
 {
   this->_gameContext.addScene("XMLfiles/ArchitectureXML.xml");
-
-  SDL_Event	event;
   while (this->_running)
     {
       this->update();

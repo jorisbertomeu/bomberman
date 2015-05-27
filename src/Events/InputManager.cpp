@@ -5,14 +5,13 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Thu Jun  4 17:22:55 2015 mari_f
+// Last update Sat Jun  6 14:15:05 2015 Geoffrey Merran
 //
 
 #include	<InputManager.hh>
 
 InputManager::InputManager()
 {
-  gdl::Input();
 }
 
 InputManager::~InputManager()

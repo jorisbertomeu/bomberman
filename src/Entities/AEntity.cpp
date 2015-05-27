@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Wed Jun  3 21:27:59 2015 Geoffrey Merran
+// Last update Sat Jun  6 15:52:32 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
@@ -40,6 +40,11 @@ void			AEntity::setScale(const glm::vec3 & scale)
 {
   this->_scale = scale;
 }
+
+// void			AEntity::translate(const glm::vec3 &v)
+// {
+//   this->_pos += v;
+// }
 
 glm::mat4	       	AEntity::getTransformation()
 {
