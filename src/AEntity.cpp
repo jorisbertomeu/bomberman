@@ -5,14 +5,15 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Tue May 26 12:09:51 2015 Nicolas Adès
+// Last update Thu May 28 14:06:50 2015 Nicolas Adès
 //
 
 #include <AEntity.hh>
 
-AEntity::AEntity()
+AEntity::AEntity(glm::vec3 pos, EntityType type)
 {
-
+  this->_pos = pos;
+  this->_type = type;
 }
 
 AEntity::~AEntity()

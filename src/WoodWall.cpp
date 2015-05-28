@@ -5,12 +5,12 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:13:09 2015 Nicolas Adès
-// Last update Wed May 27 13:14:00 2015 Nicolas Adès
+// Last update Thu May 28 14:44:51 2015 Nicolas Adès
 //
 
 #include <WoodWall.hh>
 
-WoodWall::WoodWall()
+WoodWall::WoodWall(glm::vec3 pos) : AEntity(pos, AEntity::WOODWALL)
 {
 
 }

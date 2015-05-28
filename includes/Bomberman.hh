@@ -5,17 +5,18 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Wed May 27 13:03:38 2015 Nicolas Adès
+// Last update Thu May 28 14:43:20 2015 Nicolas Adès
 //
 
 #ifndef _BOMBERMAN_H_
 # define _BOMBERMAN_H_
+
 # include <AEntity.hh>
 
 class		Bomberman : public AEntity
 {
 public:
-  Bomberman();
+  Bomberman(glm::vec3 pos, const std::string &name);
   ~Bomberman();
   
   std::string	getName() const;

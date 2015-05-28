@@ -5,15 +5,18 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:33:04 2015 Nicolas Adès
-// Last update Wed May 27 13:22:52 2015 Nicolas Adès
+// Last update Thu May 28 14:26:52 2015 Nicolas Adès
 //
 
 #ifndef _PHYSICSOLID_H_
 # define _PHYSICSOLID_H_
 
-# include <ASolid.hh>
+# include <Game.hh>
+# include <glm/glm.hpp>
+# include <iostream>
+# include <stdexcept>
 
-class		PhysicSolid : public ASolid
+class		PhysicSolid
 {
 protected:
   glm::vec3	_acceleration;

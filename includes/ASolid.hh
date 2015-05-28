@@ -5,16 +5,16 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Tue May 26 15:47:19 2015 Nicolas Adès
+// Last update Thu May 28 14:24:22 2015 Nicolas Adès
 //
 
 #ifndef _ASOLID_H_
 # define _ASOLID_H_
 
-# include <AEntity.hh>
 # include <HitBox.hh>
+# include <PhysicSolid.hh>
 
-class		ASolid : public AEntity, HitBox
+class		ASolid : public HitBox, PhysicSolid
 {
 public:
   typedef enum		solidAbility

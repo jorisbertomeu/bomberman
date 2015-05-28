@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed May 27 13:22:38 2015 Nicolas Adès
+// Last update Thu May 28 14:46:57 2015 Nicolas Adès
 //
 
 #ifndef _AENTITY_H_
@@ -16,17 +16,18 @@
 # include <stdexcept>
 # include <iostream>
 # include <glm/glm.hpp>
+# include <ASolid.hh>
 
-class		AEntity
+class		AEntity : public ASolid
 {
 public:
   enum EntityType
     {
       UNKNOWN		= 0,
-      BRICK_WALL	= 1,
+      BRICKWALL	= 1,
       BOMBERMAN		= 2,
       BOMB		= 3,
-      WOOD_WALL		= 4
+      WOODWALL		= 4
     };
 
 protected:
@@ -34,7 +35,7 @@ protected:
   EntityType	_type;
 
 public:
-  explicit		AEntity();
+  explicit		AEntity(glm::vec3 pos, EntityType type);
   virtual		~AEntity();
   virtual glm::vec3	getPos();
   virtual AEntity::EntityType	getType();

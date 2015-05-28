@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:18:15 2015 Nicolas Adès
-// Last update Wed May 27 13:19:50 2015 Nicolas Adès
+// Last update Thu May 28 14:43:44 2015 Nicolas Adès
 //
 
 #ifndef _BRICKWALL_H_
@@ -15,7 +15,7 @@
 class		BrickWall : public AEntity
 {
 public:
-  BrickWall();
+  BrickWall(glm::vec3 pos);
   ~BrickWall();
 
 };
