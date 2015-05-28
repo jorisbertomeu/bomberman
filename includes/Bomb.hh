@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Thu May 28 14:45:46 2015 Nicolas Adès
+// Last update Thu May 28 15:26:20 2015 Nicolas Adès
 //
 
 #ifndef _BOMB_H_
@@ -14,10 +14,14 @@
 
 class		Bomb : public AEntity
 {
-public: 
+protected:
+  float		_explodeTime;
+
+public:
   Bomb(glm::vec3 pos);
   ~Bomb();
 
+  void		explode();
 };
 
 #endif // _BOMB_H_

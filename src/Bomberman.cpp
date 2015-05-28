@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Thu May 28 14:42:59 2015 Nicolas Adès
+// Last update Thu May 28 15:21:23 2015 Nicolas Adès
 //
 
 #include <Bomberman.hh>
@@ -25,7 +25,32 @@ std::string	Bomberman::getName() const
   return (this->_name);
 }
 
-void	Bomberman::dropBomb()
+void		Bomberman::dropBomb()
+{
+
+}
+
+void		Bomberman::moveRight()
+{
+
+}
+
+void		Bomberman::moveLeft()
+{
+
+}
+
+void		Bomberman::moveBack()
+{
+
+}
+
+void		Bomberman::moveFront()
+{
+
+}
+
+void		Bomberman::jump()
 {
 
 }

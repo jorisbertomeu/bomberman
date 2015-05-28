@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Thu May 28 15:13:58 2015 Nicolas Adès
+// Last update Thu May 28 15:19:45 2015 Nicolas Adès
 //
 
 #ifndef _BOMBERMAN_H_
@@ -24,6 +24,11 @@ public:
   
   std::string	getName() const;
   void		dropBomb();
+  void		moveRight();
+  void		moveLeft();
+  void		moveBack();
+  void		moveFront();
+  void		jump();
 };
 
 #endif // _BOMBERMAN_H_
