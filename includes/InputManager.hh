@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Wed May 20 21:25:17 2015 mari_f
+// Last update Fri May 29 16:21:23 2015 mari_f
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -13,6 +13,9 @@
 
 # include	<Clock.hh>
 # include	<Input.hh>
+# include	<SDL_keycode.h>
+# include	<iostream>
+# include	<string>
 
 class		InputManager
 {
@@ -24,7 +27,7 @@ public:
   void		right();
   void		left();
   void		jump();
-  void		DetectKey();
+  void		DetectKey(gdl::Input &);
 };
 
 #endif		/* _INPUTMANAGER_HH_ */
