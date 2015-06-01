@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Thu May 28 14:06:50 2015 Nicolas Adès
+// Last update Mon Jun  1 17:57:46 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
@@ -34,4 +34,9 @@ AEntity::EntityType	AEntity::getType()
 void		AEntity::setPos(const glm::vec3 & pos)
 {
   this->_pos = pos;
+}
+
+void		AEntity::draw()
+{
+  
 }

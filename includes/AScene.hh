@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:27:30 2015 Joris Bertomeu
-// Last update Mon May 25 22:34:37 2015 Joris Bertomeu
+// Last update Mon Jun  1 17:06:01 2015 Geoffrey Merran
 //
 
 #ifndef			_ASCENE_HH_
@@ -22,6 +22,8 @@ private:
 public:
   explicit		AScene();
   virtual		~AScene();
+
+  void			draw();
 };
 
 #endif

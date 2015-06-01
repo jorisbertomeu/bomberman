@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Thu May 28 15:19:45 2015 Nicolas Adès
+// Last update Mon Jun  1 17:55:59 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
@@ -29,6 +29,7 @@ public:
   void		moveBack();
   void		moveFront();
   void		jump();
+  virtual void 	draw();
 };
 
 #endif // _BOMBERMAN_H_

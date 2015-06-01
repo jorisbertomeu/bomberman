@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Thu May 28 15:21:23 2015 Nicolas Adès
+// Last update Mon Jun  1 17:58:18 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -51,6 +51,11 @@ void		Bomberman::moveFront()
 }
 
 void		Bomberman::jump()
+{
+
+}
+
+void		Bomberman::draw()
 {
 
 }

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Tue May 26 17:46:03 2015 Geoffrey Merran
+// Last update Mon Jun  1 18:31:27 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -28,7 +28,8 @@ bool	GameEngine::initialize()
 {
   if (!this->_renderManager.initialize(this->_parameters.getSize(), std::string("Bomberman")))
     return (false);
-  this->_gameContext.initialize(&(this->_renderManager));
+  if (!this->_gameContext.initialize(&(this->_renderManager)))
+    return (false);
   return (true);
 }
 
@@ -41,6 +42,9 @@ bool	GameEngine::update()
 
 void	GameEngine::draw()
 {
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glClearColor(0.90f, 0.90f, 0.90f, 1.0f);
+  glClearDepth(1.0f);
   this->_renderManager.draw(this->_gameContext.getCurrentScene());
 }
 
