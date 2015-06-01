@@ -5,7 +5,7 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Wed May 27 13:20:08 2015 Nicolas Adès
+## Last update Mon Jun  1 15:51:21 2015 Jérémy Mediavilla
 ##
 
 CXX		=	g++
@@ -35,6 +35,9 @@ SRC		=	src/main.cpp				\
 			src/Bomb.cpp				\
 			src/WoodWall.cpp			\
 			src/BrickWall.cpp			\
+			src/ParserXML.cpp			\
+			src/Scene.cpp				\
+			src/SceneParser.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -44,7 +47,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL
+		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL `xml2-config --cflags` `xml2-config --libs`
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:

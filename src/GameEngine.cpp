@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Mon Jun  1 18:31:27 2015 Geoffrey Merran
+// Last update Mon Jun  1 18:43:47 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -51,6 +51,7 @@ void	GameEngine::draw()
 bool	GameEngine::run()
 {
   this->_renderManager.start();
+  this->_gameContext.addScene("XMLfiles/ArchitectureXML.xml");
   while (this->_running)
     {
       this->update();

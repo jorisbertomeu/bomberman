@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Tue May 19 14:50:20 2015 Joris Bertomeu
+// Last update Mon Jun  1 16:07:54 2015 Jérémy Mediavilla
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -15,6 +15,7 @@
 # include			<map>
 
 # include			<AScene.hh>
+# include			<SceneParser.hh>
 
 class				SceneManager
 {
