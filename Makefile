@@ -5,12 +5,12 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue Jun  2 12:31:02 2015 Nicolas Adès
+## Last update Tue Jun  2 17:05:30 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I/usr/include/libxml2/ -Iincludes
+CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I/usr/include/libxml2 -Iincludes
 
 RM		=	rm -f
 
@@ -47,7 +47,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL `xml2-config --cflags` `xml2-config --libs`
+		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L/usr/include/libxml2 -lxml2
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:

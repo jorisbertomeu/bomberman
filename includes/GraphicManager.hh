@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:55:51 2015 Joris Bertomeu
-// Last update Mon May 25 17:22:58 2015 Geoffrey Merran
+// Last update Tue Jun  2 10:43:20 2015 Geoffrey Merran
 //
 
 #ifndef			_GRAPHICMANAGER_HH_
@@ -30,6 +30,7 @@ public:
   virtual		~GraphicManager();
   bool			initialize(const glm::vec2 &, const std::string &);
   void			stop();
+  void			flush();
 };
 
 #endif			/* _GRAPHICMANAGER_HH_ */
