@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Mon Jun  1 17:33:17 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 15:42:11 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"

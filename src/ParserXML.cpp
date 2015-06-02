@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue May 26 15:18:36 2015 Jérémy Mediavilla
-// Last update Mon Jun  1 17:11:37 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 15:53:17 2015 Jérémy Mediavilla
 //
 
 #include "ParserXML.hh"
@@ -47,7 +47,6 @@ bool		ParserXML::setNode(const std::string &node)
       if (xmlStrcmp(tmp->name, (const xmlChar *) node.c_str()) == 0)
 	{
 	  this->_node = tmp->xmlChildrenNode;
-	  xmlFree(tmp);
 	  return (true);
 	}
       tmp = tmp->next;
@@ -200,7 +199,6 @@ bool			ParserXML::foreach(const std::string &tag)
       if (xmlStrcmp(tmp->name, (const xmlChar *) tag.c_str()) == 0)
 	{
 	  this->_node = tmp->xmlChildrenNode;
-	  xmlFree(tmp);
 	  return (true);
 	}
       tmp = tmp->next;
