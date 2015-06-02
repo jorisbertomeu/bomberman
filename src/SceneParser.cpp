@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 15:42:11 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 17:03:20 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -87,6 +87,7 @@ Scene		SceneParser::getScene()
   this->_parser.setNode("entities");
   while (this->_parser.foreach("entity"))
     {
+      std::cout << "type : " << this->_parser.getValueOf("type") << std::endl;
       this->_parser.setNode("attribut");
       std::cout << "speed : " << this->_parser.getValueOf("speed") << std::endl;
       std::cout << "jump : " << this->_parser.getValueOf("jump") << std::endl;
@@ -98,7 +99,6 @@ Scene		SceneParser::getScene()
       std::cout << "bonus : " << this->_parser.getValueOf("bonus") << std::endl;
       this->_parser.setPreviousNode();
       std::cout << "health : " << this->_parser.getValueOf("health") << std::endl;
-      std::cout << "type : " << this->_parser.getValueOf("type") << std::endl;
       std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
       this->_parser.setNode("position");
       std::cout << "pos x : " << this->_parser.getValueOf("x") << std::endl;

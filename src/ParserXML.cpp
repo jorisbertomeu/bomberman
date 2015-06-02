@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue May 26 15:18:36 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 15:53:17 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 16:55:43 2015 Jérémy Mediavilla
 //
 
 #include "ParserXML.hh"
@@ -82,7 +82,6 @@ std::string	ParserXML::getValueOf(const std::string &tag)
       if (xmlStrcmp(tmp->name, (const xmlChar *) tag.c_str()) == 0)
 	{
 	  value = xmlNodeGetContent(tmp);
-	  xmlFree(tmp);
 	  return (std::string((char *)value));
 	}
       tmp = tmp->next;
