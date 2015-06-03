@@ -1,11 +1,11 @@
 ##
-## Makefile for Makefile in /home/jobertomeu/Work/bomberman
+## Makefile for  in /home/mediav_j/mabm/bomberman
 ## 
-## Made by Joris Bertomeu
-## Login   <bertom_j@epitech.net>
+## Made by Jérémy Mediavilla
+## Login   <mediav_j@epitech.net>
 ## 
-## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue Jun  2 17:54:37 2015 Jérémy Mediavilla
+## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
+## Last update Wed Jun  3 11:50:44 2015 Jérémy Mediavilla
 ##
 
 CXX		=	g++
@@ -47,7 +47,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL `xml2-config --cflags` `xml2-config --libs`
+		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L./libxml2/.libs/ -lxml2
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:

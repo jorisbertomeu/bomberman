@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:36:01 2015 Joris Bertomeu
-// Last update Tue May 26 17:44:51 2015 Geoffrey Merran
+// Last update Tue Jun  2 10:41:51 2015 Geoffrey Merran
 //
 
 #include	<GraphicManager.hh>
@@ -33,4 +33,9 @@ bool	GraphicManager::initialize(const glm::vec2 &windowSize, const std::string &
 void  	GraphicManager::stop()
 {
   this->_context.getSdlContext().stop();
+}
+
+void	GraphicManager::flush()
+{
+  this->_context.getSdlContext().flush();
 }

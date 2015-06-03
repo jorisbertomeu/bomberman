@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Mon Jun  1 18:43:47 2015 Geoffrey Merran
+// Last update Tue Jun  2 10:20:17 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -55,6 +55,7 @@ bool	GameEngine::run()
   while (this->_running)
     {
       this->update();
+      this->draw();
       sleep(1);
     }
   this->_renderManager.stop();

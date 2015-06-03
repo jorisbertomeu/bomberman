@@ -1,10 +1,11 @@
-## run.sh for  in /home/jobertomeu/Work/bomberman
+#!/bin/sh
+## run.sh for  in /home/mediav_j/mabm/bomberman
 ## 
-## Made by Joris Bertomeu
-## Login   <jobertomeu@epitech.net>
+## Made by Jérémy Mediavilla
+## Login   <mediav_j@epitech.net>
 ## 
-## Started on  Tue May 19 09:56:14 2015 Joris Bertomeu
-## Last update Tue Jun  2 18:16:44 2015 Jérémy Mediavilla
+## Started on  Wed Jun  3 11:50:58 2015 Jérémy Mediavilla
+## Last update Wed Jun  3 11:51:00 2015 Jérémy Mediavilla
 ##
 #!/bin/bash
 

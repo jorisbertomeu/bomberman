@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Mon Jun  1 16:54:19 2015 Geoffrey Merran
+// Last update Tue Jun  2 10:43:29 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -40,6 +40,7 @@ bool	RenderManager::update()
 void	RenderManager::draw(AScene *scene)
 {
   scene->draw();
+  this->_graphicManager.flush();
 }
 
 void	RenderManager::stop()
