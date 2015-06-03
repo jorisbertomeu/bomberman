@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Wed Jun  3 12:57:01 2015 Nicolas Adès
+// Last update Wed Jun  3 14:57:13 2015 Nicolas Adès
 //
 
 #include <ASolid.hh>
@@ -56,6 +56,16 @@ void		ASolid::setRange(const float &range)
   this->_range = range;
 }
 
+int		ASolid::getWeight() const
+{
+  return (this->_weight);
+}
+
+void		ASolid::setWeight(const int &weight)
+{
+  this->_weight = weight;
+}
+
 int		ASolid::getHealth() const
 {
   return (this->_health);
@@ -84,6 +94,16 @@ bool		ASolid::getJump() const
 void		ASolid::setJump(const bool &jump)
 {
   this->_jump = jump;
+}
+
+std::string	ASolid::getTexture() const
+{
+  return (this->_texture);
+}
+
+void		ASolid::setTexture(const std::string &texture)
+{
+  this->_texture = texture;
 }
 
 glm::vec3	ASolid::getSize() const

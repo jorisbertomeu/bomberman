@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Wed Jun  3 12:52:49 2015 Nicolas Adès
+// Last update Wed Jun  3 14:56:11 2015 Nicolas Adès
 //
 
 #ifndef _ASOLID_H_
@@ -31,9 +31,11 @@ protected:
   float				_friction;
   float				_speed;
   float				_range;
+  int				_weight;
   int				_health;
   bool				_move;
   bool				_jump;
+  std::string			_texture;
   glm::vec3			_size;
   ASolid::SolidAbility		_ability;
   ASolid::SolidBonus		_bonus;
@@ -48,12 +50,16 @@ public:
   virtual void			setSpeed(const float &);
   virtual float			getRange() const;
   virtual void			setRange(const float &);
+  virtual int			getWeight() const;
+  virtual void			setWeight(const int &);
   virtual int			getHealth() const;
   virtual void			setHealth(const int &);
   virtual bool			getMove() const;
   virtual void			setMove(const bool &);
   virtual bool			getJump() const;
   virtual void			setJump(const bool &);
+  virtual std::string		getTexture() const;
+  virtual void			setTexture(const std::string &);
   virtual glm::vec3		getSize() const;
   virtual void			setSize(const glm::vec3 &);
   virtual ASolid::SolidAbility	getAbility() const;
