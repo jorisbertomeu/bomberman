@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Thu Jun  4 00:15:52 2015 Geoffrey Merran
+// Last update Thu Jun  4 00:20:14 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -31,9 +31,10 @@ std::string	Bomberman::getName() const
 
 void		Bomberman::dropBomb()
 {
-  Bomb		newBomb(this->_pos);
+  SceneManager		*scene = new SceneManager();
+  Bomb		*newBomb = new Bomb(this->_pos);
 
-  //addEntityToCurrentScene(newBomb);
+  scene->addEntityToCurrentScene(newBomb);
 }
 
 void		Bomberman::moveRight()
