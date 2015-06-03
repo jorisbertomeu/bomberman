@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:45:20 2015 Joris Bertomeu
-// Last update Mon Jun  1 16:00:23 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 11:36:49 2015 Geoffrey Merran
 //
 
 #ifndef		_GAMECONTEXT_HH_
@@ -27,7 +27,7 @@ private:
 public:
   explicit	GameContext();
   virtual	~GameContext();
-  bool		initialize(RenderManager *);
+  bool		initialize(RenderManager *, const glm::vec2 &);
   AScene	*getCurrentScene() const;
   bool		addScene(const std::string &);
 };

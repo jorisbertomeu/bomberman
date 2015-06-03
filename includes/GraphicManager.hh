@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:55:51 2015 Joris Bertomeu
-// Last update Tue Jun  2 10:43:20 2015 Geoffrey Merran
+// Last update Wed Jun  3 11:46:38 2015 Geoffrey Merran
 //
 
 #ifndef			_GRAPHICMANAGER_HH_
@@ -31,6 +31,8 @@ public:
   bool			initialize(const glm::vec2 &, const std::string &);
   void			stop();
   void			flush();
+
+  GraphicContext	getContext() const;
 };
 
 #endif			/* _GRAPHICMANAGER_HH_ */

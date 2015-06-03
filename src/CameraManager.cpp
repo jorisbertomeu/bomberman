@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:05:59 2015 Joris Bertomeu
-// Last update Tue May 26 17:50:04 2015 Geoffrey Merran
+// Last update Wed Jun  3 11:53:16 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
@@ -21,16 +21,21 @@ CameraManager::~CameraManager()
 
 }
 
-bool	CameraManager::initialize(RenderManager *rm)
+bool	CameraManager::initialize(RenderManager *rm, const glm::vec2 &windowSize)
 {
   this->_renderManager = rm;
+  this->_projection = glm::perspective(60.0f, static_cast<float>(windowSize.x) / static_cast<float>(windowSize.y), 0.1f, 100.0f);
   std::cout << "Camera Initialized" << std::endl;
+  this->moveTo(glm::vec3(0, 10, -10));
   return (true);
 }
 
-bool	CameraManager::moveTo(const glm::vec3 &pos) const
+bool	CameraManager::moveTo(const glm::vec3 &pos)
 {
-  (void) pos;
+  this->_transformation = glm::lookAt(pos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+  this->_renderManager->getGraphicManager().getContext().getShaders().bind();
+  this->_renderManager->getGraphicManager().getContext().getShaders().setUniform("view", this->_transformation);
+  this->_renderManager->getGraphicManager().getContext().getShaders().setUniform("projection", this->_projection);
   return (true);
 }
 

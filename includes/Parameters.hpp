@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:19:02 2015 Joris Bertomeu
-// Last update Tue May 19 15:17:30 2015 Joris Bertomeu
+// Last update Wed Jun  3 11:25:37 2015 Geoffrey Merran
 //
 
 #ifndef		_PARAMETERS_HH_
@@ -38,8 +38,10 @@ public:
     if (this->_ac != 3)
       throw std::logic_error("Usage : ./bomberman <width> <height>");
     //PENSER A CHECK QUE C'EST UNE TAILLE VALIDE
-    this->_width = atoi(this->_argv[1]);
-    this->_height = atoi(this->_argv[2]);
+    this->_width = 1280;
+    this->_height = 720;
+    // this->_width = atoi(this->_argv[1]);
+    // this->_height = atoi(this->_argv[2]);
   }
 
   glm::vec2		getSize() const {

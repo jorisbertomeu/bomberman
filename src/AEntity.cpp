@@ -5,15 +5,16 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Mon Jun  1 17:57:46 2015 Geoffrey Merran
+// Last update Wed Jun  3 12:03:05 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type)
+AEntity::AEntity(glm::vec3 pos, EntityType type, const std::string & path)
 {
   this->_pos = pos;
   this->_type = type;
+  this->_modelPath = path;
 }
 
 AEntity::~AEntity()
@@ -21,12 +22,12 @@ AEntity::~AEntity()
 
 }
 
-glm::vec3	AEntity::getPos()
+glm::vec3	AEntity::getPos() const
 {
   return (this->_pos);
 }
 
-AEntity::EntityType	AEntity::getType()
+AEntity::EntityType	AEntity::getType() const
 {
   return (this->_type);
 }
@@ -38,5 +39,15 @@ void		AEntity::setPos(const glm::vec3 & pos)
 
 void		AEntity::draw()
 {
-  
+
+}
+
+std::string     AEntity::getModelPath() const
+{
+  return (this->_modelPath);
+}
+
+void		AEntity::setModelPath(const std::string & path)
+{
+  this->_modelPath = path;
 }

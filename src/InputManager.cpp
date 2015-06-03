@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Mon Jun  1 12:50:03 2015 mari_f
+// Last update Wed Jun  3 13:14:51 2015 Geoffrey Merran
 //
 
 #include	<InputManager.hh>
@@ -31,6 +31,7 @@ void		InputManager::DetectKey(gdl::Input &input)
   else if (input.getKey(SDLK_LEFT))
     this->left();
 }
+
 
 void		InputManager::up()
 {
