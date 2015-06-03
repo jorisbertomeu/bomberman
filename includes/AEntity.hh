@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun  3 13:40:40 2015 Geoffrey Merran
+// Last update Wed Jun  3 15:24:29 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -17,6 +17,10 @@
 # include <iostream>
 # include <glm/glm.hpp>
 # include <ASolid.hh>
+
+class				AEntity;
+
+# include <RenderManager.hh>
 
 class				AEntity : public ASolid
 {
@@ -33,18 +37,18 @@ public:
 
 protected:
   glm::vec3			_pos;
+  glm::vec3			_rotation;
+  glm::vec3			_scale;
+
   EntityType			_type;
-  std::string			_modelPath;
 
 public:
-  explicit			AEntity(glm::vec3 pos, EntityType type, const std::string & path = "unknown");
+  explicit			AEntity(glm::vec3 pos, EntityType type);
   virtual			~AEntity();
   virtual glm::vec3		getPos() const;
   virtual AEntity::EntityType	getType() const;
-  virtual std::string	        getModelPath() const;
-  virtual void			setModelPath(const std::string & path);
   virtual void			setPos(const glm::vec3 &);
-  virtual void			draw();
+  virtual void			draw(const RenderManager & rm);
 
 };
 

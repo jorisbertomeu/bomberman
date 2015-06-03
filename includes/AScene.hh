@@ -5,13 +5,16 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:27:30 2015 Joris Bertomeu
-// Last update Mon Jun  1 17:06:01 2015 Geoffrey Merran
+// Last update Wed Jun  3 15:22:08 2015 Geoffrey Merran
 //
 
 #ifndef			_ASCENE_HH_
 # define		_ASCENE_HH_
 
 # include		<list>
+
+class			AScene;
+
 # include		<AEntity.hh>
 
 class			AScene
