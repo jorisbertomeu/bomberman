@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 15:28:06 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 15:39:30 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -119,10 +119,7 @@ Scene		SceneParser::getScene()
       entity->setRange(atof(this->_parser.getValueOf("range").c_str()));
       entity->setWeight((atoi(this->_parser.getValueOf("wieght").c_str())));
       if (this->_parser.getValueOf("ability") == "NONE")
-	{
-	  // std::cout << "ok" << std::endl;
-	  entity->setAbility(ASolid::NONE_ABILITY);
-	}
+	entity->setAbility(ASolid::NONE_ABILITY);
       else
 	{
 	  std::cout << "Unknown ability : " << this->_parser.getValueOf("ability") << std::endl;
@@ -131,10 +128,7 @@ Scene		SceneParser::getScene()
 	  continue;
 	}
       if (this->_parser.getValueOf("bonus") == "NONE")
-	{
-	  std::cout << "BONUS A SET" << std::endl;
-	  // entity->setBonus(ASolid::NONE_BONUS);
-	}
+	entity->setBonus(ASolid::NONE_BONUS);
       else
 	{
 	  std::cout << "Unknown bonus : " << this->_parser.getValueOf("bonus") << std::endl;
@@ -150,6 +144,7 @@ Scene		SceneParser::getScene()
 				atof(this->_parser.getValueOf("y").c_str()),
 				atof(this->_parser.getValueOf("z").c_str())));
       this->_parser.setPreviousNode();
+      newScene.addEntity(*entity);
     }
   return (newScene);
 }
