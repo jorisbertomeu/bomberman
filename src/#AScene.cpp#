@@ -20,11 +20,3 @@ AScene::~AScene()
 
 }
 
-void					AScene::draw(const RenderManager & rm)
-{
-  for (std::list<AEntity>::iterator it = this->_objects.begin(); it != this->_objects.end(); it++)
-    {
-      std::cout << "1" << std::endl;
-    }
-  (void) rm;
-}

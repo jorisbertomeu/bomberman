@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun  3 15:24:29 2015 Geoffrey Merran
+// Last update Wed Jun  3 16:02:22 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -49,7 +49,7 @@ public:
   virtual AEntity::EntityType	getType() const;
   virtual void			setPos(const glm::vec3 &);
   virtual void			draw(const RenderManager & rm);
-
+  virtual glm::mat4	       	getTransformation();
 };
 
 #endif // _AENTITY_H_

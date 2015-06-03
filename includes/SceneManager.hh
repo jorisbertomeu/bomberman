@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Mon Jun  1 16:07:54 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 16:39:42 2015 Geoffrey Merran
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -14,7 +14,7 @@
 # include			<string>
 # include			<map>
 
-# include			<AScene.hh>
+# include			<Scene.hh>
 # include			<SceneParser.hh>
 
 class				SceneManager
@@ -27,16 +27,16 @@ public:
     }				SCENE_TYPE;
 
 private:
-  std::map<SCENE_TYPE, AScene>	_scenes;
-  AScene			*_currentScene;
+  std::map<SCENE_TYPE, Scene>	_scenes;
+  Scene			*_currentScene;
 
 public:
   explicit			SceneManager();
   virtual			~SceneManager();
   bool				loadSceneFromFile(SCENE_TYPE,
 						  const std::string &);
-  bool				setCurrentScene(AScene &);
-  AScene			*getCurrentScene() const;
+  bool				setCurrentScene(Scene &);
+  Scene				*getCurrentScene() const;
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

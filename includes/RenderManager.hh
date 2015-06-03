@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Wed Jun  3 15:21:06 2015 Geoffrey Merran
+// Last update Wed Jun  3 16:32:46 2015 Geoffrey Merran
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -18,7 +18,7 @@
 
 class			RenderManager;
 
-# include		<AScene.hh>
+# include		<Scene.hh>
 
 class			RenderManager
 {
@@ -36,9 +36,10 @@ public:
   bool			start();
   bool			update();
   void			stop();
-  void			draw(AScene *);
+  void			draw(Scene *);
 
   GraphicManager	getGraphicManager() const;
+  ModelManager		getModelManager() const;
 };
 
 #endif			/* _RENDERMANAGER_HH */

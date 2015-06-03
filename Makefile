@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Tue May 26 08:15:53 2015 Joris Bertomeu
+## Last update Wed Jun  3 16:31:35 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -27,7 +27,6 @@ SRC		=	src/main.cpp				\
 			src/CameraManager.cpp			\
 			src/InputManager.cpp			\
 			src/SceneFactory.cpp			\
-			src/AScene.cpp				\
 			src/AEntity.cpp				\
 			src/ASolid.cpp				\
 			src/PhysicSolid.cpp			\

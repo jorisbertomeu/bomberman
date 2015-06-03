@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Wed Jun  3 11:48:29 2015 Geoffrey Merran
+// Last update Wed Jun  3 16:33:02 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -37,9 +37,9 @@ bool			RenderManager::update()
   return (true);
 }
 
-void			RenderManager::draw(AScene *scene)
+void			RenderManager::draw(Scene *scene)
 {
-  scene->draw();
+  scene->draw(*this);
   this->_graphicManager.flush();
 }
 
@@ -51,4 +51,9 @@ void			RenderManager::stop()
 GraphicManager		RenderManager::getGraphicManager() const
 {
   return (this->_graphicManager);
+}
+
+ModelManager		RenderManager::getModelManager() const
+{
+  return (this->_modelManager);
 }

@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Tue May 26 08:13:09 2015 Joris Bertomeu
+// Last update Wed Jun  3 16:47:11 2015 Geoffrey Merran
 //
 
 #include	"Scene.hh"
@@ -35,4 +35,15 @@ void		Scene::listAllEntities() const
   //     std::cout << "Brickwall Insered with pos <" << *it->getPos().x << ", " << *it->getPos().y << ", " << *it->getPos().z << ">" << std::endl;
 
   // }
+}
+
+void					Scene::draw(const RenderManager & rm)
+{
+  // for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
+  //   {
+  //     std::cout << "1" << std::endl;
+  //   }
+
+  std::cout << _entityList.size() << std::endl;
+  (void) rm;
 }

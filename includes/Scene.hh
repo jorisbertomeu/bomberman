@@ -5,17 +5,20 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:29:00 2015 Jérémy Mediavilla
-// Last update Tue May 26 08:25:11 2015 Joris Bertomeu
+// Last update Wed Jun  3 16:40:14 2015 Geoffrey Merran
 //
 
 #ifndef			_SCENE_HH_
 # define		_SCENE_HH_
 
 # include		<list>
-# include		<AEntity.hh>
-# include		<AScene.hh>
 
-class			Scene : public AScene
+class			Scene;
+
+# include		<AEntity.hh>
+# include		<RenderManager.hh>
+
+class			Scene
 {
 private:
   std::list<AEntity*>	_entityList;
@@ -25,6 +28,7 @@ public:
   virtual		~Scene();
   bool			addEntity(AEntity *);
   void			listAllEntities() const;
+  void			draw(const RenderManager & rm);
 };
 
 #endif		// _SCENE_HH_

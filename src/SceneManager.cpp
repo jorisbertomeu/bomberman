@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue May 26 07:56:52 2015 Joris Bertomeu
+// Last update Wed Jun  3 16:41:02 2015 Geoffrey Merran
 //
 
 #include	<SceneManager.hh>
@@ -35,13 +35,13 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   return (true);
 }
 
-bool	SceneManager::setCurrentScene(AScene &scene)
+bool	SceneManager::setCurrentScene(Scene &scene)
 {
   (void) scene;
   return (true);
 }
 
-AScene	*SceneManager::getCurrentScene() const
+Scene	*SceneManager::getCurrentScene() const
 {
   return (this->_currentScene);
 }

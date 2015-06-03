@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Wed Jun  3 15:26:00 2015 Geoffrey Merran
+// Last update Wed Jun  3 16:09:12 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -58,5 +58,7 @@ void		Bomberman::jump()
 
 void	       	Bomberman::draw(const RenderManager & rm)
 {
-  (void) rm;
+  gdl::Model*	model = rm.getModelManager().getModel("bomberman");
+
+  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
 }

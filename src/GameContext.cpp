@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Wed Jun  3 11:37:00 2015 Geoffrey Merran
+// Last update Wed Jun  3 16:35:31 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -26,7 +26,7 @@ bool	GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
   return (true);
 }
 
-AScene	*GameContext::getCurrentScene() const
+Scene	*GameContext::getCurrentScene() const
 {
   return (this->_sceneManager.getCurrentScene());
 }
