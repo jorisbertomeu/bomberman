@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed Jun  3 17:51:54 2015 Geoffrey Merran
+// Last update Wed Jun  3 21:53:40 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -49,7 +49,6 @@ void	GameEngine::draw()
 
 bool	GameEngine::run()
 {
-  this->_renderManager.start();
   this->_gameContext.addScene("XMLfiles/ArchitectureXML.xml");
 
   SDL_Event	event;
@@ -69,7 +68,7 @@ bool	GameEngine::run()
 	}
       this->update();
       this->draw();
-      usleep(100000);
+      this->_renderManager.delay();
     }
   this->_renderManager.stop();
   return (true);

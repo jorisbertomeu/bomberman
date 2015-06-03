@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Wed Jun  3 19:48:30 2015 Geoffrey Merran
+## Last update Wed Jun  3 21:37:11 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -22,6 +22,7 @@ SRC		=	src/main.cpp				\
 			src/SoundManager.cpp			\
 			src/TextureManager.cpp			\
 			src/ModelManager.cpp			\
+			src/TimeManager.cpp			\
 			src/GameContext.cpp			\
 			src/SceneManager.cpp			\
 			src/CameraManager.cpp			\

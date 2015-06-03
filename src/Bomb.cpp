@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Wed Jun  3 17:45:32 2015 Nicolas Adès
+// Last update Wed Jun  3 21:30:54 2015 Geoffrey Merran
 //
 
 #include <Bomb.hh>
@@ -41,7 +41,7 @@ void		Bomb::update()
   this->_explodeTime -= 1;
 }
 
-void		Bomb::draw()
+void		Bomb::draw(RenderManager & rm)
 {
-
+  (void) rm;
 }

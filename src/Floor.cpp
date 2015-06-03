@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 13:01:29 2015 Nicolas Adès
-// Last update Wed Jun  3 13:07:14 2015 Nicolas Adès
+// Last update Wed Jun  3 21:32:37 2015 Geoffrey Merran
 //
 
 #include <Floor.hh>
@@ -31,7 +31,7 @@ int	Floor::getHeigth() const
   return (this->_heigth);
 }
 
-void	Floor::draw()
+void	Floor::draw(RenderManager & rm)
 {
-
+  (void) rm;
 }
