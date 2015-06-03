@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Wed Jun  3 14:45:48 2015 Nicolas Adès
+// Last update Wed Jun  3 14:56:11 2015 Nicolas Adès
 //
 
 #ifndef _ASOLID_H_
@@ -35,6 +35,7 @@ protected:
   int				_health;
   bool				_move;
   bool				_jump;
+  std::string			_texture;
   glm::vec3			_size;
   ASolid::SolidAbility		_ability;
   ASolid::SolidBonus		_bonus;
@@ -57,6 +58,8 @@ public:
   virtual void			setMove(const bool &);
   virtual bool			getJump() const;
   virtual void			setJump(const bool &);
+  virtual std::string		getTexture() const;
+  virtual void			setTexture(const std::string &);
   virtual glm::vec3		getSize() const;
   virtual void			setSize(const glm::vec3 &);
   virtual ASolid::SolidAbility	getAbility() const;

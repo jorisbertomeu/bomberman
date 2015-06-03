@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Wed Jun  3 14:47:29 2015 Nicolas Adès
+// Last update Wed Jun  3 14:57:13 2015 Nicolas Adès
 //
 
 #include <ASolid.hh>
@@ -94,6 +94,16 @@ bool		ASolid::getJump() const
 void		ASolid::setJump(const bool &jump)
 {
   this->_jump = jump;
+}
+
+std::string	ASolid::getTexture() const
+{
+  return (this->_texture);
+}
+
+void		ASolid::setTexture(const std::string &texture)
+{
+  this->_texture = texture;
 }
 
 glm::vec3	ASolid::getSize() const
