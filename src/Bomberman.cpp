@@ -5,13 +5,14 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Mon Jun  1 17:58:18 2015 Geoffrey Merran
+// Last update Tue Jun  2 18:07:48 2015 Jérémy Mediavilla
 //
 
 #include <Bomberman.hh>
 
 Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN)
 {
+  std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_name = name;
 }
 

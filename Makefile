@@ -1,16 +1,16 @@
 ##
-## Makefile for Makefile in /home/jobertomeu/Work/bomberman
+## Makefile for  in /home/mediav_j/mabm/bomberman
 ## 
-## Made by Joris Bertomeu
-## Login   <bertom_j@epitech.net>
+## Made by Jérémy Mediavilla
+## Login   <mediav_j@epitech.net>
 ## 
-## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue May 26 03:00:15 2015 Joris Bertomeu
+## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
+## Last update Wed Jun  3 13:08:05 2015 Nicolas Adès
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes
+CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I/usr/include/libxml2/ -Iincludes -g3
 
 RM		=	rm -f
 
@@ -38,6 +38,7 @@ SRC		=	src/main.cpp				\
 			src/ParserXML.cpp			\
 			src/Scene.cpp				\
 			src/SceneParser.cpp			\
+			src/Floor.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 

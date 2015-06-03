@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue May 26 15:18:36 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 16:55:43 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 18:15:40 2015 Jérémy Mediavilla
 //
 
 #include "ParserXML.hh"
@@ -212,10 +212,15 @@ bool			ParserXML::setPreviousNode()
   if (!this->_node)
     return (false);
   this->_node = this->_node->parent;
+  while (this->_node)
+    if (this->_node->prev != NULL)
+      this->_node =  this->_node->prev;
+    else
+      break;
   return (true);
 }
 
-const xmlChar		*ParserXML::getNodeName()
+std::string		ParserXML::getNodeName()
 {
-  return (this->_node->name);
+  return (std::string((char *) this->_node->name));
 }

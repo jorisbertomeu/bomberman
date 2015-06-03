@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:09:44 2015 Jérémy Mediavilla
-// Last update Mon Jun  1 15:52:14 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 17:58:07 2015 Jérémy Mediavilla
 //
 
 #ifndef		_SCENEPARSER_HH_
@@ -14,6 +14,8 @@
 # include	<iostream>
 # include	<ParserXML.hh>
 # include	<Scene.hh>
+# include	<Bomberman.hh>
+# include	<BrickWall.hh>
 
 class		SceneParser
 {
