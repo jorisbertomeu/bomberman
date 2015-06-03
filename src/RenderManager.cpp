@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Wed Jun  3 19:46:04 2015 Geoffrey Merran
+// Last update Wed Jun  3 21:55:58 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -27,13 +27,14 @@ bool			RenderManager::initialize(const glm::vec2 &windowSize, const std::string 
   return (true);
 }
 
-bool			RenderManager::start()
+void			RenderManager::delay()
 {
-  return (true);
+  this->_timeManager.delay();
 }
 
 bool			RenderManager::update()
 {
+  this->_graphicManager.getContext().getSdlContext().updateClock(this->_timeManager.getClock());
   return (true);
 }
 
@@ -57,4 +58,9 @@ GraphicManager&		RenderManager::getGraphicManager()
 ModelManager&		RenderManager::getModelManager()
 {
   return (this->_modelManager);
+}
+
+TimeManager&		RenderManager::getTimeManager()
+{
+  return (this->_timeManager);
 }

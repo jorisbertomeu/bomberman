@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Wed Jun  3 14:54:49 2015 Geoffrey Merran
-// Last update Wed Jun  3 19:49:00 2015 Geoffrey Merran
+// Last update Wed Jun  3 22:14:43 2015 Geoffrey Merran
 //
 
 #include "ModelManager.hh"
@@ -28,6 +28,7 @@ bool				ModelManager::addModel(const std::string & path, const std::string & nam
     return (false);
   this->_models[name] = model;
   std::cout << "Model " << name << " loaded at " << path << "." << std::endl;
+  this->_models[name]->setCurrentAnim(0, true);
   return (true);
 }
 

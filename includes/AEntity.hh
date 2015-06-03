@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun  3 19:59:20 2015 Geoffrey Merran
+// Last update Wed Jun  3 21:27:49 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -55,7 +55,7 @@ public:
   void				setModelId(const std::string &);
   std::string			getModelId() const;
 
-  virtual void			draw(RenderManager & rm);
+  virtual void			draw(RenderManager & rm) = 0;
 };
 
 #endif // _AENTITY_H_

@@ -5,52 +5,29 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Thu May 21 14:10:07 2015 Valérian Polizzi
-// Last update Fri May 22 14:28:37 2015 Valérian Polizzi
+// Last update Wed Jun  3 21:49:08 2015 Geoffrey Merran
 //
 
 #include "TimeManager.hh"
 
 TimeManager::TimeManager()
 {
-  this->initialize();
+
 }
 
 TimeManager::~TimeManager()
 {
-}
-
-int		TimeManager::initialize()
-{
-  this->PauseTime();
-  return (0);
-}
-
-void		TimeManager::setCurrentTime(unsigned int ms)
-{
-  _currentTime = ms;
-}
-
-unsigned int	TimeManager::getCurrentTime() const
-{
-  return (_currentTime);
-}
-
-void		TimeManager::updateFps()
-{
 
 }
 
-int		TimeManager::update()
+gdl::Clock&		TimeManager::getClock()
 {
-  return (0);
+  return (this->_clock);
 }
 
-void		TimeManager::PauseTime()
+void			TimeManager::delay() const
 {
-  _isPaused = true;
-}
-
-void		TimeManager::RunTime()
-{
-  _isPaused = false;
+  double		waitingTime = (1000 / FPS) - this->_clock.getElapsed();
+  if (waitingTime > 0)
+    usleep(waitingTime);
 }

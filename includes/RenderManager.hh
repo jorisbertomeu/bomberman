@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Wed Jun  3 19:24:07 2015 Geoffrey Merran
+// Last update Wed Jun  3 21:51:10 2015 Geoffrey Merran
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -15,6 +15,7 @@
 # include		<TextureManager.hh>
 # include		<GraphicManager.hh>
 # include		<ModelManager.hh>
+# include		<TimeManager.hh>
 
 class			RenderManager;
 
@@ -27,13 +28,14 @@ protected:
   TextureManager	_textureManager;
   GraphicManager	_graphicManager;
   ModelManager		_modelManager;
+  TimeManager		_timeManager;
 
 public:
   explicit		RenderManager();
   virtual		~RenderManager();
 
   bool			initialize(const glm::vec2 &, const std::string &);
-  bool			start();
+  void			delay();
   bool			update();
   void			stop();
   void			draw(Scene *);
@@ -41,6 +43,7 @@ public:
 
   GraphicManager&	getGraphicManager();
   ModelManager&		getModelManager();
+  TimeManager&		getTimeManager();
 };
 
 #endif			/* _RENDERMANAGER_HH */

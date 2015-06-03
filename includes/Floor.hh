@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 12:57:30 2015 Nicolas Adès
-// Last update Wed Jun  3 13:08:47 2015 Nicolas Adès
+// Last update Wed Jun  3 21:29:45 2015 Geoffrey Merran
 //
 
 #ifndef _FLOOR_H_
@@ -25,7 +25,7 @@ public:
 
   int		getWidth() const;
   int		getHeigth() const;
-  virtual void	draw();
+  virtual void  draw(RenderManager & rm);
 };
 
 #endif // _FLOOR_H_

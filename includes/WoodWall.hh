@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:15:36 2015 Nicolas Adès
-// Last update Mon Jun  1 18:38:57 2015 Geoffrey Merran
+// Last update Wed Jun  3 21:29:33 2015 Geoffrey Merran
 //
 
 #ifndef _WOODWALL_H_
@@ -18,7 +18,7 @@ public:
   WoodWall(glm::vec3 pos);
   ~WoodWall();
 
-  virtual void 	draw();
+  virtual void			draw(RenderManager & rm);
 };
 
 #endif // _WOODWALL_H_
