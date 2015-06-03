@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 18:16:10 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 15:07:31 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -92,16 +92,11 @@ Scene		SceneParser::getScene()
 	{
 	  std::string	name = this->_parser.getValueOf("name");
 	  this->_parser.setNode("position");
-	  std::cout << "x : " << this->_parser.getValueOf("x") << std::endl;
 	  entity = new Bomberman(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())),
 				 name);
-	  std::cout << "current : " << this->_parser.getNodeName() << std::endl;
 	  this->_parser.setPreviousNode();
-	  // this->_parser.setNode("size");
-	  // std::cout << "x : " << this->_parser.getValueOf("x") << std::endl;
-	  // std::cout << "current : " << this->_parser.getNodeName() << std::endl;;
 	}
       else if (this->_parser.getValueOf("type") == "BRICK_WALL")
 	{
@@ -110,37 +105,28 @@ Scene		SceneParser::getScene()
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())));
 	  this->_parser.setPreviousNode();
-	  std::cout << "New  brickwall" << std::endl;
 	}
       else
 	{
 	  std::cout << "Unknown type : " << this->_parser.getValueOf("type") << std::endl;
 	  continue;
 	}
-      std::cout << "current : " << this->_parser.getNodeName() << std::endl;
-      std::cout << "type : " << this->_parser.getValueOf("type") << std::endl;
       this->_parser.setNode("attribut");
       entity->setSpeed(atof(this->_parser.getValueOf("speed").c_str()));
-      std::cout << "speed : " << this->_parser.getValueOf("speed") << std::endl;
-      std::cout << "jump : " << this->_parser.getValueOf("jump") << std::endl;
-      std::cout << "weigth : " << this->_parser.getValueOf("weigth") << std::endl;
-      std::cout << "friction : " << this->_parser.getValueOf("friction") << std::endl;
-      std::cout << "move : " << this->_parser.getValueOf("move") << std::endl;
+      entity->setJump((atoi(this->_parser.getValueOf("jump").c_str()) == 0) ? false : true);
+      entity->setFriction(atof(this->_parser.getValueOf("friction").c_str()));
+      entity->setMove((atoi(this->_parser.getValueOf("move").c_str()) == 0) ? false : true);
+      entity->setRange(atof(this->_parser.getValueOf("range").c_str()));
+      entity->setWeight((atoi(this->_parser.getValueOf("wieght").c_str())));
       std::cout << "ability : " << this->_parser.getValueOf("ability") << std::endl;
-      std::cout << "range : " << this->_parser.getValueOf("range") << std::endl;
       std::cout << "bonus : " << this->_parser.getValueOf("bonus") << std::endl;
       this->_parser.setPreviousNode();
-      std::cout << "health : " << this->_parser.getValueOf("health") << std::endl;
-      std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
-      this->_parser.setNode("position");
-      std::cout << "pos x : " << this->_parser.getValueOf("x") << std::endl;
-      std::cout << "pos y : " << this->_parser.getValueOf("y") << std::endl;
-      std::cout << "pos z : " << this->_parser.getValueOf("z") << std::endl;
-      this->_parser.setPreviousNode();
+      entity->setHealth((atoi(this->_parser.getValueOf("health").c_str())));
+      entity->setTexture(std::string(this->_parser.getValueOf("texture").c_str()));
       this->_parser.setNode("size");
-      std::cout << "size x : " << this->_parser.getValueOf("x") << std::endl;
-      std::cout << "size y : " << this->_parser.getValueOf("y") << std::endl;
-      std::cout << "size z : " << this->_parser.getValueOf("z") << std::endl << std::endl;
+      entity->setSize(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+				atof(this->_parser.getValueOf("y").c_str()),
+				atof(this->_parser.getValueOf("z").c_str())));
       this->_parser.setPreviousNode();
     }
   return (newScene);

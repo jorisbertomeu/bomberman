@@ -63,14 +63,14 @@
       <attribut>
         <speed>0</speed>
         <jump>0</jump>
-        <weigth>100</weigth>
+        <weight>200</weight>
         <friction>1</friction>
         <move>0</move>
         <ability>NONE</ability>
         <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>100</health>
+      <health>200</health>
       <type>BOMBERMAN</type>
       <name>TONY</name>
       <texture>a54564564564564607e0ebe2db1f4e</texture>
@@ -88,12 +88,12 @@
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>0</jump>
-        <weigth>100</weigth>
-        <friction>1</friction>
-        <move>0</move>
+        <jump>1</jump>
+        <weight>100</weight>
+        <friction>10</friction>
+        <move>1</move>
         <ability>NONE</ability>
-        <range>0</range>
+        <range>20</range>
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
