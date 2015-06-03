@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Wed Jun  3 12:52:49 2015 Nicolas Adès
+// Last update Wed Jun  3 14:45:48 2015 Nicolas Adès
 //
 
 #ifndef _ASOLID_H_
@@ -31,6 +31,7 @@ protected:
   float				_friction;
   float				_speed;
   float				_range;
+  int				_weight;
   int				_health;
   bool				_move;
   bool				_jump;
@@ -48,6 +49,8 @@ public:
   virtual void			setSpeed(const float &);
   virtual float			getRange() const;
   virtual void			setRange(const float &);
+  virtual int			getWeight() const;
+  virtual void			setWeight(const int &);
   virtual int			getHealth() const;
   virtual void			setHealth(const int &);
   virtual bool			getMove() const;

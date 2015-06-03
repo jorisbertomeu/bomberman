@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Wed Jun  3 12:57:01 2015 Nicolas Adès
+// Last update Wed Jun  3 14:47:29 2015 Nicolas Adès
 //
 
 #include <ASolid.hh>
@@ -54,6 +54,16 @@ float		ASolid::getRange() const
 void		ASolid::setRange(const float &range)
 {
   this->_range = range;
+}
+
+int		ASolid::getWeight() const
+{
+  return (this->_weight);
+}
+
+void		ASolid::setWeight(const int &weight)
+{
+  this->_weight = weight;
 }
 
 int		ASolid::getHealth() const
