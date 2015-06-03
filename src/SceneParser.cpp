@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 17:03:20 2015 Jérémy Mediavilla
+// Last update Tue Jun  2 18:16:10 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -33,6 +33,7 @@ bool		SceneParser::load(const std::string &filename)
 Scene		SceneParser::getScene()
 {
   Scene		newScene;
+  AEntity	*entity;
 
   this->_parser.setNode("scene");
 
@@ -87,8 +88,39 @@ Scene		SceneParser::getScene()
   this->_parser.setNode("entities");
   while (this->_parser.foreach("entity"))
     {
+      if (this->_parser.getValueOf("type") == "BOMBERMAN")
+	{
+	  std::string	name = this->_parser.getValueOf("name");
+	  this->_parser.setNode("position");
+	  std::cout << "x : " << this->_parser.getValueOf("x") << std::endl;
+	  entity = new Bomberman(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+					   atof(this->_parser.getValueOf("y").c_str()),
+					   atof(this->_parser.getValueOf("z").c_str())),
+				 name);
+	  std::cout << "current : " << this->_parser.getNodeName() << std::endl;
+	  this->_parser.setPreviousNode();
+	  // this->_parser.setNode("size");
+	  // std::cout << "x : " << this->_parser.getValueOf("x") << std::endl;
+	  // std::cout << "current : " << this->_parser.getNodeName() << std::endl;;
+	}
+      else if (this->_parser.getValueOf("type") == "BRICK_WALL")
+	{
+	  this->_parser.setNode("position");
+	  entity = new BrickWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+					   atof(this->_parser.getValueOf("y").c_str()),
+					   atof(this->_parser.getValueOf("z").c_str())));
+	  this->_parser.setPreviousNode();
+	  std::cout << "New  brickwall" << std::endl;
+	}
+      else
+	{
+	  std::cout << "Unknown type : " << this->_parser.getValueOf("type") << std::endl;
+	  continue;
+	}
+      std::cout << "current : " << this->_parser.getNodeName() << std::endl;
       std::cout << "type : " << this->_parser.getValueOf("type") << std::endl;
       this->_parser.setNode("attribut");
+      entity->setSpeed(atof(this->_parser.getValueOf("speed").c_str()));
       std::cout << "speed : " << this->_parser.getValueOf("speed") << std::endl;
       std::cout << "jump : " << this->_parser.getValueOf("jump") << std::endl;
       std::cout << "weigth : " << this->_parser.getValueOf("weigth") << std::endl;
@@ -109,6 +141,7 @@ Scene		SceneParser::getScene()
       std::cout << "size x : " << this->_parser.getValueOf("x") << std::endl;
       std::cout << "size y : " << this->_parser.getValueOf("y") << std::endl;
       std::cout << "size z : " << this->_parser.getValueOf("z") << std::endl << std::endl;
+      this->_parser.setPreviousNode();
     }
   return (newScene);
 }

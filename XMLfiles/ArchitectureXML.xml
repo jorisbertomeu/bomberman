@@ -71,8 +71,9 @@
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
-      <texture>a24b37f5374342b06607e0ebe2db1f4e</texture>
+      <type>BOMBERMAN</type>
+      <name>TONY</name>
+      <texture>a54564564564564607e0ebe2db1f4e</texture>
       <position>
         <x>42</x>
         <y>74</y>
@@ -96,8 +97,8 @@
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BOMBERMAN</type>
-      <texture>a54564564564564607e0ebe2db1f4e</texture>
+      <type>BRICK_WALL</type>
+      <texture>a24b37f5374342b06607e0ebe2db1f4e</texture>
       <position>
         <x>42</x>
         <y>74</y>

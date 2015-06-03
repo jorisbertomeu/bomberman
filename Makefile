@@ -5,12 +5,12 @@
 ## Login   <bertom_j@epitech.net>
 ## 
 ## Started on  Sat Apr 12 20:15:17 2014 Joris Bertomeu
-## Last update Tue Jun  2 12:31:02 2015 Nicolas Adès
+## Last update Tue Jun  2 17:54:37 2015 Jérémy Mediavilla
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I/usr/include/libxml2/ -Iincludes
+CXXFLAGS	+=	-W -Werror -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I/usr/include/libxml2/ -Iincludes -g3
 
 RM		=	rm -f
 
