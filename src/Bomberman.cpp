@@ -5,10 +5,12 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Wed Jun  3 17:56:56 2015 Geoffrey Merran
+// Last update Wed Jun  3 18:08:30 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
+#include <Bomb.hh>
+#include <SceneManager.hh>
 
 Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN)
 {
@@ -29,7 +31,9 @@ std::string	Bomberman::getName() const
 
 void		Bomberman::dropBomb()
 {
+  Bomb		newBomb(this->_pos);
 
+  //addEntityToCurrentScene(newBomb);
 }
 
 void		Bomberman::moveRight()

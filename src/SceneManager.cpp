@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue May 26 08:58:01 2015 Joris Bertomeu
+// Last update Tue May 26 09:10:07 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -28,7 +28,6 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   Scene		*newScene = new Scene();
 
   newSceneParser.load(filename);
-  // this->_scenes.insert(this->_scenes.begin(), std::pair<SceneManager::SCENE_TYPE, Scene>(type, newScene.getScene()));
   newScene = newSceneParser.getScene();
   newScene->listAllEntities();
   this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
@@ -45,4 +44,9 @@ bool	SceneManager::setCurrentScene(Scene &scene)
 Scene	*SceneManager::getCurrentScene() const
 {
   return (this->_currentScene);
+}
+
+void	SceneManager::addEntityToCurrentScene(AEntity *entity_)
+{
+  this->_currentScene->addEntity(entity_);
 }
