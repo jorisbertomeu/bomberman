@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Thu May 28 15:26:20 2015 Nicolas Adès
+// Last update Wed Jun  3 13:11:42 2015 Nicolas Adès
 //
 
 #ifndef _BOMB_H_
@@ -22,6 +22,7 @@ public:
   ~Bomb();
 
   void		explode();
+  virtual void	draw();
 };
 
 #endif // _BOMB_H_
