@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Wed Jun  3 13:10:48 2015 Nicolas Adès
+// Last update Wed Jun  3 17:45:32 2015 Nicolas Adès
 //
 
 #include <Bomb.hh>
@@ -13,6 +13,7 @@
 Bomb::Bomb(glm::vec3 pos) : AEntity(pos, AEntity::BOMB)
 {
   this->_explodeTime = 4;
+  this->_damage = 50;
 }
 
 Bomb::~Bomb()
@@ -20,9 +21,24 @@ Bomb::~Bomb()
 
 }
 
-void		Bomb::explode()
+void		Bomb::explode() const
 {
 
+}
+
+int		Bomb::getDamage() const
+{
+  return (this->_damage);
+}
+
+void		Bomb::setDamage(const int &damage)
+{
+  this->_damage = damage;
+}
+
+void		Bomb::update()
+{
+  this->_explodeTime -= 1;
 }
 
 void		Bomb::draw()
