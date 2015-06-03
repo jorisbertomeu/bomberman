@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Wed Jun  3 13:14:51 2015 Geoffrey Merran
+// Last update Wed Jun  3 14:26:01 2015 mari_f
 //
 
 #include	<InputManager.hh>
@@ -20,43 +20,27 @@ InputManager::~InputManager()
 
 }
 
-void		InputManager::DetectKey(gdl::Input &input)
+void			InputManager::addEvent(IEvent* event)
 {
-  if (input.getKey(SDLK_UP))
-    this->up();
-  else if (input.getKey(SDLK_DOWN))
-    this->down();
-  else if (input.getKey(SDLK_RIGHT))
-    this->right();
-  else if (input.getKey(SDLK_LEFT))
-    this->left();
+  this->_events.push_back(event);
 }
 
-
-void		InputManager::up()
+void			InputManager::handleEvent(const gdl::Input &input)
 {
-  //translate(glm::vec3(0, 0, -1) * static_cast<float>(clock.getElapsed()));
+  for(std::list<IEvent *>::iterator it = this->_events.begin(); it != this->_events.end(); it++)
+    {
+      (*it)->isCatch(input);
+    }
 }
 
-void		InputManager::down()
-{
-  //translate(glm::vec3(0, 0, 1) * static_cast<float>(clock.getElapsed()));
-  std::cout << "down" << std::endl;
-}
-
-void		InputManager::right()
-{
-  //translate(glm::vec3(-1, 0, 0) * static_cast<float>(clock.getElapsed()));
-  std::cout << "right" << std::endl;
-}
-
-void		InputManager::left()
-{
-  //translate(glm::vec3(1, 0, 0) * static_cast<float>(clock.getElapsed()));
-  std::cout << "left" << std::endl;
-}
-
-void		InputManager::jump()
-{
-
-}
+// void		InputManager::DetectKey(gdl::Input &input)
+// {
+//   if (input.getKey(SDLK_UP))
+//     this->up();
+//   else if (input.getKey(SDLK_DOWN))
+//     this->down();
+//   else if (input.getKey(SDLK_RIGHT))
+//     this->right();
+//   else if (input.getKey(SDLK_LEFT))
+//     this->left();
+// }
