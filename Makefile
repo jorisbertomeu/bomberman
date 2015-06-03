@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Wed Jun  3 11:50:44 2015 Jérémy Mediavilla
+## Last update Wed Jun  3 13:08:05 2015 Nicolas Adès
 ##
 
 CXX		=	g++
@@ -38,6 +38,7 @@ SRC		=	src/main.cpp				\
 			src/ParserXML.cpp			\
 			src/Scene.cpp				\
 			src/SceneParser.cpp			\
+			src/Floor.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 

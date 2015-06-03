@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Tue May 26 17:50:23 2015 Geoffrey Merran
+// Last update Wed Jun  3 12:57:01 2015 Nicolas Adès
 //
 
 #include <ASolid.hh>
@@ -56,6 +56,16 @@ void		ASolid::setRange(const float &range)
   this->_range = range;
 }
 
+int		ASolid::getHealth() const
+{
+  return (this->_health);
+}
+
+void		ASolid::setHealth(const int &health)
+{
+  this->_health = health;
+}
+
 bool		ASolid::getMove() const
 {
   return (this->_move);
@@ -64,6 +74,26 @@ bool		ASolid::getMove() const
 void		ASolid::setMove(const bool & move)
 {
   this->_move = move;
+}
+
+bool		ASolid::getJump() const
+{
+  return (this->_jump);
+}
+
+void		ASolid::setJump(const bool &jump)
+{
+  this->_jump = jump;
+}
+
+glm::vec3	ASolid::getSize() const
+{
+  return (this->_size);
+}
+
+void		ASolid::setSize(const glm::vec3 &size)
+{
+  this->_size = size;
 }
 
 ASolid::SolidAbility	ASolid::getAbility() const

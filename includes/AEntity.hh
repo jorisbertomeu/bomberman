@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  2 17:41:20 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 13:07:32 2015 Nicolas Adès
 //
 
 #ifndef _AENTITY_H_
@@ -27,7 +27,8 @@ public:
       BRICKWALL			= 1,
       BOMBERMAN			= 2,
       BOMB			= 3,
-      WOODWALL			= 4
+      WOODWALL			= 4,
+      FLOOR			= 5
     }				EntityType;
 
 protected:
