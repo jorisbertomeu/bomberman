@@ -75,8 +75,34 @@
       <name>TONY</name>
       <texture>a54564564564564607e0ebe2db1f4e</texture>
       <position>
-        <x>42</x>
-        <y>74</y>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </position>
+      <size>
+        <x>40</x>
+        <y>40</y>
+        <z>40</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>200</health>
+      <type>BOMBERMAN</type>
+      <name>TOTO</name>
+      <texture>a54564564564564607e0ebe2db1f4e</texture>
+      <position>
+        <x>-400</x>
+        <y>0</y>
         <z>0</z>
       </position>
       <size>

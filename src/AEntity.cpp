@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Wed Jun  3 16:06:15 2015 Geoffrey Merran
+// Last update Wed Jun  3 17:40:58 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
@@ -47,10 +47,10 @@ glm::mat4	       	AEntity::getTransformation()
 {
   glm::mat4		transform(1);
 
+  transform = glm::translate(transform, this->_pos);
   transform = glm::rotate(transform, this->_rotation.x, glm::vec3(1, 0, 0));
   transform = glm::rotate(transform, this->_rotation.y, glm::vec3(0, 1, 0));
   transform = glm::rotate(transform, this->_rotation.z, glm::vec3(0, 0, 1));
-  transform = glm::translate(transform, this->_pos);
   transform = glm::scale(transform, this->_scale);
   return (transform);
 }
