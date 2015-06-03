@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue May 26 15:18:36 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 18:15:40 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 16:51:16 2015 Jérémy Mediavilla
 //
 
 #include "ParserXML.hh"

@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue May 26 08:53:24 2015 Joris Bertomeu
+// Last update Wed Jun  3 17:22:02 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -39,6 +39,8 @@ Scene		*SceneParser::getScene()
 
   std::cout << "PARAMETERS :" << std::endl;
   this->_parser.setNode("parameters");
+  if (this->_parser.checkMultipleTag() == false)
+    std::cout << this->_parser.getError();
   std::cout << "author : " << this->_parser.getValueOf("author") << std::endl;
   std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
   std::cout << "level : " << this->_parser.getValueOf("level") << std::endl;
@@ -53,6 +55,8 @@ Scene		*SceneParser::getScene()
   this->_parser.setNode("texture_pack");
   while (this->_parser.foreach("texture"))
     {
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
       std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
       std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
@@ -64,6 +68,8 @@ Scene		*SceneParser::getScene()
   this->_parser.setNode("sound_pack");
   while (this->_parser.foreach("sound"))
     {
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
       std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
       std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
@@ -73,12 +79,16 @@ Scene		*SceneParser::getScene()
   this->_parser.setNode("scene");
   std::cout << std::endl << "COMMON :" << std::endl;
   this->_parser.setNode("common");
+  if (this->_parser.checkMultipleTag() == false)
+    std::cout << this->_parser.getError();
   std::cout << "width : " << this->_parser.getValueOf("width") << std::endl;
   std::cout << "height : " << this->_parser.getValueOf("height") << std::endl;
   std::cout << "gravity : " << this->_parser.getValueOf("gravity") << std::endl;
   std::cout << "friction : " << this->_parser.getValueOf("friction") << std::endl;
   std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
   this->_parser.setNode("skybox");
+  if (this->_parser.checkMultipleTag() == false)
+    std::cout << this->_parser.getError();
   std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
   std::cout << "file : " << this->_parser.getValueOf("file") << std::endl;
 
@@ -88,10 +98,14 @@ Scene		*SceneParser::getScene()
   this->_parser.setNode("entities");
   while (this->_parser.foreach("entity"))
     {
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
       if (this->_parser.getValueOf("type") == "BOMBERMAN")
 	{
 	  std::string	name = this->_parser.getValueOf("name");
 	  this->_parser.setNode("position");
+	  if (this->_parser.checkMultipleTag() == false)
+	    std::cout << this->_parser.getError();
 	  entity = new Bomberman(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())),
@@ -101,6 +115,8 @@ Scene		*SceneParser::getScene()
       else if (this->_parser.getValueOf("type") == "BRICK_WALL")
 	{
 	  this->_parser.setNode("position");
+	  if (this->_parser.checkMultipleTag() == false)
+	    std::cout << this->_parser.getError();
 	  entity = new BrickWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())));
@@ -112,6 +128,8 @@ Scene		*SceneParser::getScene()
 	  continue;
 	}
       this->_parser.setNode("attribut");
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
       entity->setSpeed(atof(this->_parser.getValueOf("speed").c_str()));
       entity->setJump((atoi(this->_parser.getValueOf("jump").c_str()) == 0) ? false : true);
       entity->setFriction(atof(this->_parser.getValueOf("friction").c_str()));
@@ -140,6 +158,8 @@ Scene		*SceneParser::getScene()
       entity->setHealth((atoi(this->_parser.getValueOf("health").c_str())));
       entity->setTexture(std::string(this->_parser.getValueOf("texture").c_str()));
       this->_parser.setNode("size");
+      if (this->_parser.checkMultipleTag() == false)
+	std::cout << this->_parser.getError();
       entity->setSize(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 				atof(this->_parser.getValueOf("y").c_str()),
 				atof(this->_parser.getValueOf("z").c_str())));
