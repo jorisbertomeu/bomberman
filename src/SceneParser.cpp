@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 15:07:31 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 15:28:06 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -118,8 +118,30 @@ Scene		SceneParser::getScene()
       entity->setMove((atoi(this->_parser.getValueOf("move").c_str()) == 0) ? false : true);
       entity->setRange(atof(this->_parser.getValueOf("range").c_str()));
       entity->setWeight((atoi(this->_parser.getValueOf("wieght").c_str())));
-      std::cout << "ability : " << this->_parser.getValueOf("ability") << std::endl;
-      std::cout << "bonus : " << this->_parser.getValueOf("bonus") << std::endl;
+      if (this->_parser.getValueOf("ability") == "NONE")
+	{
+	  // std::cout << "ok" << std::endl;
+	  entity->setAbility(ASolid::NONE_ABILITY);
+	}
+      else
+	{
+	  std::cout << "Unknown ability : " << this->_parser.getValueOf("ability") << std::endl;
+	  this->_parser.setPreviousNode();
+	  delete entity;
+	  continue;
+	}
+      if (this->_parser.getValueOf("bonus") == "NONE")
+	{
+	  std::cout << "BONUS A SET" << std::endl;
+	  // entity->setBonus(ASolid::NONE_BONUS);
+	}
+      else
+	{
+	  std::cout << "Unknown bonus : " << this->_parser.getValueOf("bonus") << std::endl;
+	  this->_parser.setPreviousNode();
+	  delete entity;
+	  continue;
+	}
       this->_parser.setPreviousNode();
       entity->setHealth((atoi(this->_parser.getValueOf("health").c_str())));
       entity->setTexture(std::string(this->_parser.getValueOf("texture").c_str()));
