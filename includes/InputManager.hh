@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Fri May 29 16:21:23 2015 mari_f
+// Last update Wed Jun  3 15:18:53 2015 mari_f
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -16,18 +16,18 @@
 # include	<SDL_keycode.h>
 # include	<iostream>
 # include	<string>
+# include	<list>
+# include	<Event.hh>
 
-class		InputManager
+class			InputManager
 {
+private:
+  std::list<IEvent*>	_events;
 public:
   explicit	InputManager();
   virtual	~InputManager();
-  void	       	up();
-  void		down();
-  void		right();
-  void		left();
-  void		jump();
-  void		DetectKey(gdl::Input &);
+  void		addEvent(IEvent*);
+  void		handleEvent(const gdl::Input &);
 };
 
 #endif		/* _INPUTMANAGER_HH_ */
