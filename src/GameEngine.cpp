@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed Jun  3 21:53:40 2015 Geoffrey Merran
+// Last update Thu Jun  4 00:16:29 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -56,19 +56,18 @@ bool	GameEngine::run()
     {
       SDL_PollEvent(&event);
       switch (event.type)
-	{
-	case SDL_QUIT:
-	  this->_running = 0;
-	case SDL_KEYDOWN:
-	  switch (event.key.keysym.sym)
-	    {
-	    case SDLK_ESCAPE:
-	      this->_running = 0;
-	    }
-	}
+      	{
+      	case SDL_QUIT:
+      	  this->_running = 0;
+      	case SDL_KEYDOWN:
+      	  switch (event.key.keysym.sym)
+      	    {
+      	    case SDLK_ESCAPE:
+      	      this->_running = 0;
+      	    }
+      	}
       this->update();
       this->draw();
-      this->_renderManager.delay();
     }
   this->_renderManager.stop();
   return (true);

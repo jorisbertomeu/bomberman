@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Wed Jun  3 21:37:11 2015 Geoffrey Merran
+## Last update Wed Jun  3 23:33:40 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -O3
 
 RM		=	rm -f
 
@@ -34,12 +34,12 @@ SRC		=	src/main.cpp				\
 			src/HitBox.cpp				\
 			src/Bomberman.cpp			\
 			src/Bomb.cpp				\
+			src/Floor.cpp				\
 			src/WoodWall.cpp			\
 			src/BrickWall.cpp			\
 			src/ParserXML.cpp			\
 			src/Scene.cpp				\
 			src/SceneParser.cpp			\
-			src/Floor.cpp				\
 			src/Event.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)

@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:58 2015 Jérémy Mediavilla
-## Last update Wed Jun  3 19:08:25 2015 Geoffrey Merran
+## Last update Wed Jun  3 22:47:18 2015 Geoffrey Merran
 ##
 #!/bin/bash
 
@@ -15,5 +15,5 @@ if [ -f "$file" ]
 then
     $(pwd)/bomberman "$@"
 else
-    echo "Executable '$file' not found, I will try to recompile it .."; make -C re; $(pwd)"/run.sh"
+    echo "Executable '$file' not found, I will try to recompile it .."; make -C .; $(pwd)"/run.sh"
 fi

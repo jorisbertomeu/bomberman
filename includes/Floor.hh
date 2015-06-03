@@ -5,11 +5,11 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 12:57:30 2015 Nicolas Adès
-// Last update Wed Jun  3 21:29:45 2015 Geoffrey Merran
+// Last update Wed Jun  3 23:25:42 2015 Geoffrey Merran
 //
 
-#ifndef _FLOOR_H_
-# define _FLOOR_H_
+#ifndef __FLOOR_HH
+# define __FLOOR_HH
 
 # include <AEntity.hh>
 
@@ -20,7 +20,7 @@ protected:
   int		_heigth;
 
 public:
-  Floor(glm::vec3 pos, int width, int heigth);
+  Floor(const glm::vec3 & pos, const int & width, const int & heigth);
   ~Floor();
 
   int		getWidth() const;
@@ -28,4 +28,4 @@ public:
   virtual void  draw(RenderManager & rm);
 };
 
-#endif // _FLOOR_H_
+#endif // _FLOOR_HH_

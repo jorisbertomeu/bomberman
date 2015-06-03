@@ -5,15 +5,14 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 13:01:29 2015 Nicolas Adès
-// Last update Wed Jun  3 21:32:37 2015 Geoffrey Merran
+// Last update Wed Jun  3 23:24:24 2015 Geoffrey Merran
 //
 
 #include <Floor.hh>
 
-Floor::Floor(glm::vec3 pos, int width, int heigth) : AEntity(pos, AEntity::FLOOR)
+Floor::Floor(const glm::vec3 & pos, const int & width, const int & heigth) : AEntity(pos, AEntity::FLOOR), _width(width), _heigth(heigth)
 {
-  this->_width = width;
-  this->_heigth = heigth;
+
 }
 
 Floor::~Floor()

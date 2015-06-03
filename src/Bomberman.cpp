@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Wed Jun  3 22:14:17 2015 Geoffrey Merran
+// Last update Thu Jun  4 00:15:52 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -67,5 +67,6 @@ void	       	Bomberman::draw(RenderManager & rm)
 
   if (model == NULL)
     throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
-  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
+  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed() * 2);
+
 }
