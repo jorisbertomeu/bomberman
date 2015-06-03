@@ -5,12 +5,13 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Wed Jun  3 14:39:54 2015 Geoffrey Merran
-// Last update Wed Jun  3 15:12:27 2015 Geoffrey Merran
+// Last update Wed Jun  3 19:14:04 2015 Geoffrey Merran
 //
 
 #ifndef _MODELMANAGER_HH_
 # define _MODELMANAGER_HH_
 
+# include <iostream>
 # include <map>
 # include <Model.hh>
 

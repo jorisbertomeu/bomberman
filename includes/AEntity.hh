@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue May 26 10:28:16 2015 Joris Bertomeu
+// Last update Wed Jun  3 19:59:20 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -46,12 +46,16 @@ protected:
 public:
   explicit			AEntity(glm::vec3 pos, EntityType type);
   virtual			~AEntity();
-  virtual glm::vec3		getPos() const;
-  virtual AEntity::EntityType	getType() const;
-  virtual void			setPos(const glm::vec3 &);
-  virtual void			draw(const RenderManager & rm);
-  virtual glm::mat4	       	getTransformation();
-  virtual void			setModelId(const std::string &);
+
+  glm::vec3			getPos() const;
+  AEntity::EntityType		getType() const;
+  void				setPos(const glm::vec3 &);
+  void				setScale(const glm::vec3 & scale);
+  glm::mat4			getTransformation();
+  void				setModelId(const std::string &);
+  std::string			getModelId() const;
+
+  virtual void			draw(RenderManager & rm);
 };
 
 #endif // _AENTITY_H_

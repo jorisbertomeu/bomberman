@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Wed Jun  3 18:02:04 2015 Geoffrey Merran
+// Last update Wed Jun  3 19:46:04 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -23,8 +23,6 @@ RenderManager::~RenderManager()
 bool			RenderManager::initialize(const glm::vec2 &windowSize, const std::string &name)
 {
   if (!this->_graphicManager.initialize(windowSize, name))
-    return (false);
-  if (!this->_modelManager.addModel("./LibBomberman_linux_x64/assets/marvin.fbx", "bomberman"))
     return (false);
   return (true);
 }
@@ -51,12 +49,12 @@ void			RenderManager::stop()
   this->_graphicManager.stop();
 }
 
-GraphicManager		RenderManager::getGraphicManager() const
+GraphicManager&		RenderManager::getGraphicManager()
 {
   return (this->_graphicManager);
 }
 
-ModelManager		RenderManager::getModelManager() const
+ModelManager&		RenderManager::getModelManager()
 {
   return (this->_modelManager);
 }

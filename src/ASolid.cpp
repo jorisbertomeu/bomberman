@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Wed Jun  3 14:57:13 2015 Nicolas Adès
+// Last update Wed Jun  3 19:54:28 2015 Geoffrey Merran
 //
 
 #include <ASolid.hh>
@@ -104,16 +104,6 @@ std::string	ASolid::getTexture() const
 void		ASolid::setTexture(const std::string &texture)
 {
   this->_texture = texture;
-}
-
-glm::vec3	ASolid::getSize() const
-{
-  return (this->_size);
-}
-
-void		ASolid::setSize(const glm::vec3 &size)
-{
-  this->_size = size;
 }
 
 ASolid::SolidAbility	ASolid::getAbility() const

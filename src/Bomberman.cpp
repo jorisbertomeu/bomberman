@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Wed Jun  3 18:08:30 2015 Geoffrey Merran
+// Last update Wed Jun  3 19:44:43 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -61,11 +61,11 @@ void		Bomberman::jump()
 
 }
 
-void	       	Bomberman::draw(const RenderManager & rm)
+void	       	Bomberman::draw(RenderManager & rm)
 {
-  gdl::Model*	model = rm.getModelManager().getModel("bomberman");
+  gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
   if (model == NULL)
-    throw (std::logic_error("Can't load bomberman model"));
+    throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
 }

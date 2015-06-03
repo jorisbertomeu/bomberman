@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue May 26 10:26:32 2015 Joris Bertomeu
+// Last update Wed Jun  3 19:53:29 2015 Geoffrey Merran
 //
 
 #include "SceneParser.hh"
@@ -75,12 +75,13 @@ Scene		*SceneParser::getScene(RenderManager *rm)
       std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
     }
   this->_parser.resetNode();
+  this->_parser.setNode("scene");
   this->_parser.setNode("model_pack");
   while (this->_parser.foreach("model"))
     {
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
-      rm->getModelManager().addModel(this->_parser.getValueOf("model"), this->_parser.getValueOf("id"));
+      rm->getModelManager().addModel(this->_parser.getValueOf("file"), this->_parser.getValueOf("id"));
     }
   this->_parser.resetNode();
   this->_parser.setNode("scene");
@@ -168,7 +169,7 @@ Scene		*SceneParser::getScene(RenderManager *rm)
       this->_parser.setNode("size");
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
-      entity->setSize(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+      entity->setScale(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 				atof(this->_parser.getValueOf("y").c_str()),
 				atof(this->_parser.getValueOf("z").c_str())));
       this->_parser.setPreviousNode();

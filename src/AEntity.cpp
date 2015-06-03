@@ -5,15 +5,13 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Tue May 26 10:27:42 2015 Joris Bertomeu
+// Last update Wed Jun  3 19:56:57 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type)
+AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(pos), _modelId(""), _type(type)
 {
-  this->_pos = pos;
-  this->_type = type;
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
 }
@@ -38,7 +36,12 @@ void			AEntity::setPos(const glm::vec3 & pos)
   this->_pos = pos;
 }
 
-void			AEntity::draw(const RenderManager & rm)
+void			AEntity::setScale(const glm::vec3 & scale)
+{
+  this->_scale = scale;
+}
+
+void			AEntity::draw(RenderManager & rm)
 {
   (void) rm;
 }
@@ -58,4 +61,9 @@ glm::mat4	       	AEntity::getTransformation()
 void			AEntity::setModelId(const std::string &model)
 {
   this->_modelId = model;
+}
+
+std::string	       	AEntity::getModelId() const
+{
+  return (this->_modelId);
 }

@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:17:23 2015 Nicolas Adès
-// Last update Wed Jun  3 15:08:52 2015 Jérémy Mediavilla
+// Last update Wed Jun  3 20:14:29 2015 Geoffrey Merran
 //
 
 #include <BrickWall.hh>
@@ -20,7 +20,11 @@ BrickWall::~BrickWall()
 
 }
 
-void		BrickWall::draw()
+void	       	BrickWall::draw(RenderManager & rm)
 {
+  gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
+  if (model == NULL)
+    throw (std::logic_error(std::string("Can't load model brickwall:  ") + this->_modelId));
+  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
 }

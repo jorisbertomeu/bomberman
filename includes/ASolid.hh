@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Wed Jun  3 14:56:11 2015 Nicolas Adès
+// Last update Wed Jun  3 20:00:38 2015 Geoffrey Merran
 //
 
 #ifndef _ASOLID_H_
@@ -60,8 +60,6 @@ public:
   virtual void			setJump(const bool &);
   virtual std::string		getTexture() const;
   virtual void			setTexture(const std::string &);
-  virtual glm::vec3		getSize() const;
-  virtual void			setSize(const glm::vec3 &);
   virtual ASolid::SolidAbility	getAbility() const;
   virtual void			setAbility(const ASolid::SolidAbility &);
   virtual ASolid::SolidBonus	getBonus() const;
