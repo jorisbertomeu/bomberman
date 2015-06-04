@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Thu Jun  4 13:40:45 2015 mari_f
+## Last update Thu Jun  4 14:39:19 2015 mari_f
 ##
 
 CXX		=	g++
@@ -41,6 +41,7 @@ SRC		=	src/main.cpp				\
 			src/Scene.cpp				\
 			src/SceneParser.cpp			\
 			src/GameEvent.cpp			\
+			src/CommonEvent.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 

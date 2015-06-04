@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Thu Jun  4 14:09:55 2015 mari_f
+// Last update Thu Jun  4 14:41:26 2015 mari_f
 //
 
 #ifndef				_EVENT_HH__
@@ -19,18 +19,15 @@
 # include			<Scene.hh>
 # include			<map>
 
-class GameEvent : public IEvent
+class CommonEvent : public IEvent
 {
 public:
-  typedef void (GameEvent::*eventHandler)(Scene*);
+  typedef void (CommonEvent::*eventHandler)(Scene*);
 
-  GameEvent(void);
-  void		up(Scene*);
-  void		down(Scene*);
-  void		right(Scene*);
-  void		left(Scene*);
-  virtual ~GameEvent(void);
-  virtual bool		isCatch(gdl::Input &input);
+  CommonEvent(void);
+  void		escape(Scene*);
+  virtual ~CommonEvent(void);
+  virtual bool		isCatch(gdl::Input &input, Scene*);
 
   std::map<int, eventHandler>	_events;
 };
