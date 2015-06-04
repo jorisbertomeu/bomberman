@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Thu Jun  4 12:06:34 2015 mari_f
+// Last update Thu Jun  4 14:31:40 2015 mari_f
 //
 
 #include	<InputManager.hh>
@@ -25,11 +25,11 @@ void			InputManager::addEvent(IEvent* event)
   this->_events.push_back(event);
 }
 
-void			InputManager::handleEvent(gdl::Input &input)
+void			InputManager::handleEvent(gdl::Input &input, Scene* scene)
 {
   for(std::list<IEvent *>::iterator it = this->_events.begin(); it != this->_events.end(); it++)
     {
-      (*it)->isCatch(input);
+      (*it)->isCatch(input, scene);
     }
 }
 

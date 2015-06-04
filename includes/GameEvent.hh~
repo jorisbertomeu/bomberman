@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Thu Jun  4 13:12:43 2015 mari_f
+// Last update Thu Jun  4 14:09:55 2015 mari_f
 //
 
 #ifndef				_EVENT_HH__
@@ -16,21 +16,23 @@
 # include			<iostream>
 # include			<Input.hh>
 # include			<SDL_keycode.h>
+# include			<Scene.hh>
+# include			<map>
 
-class Event : public IEvent
+class GameEvent : public IEvent
 {
 public:
-  enum Keys {
-    UP,
-    DOWN,
-    RIGHT,
-    LEFT,
-    NO
-  };
+  typedef void (GameEvent::*eventHandler)(Scene*);
 
-  Event(void);
-  virtual ~Event(void);
+  GameEvent(void);
+  void		up(Scene*);
+  void		down(Scene*);
+  void		right(Scene*);
+  void		left(Scene*);
+  virtual ~GameEvent(void);
   virtual bool		isCatch(gdl::Input &input);
+
+  std::map<int, eventHandler>	_events;
 };
 
 #endif

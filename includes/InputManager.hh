@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Thu Jun  4 12:06:24 2015 mari_f
+// Last update Thu Jun  4 14:33:12 2015 mari_f
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -17,7 +17,8 @@
 # include	<iostream>
 # include	<string>
 # include	<list>
-# include	<Event.hh>
+# include	<IEvent.hh>
+# include	<Scene.hh>
 
 class			InputManager
 {
@@ -27,7 +28,7 @@ public:
   explicit	InputManager();
   virtual	~InputManager();
   void		addEvent(IEvent*);
-  void		handleEvent(gdl::Input &);
+  void		handleEvent(gdl::Input &, Scene*);
 };
 
 #endif		/* _INPUTMANAGER_HH_ */
