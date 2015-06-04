@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Wed Jun  3 15:18:53 2015 mari_f
+// Last update Thu Jun  4 12:06:24 2015 mari_f
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -27,7 +27,7 @@ public:
   explicit	InputManager();
   virtual	~InputManager();
   void		addEvent(IEvent*);
-  void		handleEvent(const gdl::Input &);
+  void		handleEvent(gdl::Input &);
 };
 
 #endif		/* _INPUTMANAGER_HH_ */
