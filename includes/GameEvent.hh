@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Thu Jun  4 14:32:31 2015 mari_f
+// Last update Thu Jun  4 17:20:32 2015 mari_f
 //
 
 #ifndef				_EVENT_HH__
@@ -18,6 +18,9 @@
 # include			<SDL_keycode.h>
 # include			<Scene.hh>
 # include			<map>
+# include			<list>
+# include			<AEntity.hh>
+# include			<Bomberman.hh>
 
 class GameEvent : public IEvent
 {

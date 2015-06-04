@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:29:00 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 19:43:47 2015 Geoffrey Merran
+// Last update Thu Jun  4 16:52:22 2015 mari_f
 //
 
 #ifndef			_SCENE_HH_
@@ -28,6 +28,7 @@ public:
   virtual		~Scene();
   bool			addEntity(AEntity *);
   void			listAllEntities() const;
+  std::list<AEntity *>	getEntities();
   void			draw(RenderManager & rm);
 };
 

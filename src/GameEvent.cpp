@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Thu Jun  4 14:44:27 2015 mari_f
+// Last update Thu Jun  4 17:21:35 2015 mari_f
 //
 
 # include		<GameEvent.hh>
@@ -39,7 +39,15 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene)
 
 void			GameEvent::up(Scene* scene)
 {
-  (void) scene;
+  std::list<AEntity*>	list;
+
+  list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
+       it++)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	dynamic_cast<Bomberman*>((*it))->moveFront();
+    }
 }
 
 

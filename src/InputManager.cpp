@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Thu Jun  4 14:31:40 2015 mari_f
+// Last update Thu Jun  4 17:22:55 2015 mari_f
 //
 
 #include	<InputManager.hh>
@@ -32,15 +32,3 @@ void			InputManager::handleEvent(gdl::Input &input, Scene* scene)
       (*it)->isCatch(input, scene);
     }
 }
-
-// void		InputManager::DetectKey(gdl::Input &input)
-// {
-//   if (input.getKey(SDLK_UP))
-//     this->up();
-//   else if (input.getKey(SDLK_DOWN))
-//     this->down();
-//   else if (input.getKey(SDLK_RIGHT))
-//     this->right();
-//   else if (input.getKey(SDLK_LEFT))
-//     this->left();
-// }
