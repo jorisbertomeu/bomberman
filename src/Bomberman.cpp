@@ -31,6 +31,7 @@ std::string	Bomberman::getName() const
 
 void		Bomberman::dropBomb()
 {
+  std::cout << "Bomberman : " << this->getName() << " drop a bomb" << std::endl;
   SceneManager		*scene = new SceneManager();
   Bomb			*newBomb = new Bomb(this->_pos);
 
@@ -39,6 +40,7 @@ void		Bomberman::dropBomb()
 
 void		Bomberman::moveRight()
 {
+  std::cout << "Bomberman : " << this->getName() << " move rigth" << std::endl;
   // glm::vec3	oldPos;
   // glm::vec3	newPos;
 
@@ -47,16 +49,17 @@ void		Bomberman::moveRight()
 
 void		Bomberman::moveLeft()
 {
-
+  std::cout << "Bomberman : " << this->getName() << " move left" << std::endl;
 }
 
 void		Bomberman::moveBack()
 {
-
+  std::cout << "Bomberman : " << this->getName() << " move back" << std::endl;
 }
 
 void		Bomberman::moveFront()
 {
+  std::cout << "Bomberman : " << this->getName() << " move front" << std::endl;
   glm::vec3	oldPos;
   glm::vec3	newPos;
 
@@ -65,7 +68,7 @@ void		Bomberman::moveFront()
 
 void		Bomberman::jump()
 {
-
+  std::cout << "Bomberman : " << this->getName() << " jump" << std::endl;
 }
 
 void	       	Bomberman::draw(RenderManager & rm)
