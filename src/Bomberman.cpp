@@ -32,14 +32,17 @@ std::string	Bomberman::getName() const
 void		Bomberman::dropBomb()
 {
   SceneManager		*scene = new SceneManager();
-  Bomb		*newBomb = new Bomb(this->_pos);
+  Bomb			*newBomb = new Bomb(this->_pos);
 
   scene->addEntityToCurrentScene(newBomb);
 }
 
 void		Bomberman::moveRight()
 {
+  // glm::vec3	oldPos;
+  // glm::vec3	newPos;
 
+  // oldPos = this->getPos();
 }
 
 void		Bomberman::moveLeft()
@@ -54,7 +57,10 @@ void		Bomberman::moveBack()
 
 void		Bomberman::moveFront()
 {
+  glm::vec3	oldPos;
+  glm::vec3	newPos;
 
+  oldPos = this->getPos();
 }
 
 void		Bomberman::jump()
