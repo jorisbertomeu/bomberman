@@ -29,7 +29,7 @@ public:
   void		setAcceleration(const glm::vec3 &);
   float		getWeight();
   void		setWeight(const float &);
-
+  
 };
 
 #endif // _PHYSICSOLID_H_
