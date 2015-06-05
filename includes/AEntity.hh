@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Thu Jun  4 17:13:05 2015 mari_f
+// Last update Sat Jun  6 16:07:30 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -54,9 +54,13 @@ public:
   AEntity::EntityType		getType() const;
   void				setPos(const glm::vec3 &);
   void				setScale(const glm::vec3 & scale);
-  glm::mat4			getTransformation();
   void				setModelId(const std::string &);
   std::string			getModelId() const;
+
+  void				translate(const glm::vec3 & v);
+  void				rotate(const glm::vec3 & axis, const float & angle);
+  void				scale(const glm::vec3 & scale);
+  glm::mat4			getTransformation();
 
   virtual void			draw(RenderManager & rm) = 0;
 };

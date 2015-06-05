@@ -45,7 +45,7 @@
   <entities>
   <entity>
     <attribut>
-      <speed>0</speed>
+      <speed>10</speed>
       <jump>0</jump>
       <weight>200</weight>
       <friction>1</friction>

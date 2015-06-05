@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Wed Jun  3 21:27:59 2015 Geoffrey Merran
+// Last update Sat Jun  6 16:19:46 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
@@ -39,6 +39,21 @@ void			AEntity::setPos(const glm::vec3 & pos)
 void			AEntity::setScale(const glm::vec3 & scale)
 {
   this->_scale = scale;
+}
+
+void			AEntity::translate(const glm::vec3 & v)
+{
+  this->_pos += v;
+}
+
+void			AEntity::rotate(const glm::vec3 & axis, const float & angle)
+{
+  this->_rotation += axis * angle;
+}
+
+void			AEntity::scale(const glm::vec3 & scale)
+{
+  this->_scale *= scale;
 }
 
 glm::mat4	       	AEntity::getTransformation()

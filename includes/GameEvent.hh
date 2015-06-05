@@ -5,37 +5,37 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Thu Jun  4 17:20:32 2015 mari_f
+// Last update Sat Jun  6 15:25:25 2015 Geoffrey Merran
 //
 
-#ifndef				_EVENT_HH__
-# define			_EVENT_HH__
+#ifndef				_GAMEEVENT_HH__
+# define			_GAMEEVENT_HH__
 
-# include			<IEvent.hh>
 # include			<string>
 # include			<iostream>
-# include			<Input.hh>
-# include			<SDL_keycode.h>
-# include			<Scene.hh>
 # include			<map>
 # include			<list>
-# include			<AEntity.hh>
+
+# include			<SDL_keycode.h>
+
+# include			<IEvent.hh>
 # include			<Bomberman.hh>
 
-class GameEvent : public IEvent
+class				GameEvent : public IEvent
 {
 public:
   typedef void (GameEvent::*eventHandler)(Scene*);
 
   GameEvent(void);
-  void		up(Scene*);
-  void		down(Scene*);
-  void		right(Scene*);
-  void		left(Scene*);
-  virtual ~GameEvent(void);
-  virtual bool		isCatch(gdl::Input &input, Scene*);
+  virtual			~GameEvent(void);
+
+  void				up(Scene*);
+  void				down(Scene*);
+  void				right(Scene*);
+  void				left(Scene*);
+  virtual bool			isCatch(gdl::Input &input, Scene*);
 
   std::map<int, eventHandler>	_events;
 };
 
-#endif
+#endif				/* _GAMEEVENT_HH__ */

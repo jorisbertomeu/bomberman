@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Wed Jun  3 21:51:10 2015 Geoffrey Merran
+// Last update Sat Jun  6 14:01:49 2015 Geoffrey Merran
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -36,7 +36,7 @@ public:
 
   bool			initialize(const glm::vec2 &, const std::string &);
   void			delay();
-  bool			update();
+  bool			update(gdl::Input &);
   void			stop();
   void			draw(Scene *);
 
