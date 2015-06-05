@@ -44,6 +44,7 @@ SRC		=	src/main.cpp				\
 			src/CommonEvent.cpp			\
 			src/GameMenu.cpp			\
 			src/GameButton.cpp			\
+			src/Bot.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 

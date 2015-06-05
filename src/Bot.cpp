@@ -10,7 +10,7 @@
 
 #include <Bot.hh>
 
-Bot::Bot(glm::vec3, const std::string &name) : AEntity(pos, AEntity::BOT)
+Bot::Bot(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOT)
 {
   std::cout << "New Bot created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_name = name;
@@ -35,4 +35,9 @@ std::string	Bot::getColor() const
 void		Bot::setColor(const std::string &color)
 {
   this->_color = color;
+}
+
+void		Bot::draw(RenderManager &rm)
+{
+  (void) rm;
 }
