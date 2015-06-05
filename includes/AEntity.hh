@@ -32,7 +32,8 @@ public:
       BOMBERMAN			= 2,
       BOMB			= 3,
       WOODWALL			= 4,
-      FLOOR			= 5
+      FLOOR			= 5,
+      Bot			= 7
     }				EntityType;
 
 protected:
