@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Thu Jun  4 00:16:29 2015 Geoffrey Merran
+// Last update Sat Jun  6 14:04:38 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -35,7 +35,8 @@ bool	GameEngine::initialize()
 
 bool	GameEngine::update()
 {
-  this->_renderManager.update();
+  this->_renderManager.update(this->_input);
+  this->_gameContext.updateScene(this->_input);
   return (true);
 }
 
@@ -50,22 +51,8 @@ void	GameEngine::draw()
 bool	GameEngine::run()
 {
   this->_gameContext.addScene("XMLfiles/ArchitectureXML.xml");
-
-  SDL_Event	event;
   while (this->_running)
     {
-      SDL_PollEvent(&event);
-      switch (event.type)
-      	{
-      	case SDL_QUIT:
-      	  this->_running = 0;
-      	case SDL_KEYDOWN:
-      	  switch (event.key.keysym.sym)
-      	    {
-      	    case SDLK_ESCAPE:
-      	      this->_running = 0;
-      	    }
-      	}
       this->update();
       this->draw();
     }

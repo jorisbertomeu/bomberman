@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:45:20 2015 Joris Bertomeu
-// Last update Tue May 26 09:51:19 2015 Joris Bertomeu
+// Last update Sat Jun  6 14:19:57 2015 Geoffrey Merran
 //
 
 #ifndef		_GAMECONTEXT_HH_
@@ -15,6 +15,8 @@
 # include	<CameraManager.hh>
 # include	<InputManager.hh>
 # include	<SceneFactory.hh>
+# include	<CommonEvent.hh>
+# include	<GameEvent.hh>
 
 class		GameContext
 {
@@ -31,6 +33,7 @@ public:
   bool		initialize(RenderManager *, const glm::vec2 &);
   Scene		*getCurrentScene() const;
   bool		addScene(const std::string &);
+  void		updateScene(gdl::Input &);
 };
 
 #endif		/* _GAMECONTEXT_HH_ */

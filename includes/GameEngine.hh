@@ -5,16 +5,17 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:27:41 2015 Joris Bertomeu
-// Last update Mon May 25 17:16:45 2015 Geoffrey Merran
+// Last update Sat Jun  6 14:02:06 2015 Geoffrey Merran
 //
 
 #ifndef		_GAMEENGINE_HH_
 # define	_GAMEENGINE_HH_
 
-# include	<Game.hh>
-
 # include	<stdexcept>
 # include	<iostream>
+
+# include	<Game.hh>
+# include	<Input.hh>
 
 # include	<Parameters.hpp>
 # include	<RenderManager.hh>
@@ -27,6 +28,7 @@ protected:
   RenderManager	_renderManager;
   GameContext	_gameContext;
   int		_running;
+  gdl::Input	_input;
 
 public:
   explicit	GameEngine(int ac, char **argv);

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:55:51 2015 Joris Bertomeu
-// Last update Wed Jun  3 11:46:38 2015 Geoffrey Merran
+// Last update Sat Jun  6 14:14:42 2015 Geoffrey Merran
 //
 
 #ifndef			_GRAPHICMANAGER_HH_

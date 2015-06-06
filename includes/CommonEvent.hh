@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Thu Jun  4 14:41:26 2015 mari_f
+// Last update Sat Jun  6 14:12:38 2015 Geoffrey Merran
 //
 
 #ifndef				_EVENT_HH__

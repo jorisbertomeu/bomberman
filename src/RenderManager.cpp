@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Thu Jun  4 00:16:42 2015 Geoffrey Merran
+// Last update Sat Jun  6 14:02:41 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -32,9 +32,10 @@ void			RenderManager::delay()
   this->_timeManager.delay();
 }
 
-bool			RenderManager::update()
+bool			RenderManager::update(gdl::Input & input)
 {
   this->_graphicManager.getContext().getSdlContext().updateClock(this->_timeManager.getClock());
+  this->_graphicManager.getContext().getSdlContext().updateInputs(input);
   return (true);
 }
 
