@@ -5,12 +5,12 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Wed Jun  3 19:54:28 2015 Geoffrey Merran
+// Last update Sat Jun  6 16:18:59 2015 Geoffrey Merran
 //
 
 #include <ASolid.hh>
 
-ASolid::ASolid()
+ASolid::ASolid() : _speed(0)
 {
 
 }

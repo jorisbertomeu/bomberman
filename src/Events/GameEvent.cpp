@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sat Jun  6 15:23:21 2015 Geoffrey Merran
+// Last update Sat Jun  6 16:12:31 2015 Geoffrey Merran
 //
 
 # include		<GameEvent.hh>
@@ -53,16 +53,40 @@ void			GameEvent::up(Scene* scene)
 
 void			GameEvent::down(Scene* scene)
 {
-  (void) scene;
+  std::list<AEntity*>	list;
+
+  list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
+       it++)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	dynamic_cast<Bomberman*>((*it))->moveBack();
+    }
 }
 
 
 void			GameEvent::right(Scene* scene)
 {
-  (void) scene;
+  std::list<AEntity*>	list;
+
+  list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
+       it++)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	dynamic_cast<Bomberman*>((*it))->moveRight();
+    }
 }
 
 void			GameEvent::left(Scene* scene)
 {
-  (void) scene;
+  std::list<AEntity*>	list;
+
+  list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
+       it++)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	dynamic_cast<Bomberman*>((*it))->moveLeft();
+    }
 }

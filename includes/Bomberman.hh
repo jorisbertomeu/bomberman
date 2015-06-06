@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Wed Jun  3 19:25:51 2015 Geoffrey Merran
+// Last update Sat Jun  6 17:54:46 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
@@ -13,12 +13,18 @@
 
 # include <AEntity.hh>
 
+
 class		Bomberman : public AEntity
 {
-protected:
-  std::string	_name;
-
 public:
+  enum Dir
+    {
+      UP = 1,
+      RIGHT = 2,
+      DOWN = 3,
+      LEFT = 4
+    };
+
   Bomberman(glm::vec3 pos, const std::string &name);
   ~Bomberman();
 
@@ -30,6 +36,10 @@ public:
   void		moveFront();
   void		jump();
   virtual void 	draw(RenderManager & rm);
+
+private:
+  std::string	_name;
+  Dir		_dir;
 };
 
 #endif // _BOMBERMAN_H_
