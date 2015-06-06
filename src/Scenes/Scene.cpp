@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun  4 16:57:03 2015 mari_f
+// Last update Tue Jun  9 18:59:01 2015 Jérémy Mediavilla
 //
 
 #include	"Scene.hh"
@@ -46,4 +46,26 @@ void  	      	Scene::draw(RenderManager & rm)
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
+}
+
+bool		Scene::save()
+{
+  std::fstream	fs;
+
+  fs.open("XMLfiles/save.xml", std::fstream::in | std::fstream::out | std::fstream::trunc);
+  if (!fs.is_open())
+    {
+      std::cout << "Error on open while saving map.xml" << std::endl;
+      return (false);
+    }
+  fs << "<scene>" << std::endl;
+  fs << "  <entities>" << std::endl;
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
+    {
+      (*it)->save(fs);
+    }
+  fs << "  </entities>" << std::endl;
+  fs << "/<scene>" << std::endl;
+  fs.close();
+  return (true);
 }

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Wed Jun  3 20:00:38 2015 Geoffrey Merran
+// Last update Tue Jun  9 19:10:25 2015 Jérémy Mediavilla
 //
 
 #ifndef _ASOLID_H_
@@ -62,5 +62,7 @@ public:
   virtual void			setAbility(const ASolid::SolidAbility &);
   virtual ASolid::SolidBonus	getBonus() const;
   virtual void			setBonus(const ASolid::SolidBonus &);
+  virtual glm::vec3		getSize();
+  virtual void			setSize(const glm::vec3 &);
 };
 #endif // _ASOLID_H_

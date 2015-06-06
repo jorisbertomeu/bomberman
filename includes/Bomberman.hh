@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Sat Jun  6 17:54:46 2015 Geoffrey Merran
+// Last update Tue Jun  9 19:51:02 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOMBERMAN_H_
@@ -37,7 +37,7 @@ public:
   void		jump();
   virtual void 	draw(RenderManager & rm);
 
-private:
+protected:
   std::string	_name;
   Dir		_dir;
 };

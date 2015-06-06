@@ -5,27 +5,27 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 12:57:30 2015 Nicolas Adès
-// Last update Wed Jun  3 23:25:42 2015 Geoffrey Merran
+// Last update Tue Jun  9 20:13:48 2015 Geoffrey Merran
 //
 
 #ifndef __FLOOR_HH
 # define __FLOOR_HH
 
 # include <AEntity.hh>
+# include <Pavement.hh>
 
-class		Floor : public AEntity
+class		Floor : public Pavement
 {
-protected:
+private:
   int		_width;
   int		_heigth;
 
 public:
-  Floor(const glm::vec3 & pos, const int & width, const int & heigth);
-  ~Floor();
+  Floor(const glm::vec3 & pos, const int & width, const int & heigth, const std::string &);
+  virtual ~Floor();
 
   int		getWidth() const;
   int		getHeigth() const;
-  virtual void  draw(RenderManager & rm);
 };
 
 #endif // _FLOOR_HH_

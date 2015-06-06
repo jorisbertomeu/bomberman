@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Tue Jun  9 12:36:12 2015 Joris Bertomeu
+// Last update Tue Jun  9 20:50:15 2015 Geoffrey Merran
 //
 
 #ifndef		PAVEMENT_HH_
@@ -22,14 +22,13 @@
 
 # include		<AEntity.hh>
 
-class		Pavement : public	AEntity
+class		Pavement : public AEntity
 {
 private:
   gdl::Geometry	_geometry;
   gdl::Texture	_textureO;
-
 public:
-  explicit	Pavement(glm::vec3, const std::string &);
+  explicit	Pavement(const glm::vec3 &, const std::string &);
   virtual	~Pavement();
   virtual void	draw(RenderManager &);
 };

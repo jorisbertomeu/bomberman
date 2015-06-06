@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 10:58:51 2015 Joris Bertomeu
+// Last update Tue Jun  9 19:35:43 2015 Jérémy Mediavilla
 //
 
 #ifndef _AENTITY_H_
@@ -15,6 +15,7 @@
 
 # include <stdexcept>
 # include <iostream>
+# include <fstream>
 # include <glm/glm.hpp>
 # include <ASolid.hh>
 
@@ -55,6 +56,8 @@ public:
   AEntity::EntityType		getType() const;
   void				setPos(const glm::vec3 &);
   void				setScale(const glm::vec3 & scale);
+  glm::vec3			getScale();
+
   void				setModelId(const std::string &);
   std::string			getModelId() const;
 
@@ -64,6 +67,7 @@ public:
   glm::mat4			getTransformation();
 
   virtual void			draw(RenderManager & rm) = 0;
+  void				save(std::fstream &);
 };
 
 #endif // _AENTITY_H_

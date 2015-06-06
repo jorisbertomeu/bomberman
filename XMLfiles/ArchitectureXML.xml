@@ -12,7 +12,7 @@
     <texture>
       <id>idFloorTexture</id>
       <online>0</online>
-      <file>assets/textures/floor_grass.tga</file>
+      <file>wall_texture.tga</file>
     </texture>
   </texture_pack>
   <model_pack>
@@ -35,8 +35,8 @@
     </sound>
   </sound_pack>
   <common>
-    <width>10</width>
-    <height>10</height>
+    <width>1000</width>
+    <height>1000</height>
     <gravity></gravity>
     <friction>3</friction>
     <skybox><online>0</online><file>NULL</file></skybox>
@@ -51,7 +51,7 @@
       <friction>1</friction>
       <move>0</move>
       <ability>NONE</ability>
-      <range>0</range>
+      <range>3</range>
       <bonus>NONE</bonus>
     </attribut>
     <health>100</health>

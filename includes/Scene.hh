@@ -1,17 +1,18 @@
 //
-// Scene.hh for  in /home/mediav_j/mabm/bomberman/includes
-//
+// Scene.hh for  in /home/mediav_j/mabm/bomberman
+// 
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-//
-// Started on  Mon Jun  1 15:29:00 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 11:21:15 2015 Joris Bertomeu
+// 
+// Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
 //
 
 #ifndef			_SCENE_HH_
 # define		_SCENE_HH_
 
 # include		<list>
+# include		<fstream>
 
 class			Scene;
 
@@ -30,6 +31,7 @@ public:
   void			listAllEntities() const;
   std::list<AEntity *>	getEntities();
   void			draw(RenderManager & rm);
+  bool			save();
 };
 
 #endif		// _SCENE_HH_
