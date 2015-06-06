@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Fri Jun  5 14:42:41 2015 Valérian Polizzi
+## Last update Sat Jun  6 15:43:23 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -16,34 +16,34 @@ RM		=	rm -f
 
 SRC		=	src/main.cpp				\
 			src/GameEngine.cpp			\
-			src/GraphicManager.cpp			\
 			src/GraphicContext.cpp			\
-			src/RenderManager.cpp			\
-			src/SoundManager.cpp			\
-			src/TextureManager.cpp			\
-			src/ModelManager.cpp			\
-			src/TimeManager.cpp			\
 			src/GameContext.cpp			\
-			src/SceneManager.cpp			\
-			src/CameraManager.cpp			\
-			src/InputManager.cpp			\
-			src/SceneFactory.cpp			\
-			src/AEntity.cpp				\
-			src/ASolid.cpp				\
-			src/PhysicSolid.cpp			\
-			src/HitBox.cpp				\
-			src/Bomberman.cpp			\
-			src/Bomb.cpp				\
-			src/Floor.cpp				\
-			src/WoodWall.cpp			\
-			src/BrickWall.cpp			\
-			src/ParserXML.cpp			\
-			src/Scene.cpp				\
-			src/SceneParser.cpp			\
-			src/GameEvent.cpp			\
-			src/CommonEvent.cpp			\
-			src/GameMenu.cpp			\
-			src/GameButton.cpp			\
+			src/Rendering/GraphicManager.cpp	\
+			src/Rendering/RenderManager.cpp		\
+			src/Rendering/SoundManager.cpp		\
+			src/Rendering/TextureManager.cpp	\
+			src/Rendering/ModelManager.cpp		\
+			src/Rendering/TimeManager.cpp		\
+			src/Rendering/CameraManager.cpp		\
+			src/Scenes/SceneManager.cpp		\
+			src/Scenes/SceneFactory.cpp		\
+			src/Scenes/ParserXML.cpp		\
+			src/Scenes/Scene.cpp			\
+			src/Scenes/SceneParser.cpp		\
+			src/Scenes/GameMenu.cpp			\
+			src/Physics/ASolid.cpp			\
+			src/Physics/PhysicSolid.cpp		\
+			src/Physics/HitBox.cpp			\
+			src/Entities/AEntity.cpp		\
+			src/Entities/Bomberman.cpp		\
+			src/Entities/Bomb.cpp			\
+			src/Entities/Floor.cpp			\
+			src/Entities/WoodWall.cpp		\
+			src/Entities/BrickWall.cpp		\
+			src/Entities/GameButton.cpp		\
+			src/Events/GameEvent.cpp		\
+			src/Events/CommonEvent.cpp		\
+			src/Events/InputManager.cpp		\
 			src/Bot.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)

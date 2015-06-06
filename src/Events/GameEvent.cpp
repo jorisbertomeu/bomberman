@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sat Jun  6 14:12:23 2015 Geoffrey Merran
+// Last update Sat Jun  6 15:23:21 2015 Geoffrey Merran
 //
 
 # include		<GameEvent.hh>

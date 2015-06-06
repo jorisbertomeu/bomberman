@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Sat Jun  6 14:22:15 2015 Geoffrey Merran
+// Last update Sat Jun  6 15:15:54 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -36,7 +36,7 @@ Scene		*GameContext::getCurrentScene() const
 bool		GameContext::addScene(const std::string &path)
 {
   this->_inputManager.addEvent(new CommonEvent());
-  // this->_inputManager.addEvent(new GameEvent());
+  this->_inputManager.addEvent(new GameEvent());
   return (this->_sceneManager.loadSceneFromFile(SceneManager::MAP, path));
 }
 

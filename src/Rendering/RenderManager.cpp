@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Sat Jun  6 14:02:41 2015 Geoffrey Merran
+// Last update Sat Jun  6 15:45:35 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>

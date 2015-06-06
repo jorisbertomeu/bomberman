@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Thu Jun  4 00:20:14 2015 Geoffrey Merran
+// Last update Sat Jun  6 15:27:12 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -61,6 +61,7 @@ void		Bomberman::moveFront()
   glm::vec3	newPos;
 
   oldPos = this->getPos();
+  std::cout << "toto" << std::endl;
 }
 
 void		Bomberman::jump()
