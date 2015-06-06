@@ -5,12 +5,14 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:40:47 2015 Valérian Polizzi
-// Last update Fri Jun  5 19:43:43 2015 Valérian Polizzi
+// Last update Tue Jun  9 14:11:38 2015 Joris Bertomeu
 //
 
 #ifndef _GAMEBUTTON_HH_
 # define _GAMEBUTTON_HH_
 # include	"AEntity.hh"
+# include	<SDL/SDL.h>
+# include	<SDL/SDL_ttf.h>
 
 class GameButton : public AEntity
 {
