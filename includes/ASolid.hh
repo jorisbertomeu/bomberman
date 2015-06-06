@@ -11,10 +11,9 @@
 #ifndef _ASOLID_H_
 # define _ASOLID_H_
 
-# include <HitBox.hh>
 # include <PhysicSolid.hh>
 
-class				ASolid : public HitBox, PhysicSolid
+class				ASolid : public PhysicSolid
 {
 public:
   typedef enum			solidAbility
@@ -27,7 +26,6 @@ public:
     }				SolidBonus;
 
 protected:
-  HitBox			_hitBox;
   float				_friction;
   float				_speed;
   float				_range;

@@ -8,7 +8,7 @@
 ## Last update Tue Jun  9 11:53:10 2015 Joris Bertomeu
 ##
 
-CXX		=	g++
+CXX		=	clang++
 
 CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -O3
 
