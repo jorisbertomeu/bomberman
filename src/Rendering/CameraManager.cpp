@@ -5,19 +5,15 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:05:59 2015 Joris Bertomeu
-<<<<<<< HEAD
-// Last update Mon Jun  8 10:37:37 2015 Valérian Polizzi
-=======
+// Last update Mon Jun  8 12:05:53 2015 Valérian Polizzi
 // Last update Tue Jun  9 20:27:28 2015 Geoffrey Merran
->>>>>>> 95c9de52006b0fcd4c9e5d018875eaa648609eb7
 //
 
 #include	<CameraManager.hh>
 #include	<iostream>
 
-CameraManager::CameraManager() : _pos(glm::vec3(0, 0, 800)), _point(glm::vec3(0, 0, 0)), _defaultPos(_pos)
+CameraManager::CameraManager() : _pos(glm::vec3(0, 600, 800)), _point(glm::vec3(0, 0, 0)), _defaultPos(_pos)
 {
-  // _pos.y = 600
   this->_renderManager = NULL;
 }
 
