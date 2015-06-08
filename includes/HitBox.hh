@@ -11,20 +11,30 @@
 #ifndef	 _HITBOX_H_
 # define _HITBOX_H_
 
+# include <AEntity.hh>
 # include <glm/glm.hpp>
 # include <iostream>
+# include <Floor.hh>
+
 
 class		HitBox
-{
+{ 
+protected:
+
+  AEntity::EntityType	_type;
+  glm::vec3	_c1;
+  glm::vec3	_c2;
+  glm::vec3	_c3;
+  glm::vec3	_c4;
+  glm::vec3	_c5;
+  glm::vec3	_c6;
+  glm::vec3	_c7;
+  glm::vec3	_c8;
+
 public:
-  HitBox();
+  HitBox(AEntity *entity);
   ~HitBox();
 
-  glm::vec3	getDimensions();
-  void		setDimensions(const glm::vec3 &);
-
-protected:
-  glm::vec3	_dimension;
 };
 
 #endif // _HITBOX_H_

@@ -2,6 +2,33 @@
   <entities>
     <entity>
       <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>-1113944840</weight>
+        <friction>8.82503e-37</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>10.2264</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>1106993915</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model></model>
+      <texture></texture>
+      <position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </position>
+      <size>
+        <x>1000</x>
+        <y>10</y>
+        <z>1000</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
         <speed>10</speed>
         <jump>0</jump>
         <weight>0</weight>
