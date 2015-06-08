@@ -3,15 +3,15 @@
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>32</jump>
-        <weight>1058410462</weight>
-        <friction>3.03037e-37</friction>
-        <move>252</move>
+        <jump>0</jump>
+        <weight>0</weight>
+        <friction>0</friction>
+        <move>0</move>
         <ability>NONE</ability>
-        <range>0.610347</range>
+        <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>1058855479</health>
+      <health>0</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>

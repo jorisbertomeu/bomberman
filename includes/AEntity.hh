@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 16:42:50 2015 Joris Bertomeu
+// Last update Mon Jun  8 14:04:50 2015 Valérian Polizzi
 //
 
 #ifndef _AENTITY_H_
@@ -17,7 +17,7 @@
 # include <iostream>
 # include <fstream>
 # include <glm/glm.hpp>
-
+# include <HitBox.hh>
 
 # include <ASolid.hh>
 
