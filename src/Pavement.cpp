@@ -5,12 +5,12 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:21:36 2015 Joris Bertomeu
-// Last update Mon Jun  8 09:24:56 2015 Valérian Polizzi
+// Last update Mon Jun  8 11:13:42 2015 Valérian Polizzi
 //
 
 #include	<Pavement.hh>
 
-Pavement::Pavement(glm::vec3 pos, const std::string& texture, glm::vec3 scale) : AEntity(pos, AEntity::PAVEMENT)
+Pavement::Pavement(glm::vec3 pos, const std::string& texture) : AEntity(pos, AEntity::PAVEMENT)
 {
   if (!_textureO.load(texture))
     printf("Error while loading Texture for Pavement\n");
@@ -70,7 +70,6 @@ Pavement::Pavement(glm::vec3 pos, const std::string& texture, glm::vec3 scale) :
   _geometry.pushUv(glm::vec2(1.0f, 1.0f));
   _geometry.pushUv(glm::vec2(0.0f, 1.0f));
   this->_geometry.build();
-  this->scale(scale);
 }
 
 Pavement::~Pavement()

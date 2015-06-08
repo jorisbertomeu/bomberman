@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Mon Jun  8 09:42:29 2015 Valérian Polizzi
+// Last update Mon Jun  8 11:14:01 2015 Valérian Polizzi
 //
 
 #ifndef		PAVEMENT_HH_
@@ -28,7 +28,7 @@ private:
   gdl::Geometry	_geometry;
   gdl::Texture	_textureO;
 public:
-  explicit	Pavement(glm::vec3, const std::string &, glm::vec3);
+  explicit	Pavement(glm::vec3, const std::string &);
   virtual	~Pavement();
   virtual void	draw(RenderManager &);
 };
