@@ -34,7 +34,7 @@ public:
       BOMB			= 3,
       WOODWALL			= 4,
       FLOOR			= 5,
-      BUTTON			= 6,
+ u     BUTTON			= 6,
       BOT			= 7,
       RECTANGLE			= 8,
       PAVEMENT			= 9
