@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 26 12:09:50 2015 Joris Bertomeu
-// Last update Tue May 26 14:56:41 2015 Joris Bertomeu
+// Last update Tue Jun  9 10:01:40 2015 Joris Bertomeu
 //
 
 #include	<iostream>
@@ -107,7 +107,8 @@ int		main(int ac, char *argv[])
   fs << "      <z>0.3</z>" << std::endl;
   fs << "    </size>" << std::endl;
   fs << "  </entity>" << std::endl;
-  for (int i = 1; i < x; i++) {
+  for (std::list<AEntity>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it) {
+    ($it)->getType();
     fs << "  <entity>" << std::endl;
     fs << "    <attribut>" << std::endl;
     fs << "      <speed>0</speed>" << std::endl;
