@@ -1,11 +1,11 @@
 //
-// Scene.hh for  in /home/mediav_j/mabm/bomberman/includes
-//
+// Scene.hh for  in /home/mediav_j/mabm/bomberman
+// 
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-//
-// Started on  Mon Jun  1 15:29:00 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 17:16:06 2015 Jérémy Mediavilla
+// 
+// Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
 //
 
 #ifndef			_SCENE_HH_

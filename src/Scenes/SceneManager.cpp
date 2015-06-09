@@ -1,14 +1,15 @@
 //
-// SceneManager.cpp for  in /home/jobertomeu/Work/bomberman/includes
-//
-// Made by Joris Bertomeu
-// Login   <jobertomeu@epitech.net>
-//
-// Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue Jun  9 16:57:20 2015 Jérémy Mediavilla
+// SceneManager.cpp for  in /home/mediav_j/mabm/bomberman
+// 
+// Made by Jérémy Mediavilla
+// Login   <mediav_j@epitech.net>
+// 
+// Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
 //
 
 #include	<SceneManager.hh>
+#include	<Pavement.hh>
 
 SceneManager::SceneManager() :
   _currentScene(NULL)
@@ -41,9 +42,9 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   return (true);
 }
 
-bool	SceneManager::setCurrentScene(Scene &scene)
+bool	SceneManager::setCurrentScene(Scene *scene)
 {
-  (void) scene;
+  this->_currentScene = scene;
   return (true);
 }
 

@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:27:05 2015 Valérian Polizzi
-// Last update Fri Jun  5 14:42:16 2015 Valérian Polizzi
+// Last update Fri Jun  5 14:55:44 2015 Valérian Polizzi
 //
 
 #ifndef _GAMEMENU_HH_
@@ -19,4 +19,4 @@ public:
   ~GameMenu();
 };
 
-#endif
+#endif // _GAMEMENU_HH_

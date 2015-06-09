@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:45:20 2015 Joris Bertomeu
-// Last update Sat Jun  6 15:21:38 2015 Geoffrey Merran
+// Last update Mon Jun  8 09:34:19 2015 Valérian Polizzi
 //
 
 #ifndef		_GAMECONTEXT_HH_
@@ -17,6 +17,7 @@
 # include	<SceneFactory.hh>
 # include	<CommonEvent.hh>
 # include	<GameEvent.hh>
+# include	<MainMenu.hh>
 
 class		GameContext
 {

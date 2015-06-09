@@ -1,11 +1,11 @@
 ##
-## Makefile for  in /home/mediav_j/mabm/bomberman
+## Makefile for $ in /home/mediav_j/mabm/bomberman
 ## 
 ## Made by Jérémy Mediavilla
 ## Login   <mediav_j@epitech.net>
 ## 
-## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Tue Jun  9 16:55:05 2015 Jérémy Mediavilla
+## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
+## Last update Tue Jun  9 19:35:18 2015 Jérémy Mediavilla
 ##
 
 CXX		=	g++
@@ -31,6 +31,7 @@ SRC		=	src/main.cpp				\
 			src/Scenes/Scene.cpp			\
 			src/Scenes/SceneParser.cpp		\
 			src/Scenes/GameMenu.cpp			\
+			src/Scenes/MainMenu.cpp			\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
 			src/Physics/HitBox.cpp			\
@@ -44,7 +45,8 @@ SRC		=	src/main.cpp				\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
-			# src/Bot.cpp				\
+			src/Bot.cpp				\
+			src/Pavement.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 

@@ -5,18 +5,23 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:43:04 2015 Valérian Polizzi
-// Last update Fri Jun  5 14:51:32 2015 Valérian Polizzi
+// Last update Mon Jun  8 01:08:42 2015 Valérian Polizzi
 //
 
 #include "GameButton.hh"
 
-GameButton::GameButton(glm::vec3 pos, const std::string &content) : AEntity(pos, AEntity::BUTTON)
+GameButton::GameButton(glm::vec3 pos, glm::vec3 scale) : AEntity(pos, AEntity::BUTTON)
 {
-  (void)content;
+  (void)scale;
 }
 
 GameButton::~GameButton()
 {
+}
+
+void		GameButton::setTexture(const std::string &path)
+{
+  (void)path;
 }
 
 void		GameButton::draw(RenderManager &rm)
