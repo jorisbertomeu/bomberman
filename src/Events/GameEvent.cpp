@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 21:36:31 2015 Geoffrey Merran
+// Last update Tue Jun  9 21:44:09 2015 mari_f
 //
 
 # include		<GameEvent.hh>
@@ -17,6 +17,7 @@ GameEvent::GameEvent()
   this->_events[SDLK_LEFT] = &GameEvent::left;
   this->_events[SDLK_RIGHT] = &GameEvent::right;
   // this->_events[SDLK_SPACE] = &GameEvent::space;
+       		// this->_events[SDL_BUTTON_LEFT] = &GameEvent::click;
 }
 
 GameEvent::~GameEvent()
@@ -32,6 +33,12 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
       if (input.getKey((*found).first))
 	{
 	  (this->*this->_events[(*found).first])(scene);
+	  return (true);
+	}
+      if (input.getKey(SDL_BUTTON_LEFT))
+	{
+	  std::cout << "x :" << input.getMousePosition().x << std::endl;
+	  std::cout << "y : " << input.getMousePosition().y << std::endl;
 	  return (true);
 	}
     }
@@ -59,6 +66,12 @@ void			GameEvent::up(Scene* scene)
     }
 }
 
+void			GameEvent::click(Scene* scene)
+{
+  (void)scene;
+  std::cout << "Click" << std::endl;
+
+}
 
 void			GameEvent::down(Scene* scene)
 {
