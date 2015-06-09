@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 20:12:50 2015 Geoffrey Merran
+// Last update Tue Jun  9 23:34:20 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -70,9 +70,22 @@ Scene		*SceneParser::getScene(RenderManager *rm)
     {
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
-      std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
-      std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
-      std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
+      if (this->_parser.getValueOf("id") == "WALK_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::WALK, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+      else if (this->_parser.getValueOf("id") == "EXPLOSION_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::EXPLOSION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+      else if (this->_parser.getValueOf("id") == "WALK_STOP_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::WALK_STOP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+else if (this->_parser.getValueOf("id") == "DESTRUCTION_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::DESTRUCTION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+else if (this->_parser.getValueOf("id") == "DEAD_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::DEAD, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+else if (this->_parser.getValueOf("id") == "AMBIANT_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::AMBIANT, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
+	rm->getSoundManager().addSound(Sound(Sound::JUMP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+      else
+	rm->getSoundManager().addSound(Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
     }
   this->_parser.resetNode();
   this->_parser.setNode("scene");

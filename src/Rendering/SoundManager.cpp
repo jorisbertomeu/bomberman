@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Tue May 26 17:39:02 2015 Geoffrey Merran
-// Last update Tue May 26 17:47:20 2015 Geoffrey Merran
+// Last update Tue Jun  9 22:19:22 2015 Jérémy Mediavilla
 //
 
 #include <SoundManager.hh>
@@ -20,18 +20,18 @@ SoundManager::~SoundManager()
 
 }
 
-bool	SoundManager::initialize()
+bool		SoundManager::initialize()
 {
   return (true);
 }
 
-bool	SoundManager::addSound(const Sound &sound)
+bool		SoundManager::addSound(const Sound &sound)
 {
-  (void) sound;
+  this->_sounds.push_back(sound);
   return (true);
 }
 
-bool	SoundManager::addSoundFromFile(const std::string &filename)
+bool		SoundManager::addSoundFromFile(const std::string &filename)
 {
   (void) filename;
   return (true);
