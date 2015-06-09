@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Mon Jun  8 14:04:50 2015 Valérian Polizzi
+// Last update Tue Jun  9 22:21:07 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -17,8 +17,6 @@
 # include <iostream>
 # include <fstream>
 # include <glm/glm.hpp>
-# include <HitBox.hh>
-
 # include <ASolid.hh>
 
 class				AEntity;
@@ -36,7 +34,7 @@ public:
       BOMB			= 3,
       WOODWALL			= 4,
       FLOOR			= 5,
-      BUTTON			= 6,
+ u     BUTTON			= 6,
       BOT			= 7,
       RECTANGLE			= 8,
       PAVEMENT			= 9
@@ -49,11 +47,9 @@ protected:
 
   std::string			_modelId;
   EntityType			_type;
-  Hitbox			*_hitbox;
 
 public:
   explicit			AEntity(glm::vec3 pos, EntityType type);
-  explicit			AEntity(glm::vec3 pos, EntityType type, bool);
   virtual			~AEntity();
 
   glm::vec3			getPos() const;

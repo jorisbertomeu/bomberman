@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 23:34:20 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 23:52:13 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -104,8 +104,9 @@ else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
     std::cout << this->_parser.getError();
   int mapWidth = atoi(this->_parser.getValueOf("width").c_str());
   int mapHeight = atoi(this->_parser.getValueOf("height").c_str());
-  entity = new Floor(glm::vec3(0, 0, 0), mapWidth, mapHeight, "wall_texture.tga");
+  entity = new Floor(glm::vec3(0, 0, 0), mapWidth, mapHeight, std::string("wall_texture.tga"));
   newScene->addEntity(entity);
+  printf("5\n");
   std::cout << "gravity : " << this->_parser.getValueOf("gravity") << std::endl;
   std::cout << "friction : " << this->_parser.getValueOf("friction") << std::endl;
   std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
