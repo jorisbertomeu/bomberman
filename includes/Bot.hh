@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 11:46:32 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 19:51:25 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOT_H_
@@ -24,7 +24,6 @@ private:
 
   std::string	getColor() const;
   void		setColor(const std::string &color);
-  virtual void	draw(RenderManager & rm);
   void		moveToPos(int x, int y);
   void		stopMove();
   bool		canPlaceBomb();
