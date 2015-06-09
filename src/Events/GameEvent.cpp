@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sat Jun  6 16:12:31 2015 Geoffrey Merran
+// Last update Sun Jun  7 00:10:53 2015 Geoffrey Merran
 //
 
 # include		<GameEvent.hh>
@@ -23,8 +23,9 @@ GameEvent::~GameEvent()
 
 }
 
-bool			GameEvent::isCatch(gdl::Input &input, Scene* scene)
+bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera)
 {
+  this->_camera = camera;
   for (std::map<int, GameEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
       if (input.getKey((*found).first))
@@ -36,6 +37,10 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene)
   return (false);
 }
 
+void			GameEvent::updatePlayerCamera(const glm::vec3 & point)
+{
+  this->_camera.moveTo(this->_camera.getDefaultPos() + point, point);
+}
 
 void			GameEvent::up(Scene* scene)
 {
@@ -46,7 +51,10 @@ void			GameEvent::up(Scene* scene)
        it++)
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
-	dynamic_cast<Bomberman*>((*it))->moveFront();
+	{
+	  dynamic_cast<Bomberman*>((*it))->moveFront();
+	  this->updatePlayerCamera((*it)->getPos());
+	}
     }
 }
 
@@ -60,7 +68,11 @@ void			GameEvent::down(Scene* scene)
        it++)
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
-	dynamic_cast<Bomberman*>((*it))->moveBack();
+	{
+	  dynamic_cast<Bomberman*>((*it))->moveBack();
+	  this->updatePlayerCamera((*it)->getPos());
+	}
+
     }
 }
 
@@ -74,7 +86,10 @@ void			GameEvent::right(Scene* scene)
        it++)
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
-	dynamic_cast<Bomberman*>((*it))->moveRight();
+	{
+	  dynamic_cast<Bomberman*>((*it))->moveRight();
+	  this->updatePlayerCamera((*it)->getPos());
+	}
     }
 }
 
@@ -87,6 +102,9 @@ void			GameEvent::left(Scene* scene)
        it++)
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
-	dynamic_cast<Bomberman*>((*it))->moveLeft();
+	{
+	  dynamic_cast<Bomberman*>((*it))->moveLeft();
+	  this->updatePlayerCamera((*it)->getPos());
+	}
     }
 }

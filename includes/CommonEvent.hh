@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Sat Jun  6 15:25:04 2015 Geoffrey Merran
+// Last update Sat Jun  6 19:50:50 2015 Geoffrey Merran
 //
 
 #ifndef				_COMMON_EVENT_HH
@@ -28,8 +28,9 @@ public:
   virtual			~CommonEvent(void);
 
   void				escape(Scene*);
-  virtual bool			isCatch(gdl::Input &input, Scene*);
+  virtual bool			isCatch(gdl::Input &input, Scene*, CameraManager&);
 
+private:
   std::map<int, eventHandler>	_events;
 };
 

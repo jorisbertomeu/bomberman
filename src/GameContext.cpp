@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Sat Jun  6 15:15:54 2015 Geoffrey Merran
+// Last update Sat Jun  6 19:43:10 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -42,5 +42,5 @@ bool		GameContext::addScene(const std::string &path)
 
 void		GameContext::updateScene(gdl::Input & input)
 {
-  this->_inputManager.handleEvent(input, this->getCurrentScene());
+  this->_inputManager.handleEvent(input, this->getCurrentScene(), this->_cameraManager);
 }
