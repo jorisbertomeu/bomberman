@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 15:49:44 2015 Joris Bertomeu
+// Last update Tue Jun  9 15:50:35 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -44,8 +44,6 @@ public:
     }				EntityType;
 
 protected:
-  HitBox			_hitbox;
-
   glm::vec3			_pos;
   glm::vec3			_rotation;
   glm::vec3			_scale;
