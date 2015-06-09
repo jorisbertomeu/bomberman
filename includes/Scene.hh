@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:29:00 2015 Jérémy Mediavilla
-// Last update Thu Jun  4 16:52:22 2015 mari_f
+// Last update Tue Jun  9 11:21:15 2015 Joris Bertomeu
 //
 
 #ifndef			_SCENE_HH_

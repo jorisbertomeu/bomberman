@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun  6 19:30:33 2015 Geoffrey Merran
+// Last update Tue Jun  9 10:58:51 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -35,7 +35,8 @@ public:
       FLOOR			= 5,
       BUTTON			= 6,
       BOT			= 7,
-      RECTANGLE			= 8
+      RECTANGLE			= 8,
+      PAVEMENT			= 9
     }				EntityType;
 
 protected:

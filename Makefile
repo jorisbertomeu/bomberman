@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Wed Jun  3 11:50:33 2015 Jérémy Mediavilla
-## Last update Sat Jun  6 15:43:23 2015 Geoffrey Merran
+## Last update Tue Jun  9 11:53:10 2015 Joris Bertomeu
 ##
 
 CXX		=	g++
@@ -45,6 +45,7 @@ SRC		=	src/main.cpp				\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
 			src/Bot.cpp				\
+			src/Pavement.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 

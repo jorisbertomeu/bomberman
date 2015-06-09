@@ -5,10 +5,11 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Wed Jun  3 21:40:13 2015 Nicolas Adès
+// Last update Tue Jun  9 12:38:23 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
+#include	<Pavement.hh>
 
 SceneManager::SceneManager() :
   _currentScene(NULL)
@@ -40,9 +41,9 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   return (true);
 }
 
-bool	SceneManager::setCurrentScene(Scene &scene)
+bool	SceneManager::setCurrentScene(Scene *scene)
 {
-  (void) scene;
+  this->_currentScene = scene;
   return (true);
 }
 

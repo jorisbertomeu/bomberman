@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Tue May 26 09:46:29 2015 Joris Bertomeu
+// Last update Tue Jun  9 11:29:46 2015 Joris Bertomeu
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -37,7 +37,7 @@ public:
   virtual			~SceneManager();
   bool				loadSceneFromFile(SCENE_TYPE,
 						  const std::string &);
-  bool				setCurrentScene(Scene &);
+  bool				setCurrentScene(Scene *);
   Scene				*getCurrentScene() const;
   void				addEntityToCurrentScene(AEntity *);
   void				setRenderManager(RenderManager *);
