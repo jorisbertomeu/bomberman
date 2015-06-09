@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 20:12:50 2015 Geoffrey Merran
+// Last update Tue Jun  9 16:03:08 2015 Joris Bertomeu
 //
 
 #include "SceneParser.hh"
@@ -89,10 +89,15 @@ Scene		*SceneParser::getScene(RenderManager *rm)
   this->_parser.setNode("common");
   if (this->_parser.checkMultipleTag() == false)
     std::cout << this->_parser.getError();
+  printf("1\n");
   int mapWidth = atoi(this->_parser.getValueOf("width").c_str());
+  printf("2\n");
   int mapHeight = atoi(this->_parser.getValueOf("height").c_str());
-  entity = new Floor(glm::vec3(0, 0, 0), mapWidth, mapHeight, "wall_texture.tga");
+  printf("3\n");
+  entity = new Floor(glm::vec3(0, 0, 0), mapWidth, mapHeight, std::string("wall_texture.tga"));
+  printf("4\n");
   newScene->addEntity(entity);
+  printf("5\n");
   std::cout << "gravity : " << this->_parser.getValueOf("gravity") << std::endl;
   std::cout << "friction : " << this->_parser.getValueOf("friction") << std::endl;
   std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
