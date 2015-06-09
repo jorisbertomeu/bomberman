@@ -5,14 +5,14 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Tue Jun  9 19:51:02 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 21:34:41 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
 # define _BOMBERMAN_H_
 
 # include <AEntity.hh>
-
+# include <Scene.hh>
 
 class		Bomberman : public AEntity
 {
@@ -29,7 +29,7 @@ public:
   ~Bomberman();
 
   std::string	getName() const;
-  void		dropBomb();
+  void		dropBomb(Scene*);
   void		moveRight();
   void		moveLeft();
   void		moveBack();

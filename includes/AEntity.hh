@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 19:35:43 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 22:14:01 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -18,6 +18,7 @@
 # include <fstream>
 # include <glm/glm.hpp>
 # include <ASolid.hh>
+# include <HitBox.hh>
 
 class				AEntity;
 
@@ -41,6 +42,8 @@ public:
     }				EntityType;
 
 protected:
+  HitBox			_hitbox;
+
   glm::vec3			_pos;
   glm::vec3			_rotation;
   glm::vec3			_scale;
