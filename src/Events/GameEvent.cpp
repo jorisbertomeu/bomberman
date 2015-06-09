@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sun Jun  7 00:10:53 2015 Geoffrey Merran
+// Last update Tue Jun  9 21:36:31 2015 Geoffrey Merran
 //
 
 # include		<GameEvent.hh>
@@ -16,6 +16,7 @@ GameEvent::GameEvent()
   this->_events[SDLK_DOWN] = &GameEvent::down;
   this->_events[SDLK_LEFT] = &GameEvent::left;
   this->_events[SDLK_RIGHT] = &GameEvent::right;
+  // this->_events[SDLK_SPACE] = &GameEvent::space;
 }
 
 GameEvent::~GameEvent()

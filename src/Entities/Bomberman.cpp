@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Tue Jun  9 19:49:21 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 21:33:38 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -28,22 +28,13 @@ std::string	Bomberman::getName() const
   return (this->_name);
 }
 
-void		Bomberman::dropBomb()
+void		Bomberman::dropBomb(Scene* scene)
 {
-  std::cout << "Bomberman : " << this->getName() << " drop a bomb" << std::endl;
-  SceneManager		*scene = new SceneManager();
-  Bomb			*newBomb = new Bomb(this->_pos);
-
-  scene->addEntityToCurrentScene(newBomb);
+  scene->addEntity(new Bomb(this->_pos));
 }
 
 void		Bomberman::moveRight()
 {
-  std::cout << "Bomberman : " << this->getName() << " move rigth" << std::endl;
-  // glm::vec3	oldPos;
-  // glm::vec3	newPos;
-
-  // oldPos = this->getPos();
   if (this->_dir != RIGHT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - RIGHT));
@@ -54,7 +45,6 @@ void		Bomberman::moveRight()
 
 void		Bomberman::moveLeft()
 {
-  std::cout << "Bomberman : " << this->getName() << " move left" << std::endl;
   if (this->_dir != LEFT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - LEFT));
@@ -65,7 +55,6 @@ void		Bomberman::moveLeft()
 
 void		Bomberman::moveBack()
 {
-  std::cout << "Bomberman : " << this->getName() << " move back" << std::endl;
   if (this->_dir != DOWN)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - DOWN));
@@ -76,11 +65,6 @@ void		Bomberman::moveBack()
 
 void		Bomberman::moveFront()
 {
-  std::cout << "Bomberman : " << this->getName() << " move front" << std::endl;
-  glm::vec3	oldPos;
-  glm::vec3	newPos;
-
-  oldPos = this->getPos();
   if (this->_dir != UP)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - UP));
