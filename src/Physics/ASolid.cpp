@@ -1,11 +1,11 @@
 //
 // ASolid.cpp for  in /home/parallels/Tek2/CPP/bomberman/src
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Tue Jun  9 19:13:06 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 17:52:03 2015 Joris Bertomeu
 //
 
 #include <ASolid.hh>
@@ -18,12 +18,6 @@ ASolid::ASolid() : _speed(0)
 ASolid::~ASolid()
 {
 
-}
-
-bool		ASolid::checkColision(ASolid *solid)
-{
-  (void) solid;
-  return (true);
 }
 
 float		ASolid::getFriction() const

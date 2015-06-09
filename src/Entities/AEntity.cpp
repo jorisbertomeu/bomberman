@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Tue Jun  9 16:32:43 2015 Joris Bertomeu
+// Last update Tue Jun  9 19:01:28 2015 Joris Bertomeu
 //
 
 #include <AEntity.hh>
@@ -15,7 +15,6 @@ AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(pos), _modelId(""), _typ
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
-  printf("Type = %d\n", type);
   if (type != AEntity::PAVEMENT)
     this->_hitbox = new Hitbox(this);
 }
@@ -137,4 +136,9 @@ void			AEntity::save(std::fstream &fs)
   fs << "        <z>" << this->getScale().z << "</z>" << std::endl;
   fs << "      </size>" << std::endl;
   fs << "    </entity>" << std::endl;
+}
+
+Hitbox		*AEntity::getHitbox() const
+{
+  return (this->_hitbox);
 }
