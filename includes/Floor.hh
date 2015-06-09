@@ -1,17 +1,16 @@
 //
 // Floor.hh for  in /home/parallels/Tek2/CPP/bomberman/includes
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Wed Jun  3 12:57:30 2015 Nicolas Adès
-// Last update Tue Jun  9 20:13:48 2015 Geoffrey Merran
+// Last update Tue Jun  9 15:45:24 2015 Joris Bertomeu
 //
 
 #ifndef __FLOOR_HH
 # define __FLOOR_HH
 
-# include <AEntity.hh>
 # include <Pavement.hh>
 
 class		Floor : public Pavement
