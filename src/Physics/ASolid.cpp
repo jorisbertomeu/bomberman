@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 12:38:07 2015 Nicolas Adès
-// Last update Sat Jun  6 16:18:59 2015 Geoffrey Merran
+// Last update Tue Jun  9 19:13:06 2015 Jérémy Mediavilla
 //
 
 #include <ASolid.hh>
@@ -124,4 +124,14 @@ ASolid::SolidBonus	ASolid::getBonus() const
 void			ASolid::setBonus(const ASolid::SolidBonus & bonus)
 {
   this->_bonus = bonus;
+}
+
+glm::vec3		ASolid::getSize()
+{
+  return (this->_size);
+}
+
+void			ASolid::setSize(const glm::vec3 &size)
+{
+  this->_size = size;
 }

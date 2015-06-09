@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Wed Jun  3 21:40:13 2015 Nicolas Adès
+// Last update Tue Jun  9 16:57:20 2015 Jérémy Mediavilla
 //
 
 #include	<SceneManager.hh>
@@ -37,6 +37,7 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   newScene->listAllEntities();
   this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
   this->_currentScene = newScene;
+  newScene->save();
   return (true);
 }
 
