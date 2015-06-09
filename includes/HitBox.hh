@@ -1,27 +1,26 @@
 //
 // HitBox.hh for  in /home/parallels/Tek2/CPP/bomberman/includes
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Tue May 26 12:24:45 2015 Nicolas Adès
-// Last update Tue May 26 12:46:54 2015 Nicolas Adès
+// Last update Tue Jun  9 15:47:33 2015 Joris Bertomeu
 //
 
 #ifndef	 _HITBOX_H_
 # define _HITBOX_H_
 
-# include <AEntity.hh>
 # include <glm/glm.hpp>
 # include <iostream>
-# include <Floor.hh>
 
 
-class		HitBox
-{ 
+//# include <AEntity.hh>
+
+class		Hitbox
+{
 protected:
 
-  AEntity::EntityType	_type;
   glm::vec3	_c1;
   glm::vec3	_c2;
   glm::vec3	_c3;
@@ -32,9 +31,8 @@ protected:
   glm::vec3	_c8;
 
 public:
-  HitBox(AEntity *entity);
-  ~HitBox();
-
+  explicit	Hitbox(void *);
+  virtual	~Hitbox();
 };
 
-#endif // _HITBOX_H_
+#endif
