@@ -5,10 +5,11 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Sat Jun  6 16:19:46 2015 Geoffrey Merran
+// Last update Tue Jun  9 19:29:36 2015 Jérémy Mediavilla
 //
 
 #include <AEntity.hh>
+#include <Bomberman.hh>
 
 AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(pos), _modelId(""), _type(type)
 {
@@ -39,6 +40,11 @@ void			AEntity::setPos(const glm::vec3 & pos)
 void			AEntity::setScale(const glm::vec3 & scale)
 {
   this->_scale = scale;
+}
+
+glm::vec3		AEntity::getScale()
+{
+  return (this->_scale);
 }
 
 void			AEntity::translate(const glm::vec3 & v)
@@ -76,4 +82,48 @@ void			AEntity::setModelId(const std::string &model)
 std::string	       	AEntity::getModelId() const
 {
   return (this->_modelId);
+}
+
+void			AEntity::save(std::fstream &fs)
+{
+  fs << "    <entity>" << std::endl;
+  fs << "      <attribut>" << std::endl;
+  fs << "        <speed>" << this->getSpeed() << "</speed>" << std::endl;
+  fs << "        <jump>" << this->getJump() << "</jump>" << std::endl;
+  fs << "        <weight>" << this->getWeight() << "</weight>" << std::endl;
+  fs << "        <friction>" << this->getFriction() << "</friction>" << std::endl;
+  fs << "        <move>" << this->getMove() << "</move>" << std::endl;
+  fs << "        <ability>NONE</ability>" << std::endl;
+  fs << "        <range>" << this->getRange() << "</range>" << std::endl;
+  fs << "        <bonus>NONE</bonus>" << std::endl;
+  fs << "      </attribut>" << std::endl;
+  fs << "      <health>" << this->getHealth() << "</health>" << std::endl;
+  if (this->getType() == 1)
+    {
+      fs << "      <type>BRICK_WALL</type>" << std::endl;
+      fs << "      <name>NONE</name>" << std::endl;
+    }
+  else if (this->getType() == 2)
+    {
+      fs << "      <type>BOMBERMAN</type>" << std::endl;
+      fs << "      <name>" << dynamic_cast<Bomberman *>(this)->getName() << "</name>" << std::endl;
+    }
+  else
+    {
+      fs << "      <type>UNKNOWN</type>" << std::endl;
+      fs << "      <name>NONE</name>" << std::endl;
+    }
+  fs << "      <model>" << this->getModelId() << "</model>" << std::endl;
+  fs << "      <texture>" << this->getTexture() << "</texture>" << std::endl;
+  fs << "      <position>" << std::endl;
+  fs << "        <x>" << this->getPos().x << "</x>" << std::endl;
+  fs << "        <y>" << this->getPos().y << "</y>" << std::endl;
+  fs << "        <z>" << this->getPos().z << "</z>" << std::endl;
+  fs << "      </position>" << std::endl;
+  fs << "      <size>" << std::endl;
+  fs << "        <x>" << this->getScale().x << "</x>" << std::endl;
+  fs << "        <y>" << this->getScale().y << "</y>" << std::endl;
+  fs << "        <z>" << this->getScale().z << "</z>" << std::endl;
+  fs << "      </size>" << std::endl;
+  fs << "    </entity>" << std::endl;
 }

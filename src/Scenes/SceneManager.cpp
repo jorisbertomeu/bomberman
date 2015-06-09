@@ -1,11 +1,11 @@
 //
-// SceneManager.cpp for  in /home/jobertomeu/Work/bomberman/includes
-//
-// Made by Joris Bertomeu
-// Login   <jobertomeu@epitech.net>
-//
-// Started on  Tue May 19 13:00:00 2015 Joris Bertomeu
-// Last update Tue Jun  9 12:38:23 2015 Joris Bertomeu
+// SceneManager.cpp for  in /home/mediav_j/mabm/bomberman
+// 
+// Made by Jérémy Mediavilla
+// Login   <mediav_j@epitech.net>
+// 
+// Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
 //
 
 #include	<SceneManager.hh>
@@ -38,6 +38,7 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   newScene->listAllEntities();
   this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
   this->_currentScene = newScene;
+  newScene->save();
   return (true);
 }
 
