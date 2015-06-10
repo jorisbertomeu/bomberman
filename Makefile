@@ -5,10 +5,10 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Fri Jun 12 22:45:25 2015 Geoffrey Merran
+## Last update Wed Jun 10 14:04:58 2015 Joris Bertomeu
 ##
 
-CXX		=	g++
+CXX		=	clang++
 
 CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
 
@@ -49,6 +49,7 @@ SRC		=	src/main.cpp				\
 			src/Pavement.cpp			\
 			src/Scenes/EscapeMenu.cpp		\
 			src/Events/EscapeEvent.cpp		\
+			src/Entities/Cloud.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 
