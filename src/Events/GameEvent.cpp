@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Thu Jun 11 17:32:23 2015 Valérian Polizzi
+// Last update Tue Jun  9 23:33:13 2015 Joris Bertomeu
 //
 
 #include		<GameEvent.hh>
@@ -78,19 +78,18 @@ void			GameEvent::up(Scene* scene)
       	}
     }
 
-  height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
-  if (height >= 300)
-    height = (300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()));
-  else
-    height += 300;
-  dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
-  std::cout << height << std::endl;
+  // height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
+  // if (height >= 300)
+  //   height = (300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()));
+  // else
+  //   height += 300;
+  // dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
+  // std::cout << height << std::endl;
 }
 
 void			GameEvent::click(Scene* scene)
 {
   (void)scene;
-
 }
 
 void			GameEvent::down(Scene* scene)
@@ -113,12 +112,12 @@ void			GameEvent::down(Scene* scene)
 	}
     }
 
-  height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
-  if (height <= 300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()))
-    height = 300;
-  else
-    height -= 300;
-  dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
+  // height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
+  // if (height <= 300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()))
+  //   height = 300;
+  // else
+  //   height -= 300;
+  // dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
 }
 
 
