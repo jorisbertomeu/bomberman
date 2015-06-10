@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Mon Jun  8 14:04:50 2015 Valérian Polizzi
+// Last update Tue Jun  9 18:55:56 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -72,6 +72,7 @@ public:
 
   virtual void			draw(RenderManager & rm) = 0;
   void				save(std::fstream &);
+  virtual Hitbox			*getHitbox() const;
 };
 
 #endif // _AENTITY_H_

@@ -1,11 +1,11 @@
 //
 // ASolid.hh for  in /home/parallels/Tek2/CPP/bomberman/includes
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Tue May 26 12:17:57 2015 Nicolas Adès
-// Last update Tue Jun  9 19:10:25 2015 Jérémy Mediavilla
+// Last update Tue Jun  9 17:52:06 2015 Joris Bertomeu
 //
 
 #ifndef _ASOLID_H_
@@ -41,7 +41,6 @@ protected:
 public:
   explicit			ASolid();
   virtual			~ASolid();
-  virtual bool			checkColision(ASolid *);
   virtual float			getFriction() const;
   virtual void			setFriction(const float &);
   virtual float			getSpeed() const;

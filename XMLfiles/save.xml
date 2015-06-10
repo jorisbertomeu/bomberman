@@ -6,6 +6,8 @@
         <jump>0</jump>
         <weight>0</weight>
         <friction>0</friction>
+        <weight>1074790400</weight>
+        <friction>2.26769e-37</friction>
         <move>0</move>
         <ability>NONE</ability>
         <range>0</range>
@@ -44,9 +46,9 @@
       <model>idBombermanModel</model>
       <texture>NULL</texture>
       <position>
-        <x>5</x>
+        <x>50</x>
         <y>0</y>
-        <z>5</z>
+        <z>80</z>
       </position>
       <size>
         <x>0.3</x>

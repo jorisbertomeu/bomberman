@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Tue Jun  9 16:42:35 2015 Joris Bertomeu
+## Last update Tue Jun  9 22:04:02 2015 Joris Bertomeu
 ##
 
-CXX		=	g++
+CXX		=	clang++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -O3
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -g3
 
 RM		=	rm -f
 
@@ -41,7 +41,6 @@ SRC		=	src/main.cpp				\
 			src/Entities/Floor.cpp			\
 			src/Entities/WoodWall.cpp		\
 			src/Entities/BrickWall.cpp		\
-			src/Entities/GameButton.cpp		\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
