@@ -19,17 +19,16 @@
 class		PhysicSolid
 {
 protected:
-  glm::vec3	_acceleration;
+  float	_acceleration;
   float		_weight;
 
 public:
   PhysicSolid();
   ~PhysicSolid();
-  glm::vec3	getAcceleration();
-  void		setAcceleration(const glm::vec3 &);
+  float		getAcceleration();
+  void		setAcceleration(const float &);
   float		getWeight();
-  void		setWeight(const float &);
-  
+  void		setWeight(const float &);  
 };
 
 #endif // _PHYSICSOLID_H_
