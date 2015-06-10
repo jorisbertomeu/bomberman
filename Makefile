@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Tue Jun  9 16:42:35 2015 Joris Bertomeu
+## Last update Tue Jun  9 21:33:37 2015 mari_f
 ##
 
 CXX		=	g++
@@ -41,7 +41,6 @@ SRC		=	src/main.cpp				\
 			src/Entities/Floor.cpp			\
 			src/Entities/WoodWall.cpp		\
 			src/Entities/BrickWall.cpp		\
-			src/Entities/GameButton.cpp		\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
