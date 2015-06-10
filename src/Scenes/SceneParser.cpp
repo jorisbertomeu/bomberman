@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 08:49:38 2015 Joris Bertomeu
+// Last update Wed Jun 10 10:55:34 2015 Joris Bertomeu
 //
 
 #include	<SceneParser.hh>
@@ -93,21 +93,21 @@ Scene		*SceneParser::getScene(RenderManager *rm)
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
       if (this->_parser.getValueOf("id") == "WALK_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::WALK, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::WALK, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else if (this->_parser.getValueOf("id") == "EXPLOSION_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::EXPLOSION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::EXPLOSION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else if (this->_parser.getValueOf("id") == "WALK_STOP_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::WALK_STOP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "DESTRUCTION_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::DESTRUCTION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "DEAD_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::DEAD, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "AMBIANT_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::AMBIANT, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::JUMP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::WALK_STOP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "DESTRUCTION_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::DESTRUCTION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "DEAD_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::DEAD, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "AMBIANT_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::AMBIANT, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::JUMP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else
-	rm->getSoundManager().addSound(Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
     }
   this->_parser.resetNode();
   std::cout << "MODELS" << std::endl;

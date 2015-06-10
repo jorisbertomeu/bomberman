@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Wed Jun 10 08:44:05 2015 Joris Bertomeu
+// Last update Wed Jun 10 10:58:03 2015 Joris Bertomeu
 //
 
 #ifndef				_SOUND_HH_
@@ -13,6 +13,7 @@
 
 # include			<string>
 # include			<fmod.h>
+# include			<iostream>
 
 class				Sound
 {
@@ -34,17 +35,24 @@ protected:
   bool				_online;
   SoundType			_type;
   FMOD_SOUND			*_rawSound;
+  FMOD_SYSTEM			*_system;
 
 public:
-  explicit			Sound(const Sound::SoundType &type, const bool &online, const std::string &filename) {
+  explicit			Sound(const Sound::SoundType &type, const bool &online, const std::string &filename, FMOD_SYSTEM *system) {
     this->_filename = filename;
     this->_online = online;
     this->_type = type;
-    printf("NEW SOUND CREATED \n");
-    // if (this->_type == Sound::AMBIANT)
-    //   FMOD_System_CreateSound();
-    // else
-    //   FMOD_System_CreateSound();
+    this->_system = system;
+    if (this->_type == Sound::AMBIANT) {
+      if (FMOD_System_CreateSound(this->_system, filename.c_str(), FMOD_2D | FMOD_CREATESTREAM, 0, &(this->_rawSound)) != FMOD_OK) {
+	std::cerr << "Unable to load sound " << filename << std::endl;
+	this->_rawSound = NULL;
+      }
+    } else
+      if (FMOD_System_CreateSound(this->_system, filename.c_str(), FMOD_CREATESAMPLE, 0, &(this->_rawSound)) != FMOD_OK) {
+	std::cerr << "Unable to load sound " << filename << std::endl;
+	this->_rawSound = NULL;
+      }
   }
 
   virtual			~Sound() {
@@ -73,6 +81,14 @@ public:
 
   void				setType(const SoundType &type) {
     this->_type = type;
+  };
+
+  void				play() {
+    if (this->_rawSound) {
+      std::cerr << "Unable to play Sound" << std::endl;
+      return;
+    }
+    FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, NULL);
   };
 };
 
