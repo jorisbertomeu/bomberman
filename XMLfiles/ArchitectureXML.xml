@@ -13,7 +13,7 @@
     <texture>
       <id>idFloorTexture</id>
       <online>0</online>
-      <file>assets/textures/floor.tga</file>
+      <file>assets/textures/floor_grass.tga</file>
     </texture>
   </texture_pack>
   <model_pack>

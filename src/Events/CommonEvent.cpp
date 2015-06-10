@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sat Jun  6 19:48:51 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:49:44 2015 Joris Bertomeu
 //
 
 # include		<CommonEvent.hh>
@@ -21,14 +21,16 @@ CommonEvent::~CommonEvent()
 
 }
 
-bool			CommonEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera)
+bool			CommonEvent::isCatch(gdl::Input &input, SceneManager* sm, CameraManager& camera)
 {
+  Scene			*scene = sm->getCurrentScene();
+
   (void) camera;
   for (std::map<int, CommonEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
       if (input.getKey((*found).first))
 	{
-	  (this->*this->_events[(*found).first])(scene);
+	  (this->*this->_events[(*found).first])(sm);
 	  return (true);
 	}
     }
@@ -36,8 +38,8 @@ bool			CommonEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& came
 }
 
 
-void			CommonEvent::escape(Scene* scene)
+void			CommonEvent::escape(SceneManager* sm)
 {
-  (void) scene;
+  (void) sm;
   exit(0);
 }

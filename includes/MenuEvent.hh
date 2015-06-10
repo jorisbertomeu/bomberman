@@ -1,11 +1,11 @@
 //
 // MenuEvent.hh for  in /home/merran_g/work/rendu/bomberman
-// 
+//
 // Made by Geoffrey Merran
 // Login   <merran_g@epitech.net>
-// 
+//
 // Started on  Fri Jun 12 04:53:07 2015 Geoffrey Merran
-// Last update Fri Jun 12 05:15:11 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:51:34 2015 Joris Bertomeu
 //
 
 #ifndef __MENU_EVENT_HH
@@ -17,17 +17,16 @@
 class				MenuEvent : public IEvent
 {
 public:
-  typedef void (MenuEvent::*eventHandler)(Scene*);
+  typedef void (MenuEvent::*eventHandler)(SceneManager*);
 
   MenuEvent();
   virtual			~MenuEvent();
-  virtual bool			isCatch(gdl::Input &input, Scene*, CameraManager&);
+  virtual bool			isCatch(gdl::Input &input, SceneManager*, CameraManager&);
 
 private:
-  void				up(Scene*);
-  void				down(Scene*);
-  void				space(Scene*);
-
+  void				up(SceneManager*);
+  void				down(SceneManager*);
+  void				space(SceneManager*);
   std::map<int, eventHandler>	_events;
 };
 

@@ -8,10 +8,10 @@ TEXTURE
         <speed>0</speed>
         <jump>0</jump>
         <weight>0</weight>
-        <friction>6.46437e-37</friction>
+        <friction>2.02014e-37</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>6.46437e-37</range>
+        <range>2.02014e-37</range>
         <bonus>NONE</bonus>
       </attribut>
       <health>0</health>
@@ -25,20 +25,20 @@ TEXTURE
         <z>0</z>
       </position>
       <size>
-        <x>1000</x>
+        <x>100</x>
         <y>10</y>
-        <z>1000</z>
+        <z>100</z>
       </size>
     </entity>
     <entity>
       <attribut>
         <speed>2</speed>
-        <jump>1</jump>
+        <jump>0</jump>
         <weight>200</weight>
         <friction>1</friction>
-        <move>1</move>
+        <move>0</move>
         <ability>NONE</ability>
-        <range>0</range>
+        <range>3</range>
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
@@ -47,7 +47,7 @@ TEXTURE
       <model>idBombermanModel</model>
       <texture>NULL</texture>
       <position>
-        <x>80</x>
+        <x>50</x>
         <y>0</y>
         <z>80</z>
       </position>
@@ -74,7 +74,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>40</x>
+        <x>30</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -101,9 +101,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>40</x>
+        <x>30</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -128,7 +128,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>80</x>
+        <x>60</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -155,9 +155,63 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>80</x>
+        <x>60</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>90</x>
+        <y>0</y>
+        <z>0</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>90</x>
+        <y>0</y>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -211,7 +265,7 @@ TEXTURE
       <position>
         <x>120</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -236,7 +290,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>160</x>
+        <x>150</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -263,9 +317,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>160</x>
+        <x>150</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -290,7 +344,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>200</x>
+        <x>180</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -317,9 +371,63 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>200</x>
+        <x>180</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>210</x>
+        <y>0</y>
+        <z>0</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>210</x>
+        <y>0</y>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -373,7 +481,7 @@ TEXTURE
       <position>
         <x>240</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -398,7 +506,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>280</x>
+        <x>270</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -425,873 +533,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>280</x>
+        <x>270</x>
         <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>320</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>320</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>360</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>360</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>400</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>400</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>440</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>440</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>480</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>480</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>520</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>520</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>560</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>560</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>600</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>600</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>640</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>640</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>680</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>680</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>720</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>720</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>760</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>760</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>800</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>800</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>840</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>840</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>880</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>880</x>
-        <y>0</y>
-        <z>960</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>920</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>920</x>
-        <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1318,7 +562,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>40</z>
+        <z>30</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1343,9 +587,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>40</z>
+        <z>30</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1372,7 +616,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>80</z>
+        <z>60</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1397,9 +641,63 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>80</z>
+        <z>60</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>0</x>
+        <y>0</y>
+        <z>90</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>300</x>
+        <y>0</y>
+        <z>90</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1451,7 +749,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
         <z>120</z>
       </position>
@@ -1480,7 +778,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>160</z>
+        <z>150</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1505,9 +803,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>160</z>
+        <z>150</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1534,7 +832,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>200</z>
+        <z>180</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1559,9 +857,63 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>200</z>
+        <z>180</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>0</x>
+        <y>0</y>
+        <z>210</z>
+      </position>
+      <size>
+        <x>0.3</x>
+        <y>0.3</y>
+        <z>0.3</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>BRICK_WALL</type>
+      <name>NONE</name>
+      <model>idBoxModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>300</x>
+        <y>0</y>
+        <z>210</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1613,7 +965,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
         <z>240</z>
       </position>
@@ -1642,7 +994,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>280</z>
+        <z>270</z>
       </position>
       <size>
         <x>0.3</x>
@@ -1667,873 +1019,9 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>280</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>320</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>320</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>360</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>360</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>400</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>400</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>440</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>440</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>480</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>480</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>520</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>520</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>560</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>560</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>600</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>600</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>640</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>640</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>680</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>680</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>720</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>720</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>760</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>760</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>800</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>800</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>840</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>840</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>880</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>880</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>0</x>
-        <y>0</y>
-        <z>920</z>
-      </position>
-      <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>960</x>
-        <y>0</y>
-        <z>920</z>
+        <z>270</z>
       </position>
       <size>
         <x>0.3</x>
@@ -2587,7 +1075,7 @@ TEXTURE
       <position>
         <x>0</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
         <x>0.3</x>
@@ -2612,7 +1100,7 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
         <z>0</z>
       </position>
@@ -2639,14 +1127,14 @@ TEXTURE
       <model>idBoxModel</model>
       <texture>NULL</texture>
       <position>
-        <x>960</x>
+        <x>300</x>
         <y>0</y>
-        <z>960</z>
+        <z>300</z>
       </position>
       <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
+        <x>1</x>
+        <y>1</y>
+        <z>1</z>
       </size>
     </entity>
   </entities>

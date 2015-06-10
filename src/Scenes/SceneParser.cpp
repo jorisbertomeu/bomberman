@@ -5,10 +5,13 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 20:05:18 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:47:19 2015 Joris Bertomeu
 //
 
-#include "SceneParser.hh"
+#include	<SceneParser.hh>
+#include	<Bomberman.hh>
+#include	<BrickWall.hh>
+#include	<Floor.hh>
 
 SceneParser::SceneParser()
 {
@@ -211,7 +214,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : speed must be a number" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setSpeed(atof(this->_parser.getValueOf("speed").c_str()));
       if (this->_parser.isNum(this->_parser.getValueOf("jump")) == false)
@@ -219,7 +222,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : jump must be a number" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setJump((atoi(this->_parser.getValueOf("jump").c_str()) == 0) ? false : true);
       if (this->_parser.isFloatNum(this->_parser.getValueOf("friction")) == false)
@@ -227,7 +230,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : friction must be a float number" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setFriction(atof(this->_parser.getValueOf("friction").c_str()));
       if (this->_parser.isBool(this->_parser.getValueOf("move")) == false)
@@ -235,7 +238,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : move must be a boolean" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setMove((atoi(this->_parser.getValueOf("move").c_str()) == 0) ? false : true);
       if (this->_parser.isFloatNum(this->_parser.getValueOf("range")) == false)
@@ -243,7 +246,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : range must be a float number" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setRange(atof(this->_parser.getValueOf("range").c_str()));
       if (this->_parser.isNum(this->_parser.getValueOf("weight")) == false)
@@ -251,7 +254,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  std::cout << "Error in entity : weight must be a number" << std::endl;
 	  this->_parser.setPreviousNode();
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setWeight((atoi(this->_parser.getValueOf("weight").c_str())));
       if (this->_parser.getValueOf("ability") == "NONE")
@@ -277,7 +280,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	{
 	  std::cout << "Error in entity : health must be a number" << std::endl;
 	  delete entity;
-	  continue;	  
+	  continue;
 	}
       entity->setHealth((atoi(this->_parser.getValueOf("health").c_str())));
       entity->setModelId(std::string(this->_parser.getValueOf("model").c_str()));

@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:34:31 2015 mari_f
-// Last update Fri Jun 12 05:07:22 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:34:26 2015 Joris Bertomeu
 //
 
 #ifndef			_IEVENT_HH__
@@ -16,14 +16,14 @@
 
 class			IEvent;
 
-# include		<Scene.hh>
+# include		<SceneManager.hh>
 # include		<CameraManager.hh>
 
 class			IEvent
 {
 public:
   virtual		~IEvent() {};
-  virtual bool	       	isCatch(gdl::Input &input, Scene*, CameraManager&) = 0;
+  virtual bool	       	isCatch(gdl::Input &input, SceneManager*, CameraManager&) = 0;
 };
 
 #endif

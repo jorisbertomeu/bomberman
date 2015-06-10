@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Fri Jun 12 03:37:12 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:46:01 2015 Joris Bertomeu
 //
 
 #ifndef _AENTITY_H_
@@ -17,12 +17,10 @@
 # include <iostream>
 # include <fstream>
 # include <glm/glm.hpp>
-# include <HitBox.hh>
-
-# include <ASolid.hh>
 
 class				AEntity;
 
+# include <ASolid.hh>
 # include <RenderManager.hh>
 # include <HitBox.hh>
 

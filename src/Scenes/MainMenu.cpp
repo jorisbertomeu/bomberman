@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 05:25:39 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:59:09 2015 Joris Bertomeu
 // Last update Tue Jun  9 20:52:02 2015 Geoffrey Merran
 //
 
@@ -82,4 +82,10 @@ void			MainMenu::moveCursor()
     }
   pos.x = -500;
   this->_cursor->setPos(pos);
+}
+
+void			MainMenu::selectButton(SceneManager *sm)
+{
+  if (!sm->setCurrentScene(std::string("gameScene")))
+    std::cerr << "Error while loading scene Game" << std::endl;
 }

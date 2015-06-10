@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Fri Jun 12 04:42:12 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:50:54 2015 Joris Bertomeu
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -30,7 +30,7 @@ public:
   explicit	InputManager();
   virtual	~InputManager();
   void		addEvent(IEvent*);
-  void		handleEvent(gdl::Input &, Scene*, CameraManager &);
+  void		handleEvent(gdl::Input &, SceneManager*, CameraManager &);
   void		removeEvents();
 };
 

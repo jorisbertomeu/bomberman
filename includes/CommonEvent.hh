@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Sat Jun  6 19:50:50 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:49:08 2015 Joris Bertomeu
 //
 
 #ifndef				_COMMON_EVENT_HH
@@ -22,13 +22,13 @@
 class				CommonEvent : public IEvent
 {
 public:
-  typedef void (CommonEvent::*eventHandler)(Scene*);
+  typedef void (CommonEvent::*eventHandler)(SceneManager*);
 
   CommonEvent(void);
   virtual			~CommonEvent(void);
 
-  void				escape(Scene*);
-  virtual bool			isCatch(gdl::Input &input, Scene*, CameraManager&);
+  void				escape(SceneManager*);
+  virtual bool			isCatch(gdl::Input &input, SceneManager*, CameraManager&);
 
 private:
   std::map<int, eventHandler>	_events;

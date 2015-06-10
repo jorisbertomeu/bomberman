@@ -1,11 +1,11 @@
 //
 // SceneManager.cpp for  in /home/mediav_j/mabm/bomberman
-// 
+//
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-// 
+//
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 21:02:09 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:26:40 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -27,7 +27,7 @@ void	SceneManager::setRenderManager(RenderManager *rm)
   this->_renderManager = rm;
 }
 
-bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
+bool	SceneManager::loadSceneFromFile(const std::string &sceneId,
 					const std::string &filename)
 {
   SceneParser	newSceneParser;
@@ -35,14 +35,28 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
 
   newSceneParser.load(filename);
   newScene = newSceneParser.getScene(this->_renderManager);
-  this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
-  this->_currentScene = newScene;
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, newScene));
+  //this->_currentScene = newScene;
   newScene->save(this->_renderManager);
   return (true);
 }
 
-bool	SceneManager::setCurrentScene(Scene *scene)
+bool	SceneManager::setCurrentScene(std::string sceneId)
 {
+  for(std::map<std::string, Scene *>::iterator it = this->_scenes.begin(); it != this->_scenes.end(); ++it) {
+    if ((*it).first == sceneId) {
+      this->_currentScene = (*it).second;
+      return (true);
+    }
+  }
+  return (false);
+}
+
+
+
+bool	SceneManager::setCurrentScene(std::string sceneId, Scene *scene)
+{
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene));
   this->_currentScene = scene;
   return (true);
 }
