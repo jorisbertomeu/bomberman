@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Wed Jun 10 20:18:07 2015 mari_f
+// Last update Wed Jun 10 20:25:35 2015 mari_f
 //
 
 #include		<GameEvent.hh>
@@ -31,15 +31,15 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
   this->_camera = camera;
   for (std::map<int, GameEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
+      // if (input.getKey(SDL_BUTTON_LEFT))
+      // 	{
+      // 	  std::cout << "x :" << input.getMousePosition().x << std::endl;
+      // 	  std::cout << "y : " << input.getMousePosition().y << std::endl;
+      // 	  return (true);
+      // 	}
       if (input.getKey((*found).first))
 	{
 	  (this->*this->_events[(*found).first])(scene);
-	  return (true);
-	}
-      if (input.getKey(SDL_BUTTON_LEFT))
-	{
-	  std::cout << "x :" << input.getMousePosition().x << std::endl;
-	  std::cout << "y : " << input.getMousePosition().y << std::endl;
 	  return (true);
 	}
       else
@@ -48,10 +48,8 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
 	  list = scene->getEntities();
 	  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
 	       it++)
-	    {
-	      if ((*it)->getType() == AEntity::BOMBERMAN)
-		dynamic_cast<Bomberman*>((*it))->isReleased();
-	    }
+	    if ((*it)->getType() == AEntity::BOMBERMAN)
+	      dynamic_cast<Bomberman*>((*it))->isReleased();
 	}
     }
   return (false);
