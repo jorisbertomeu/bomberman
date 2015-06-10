@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Fri Jun 12 20:48:07 2015 Geoffrey Merran
+// Last update Fri Jun 12 23:08:22 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -20,10 +20,10 @@ GameContext::~GameContext()
 
 }
 
-bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
+bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize, int* running)
 {
   this->_renderManager = rm;
-  this->_sceneManager.initialize(&this->_cameraManager, rm);
+  this->_sceneManager.initialize(&this->_cameraManager, rm, running);
   this->_sceneManager.setInputManager(&(this->_inputManager));
   this->_cameraManager.initialize(rm, windowSize);
   this->_sceneManager.loadSceneFromFile(std::string("gameScene"), std::string("XMLfiles/big.xml"));

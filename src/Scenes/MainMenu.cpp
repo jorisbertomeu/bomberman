@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Wed Jun 10 12:41:29 2015 Joris Bertomeu
+// Last update Wed Jun 10 12:41:59 2015 Joris Bertomeu
 //
 
 #include	<MainMenu.hh>
@@ -115,6 +115,7 @@ void			MainMenu::selectButton(SceneManager *sm)
       nextScene = "load";
       break;
     case QUIT:
+      sm->stopGame();
       return ;
       break;
     }
