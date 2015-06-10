@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 04:11:06 2015 Geoffrey Merran
+// Last update Wed Jun 10 06:40:43 2015 Joris Bertomeu
 //
 
 #include <Bomberman.hh>
@@ -111,7 +111,7 @@ void		Bomberman::isReleased(Scene *scene)
 
   if (this->getAcceleration() <= 0)
     return;
-  this->setAcceleration(this->getAcceleration() - 0.01);
+  this->setAcceleration(this->getAcceleration() - 0.05);
   switch (this->_dir)
     {
     case (Bomberman::UP) :

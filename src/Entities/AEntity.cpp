@@ -5,13 +5,13 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Tue Jun  9 20:23:05 2015 Joris Bertomeu
+// Last update Wed Jun 10 06:23:56 2015 Joris Bertomeu
 //
 
 #include <AEntity.hh>
 #include <Bomberman.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(pos), _modelId(""), _type(type)
+AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(glm::vec3(pos.x, pos.y, pos.z)), _modelId(""), _type(type)
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
@@ -19,7 +19,7 @@ AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(pos), _modelId(""), _typ
     this->_hitbox = new Hitbox(this);
 }
 
-AEntity::AEntity(glm::vec3 pos, EntityType type, bool custom) : _pos(pos), _modelId(""), _type(type)
+AEntity::AEntity(glm::vec3 pos, EntityType type, bool custom) : _pos(glm::vec3(pos.x, pos.y, pos.z)), _modelId(""), _type(type)
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
