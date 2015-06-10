@@ -5,10 +5,11 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 20:45:37 2015 Joris Bertomeu
+// Last update Tue Jun  9 22:34:17 2015 Joris Bertomeu
 //
 
-# include		<GameEvent.hh>
+#include		<GameEvent.hh>
+#include		<Pavement.hh>
 
 GameEvent::GameEvent()
 {
