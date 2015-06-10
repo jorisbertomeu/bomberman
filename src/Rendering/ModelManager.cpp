@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Wed Jun  3 14:54:49 2015 Geoffrey Merran
-// Last update Fri Jun 12 18:40:42 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:56:34 2015 Geoffrey Merran
 //
 
 #include <ModelManager.hh>
@@ -27,7 +27,7 @@ bool				ModelManager::addModel(const std::string & path, const std::string & nam
   if (!model->load(path))
     return (false);
   this->_models[name] = model;
-  std::cout << "Model " << name << " loaded at " << path << "." << std::endl;
+  std::cout << "[MODEL_LOADED] Model " << name << " loaded from " << path << "." << std::endl;
   return (true);
 }
 

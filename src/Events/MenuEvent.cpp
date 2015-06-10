@@ -5,12 +5,12 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:55:54 2015 Geoffrey Merran
-// Last update Sat Jun 13 02:27:38 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:03:12 2015 Geoffrey Merran
 //
 
 #include <MenuEvent.hh>
 
-MenuEvent::MenuEvent() : _nextKeyCatch(0.0f)
+MenuEvent::MenuEvent() : _nextKeyCatch(0.2f)
 {
   this->_events[SDLK_UP] = &MenuEvent::up;
   this->_events[SDLK_DOWN] = &MenuEvent::down;
