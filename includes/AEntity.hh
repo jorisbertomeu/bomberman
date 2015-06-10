@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 22:49:39 2015 Geoffrey Merran
+// Last update Tue Jun  9 22:50:59 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -24,6 +24,7 @@
 class				AEntity;
 
 # include <RenderManager.hh>
+# include <HitBox.hh>
 
 class				AEntity : public ASolid
 {
