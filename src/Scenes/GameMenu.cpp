@@ -5,10 +5,10 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:30:22 2015 Valérian Polizzi
-// Last update Fri Jun  5 14:31:02 2015 Valérian Polizzi
+// Last update Fri Jun 12 18:41:08 2015 Geoffrey Merran
 //
 
-#include "GameMenu.hh"
+#include <GameMenu.hh>
 
 GameMenu::GameMenu()
 {

@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Wed Jun 10 03:17:07 2015 Joris Bertomeu
+// Last update Fri Jun 12 20:48:35 2015 Geoffrey Merran
 //
 
 #ifndef				_GAMEEVENT_HH__
@@ -27,16 +27,15 @@ public:
 
   GameEvent(void);
   virtual			~GameEvent(void);
-  virtual bool			isCatch(gdl::Input &input, SceneManager*, CameraManager&);
+  virtual bool			isCatch(gdl::Input &input, gdl::Clock&, SceneManager*, CameraManager&);
 
 private:
   void				up(SceneManager*);
   void				down(SceneManager*);
   void				right(SceneManager*);
   void				left(SceneManager*);
-  void				click(SceneManager*);
   void				space(SceneManager*);
-
+  void				escape(SceneManager*);
   void				updatePlayerCamera(const glm::vec3 & point);
 
   CameraManager			_camera;

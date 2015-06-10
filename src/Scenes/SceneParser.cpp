@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:16:04 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:45:49 2015 Geoffrey Merran
 //
 
 #include	<SceneParser.hh>
@@ -34,9 +34,9 @@ bool		SceneParser::load(const std::string &filename)
   return (true);
 }
 
-Scene		*SceneParser::getScene(RenderManager *rm)
+Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
 {
-  Scene		*newScene = new Scene();
+  Scene		*newScene = new Scene(cm);
   AEntity	*entity;
 
   this->_parser.setNode("scene");

@@ -5,12 +5,13 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 12:02:49 2015 Joris Bertomeu
+// Last update Wed Jun 10 12:19:47 2015 Joris Bertomeu
 //
 
-#include	"Scene.hh"
+#include	<CameraManager.hh>
+#include	<Scene.hh>
 
-Scene::Scene()
+Scene::Scene(CameraManager* cm) : _cm(cm)
 {
   this->_eventHandler = NULL;
   this->_first = true;
@@ -19,6 +20,12 @@ Scene::Scene()
 Scene::~Scene()
 {
 
+}
+
+void				Scene::initialize()
+{
+  this->_cm->moveTo(glm::vec3(0, 500, 200), glm::vec3(0, 0, 0));
+  this->_cm->setDefaultPos(glm::vec3(0, 500, 200));
 }
 
 std::list<AEntity*>		Scene::getEntities()
@@ -48,7 +55,9 @@ IEvent*		Scene::getEventHandler()
 void  	      	Scene::draw(RenderManager & rm)
 {
   if (this->_first) {
-    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->play();
+    Sound* s = rm.getSoundManager().getSoundOf(Sound::AMBIANT);
+    if (s)
+      s->play();
     this->_first = false;
   }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
@@ -92,6 +101,12 @@ void		Scene::setEventHandler(IEvent *event)
 void		Scene::spacePress(SceneManager *sm)
 {
   if (!sm->setCurrentScene(std::string("mainMenu")))
+    std::cerr << "Error while loading menu Scene" << std::endl;
+}
+
+void		Scene::escapePress(SceneManager *sm)
+{
+  if (!sm->setCurrentScene(std::string("escapeMenu")))
     std::cerr << "Error while loading menu Scene" << std::endl;
 }
 

@@ -5,22 +5,22 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:53:07 2015 Geoffrey Merran
-// Last update Fri Jun 12 20:58:49 2015 Geoffrey Merran
+// Last update Wed Jun 10 02:51:34 2015 Joris Bertomeu
 //
 
-#ifndef __MENU_EVENT_HH
-# define __MENU_EVENT_HH
+#ifndef __ESCAPEEVENT_HH
+# define __ESCAPEEVENT_HH
 
 # include <IEvent.hh>
-# include <MainMenu.hh>
+# include <EscapeMenu.hh>
 
-class				MenuEvent : public IEvent
+class				EscapeEvent : public IEvent
 {
 public:
-  typedef void (MenuEvent::*eventHandler)(SceneManager*);
+  typedef void (EscapeEvent::*eventHandler)(SceneManager*);
 
-  MenuEvent();
-  virtual			~MenuEvent();
+  EscapeEvent();
+  virtual			~EscapeEvent();
   virtual bool			isCatch(gdl::Input &input, gdl::Clock&, SceneManager*, CameraManager&);
 
 private:
@@ -28,9 +28,9 @@ private:
   void				up(SceneManager*);
   void				down(SceneManager*);
   void				space(SceneManager*);
-
+  
   float				_nextKeyCatch;
   std::map<int, eventHandler>	_events;
 };
 
-#endif /* __MENU_EVENT_HH */
+#endif /* __ESCAPEEVENT_HH */
