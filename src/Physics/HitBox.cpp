@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Tue Jun  9 22:33:46 2015 Joris Bertomeu
+// Last update Wed Jun 10 05:19:21 2015 Joris Bertomeu
 //
 
 #include <HitBox.hh>
@@ -32,35 +32,35 @@ void	Hitbox::updateHitbox(void *entityp)
   if (type == AEntity::BOMBERMAN || type == AEntity::BOT)
     {
       this->_c1 = glm::vec3(pos.x, pos.y, pos.z);
-      this->_c2 = glm::vec3(60 + pos.x, pos.y, pos.z);
-      this->_c3 = glm::vec3(60 + pos.x, pos.y, pos.z - 60);
-      this->_c4 = glm::vec3(60 + pos.x, 80 + pos.y, pos.z - 60);
-      this->_c5 = glm::vec3(pos.x, 80 + pos.y, pos.z - 60);
-      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 60);
-      this->_c7 = glm::vec3(pos.x, 80 + pos.y, pos.z);
-      this->_c8 = glm::vec3(60 + pos.x, 80 + pos.y, pos.z);
+      this->_c2 = glm::vec3(20 + pos.x, pos.y, pos.z);
+      this->_c3 = glm::vec3(20 + pos.x, pos.y, pos.z - 20);
+      this->_c4 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z - 20);
+      this->_c5 = glm::vec3(pos.x, 20 + pos.y, pos.z - 20);
+      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 20);
+      this->_c7 = glm::vec3(pos.x, 20 + pos.y, pos.z);
+      this->_c8 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z);
     }
   else if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
     {
       this->_c1 = glm::vec3(pos.x, pos.y, pos.z);
-      this->_c2 = glm::vec3(60 + pos.x, pos.y, pos.z);
-      this->_c3 = glm::vec3(60 + pos.x, pos.y, pos.z - 60);
-      this->_c4 = glm::vec3(60 + pos.x, 60 + pos.y, pos.z - 60);
-      this->_c5 = glm::vec3(pos.x, 60 + pos.y, pos.z - 60);
-      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 60);
-      this->_c7 = glm::vec3(pos.x, 60 + pos.y, pos.z);
-      this->_c8 = glm::vec3(60 + pos.x, 60 + pos.y, pos.z);
+      this->_c2 = glm::vec3(20 + pos.x, pos.y, pos.z);
+      this->_c3 = glm::vec3(20 + pos.x, pos.y, pos.z - 20);
+      this->_c4 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z - 20);
+      this->_c5 = glm::vec3(pos.x, 20 + pos.y, pos.z - 20);
+      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 20);
+      this->_c7 = glm::vec3(pos.x, 20 + pos.y, pos.z);
+      this->_c8 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z);
     }
   else if (type == AEntity::BOMB)
     {
       this->_c1 = glm::vec3(pos.x, pos.y, pos.z);
-      this->_c2 = glm::vec3(60 + pos.x, pos.y, pos.z);
-      this->_c3 = glm::vec3(60 + pos.x, pos.y, pos.z - 60);
-      this->_c4 = glm::vec3(60 + pos.x, 60 + pos.y, pos.z - 60);
-      this->_c5 = glm::vec3(pos.x, 60 + pos.y, pos.z - 60);
-      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 60);
-      this->_c7 = glm::vec3(pos.x, 60 + pos.y, pos.z);
-      this->_c8 = glm::vec3(60 + pos.x, 60 + pos.y, pos.z);
+      this->_c2 = glm::vec3(20 + pos.x, pos.y, pos.z);
+      this->_c3 = glm::vec3(20 + pos.x, pos.y, pos.z - 20);
+      this->_c4 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z - 20);
+      this->_c5 = glm::vec3(pos.x, 20 + pos.y, pos.z - 20);
+      this->_c6 = glm::vec3(pos.x, pos.y, pos.z - 20);
+      this->_c7 = glm::vec3(pos.x, 20 + pos.y, pos.z);
+      this->_c8 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z);
     }
   else if (type == AEntity::PAVEMENT)
     {
@@ -83,6 +83,36 @@ void	Hitbox::updateHitbox(void *entityp)
     }
 }
 
+bool	Hitbox::checkCollisionForPoint(glm::vec3 point)
+{
+  if ((point.x >= this->_c1.x &&
+       point.x <= this->_c2.x &&
+       point.y >= this->_c1.y &&
+       point.y <= this->_c2.y &&
+       point.z >= this->_c1.z &&
+       point.z <= this->_c2.z) ||
+      (point.x >= this->_c3.x && // NEW
+       point.x <= this->_c4.x &&
+       point.y >= this->_c3.y &&
+       point.y <= this->_c4.y &&
+       point.z >= this->_c3.z &&
+       point.z <= this->_c4.z &&
+       point.x >= this->_c5.x) || // NEW
+      (point.x <= this->_c6.x &&
+       point.y >= this->_c5.y &&
+       point.y <= this->_c6.y &&
+       point.z >= this->_c5.z &&
+       point.z <= this->_c6.z &&
+       point.x >= this->_c7.x) || // NEW
+      (point.x <= this->_c8.x &&
+       point.y >= this->_c7.y &&
+       point.y <= this->_c8.y &&
+       point.z >= this->_c7.z &&
+       point.z <= this->_c8.z))
+    return (true);
+  return (false);
+}
+
 bool	Hitbox::checkCollision(void *scenep)
 {
   Scene *scene = (Scene*) scenep;
@@ -91,61 +121,21 @@ bool	Hitbox::checkCollision(void *scenep)
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
     if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL)
       continue;
-    if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c1.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c1.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c1.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c1.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c1.z <= this->_c8.z) {
+    if (this->checkCollisionForPoint((*it)->getHitbox()->_c1)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c2.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c2.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c2.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c2.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c2.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c2)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c3.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c3.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c3.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c3.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c3.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c3)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c4.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c4.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c4.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c4.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c4.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c4)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c5.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c5.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c5.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c5.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c5.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c5)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c6.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c6.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c6.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c6.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c6.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c6)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c7.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c7.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c7.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c7.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c7.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c7)) {
       return (true);
-    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
-	(*it)->getHitbox()->_c8.x <= this->_c8.x &&
-	(*it)->getHitbox()->_c8.y >= this->_c6.y &&
-	(*it)->getHitbox()->_c8.y <= this->_c8.y &&
-	(*it)->getHitbox()->_c8.z >= this->_c6.z &&
-	(*it)->getHitbox()->_c8.z <= this->_c8.z) {
+    } else if (this->checkCollisionForPoint((*it)->getHitbox()->_c8)) {
       return (true);
     } else {
       continue;

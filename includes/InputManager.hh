@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Wed Jun 10 02:50:54 2015 Joris Bertomeu
+// Last update Wed Jun 10 03:57:58 2015 Joris Bertomeu
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -14,6 +14,8 @@
 # include	<iostream>
 # include	<string>
 # include	<list>
+
+class			InputManager;
 
 # include	<Clock.hh>
 # include	<Input.hh>

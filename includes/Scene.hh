@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 05:00:58 2015 Geoffrey Merran
+// Last update Wed Jun 10 04:35:15 2015 Joris Bertomeu
 //
 
 #ifndef			_SCENE_HH_
@@ -36,9 +36,10 @@ public:
   std::list<AEntity *>	getEntities();
   void			updateEntities(gdl::Clock & clock);
   IEvent*		getEventHandler();
-
+  void			setEventHandler(IEvent *);
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
+  void			spacePress(SceneManager *sm);
 };
 
 #endif		// _SCENE_HH_

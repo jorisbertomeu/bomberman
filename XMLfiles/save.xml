@@ -6,15 +6,15 @@ TEXTURE
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>0</jump>
+        <jump>1</jump>
         <weight>0</weight>
-        <friction>2.02014e-37</friction>
+        <friction>2.28351e-37</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>2.02014e-37</range>
+        <range>2.28351e-37</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>0</health>
+      <health>1054645565</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>

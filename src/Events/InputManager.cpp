@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Wed Jun 10 02:50:31 2015 Joris Bertomeu
+// Last update Wed Jun 10 04:08:40 2015 Joris Bertomeu
 //
 
 #include	<InputManager.hh>

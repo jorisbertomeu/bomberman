@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Wed Jun 10 02:49:08 2015 Joris Bertomeu
+// Last update Wed Jun 10 03:51:54 2015 Joris Bertomeu
 //
 
 #ifndef				_COMMON_EVENT_HH
@@ -16,6 +16,8 @@
 # include			<map>
 
 # include			<SDL_keycode.h>
+
+class				CommonEvent;
 
 # include			<IEvent.hh>
 

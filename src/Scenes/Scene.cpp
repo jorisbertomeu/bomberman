@@ -5,14 +5,14 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 05:01:55 2015 Geoffrey Merran
+// Last update Wed Jun 10 04:37:01 2015 Joris Bertomeu
 //
 
 #include	"Scene.hh"
 
 Scene::Scene()
 {
-
+  this->_eventHandler = NULL;
 }
 
 Scene::~Scene()
@@ -39,6 +39,8 @@ void		Scene::updateEntities(gdl::Clock & clock)
 
 IEvent*		Scene::getEventHandler()
 {
+  if (!this->_eventHandler)
+    std::cerr << "WARNING : Event Handler from Scene is NULL." << std::endl;
   return (this->_eventHandler);
 }
 
@@ -75,4 +77,15 @@ bool		Scene::save(RenderManager *rm)
   fs << "/<scene>" << std::endl;
   fs.close();
   return (true);
+}
+
+void		Scene::setEventHandler(IEvent *event)
+{
+  this->_eventHandler = event;
+}
+
+void		Scene::spacePress(SceneManager *sm)
+{
+  if (!sm->setCurrentScene(std::string("mainMenu")))
+    std::cerr << "Error while loading menu Scene" << std::endl;
 }

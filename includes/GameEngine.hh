@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:27:41 2015 Joris Bertomeu
-// Last update Sat Jun  6 14:02:06 2015 Geoffrey Merran
+// Last update Wed Jun 10 03:53:06 2015 Joris Bertomeu
 //
 
 #ifndef		_GAMEENGINE_HH_
@@ -16,6 +16,8 @@
 
 # include	<Game.hh>
 # include	<Input.hh>
+
+class		GameEngine;
 
 # include	<Parameters.hpp>
 # include	<RenderManager.hh>

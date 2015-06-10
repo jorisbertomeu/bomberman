@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:24:45 2015 Nicolas Adès
-// Last update Tue Jun  9 22:34:28 2015 Joris Bertomeu
+// Last update Wed Jun 10 05:15:15 2015 Joris Bertomeu
 //
 
 #ifndef	 _HITBOX_H_
@@ -35,6 +35,7 @@ public:
   explicit	Hitbox(void *);
   bool		checkCollision(void *);
   void		updateHitbox(void *);
+  bool		checkCollisionForPoint(glm::vec3);
   virtual	~Hitbox();
 };
 
