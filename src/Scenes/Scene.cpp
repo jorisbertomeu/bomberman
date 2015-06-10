@@ -5,11 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-<<<<<<< HEAD
-// Last update Wed Jun 10 11:28:19 2015 Joris Bertomeu
-=======
-// Last update Fri Jun 12 19:07:22 2015 Jérémy Mediavilla
->>>>>>> 9990dd80438a077895b8bfeb8b7b5fedf8a6541c
+// Last update Wed Jun 10 12:02:49 2015 Joris Bertomeu
 //
 
 #include	"Scene.hh"
@@ -105,6 +101,6 @@ void		*Scene::getBomberman()
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
 	return (*it);
-    }  
+    }
   return (NULL);
 }

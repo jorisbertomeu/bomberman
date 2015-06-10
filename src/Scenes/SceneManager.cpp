@@ -5,11 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-<<<<<<< HEAD
-// Last update Wed Jun 10 11:17:47 2015 Joris Bertomeu
-=======
-// Last update Fri Jun 12 18:23:26 2015 Jérémy Mediavilla
->>>>>>> 9990dd80438a077895b8bfeb8b7b5fedf8a6541c
+// Last update Wed Jun 10 12:02:35 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
