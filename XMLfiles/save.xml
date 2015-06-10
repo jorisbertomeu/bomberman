@@ -5,7 +5,7 @@
         <speed>0</speed>
         <jump>0</jump>
         <weight>1074790400</weight>
-        <friction>0</friction>
+        <friction>2.26769e-37</friction>
         <move>0</move>
         <ability>NONE</ability>
         <range>0</range>
