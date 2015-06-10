@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 21:36:31 2015 Geoffrey Merran
+// Last update Wed Jun 10 14:30:50 2015 Valérian Polizzi
 //
 
 # include		<GameEvent.hh>
@@ -17,6 +17,7 @@ GameEvent::GameEvent()
   this->_events[SDLK_LEFT] = &GameEvent::left;
   this->_events[SDLK_RIGHT] = &GameEvent::right;
   // this->_events[SDLK_SPACE] = &GameEvent::space;
+  this->_events[SDL_BUTTON_LEFT] = &GameEvent::click;
 }
 
 GameEvent::~GameEvent()
@@ -59,6 +60,11 @@ void			GameEvent::up(Scene* scene)
     }
 }
 
+void			GameEvent::click(Scene* scene)
+{
+  (void)scene;
+  std::cout << "Click" << std::endl;
+}
 
 void			GameEvent::down(Scene* scene)
 {
