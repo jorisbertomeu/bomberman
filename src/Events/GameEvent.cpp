@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 22:34:17 2015 Joris Bertomeu
+// Last update Wed Jun 10 20:18:07 2015 mari_f
 //
 
 #include		<GameEvent.hh>
@@ -41,6 +41,17 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
 	  std::cout << "x :" << input.getMousePosition().x << std::endl;
 	  std::cout << "y : " << input.getMousePosition().y << std::endl;
 	  return (true);
+	}
+      else
+	{
+	  std::list<AEntity*> list;
+	  list = scene->getEntities();
+	  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
+	       it++)
+	    {
+	      if ((*it)->getType() == AEntity::BOMBERMAN)
+		dynamic_cast<Bomberman*>((*it))->isReleased();
+	    }
 	}
     }
   return (false);
