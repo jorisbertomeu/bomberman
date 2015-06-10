@@ -5,7 +5,7 @@
 ** Login   <mediav_j@epitech.net>
 ** 
 ** Started on  Fri May 22 15:07:06 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 18:02:35 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 17:59:35 2015 Jérémy Mediavilla
 */
 
 #ifndef		_PARSERXML_HH_
@@ -45,6 +45,10 @@ public:
   bool			checkMultipleTag();
   bool			foreach(const std::string &);
   std::string		getNodeName();
+  bool			isNum(const std::string &);
+  bool			isFloatNum(const std::string &);
+  bool			isBool(const std::string &);
+  bool			isGoodEnd(const std::string &, const std::string &);
 
 private:
   t_tag			*getMultipleTag();
