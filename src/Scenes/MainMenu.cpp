@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 23:17:18 2015 mari_f
+// Last update Wed Jun 10 12:41:29 2015 Joris Bertomeu
 //
 
 #include	<MainMenu.hh>
