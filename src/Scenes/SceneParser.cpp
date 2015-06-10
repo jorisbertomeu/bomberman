@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 23:52:13 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 14:37:57 2015 Jérémy Mediavilla
 //
 
 #include "SceneParser.hh"
@@ -57,6 +57,7 @@ Scene		*SceneParser::getScene(RenderManager *rm)
     {
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
+      rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"));
       std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
       std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;

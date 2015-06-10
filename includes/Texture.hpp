@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Tue May 26 18:34:31 2015 Geoffrey Merran
+// Last update Wed Jun 10 14:38:30 2015 Jérémy Mediavilla
 //
 
 #ifndef		_TEXTURE_HPP_

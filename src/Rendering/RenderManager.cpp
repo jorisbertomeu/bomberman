@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Tue Jun  9 22:21:15 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 14:28:22 2015 Jérémy Mediavilla
 //
 
 #include <RenderManager.hh>
@@ -69,4 +69,9 @@ TimeManager&		RenderManager::getTimeManager()
 SoundManager&		RenderManager::getSoundManager()
 {
   return (this->_soundManager);
+}
+
+TextureManager&		RenderManager::getTextureManager()
+{
+  return (this->_textureManager);
 }
