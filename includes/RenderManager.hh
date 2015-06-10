@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Tue Jun  9 22:20:22 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 14:26:38 2015 Jérémy Mediavilla
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -45,6 +45,7 @@ public:
   ModelManager&		getModelManager();
   TimeManager&		getTimeManager();
   SoundManager&		getSoundManager();
+  TextureManager&	getTextureManager();
 };
 
 #endif			/* _RENDERMANAGER_HH */

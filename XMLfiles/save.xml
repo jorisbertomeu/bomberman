@@ -4,14 +4,19 @@
       <attribut>
         <speed>0</speed>
         <jump>0</jump>
+<<<<<<< HEAD
+        <weight>-1087595459</weight>
+        <friction>9.8067e-37</friction>
+=======
         <weight>0</weight>
-        <friction>0</friction>
+        <friction>9.46428e-37</friction>
+>>>>>>> 0db3541b617d373a136b0cc6e0ade908c26473e4
         <move>0</move>
         <ability>NONE</ability>
-        <range>0</range>
+        <range>-7.65078</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>0</health>
+      <health>1107737797</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
