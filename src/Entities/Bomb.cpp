@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Fri Jun 12 03:43:33 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:06:29 2015 Jérémy Mediavilla
 //
 
 #include <Bomb.hh>
@@ -46,7 +46,8 @@ void		Bomb::draw(RenderManager & rm)
   (void) rm;
 }
 
-void		Bomb::update(gdl::Clock & clock)
+void		Bomb::update(gdl::Clock & clock, Scene *scene)
 {
+  (void)scene;
   (void) clock;
 }

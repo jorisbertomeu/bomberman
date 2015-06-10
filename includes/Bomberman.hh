@@ -5,11 +5,13 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Fri Jun 12 14:45:02 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:55:32 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOMBERMAN_H_
 # define _BOMBERMAN_H_
+
+class		Bomberman;
 
 # include <AEntity.hh>
 # include <Scene.hh>
@@ -39,7 +41,7 @@ public:
   void		isTurningBack(const int &);
 
   virtual void 	draw(RenderManager & rm);
-  virtual void 	update(gdl::Clock &);
+  virtual void 	update(gdl::Clock &, Scene *);
 
 protected:
   std::string	_name;

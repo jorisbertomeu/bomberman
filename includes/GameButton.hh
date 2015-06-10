@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:40:47 2015 Valérian Polizzi
-// Last update Fri Jun 12 04:00:38 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:31:46 2015 Jérémy Mediavilla
 //
 
 #ifndef _GAMEBUTTON_HH_
@@ -19,7 +19,7 @@ public:
   GameButton(const glm::vec3 &, const std::string &);
   ~GameButton();
 
-  virtual void	       	update(gdl::Clock &);
+  virtual void	       	update(gdl::Clock &, Scene *);
 
   void			setCurrent(const bool &);
   const bool &      	getCurrent();

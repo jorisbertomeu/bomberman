@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Fri Jun 12 03:46:34 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:30:16 2015 Jérémy Mediavilla
 //
 
 #ifndef		PAVEMENT_HH_
@@ -41,7 +41,7 @@ public:
   float			getDepth();
 
   virtual void		draw(RenderManager &);
-  virtual void		update(gdl::Clock &);
+  virtual void		update(gdl::Clock &, Scene *);
 };
 
 #endif
