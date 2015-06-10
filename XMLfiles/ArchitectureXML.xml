@@ -33,6 +33,11 @@
      <online>0</online>
      <file>assets/sounds/jump.mp3</file>
    </sound>
+   <sound>
+     <id>AMBIANT_SOUND</id>
+     <online>0</online>
+     <file>assets/sounds/music.mp3</file>
+   </sound>
  </sound_pack>
  <common>
    <width>1000</width>

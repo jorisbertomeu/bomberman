@@ -1,11 +1,11 @@
 //
 // Thread.hpp for  in /home/mediav_j/rendu/cpp_plazza/includes
-// 
+//
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-// 
+//
 // Started on  Tue Apr 21 16:24:49 2015 Jérémy Mediavilla
-// Last update Sat Apr 25 11:19:17 2015 Joris Bertomeu
+// Last update Wed Jun 10 08:16:34 2015 Joris Bertomeu
 //
 
 #ifndef			_THREADC_HPP_
@@ -20,7 +20,7 @@ private:
 
 public:
   explicit		ThreadC() {
-    
+
   };
   virtual		~ThreadC() {
     pthread_exit(&this->_thread);
