@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Wed Jun 10 05:19:21 2015 Joris Bertomeu
+// Last update Wed Jun 10 05:41:55 2015 Joris Bertomeu
 //
 
 #include <HitBox.hh>
@@ -85,29 +85,11 @@ void	Hitbox::updateHitbox(void *entityp)
 
 bool	Hitbox::checkCollisionForPoint(glm::vec3 point)
 {
-  if ((point.x >= this->_c1.x &&
-       point.x <= this->_c2.x &&
-       point.y >= this->_c1.y &&
-       point.y <= this->_c2.y &&
-       point.z >= this->_c1.z &&
-       point.z <= this->_c2.z) ||
-      (point.x >= this->_c3.x && // NEW
-       point.x <= this->_c4.x &&
-       point.y >= this->_c3.y &&
-       point.y <= this->_c4.y &&
-       point.z >= this->_c3.z &&
-       point.z <= this->_c4.z &&
-       point.x >= this->_c5.x) || // NEW
-      (point.x <= this->_c6.x &&
-       point.y >= this->_c5.y &&
-       point.y <= this->_c6.y &&
-       point.z >= this->_c5.z &&
-       point.z <= this->_c6.z &&
-       point.x >= this->_c7.x) || // NEW
-      (point.x <= this->_c8.x &&
-       point.y >= this->_c7.y &&
+  if ((point.x >= this->_c6.x &&
+       point.x <= this->_c8.x &&
+       point.y >= this->_c6.y &&
        point.y <= this->_c8.y &&
-       point.z >= this->_c7.z &&
+       point.z >= this->_c6.z &&
        point.z <= this->_c8.z))
     return (true);
   return (false);

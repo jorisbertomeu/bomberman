@@ -56,8 +56,8 @@
     </sound>
   </sound_pack>
   <common>
-    <width>100</width>
-    <height>100</height>
+    <width>1000</width>
+    <height>1000</height>
     <gravity>0</gravity>
     <friction>3</friction>
     <skybox>
@@ -1145,33 +1145,6 @@
       <x>0.3</x>
       <y>0.3</y>
       <z>0.3</z>
-    </size>
-  </entity>
-  <entity>
-    <attribut>
-      <speed>0</speed>
-      <jump>0</jump>
-      <weight>200</weight>
-      <friction>1</friction>
-      <move>0</move>
-      <ability>NONE</ability>
-      <range>0</range>
-      <bonus>NONE</bonus>
-    </attribut>
-    <health>100</health>
-    <type>BRICK_WALL</type>
-    <name>Tony</name>
-    <model>idBoxModel</model>
-    <texture>NULL</texture>
-    <position>
-      <x>300</x>
-      <y>0</y>
-      <z>300</z>
-    </position>
-    <size>
-      <x>1</x>
-      <y>1</y>
-      <z>1</z>
     </size>
   </entity>
   </entities>
