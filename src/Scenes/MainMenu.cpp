@@ -5,10 +5,11 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sat Jun 13 03:25:17 2015 Geoffrey Merran
+// Last update Wed Jun 10 17:52:50 2015 Joris Bertomeu
 //
 
 #include	<MainMenu.hh>
+#include	<HttpRequest.hh>
 
 MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
@@ -58,6 +59,10 @@ MainMenu::~MainMenu()
 void			MainMenu::initialize()
 {
   this->_cm->moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
+  HttpRequest	req("http://jobertomeu.fr/generatePreview.php?id=63NEUDdFF3&text=Joris%20Bertomeu", "toto.png");
+
+  if (!req.exec())
+    std::cerr << "Error while fetching map Preview" << std::endl;
 }
 
 int			MainMenu::getListSize() const
