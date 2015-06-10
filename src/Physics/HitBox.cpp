@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Tue Jun  9 19:04:53 2015 Joris Bertomeu
+// Last update Tue Jun  9 20:58:03 2015 Joris Bertomeu
 //
 
 #include <HitBox.hh>
@@ -14,6 +14,16 @@
 #include <Scene.hh>
 
 Hitbox::Hitbox(void *entityp)
+{
+  updateHitbox(entityp);
+}
+
+Hitbox::~Hitbox()
+{
+
+}
+
+void	Hitbox::updateHitbox(void *entityp)
 {
   AEntity *entity = (AEntity *)entityp;
   AEntity::EntityType type = entity->getType();
@@ -66,17 +76,73 @@ Hitbox::Hitbox(void *entityp)
     }
 }
 
-Hitbox::~Hitbox()
-{
-
-}
-
 bool	Hitbox::checkCollision(void *scenep)
 {
   Scene *scene = (Scene*) scenep;
 
-  for (std::list<AEntity *>::iterator it = scene->getEntities().begin(); it != scene->getEntities().end(); ++it) {
-    if (this->_c1.x >= (*it)->getHitbox()->_c2.x || this->_c2.x <= (*it)->getHitbox()->_c1.x || this->_c1.z >= (*it)->getHitbox()->_c2.z || this->_c6.z <= (*it)->getHitbox()->_c1.z)
+  std::list<AEntity*> list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
+    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL)
       continue;
+    if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c1.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c1.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c1.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c1.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c1.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c2.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c2.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c2.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c2.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c2.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c3.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c3.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c3.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c3.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c3.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c4.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c4.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c4.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c4.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c4.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c5.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c5.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c5.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c5.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c5.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c6.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c6.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c6.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c6.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c6.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c7.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c7.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c7.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c7.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c7.z <= this->_c8.z) {
+      return (true);
+    } else if ((*it)->getHitbox()->_c1.x >= this->_c6.x &&
+	(*it)->getHitbox()->_c8.x <= this->_c8.x &&
+	(*it)->getHitbox()->_c8.y >= this->_c6.y &&
+	(*it)->getHitbox()->_c8.y <= this->_c8.y &&
+	(*it)->getHitbox()->_c8.z >= this->_c6.z &&
+	(*it)->getHitbox()->_c8.z <= this->_c8.z) {
+      return (true);
+    } else {
+      continue;
+    }
   }
+  return (false);
 }

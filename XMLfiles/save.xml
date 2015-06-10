@@ -4,19 +4,14 @@
       <attribut>
         <speed>0</speed>
         <jump>0</jump>
-<<<<<<< HEAD
-        <weight>-1087595459</weight>
-        <friction>9.8067e-37</friction>
-=======
-        <weight>0</weight>
-        <friction>9.46428e-37</friction>
->>>>>>> 0db3541b617d373a136b0cc6e0ade908c26473e4
+        <weight>1074790400</weight>
+        <friction>0</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>-7.65078</range>
+        <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>1107737797</health>
+      <health>0</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
@@ -49,9 +44,9 @@
       <model>idBombermanModel</model>
       <texture>NULL</texture>
       <position>
-        <x>5</x>
+        <x>50</x>
         <y>0</y>
-        <z>5</z>
+        <z>80</z>
       </position>
       <size>
         <x>0.3</x>

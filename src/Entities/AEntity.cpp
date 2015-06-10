@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Tue Jun  9 19:01:28 2015 Joris Bertomeu
+// Last update Tue Jun  9 20:23:05 2015 Joris Bertomeu
 //
 
 #include <AEntity.hh>

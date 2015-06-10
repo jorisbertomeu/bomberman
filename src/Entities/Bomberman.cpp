@@ -1,11 +1,11 @@
 //
 // Bomberman.cpp for  in /home/parallels/Tek2/CPP/bomberman/src
-// 
+//
 // Made by Nicolas Adès
 // Login   <ades_n@epitech.net>
-// 
+//
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Tue Jun  9 21:33:38 2015 Geoffrey Merran
+// Last update Tue Jun  9 20:39:54 2015 Joris Bertomeu
 //
 
 #include <Bomberman.hh>
@@ -41,6 +41,7 @@ void		Bomberman::moveRight()
       this->_dir = RIGHT;
     }
   this->translate(glm::vec3(1, 0, 0) * this->_speed);
+  this->_hitbox->updateHitbox(this);
 }
 
 void		Bomberman::moveLeft()
@@ -51,6 +52,7 @@ void		Bomberman::moveLeft()
       this->_dir = LEFT;
     }
   this->translate(glm::vec3(-1, 0, 0) * this->_speed);
+  this->_hitbox->updateHitbox(this);
 }
 
 void		Bomberman::moveBack()
@@ -61,6 +63,7 @@ void		Bomberman::moveBack()
       this->_dir = DOWN;
     }
   this->translate(glm::vec3(0, 0, 1) * this->_speed);
+  this->_hitbox->updateHitbox(this);
 }
 
 void		Bomberman::moveFront()
@@ -71,6 +74,7 @@ void		Bomberman::moveFront()
       this->_dir = UP;
     }
   this->translate(glm::vec3(0, 0, -1) * this->_speed);
+  this->_hitbox->updateHitbox(this);
 }
 
 void		Bomberman::jump()
