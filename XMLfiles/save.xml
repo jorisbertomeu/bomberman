@@ -7,14 +7,14 @@ TEXTURE
       <attribut>
         <speed>0</speed>
         <jump>0</jump>
-        <weight>0</weight>
-        <friction>1.81762e-37</friction>
+        <weight>32605</weight>
+        <friction>-4.70693e-09</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>1.81762e-37</range>
+        <range>-4.70693e-09</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>0</health>
+      <health>1055937282</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>

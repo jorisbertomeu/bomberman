@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 04:37:01 2015 Joris Bertomeu
+// Last update Wed Jun 10 11:28:19 2015 Joris Bertomeu
 //
 
 #include	"Scene.hh"
@@ -13,6 +13,7 @@
 Scene::Scene()
 {
   this->_eventHandler = NULL;
+  this->_first = true;
 }
 
 Scene::~Scene()
@@ -46,6 +47,10 @@ IEvent*		Scene::getEventHandler()
 
 void  	      	Scene::draw(RenderManager & rm)
 {
+  if (this->_first) {
+    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->play();
+    this->_first = false;
+  }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
 }

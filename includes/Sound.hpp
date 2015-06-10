@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Wed Jun 10 11:03:12 2015 Joris Bertomeu
+// Last update Wed Jun 10 11:43:56 2015 Joris Bertomeu
 //
 
 #ifndef				_SOUND_HH_
@@ -84,7 +84,7 @@ public:
   };
 
   void				play() {
-    if (this->_rawSound) {
+    if (!this->_rawSound) {
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }

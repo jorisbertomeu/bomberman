@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 04:18:41 2015 Joris Bertomeu
+// Last update Wed Jun 10 11:17:47 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -57,8 +57,6 @@ bool	SceneManager::setCurrentScene(std::string sceneId)
   }
   return (false);
 }
-
-
 
 bool	SceneManager::setCurrentScene(std::string sceneId, Scene *scene)
 {
