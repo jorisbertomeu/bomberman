@@ -4,14 +4,14 @@
       <attribut>
         <speed>0</speed>
         <jump>1</jump>
-        <weight>1057173336</weight>
-        <friction>0</friction>
-        <move>1</move>
+        <weight>0</weight>
+        <friction>1.34353e-36</friction>
+        <move>0</move>
         <ability>NONE</ability>
-        <range>0.619617</range>
+        <range>1.34353e-36</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>1058867834</health>
+      <health>1089786675</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
@@ -49,9 +49,9 @@
         <z>80</z>
       </position>
       <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
+        <x>0.1</x>
+        <y>0.1</y>
+        <z>0.1</z>
       </size>
     </entity>
     <entity>

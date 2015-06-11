@@ -103,5 +103,5 @@ void	       	Bomberman::draw(RenderManager & rm)
 
 void		Bomberman::isReleased()
 {
-  printf("RELEASEED\n");
+  printf("RELEASEED TIME: %d\n", time(NULL));
 }
