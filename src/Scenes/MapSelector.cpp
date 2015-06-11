@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 03:47:52 2015 Geoffrey Merran
-// Last update Sat Jun 13 21:20:48 2015 Geoffrey Merran
+// Last update Sun Jun 14 00:13:55 2015 Geoffrey Merran
 //
 
 #include <MapSelector.hh>
@@ -85,9 +85,17 @@ void				MapSelector::prevMap()
 std::list<std::string>		MapSelector::get3Maps()
 {
   std::list<std::string>	texturesList;
+
+  if (!this->hasFoundMap())
+    {
+      texturesList.push_back("hidden");
+      texturesList.push_back("hidden");
+      texturesList.push_back("hidden");
+      return (texturesList);
+    }
+
   std::list<Map>::iterator	it = this->getCurrent();
   int				i = 0;
-
   if (it == this->_maps.begin())
     {
       texturesList.push_back("hidden");

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Wed Jun 10 12:20:02 2015 Joris Bertomeu
+// Last update Sun Jun 14 01:48:20 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -34,7 +34,7 @@ void		Bomberman::dropBomb(Scene* scene)
   scene->addEntity(new Bomb(this->_pos));
 }
 
-void		Bomberman::moveRight()
+void		Bomberman::moveRight(gdl::Clock& clock)
 {
   if (this->_dir != RIGHT)
     {
@@ -44,11 +44,11 @@ void		Bomberman::moveRight()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.03);
-  this->translate(glm::vec3(1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
+  this->translate((glm::vec3(1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction())) * static_cast<float>(clock.getElapsed()));
   this->_hitbox->updateHitbox(this);
 }
 
-void		Bomberman::moveLeft()
+void		Bomberman::moveLeft(gdl::Clock& clock)
 {
   if (this->_dir != LEFT)
     {
@@ -58,11 +58,11 @@ void		Bomberman::moveLeft()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(-1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
+  this->translate((glm::vec3(-1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction())) * static_cast<float>(clock.getElapsed()));
   this->_hitbox->updateHitbox(this);
 }
 
-void		Bomberman::moveBack()
+void		Bomberman::moveBack(gdl::Clock& clock)
 {
   if (this->_dir != DOWN)
     {
@@ -72,11 +72,11 @@ void		Bomberman::moveBack()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(0, 0, 1) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
+  this->translate((glm::vec3(0, 0, 1) * ((this->_speed * this->getAcceleration()) - this->getFriction())) * static_cast<float>(clock.getElapsed()));
   this->_hitbox->updateHitbox(this);
 }
 
-void		Bomberman::moveFront()
+void		Bomberman::moveFront(gdl::Clock& clock)
 {
   if (this->_dir != UP)
     {
@@ -86,7 +86,7 @@ void		Bomberman::moveFront()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(0, 0, -1) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
+  this->translate((glm::vec3(0, 0, -1) * ((this->_speed * this->getAcceleration()) - this->getFriction())) * static_cast<float>(clock.getElapsed()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -120,7 +120,7 @@ void		Bomberman::update(gdl::Clock & clock, Scene *scene)
   //   model.setCurrentAnim("stop", false);
 }
 
-void		Bomberman::isReleased(Scene *scene)
+void		Bomberman::isReleased(Scene *scene, gdl::Clock &clock)
 {
   glm::vec3	old = this->_pos;
 
@@ -130,19 +130,19 @@ void		Bomberman::isReleased(Scene *scene)
   switch (this->_dir)
     {
     case (Bomberman::UP) :
-      this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
+      this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()) * static_cast<float>(clock.getElapsed()));
       this->_hitbox->updateHitbox(this);
       break;
     case (Bomberman::RIGHT) :
-      this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
+      this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()) * static_cast<float>(clock.getElapsed()));
       this->_hitbox->updateHitbox(this);
       break;
     case (Bomberman::DOWN) :
-      this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
+      this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()) * static_cast<float>(clock.getElapsed()));
       this->_hitbox->updateHitbox(this);
       break;
     case (Bomberman::LEFT) :
-      this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
+      this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()) * static_cast<float>(clock.getElapsed()));
       this->_hitbox->updateHitbox(this);
       break;
     }
