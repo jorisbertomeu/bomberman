@@ -12,7 +12,7 @@
 
 PhysicSolid::PhysicSolid()
 {
-
+  this->_acceleration = 0;
 }
 
 PhysicSolid::~PhysicSolid()
@@ -20,14 +20,16 @@ PhysicSolid::~PhysicSolid()
 
 }
 
-glm::vec3	PhysicSolid::getAcceleration()
+float	PhysicSolid::getAcceleration()
 {
   return (this->_acceleration);
 }
 
-void		PhysicSolid::setAcceleration(const glm::vec3 & acceleration)
+void		PhysicSolid::setAcceleration(const float & acceleration)
 {
   this->_acceleration = acceleration;
+  if (this->_acceleration >= 1.5)
+    this->_acceleration = 1.5;
 }
 
 float		PhysicSolid::getWeight()
