@@ -1,11 +1,11 @@
 //
 // Scene.hh for  in /home/mediav_j/mabm/bomberman
-// 
+//
 // Made by Jérémy Mediavilla
 // Login   <mediav_j@epitech.net>
-// 
+//
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 18:30:45 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 17:32:39 2015 Valérian Polizzi
 //
 
 #ifndef			_SCENE_HH_
@@ -23,7 +23,6 @@ class			Scene
 {
 private:
   std::list<AEntity*>	_entityList;
-
 public:
   explicit		Scene();
   virtual		~Scene();
