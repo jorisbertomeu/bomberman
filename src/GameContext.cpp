@@ -38,8 +38,8 @@ bool		GameContext::addScene(const std::string &path)
   (void)path;
   this->_inputManager.addEvent(new CommonEvent());
   this->_inputManager.addEvent(new GameEvent());
-  return (this->_sceneManager.setCurrentScene(new MainMenu()));
-  //return (this->_sceneManager.loadSceneFromFile(SceneManager::MAP, path));
+  //return (this->_sceneManager.setCurrentScene(new MainMenu()));
+  return (this->_sceneManager.loadSceneFromFile(SceneManager::MAP, path));
 }
 
 void		GameContext::updateScene(gdl::Input & input)
