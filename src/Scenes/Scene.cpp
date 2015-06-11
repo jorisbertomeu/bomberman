@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 02:04:34 2015 Joris Bertomeu
+// Last update Thu Jun 11 02:24:10 2015 Joris Bertomeu
 //
 
 #include	<CameraManager.hh>
@@ -59,7 +59,7 @@ IEvent*		Scene::getEventHandler()
 void  	      	Scene::draw(RenderManager & rm)
 {
   if (!this->_first) {
-    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->setVolume(0);
+    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->pause();
     this->_first = true;
   }
   if (!this->_renderManager)
