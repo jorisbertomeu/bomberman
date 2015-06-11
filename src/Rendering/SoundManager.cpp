@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Tue May 26 17:39:02 2015 Geoffrey Merran
-// Last update Wed Jun 10 10:53:35 2015 Joris Bertomeu
+// Last update Wed Jun 10 21:36:07 2015 Joris Bertomeu
 //
 
 #include <SoundManager.hh>
@@ -32,9 +32,12 @@ bool		SoundManager::addSound(Sound *sound)
   return (true);
 }
 
-bool		SoundManager::addSoundFromFile(const std::string &filename)
+bool		SoundManager::addSoundFromFile(const std::string &filename, const Sound::SoundType &type)
 {
-  (void) filename;
+  Sound		*sound;
+
+  sound = new Sound(type, false, filename, this->_system);
+  this->addSound(sound);
   return (true);
 }
 
