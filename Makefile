@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Tue Jun  9 22:04:02 2015 Joris Bertomeu
+## Last update Thu Jun 11 19:06:49 2015 Geoffrey Merran
 ##
 
-CXX		=	clang++
+CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -g3
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes
 
 RM		=	rm -f
 

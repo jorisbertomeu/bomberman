@@ -5,17 +5,18 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Tue Jun  9 20:39:54 2015 Joris Bertomeu
+// Last update Thu Jun 11 19:07:56 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
 #include <Bomb.hh>
 #include <SceneManager.hh>
+#include <PhysicSolid.hh>
 
 Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
-  this->_scale = glm::vec3(0.3, 0.3, 0.3);
+  this->_scale = glm::vec3(0.1, 0.1, 0.1);
 }
 
 Bomberman::~Bomberman()
@@ -40,7 +41,9 @@ void		Bomberman::moveRight()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - RIGHT));
       this->_dir = RIGHT;
     }
-  this->translate(glm::vec3(1, 0, 0) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -51,7 +54,9 @@ void		Bomberman::moveLeft()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - LEFT));
       this->_dir = LEFT;
     }
-  this->translate(glm::vec3(-1, 0, 0) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -62,7 +67,9 @@ void		Bomberman::moveBack()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - DOWN));
       this->_dir = DOWN;
     }
-  this->translate(glm::vec3(0, 0, 1) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -73,7 +80,9 @@ void		Bomberman::moveFront()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - UP));
       this->_dir = UP;
     }
-  this->translate(glm::vec3(0, 0, -1) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -88,6 +97,10 @@ void	       	Bomberman::draw(RenderManager & rm)
 
   if (model == NULL)
     throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
-  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed() * 2);
+  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
+}
 
+void		Bomberman::isReleased()
+{
+  std::cout << "RELEASEED TIME: " << time(NULL) << std::endl;
 }

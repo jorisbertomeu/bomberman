@@ -68,7 +68,7 @@
   <entities>
   <entity>
     <attribut>
-      <speed>10</speed>
+      <speed>2</speed>
       <jump>0</jump>
       <weight>200</weight>
       <friction>1</friction>
@@ -88,9 +88,9 @@
       <z>80</z>
     </position>
     <size>
-      <x>0.3</x>
-      <y>0.3</y>
-      <z>0.3</z>
+      <x>0.1</x>
+      <y>0.1</y>
+      <z>0.1</z>
     </size>
   </entity>
   <entity>
@@ -1168,9 +1168,9 @@
       <z>300</z>
     </position>
     <size>
-      <x>0.3</x>
-      <y>0.3</y>
-      <z>0.3</z>
+      <x>1</x>
+      <y>1</y>
+      <z>1</z>
     </size>
   </entity>
   </entities>

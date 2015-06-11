@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Wed Jun 10 14:28:22 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 18:05:58 2015 Jérémy Mediavilla
 //
 
 #include <RenderManager.hh>
