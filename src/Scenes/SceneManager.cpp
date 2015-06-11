@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 18:26:04 2015 Jérémy Mediavilla
 //
 
 #include	<SceneManager.hh>
@@ -38,7 +38,7 @@ bool	SceneManager::loadSceneFromFile(SceneManager::SCENE_TYPE type,
   newScene->listAllEntities();
   this->_scenes.insert(std::pair<SceneManager::SCENE_TYPE, Scene*>(type, newScene));
   this->_currentScene = newScene;
-  newScene->save();
+  newScene->save(this->_renderManager);
   return (true);
 }
 

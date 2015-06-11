@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Wed Jun 10 14:38:30 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 18:58:12 2015 Jérémy Mediavilla
 //
 
 #ifndef		_TEXTURE_HPP_
@@ -31,6 +31,9 @@ public:
 
   virtual	~Texture(void) {
 
+  }
+  bool		save(std::fstream &fs) {
+    fs << "TEXTURE" << std::endl;
   }
 };
 
