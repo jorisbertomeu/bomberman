@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Thu Jun 11 19:59:05 2015 Geoffrey Merran
+// Last update Thu Jun 11 20:09:27 2015 Geoffrey Merran
 //
 
 #ifndef		_TEXTURE_HPP_
@@ -33,7 +33,7 @@ public:
 
   }
 
-  gdl::Texture	getTexture()  {
+  gdl::Texture&	getTexture()  {
     return (this->_t);
   }
   std::string	getFilename() {
