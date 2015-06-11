@@ -5,16 +5,20 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Wed Jun 10 06:23:56 2015 Joris Bertomeu
+// Last update Sun Jun 14 11:18:21 2015 Jérémy Mediavilla
 //
 
 #include <AEntity.hh>
 #include <Bomberman.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type) : _pos(glm::vec3(pos.x, pos.y, pos.z)), _modelId(""), _type(type)
+AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type)
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
+  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
+    this->_pos = glm::vec3(pos.x, pos.y + 10, pos.z);
+  else
+    this->_pos = glm::vec3(pos.x, pos.y, pos.z);
   if (type != AEntity::PAVEMENT)
     this->_hitbox = new Hitbox(this);
 }

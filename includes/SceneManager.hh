@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Sat Jun 13 23:57:33 2015 Geoffrey Merran
+// Last update Sun Jun 14 12:23:12 2015 Jérémy Mediavilla
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -33,10 +33,12 @@ public:
 private:
   std::map<std::string, Scene*>	_scenes;
   Scene				*_currentScene;
-  RenderManager			*_renderManager;
   InputManager			*_inputManager;
   CameraManager			*_cm;
   int				*_running;
+
+public:
+  RenderManager			*_renderManager;
 
 public:
   explicit			SceneManager();

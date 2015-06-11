@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Tue May 26 17:39:02 2015 Geoffrey Merran
-// Last update Wed Jun 10 21:36:07 2015 Joris Bertomeu
+// Last update Sun Jun 14 12:48:46 2015 Jérémy Mediavilla
 //
 
 #include <SoundManager.hh>
@@ -28,6 +28,7 @@ bool		SoundManager::initialize()
 
 bool		SoundManager::addSound(Sound *sound)
 {
+  std::cout << "Sound added" << std::endl;
   this->_sounds.push_back(sound);
   return (true);
 }
@@ -48,9 +49,13 @@ FMOD_SYSTEM	*SoundManager::getSystem() const
 
 Sound		*SoundManager::getSoundOf(Sound::soundType type)
 {
+  if (this->_sounds.size() == 0)
+    return (NULL);
   for (std::list<Sound*>::iterator it = this->_sounds.begin(); it != this->_sounds.end(); ++it) {
     if ((*it)->getType() == type)
-      return ((*it));
+      {
+	return ((*it));
+      }
   }
   return (NULL);
 }

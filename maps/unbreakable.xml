@@ -31,6 +31,11 @@
       <online>0</online>
       <file>assets/models/marvin.fbx</file>
     </model>
+    <model>
+      <id>idBombModel</id>
+      <online>0</online>
+      <file>assets/models/bomb.fbx</file>
+    </model>
   </model_pack>
   <sound_pack>
    <sound>
@@ -53,7 +58,7 @@
       <speed>150</speed>
       <jump>1</jump>
       <weight>200</weight>
-      <friction>0.015</friction>
+      <friction>0.03</friction>
       <move>1</move>
       <ability>NONE</ability>
       <range>0</range>
@@ -7012,6 +7017,33 @@
       <x>0.4</x>
       <y>0.4</y>
       <z>0.4</z>
+    </size>
+  </entity>
+  <entity>
+    <attribut>
+      <speed>150</speed>
+      <jump>1</jump>
+      <weight>200</weight>
+      <friction>1</friction>
+      <move>1</move>
+      <ability>NONE</ability>
+      <range>0</range>
+      <bonus>NONE</bonus>
+    </attribut>
+    <health>100</health>
+    <type>BOT</type>
+    <name>Tony</name>
+    <model>idBombermanModel</model>
+    <texture>NULL</texture>
+    <position>
+      <x>600</x>
+      <y>0</y>
+      <z>750</z>
+    </position>
+    <size>
+      <x>0.1</x>
+      <y>0.1</y>
+      <z>0.1</z>
     </size>
   </entity>
   </entities>

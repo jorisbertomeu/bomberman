@@ -5,16 +5,21 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 23:05:46 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 13:34:30 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
+#include <Bomb.hh>
 
-Bot::Bot(glm::vec3 pos, const std::string &name) : Bomberman(pos, name)
+Bot::Bot(glm::vec3 pos, const std::string &name, ModelManager& modelManager) : Bomberman(pos, name, modelManager)
 {
   std::cout << "New Bot created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_name = name;
   this->_type = BOT;
+  this->_isBusy = false;
+  this->_timeDropped = 0;
+  this->_isArrived = false;
+  this->_nextCadrant = 0;
 }
 
 Bot::~Bot()
@@ -38,7 +43,7 @@ void		Bot::setColor(const std::string &color)
   this->_color = color;
 }
 
-std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, int yEnd)
+std::list<glm::vec2>		Bot::directTrajectory(glm::vec2 start, glm::vec2 end)
 {
   std::list<glm::vec2> posList;
 
@@ -49,107 +54,106 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
   int		x;
   int		y;
 
-  dx = abs(xEnd - xStart);
-  dy = abs(yEnd - yStart);
-  std::cout << dx << " - " << dy << std::endl;
-  if (xStart == xEnd)
+  dx = abs(end.x - start.x);
+  dy = abs(end.y - start.y);
+  if (start.x == end.x)
     {
-      if (yStart < yEnd + 1)
-	while (yStart != yEnd + 1)
+      if (start.y < end.y + 1)
+	while (start.y != end.y + 1)
 	  {
-	    posList.push_back(glm::vec2(xStart, yStart));
-	    yStart++;
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.y++;
 	  }
       else
-	while (yStart != yEnd)
+	while (start.y != end.y)
 	  {
-	    posList.push_back(glm::vec2(xStart, yStart));
-	    yStart--;
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.y--;
 	  }
     }
-  else if (yStart == yEnd)
+  else if (start.y == end.y)
     {
-      if (xStart < xEnd + 1)
-	while (xStart != xEnd + 1)
+      if (start.x < end.x + 1)
+	while (start.x != end.x + 1)
 	  {
-	    posList.push_back(glm::vec2(xStart, yStart));
-	    xStart++;
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.x++;
 	  }
       else
-	while (xStart != xEnd + 1)
+	while (start.x != end.x + 1)
 	  {
-	    posList.push_back(glm::vec2(xStart, yStart));
-	    xStart--;
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.x--;
 	  }
     }
   else
     {
       if (dx >= dy && dx != 0 && dy != 0)
 	{
-	  if (xStart > xEnd)
+	  if (start.x > end.x)
 	    {
-	      tmp = xStart;
-	      xStart = xEnd;
-	      xEnd = tmp;
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
 
-	      tmp = yStart;
-	      yStart = yEnd;
-	      yEnd = tmp;
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
 	    }
-	  a = ((float)(yEnd - yStart) / (xEnd - xStart));
+	  a = ((float)(end.y - start.y) / (end.x - start.x));
 	  for (int i = 0; i < (dx + 1); i++)
 	    {
-	      x = i + xStart;
-	      y = yStart + (a * i);
+	      x = i + start.x;
+	      y = start.y + (a * i);
 	      posList.push_back(glm::vec2(x, y));
 	    }
 	}
       if (dx < dy && dy != 0 && dx != 0)
 	{
-	  if (yStart > yEnd)
+	  if (start.y > end.y)
 	    {
-	      tmp = yStart;
-	      yStart = yEnd;
-	      yEnd = tmp;
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
 
-	      tmp = xStart;
-	      xStart = xEnd;
-	      xEnd = tmp;
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
 	    }
-	  a = ((float)(xEnd - xStart) / (yEnd - yStart));
+	  a = ((float)(end.x - start.x) / (end.y - start.y));
 	  for (int i = 0; i < (dy + 1); i++)
 	    {
-	      x = xStart + (i * a);
-	      y = i + yStart;
+	      x = start.x + (i * a);
+	      y = i + start.y;
 	      posList.push_back(glm::vec2(x, y));
 	    }
 	}
       if (dx == 0)
 	{
-	  if (xStart > xEnd)
+	  if (start.x > end.x)
 	    {
-	      tmp = xStart;
-	      xStart = xEnd;
-	      xEnd = tmp;
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
 	    }
-	  for (int i = yStart; i < (yEnd + 1); i++)
+	  for (int i = start.y; i < (end.y + 1); i++)
 	    {
-	      x = xStart;
+	      x = start.x;
 	      posList.push_back(glm::vec2(x, i));
 	    }
 	}
       if (dy == 0)
 	{
-	  if (yStart > yEnd)
+	  if (start.y > end.y)
 	    {
-	      tmp = yStart;
-	      yStart = yEnd;
-	      yEnd = tmp;
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
 	    }
-	  for (int i = xStart; i < (xEnd + 1); i++)
+	  for (int i = start.x; i < (end.x + 1); i++)
 	    {
 	      x = i;
-	      y = yStart;
+	      y = start.y;
 	      posList.push_back(glm::vec2(x, y));
 	    }
 	}
@@ -160,44 +164,134 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
 
 void		Bot::ia(Scene *scene)
 {
-  Bomberman	*bomberman;
-  std::list<glm::vec2> posList;
+  // Bomberman	*bomberman;
+  // std::list<glm::vec2> posList;
   
-  bomberman = static_cast<Bomberman *>(scene->getBomberman());
-  posList = this->directTrajectory(this->getPos().x, this->getPos().z, bomberman->getPos().x, bomberman->getPos().z);
-  if (((posList.front().x == this->getPos().x && posList.front().y == this->getPos().z)) || (posList.back().x == bomberman->getPos().x && posList.back().y == bomberman->getPos().z))
-    this->setPosList(posList);
-  else
+  // bomberman = static_cast<Bomberman *>(scene->getBomberman());
+  // posList = this->directTrajectory(this->getPos().x, this->getPos().z, bomberman->getPos().x, bomberman->getPos().z);
+  // if (((posList.front().x == this->getPos().x && posList.front().y == this->getPos().z)) || (posList.back().x == bomberman->getPos().x && posList.back().y == bomberman->getPos().z))
+  //   this->setPosList(posList);
+  // else
+  //   {
+  //     posList.reverse();
+  //     this->setPosList(posList);
+  //   }
+}
+
+void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
+{
+  int		cadrant;
+  Scene		*scene = (Scene *)scenep;
+  glm::vec3	oldPos;
+
+
+  if (this->getPos().x > static_cast<Bomberman*>(scene->getBomberman())->getPos().x - 10 &&
+      this->getPos().x < static_cast<Bomberman*>(scene->getBomberman())->getPos().x + 10 &&
+      this->getPos().z > static_cast<Bomberman*>(scene->getBomberman())->getPos().z - 10 &&
+      this->getPos().z < static_cast<Bomberman*>(scene->getBomberman())->getPos().z + 10 &&
+      !this->_isBusy) { 
+    this->_isArrived = true;
+    return(this->goAwayFromBomb(scene, cadrant));
+  }
+  oldPos = this->_pos;
+  cadrant = 0;
+  if (pos.z < this->_pos.z && pos.x > this->_pos.x)
     {
-      posList.reverse();
-      this->setPosList(posList);
+      if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
+      	{
+	  this->moveRight(clock);
+      	}
+      else
+	this->moveFront(clock);
+      cadrant = 1;
     }
+  else if (pos.z > this->_pos.z && pos.x > this->_pos.x)
+    {
+      if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
+      	{
+	  this->moveBack(clock);
+      	}
+      else
+	this->moveRight(clock);
+      cadrant = 2;
+    }
+  else if (pos.z > this->_pos.z && pos.x < this->_pos.x)
+    {
+      if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
+      	{
+	  this->moveLeft(clock);
+      	}
+      else
+	this->moveBack(clock);
+      cadrant = 3;
+    }
+  else if (pos.z < this->_pos.z && pos.x < this->_pos.x)
+    {
+      if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
+	{
+	  this->moveFront(clock);
+	}
+      else
+	this->moveLeft(clock);
+      cadrant = 4;
+    }
+  if (!this->_isArrived && (int)this->_pointToGo.x == (int)this->_pos.x && (int)this->_pointToGo.z == (int)this->_pos.z) {
+    this->_isArrived = true;
+    // this->_isBusy = false;
+  }
+  if (this->_isBusy && this->getHitbox()->checkCollision(scene)) {
+    this->_nextCadrant = this->_currentCadrant;
+    this->setPos(oldPos);
+    this->setAcceleration(0.01f);
+    this->_isBusy = false;
+  } else if (this->getHitbox()->checkCollision(scene)) {
+    this->setPos(oldPos);
+    this->setAcceleration(0.01f);
+    if (this->_isBusy)
+      this->_isBusy = false;
+    this->goAwayFromBomb(scene, cadrant);
+  }
 }
 
 void		Bot::update(gdl::Clock &clock, Scene *scene)
 {
-  glm::vec3	oldPos;
-  static int	i = 0;
-  if (i == 0)
-    {
-      this->ia(scene);
-      i++;
+  int		cadrant;
+
+  Bomberman::update(clock, scene);
+  if (this->_timeDropped != 0)
+    if (time(NULL) - this->_timeDropped >= 4 && this->_isArrived) {
+      this->_isBusy = false;
+      this->_timeDropped = 0;
     }
-  if (!this->_posList.empty())
+  if (!this->_isArrived && this->_isBusy)
     {
-      oldPos = this->getPos();
-      this->moveToPos(this->getPosList().front());
-      if (this->getHitbox()->checkCollision(scene))
-	{
-	  this->setPos(oldPos);
-	  this->ia(scene);
-	}
-      this->popFront();
+      this->goTo(clock, this->_pointToGo, scene);
+      return;
     }
-  else
-    this->ia(scene);
-  this->_hitbox->updateHitbox(this);
-  (void)clock;
+  else if (this->_isBusy)
+    return;
+  cadrant = 0;
+  this->goTo(clock, static_cast<Bomberman *>(scene->getBomberman())->getPos(), scene);
 }
 
 void	        Bot::moveToPos(const glm::vec2 &pos)
@@ -223,4 +317,75 @@ void		Bot::popBack()
 void		Bot::popFront()
 {
   this->_posList.pop_front();
+}
+
+float		Bot::calcAngle(const glm::vec3 &a, const glm::vec3 &b, const glm::vec3 &c)
+{
+  glm::vec2	vecAB;
+  glm::vec2	vecBC;
+  float		AB;
+  float		BC;
+
+  vecAB.x = b.x - a.x;
+  vecAB.y = b.z - a.z;
+  vecBC.x = c.x - b.x;
+  vecBC.y = c.z - b.z;
+
+  AB = sqrt(pow(b.x - a.x ,2) + pow(b.z - a.z ,2));
+  BC = sqrt(pow(c.x - b.x ,2) + pow(c.z - b.z ,2));
+  return (cos((-1 * (vecAB.x * vecBC.x + vecAB.y * vecBC.y)) / (AB * BC)) * 180 / 3.14159265f);
+}
+
+void		Bot::goAwayFromBomb(Scene *scene, const int &cadrant)
+{
+  if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z - 50)) && this->_nextCadrant != 1)
+    {
+      this->_currentCadrant = 1;
+      this->_pointToGo = glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z - 40);
+      this->_isBusy = true;
+      printf("En haut à droite\n");
+    }
+  else if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z + 50)) && this->_nextCadrant != 2)
+    {
+      this->_currentCadrant = 2;
+      this->_pointToGo = glm::vec3(this->_pos.x + 400, this->_pos.y, this->_pos.z + 40);
+      this->_isBusy = true;
+      printf("En bas à droite\n");
+    }
+  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 50, this->_pos.y, this->_pos.z + 50)) && this->_nextCadrant != 3)
+    {
+      this->_currentCadrant = 3;
+      this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z + 40);
+      this->_isBusy = true;
+      printf("En bas à gauche\n");
+    }
+  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 50, this->_pos.y, this->_pos.z - 50)) &&  this->_nextCadrant != 4)
+    {
+      this->_currentCadrant = 4;
+      this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z - 40);
+      this->_isBusy = true;
+      printf("En haut à gauche\n");
+    }
+  else
+    {
+      this->_nextCadrant = 0;
+      this->_isBusy = false;
+      printf("Je suis keblo\n");
+      return;
+    }
+  this->dropBomb(scene);
+  this->_timeDropped = time(NULL);
+  this->_isArrived = false;
+}
+
+bool		Bot::checkCollisionForLine(void *scenep, glm::vec3 start, glm::vec3 end)
+{
+  std::list<glm::vec2>	posList;
+  Scene		*scene = (Scene *)scenep;
+
+  posList = this->directTrajectory(glm::vec2(start.x, start.z), glm::vec2(end.x, end.z));
+  for (std::list<glm::vec2>::iterator it = posList.begin(); it != posList.end(); ++it)
+    if (this->getHitbox()->checkCollisionForPointForEntities(scene, glm::vec3((*it).x, this->getPos().y, (*it).y)))
+      return (true);
+  return (false);
 }
