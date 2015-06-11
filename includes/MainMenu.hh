@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 11:12:51 2015 Joris Bertomeu
-// Last update Mon Jun  8 09:50:19 2015 Valérian Polizzi
+// Last update Thu Jun 11 16:03:36 2015 Valérian Polizzi
 //
 
 #ifndef		_MAINMENU_HPP_
@@ -15,14 +15,22 @@
 # include	<Pavement.hh>
 # include	<list>
 
+# define	TOP_HEIGHT		800;
+# define	MARGIN			200;
+
 class		MainMenu : public	Scene
 {
 private:
-  Pavement	*_p1;
-  Pavement	*_p2;
+  std::list<Pavement*>	_buttons;
+  Pavement		*_cursor;
 public:
   explicit	MainMenu();
   virtual	~MainMenu();
+
+  void		initialize();
+  void		moveCursor();
+  Pavement     	*getCursor() const;
+  int		getListSize() const;
 };
 
 #endif

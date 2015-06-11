@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Tue Jun  9 20:39:54 2015 Joris Bertomeu
+// Last update Thu Jun 11 19:07:56 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -16,7 +16,7 @@
 Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
-  this->_scale = glm::vec3(0.3, 0.3, 0.3);
+  this->_scale = glm::vec3(0.1, 0.1, 0.1);
 }
 
 Bomberman::~Bomberman()
@@ -97,8 +97,7 @@ void	       	Bomberman::draw(RenderManager & rm)
 
   if (model == NULL)
     throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
-  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed() * 2);
-
+  model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
 }
 
 void		Bomberman::isReleased()

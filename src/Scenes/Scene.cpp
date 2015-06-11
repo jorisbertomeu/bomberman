@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 18:59:01 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 19:00:28 2015 Jérémy Mediavilla
 //
 
 #include	"Scene.hh"
@@ -48,7 +48,7 @@ void  	      	Scene::draw(RenderManager & rm)
     (*it)->draw(rm);
 }
 
-bool		Scene::save()
+bool		Scene::save(RenderManager *rm)
 {
   std::fstream	fs;
 
@@ -59,6 +59,13 @@ bool		Scene::save()
       return (false);
     }
   fs << "<scene>" << std::endl;
+  fs << "  <texture_pack>" << std::endl;
+  std::map<std::string, Texture *> textureList = rm->getTextureManager().getTextures();
+  for (std::map<std::string, Texture*>::iterator it = textureList.begin(); it != textureList.end(); ++it)
+    {
+      (*it->second).save(fs);
+    }
+  fs << "  </texture_pack>" << std::endl;
   fs << "  <entities>" << std::endl;
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
     {
