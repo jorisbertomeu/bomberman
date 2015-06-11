@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 01:22:32 2015 Joris Bertomeu
+// Last update Thu Jun 11 02:04:34 2015 Joris Bertomeu
 //
 
 #include	<CameraManager.hh>
@@ -20,7 +20,10 @@ Scene::Scene(CameraManager* cm) : _cm(cm)
 
 Scene::~Scene()
 {
-
+  if (_eventHandler)
+    delete _eventHandler;
+  for (std::list<AEntity*>::iterator it = _entityList.begin(); it != _entityList.end(); it++)
+    delete (*it);
 }
 
 void				Scene::initialize()

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 11:12:51 2015 Joris Bertomeu
-// Last update Wed Jun 10 14:16:19 2015 Joris Bertomeu
+// Last update Sat Jun 13 23:59:36 2015 Geoffrey Merran
 //
 
 #ifndef		_MAINMENU_HPP_
@@ -16,6 +16,7 @@
 # include				<Cloud.hh>
 # include				<list>
 # include				<MenuEvent.hh>
+# include				<LoadingScene.hh>
 
 class					MainMenu : public Scene
 {

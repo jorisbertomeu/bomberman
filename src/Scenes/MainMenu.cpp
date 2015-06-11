@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sat Jun 13 06:09:46 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:52:21 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>
@@ -138,6 +138,7 @@ void			MainMenu::selectButton(SceneManager *sm)
       return ;
       break;
     }
-  if (!sm->setCurrentScene(nextScene))
+  if (!sm->setCurrentScene("loadingScene"))
     std::cerr << "Error while loading scene: " << nextScene << std::endl;
+  dynamic_cast<LoadingScene*>(sm->getCurrentScene())->setSceneToLoad(nextScene);
 }

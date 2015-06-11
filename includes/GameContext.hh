@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:45:20 2015 Joris Bertomeu
-// Last update Sat Jun 13 01:12:08 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:59:01 2015 Geoffrey Merran
 //
 
 #ifndef		_GAMECONTEXT_HH_
@@ -18,6 +18,7 @@
 # include	<MainMenu.hh>
 # include	<EscapeMenu.hh>
 # include	<NewGameMenu.hh>
+# include	<LoadingScene.hh>
 
 class		GameContext
 {
