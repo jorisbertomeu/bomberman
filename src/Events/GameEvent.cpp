@@ -49,7 +49,7 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
        it++)
     if ((*it)->getType() == AEntity::BOMBERMAN)
-      dynamic_cast<Bomberman*>((*it))->isReleased();
+      dynamic_cast<Bomberman*>((*it))->isReleased(scene);
   return (false);
 }
 

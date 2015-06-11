@@ -100,8 +100,10 @@ void	       	Bomberman::draw(RenderManager & rm)
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
 }
 
-void		Bomberman::isReleased()
+void		Bomberman::isReleased(Scene *scene)
 {
+  glm::vec3	old = this->_pos;
+  
   if (this->getAcceleration() <= 0)
     return;
   this->setAcceleration(this->getAcceleration() - 0.01);  
@@ -124,4 +126,8 @@ void		Bomberman::isReleased()
       this->_hitbox->updateHitbox(this);
       break;
     }
+  if (this->getHitbox()->checkCollision(scene)) {
+    this->setPos(old);
+    this->setAcceleration(0.0f);
+  }
 }

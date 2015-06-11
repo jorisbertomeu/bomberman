@@ -35,7 +35,7 @@ public:
   void		moveBack();
   void		moveFront();
   void		jump();
-  void		isReleased();
+  void		isReleased(Scene *);
   virtual void 	draw(RenderManager & rm);
   
 protected:
