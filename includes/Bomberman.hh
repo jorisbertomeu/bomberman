@@ -35,8 +35,9 @@ public:
   void		moveBack();
   void		moveFront();
   void		jump();
+  void		isReleased();
   virtual void 	draw(RenderManager & rm);
-
+  
 protected:
   std::string	_name;
   Dir		_dir;

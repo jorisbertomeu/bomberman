@@ -11,6 +11,7 @@
 #include <Bomberman.hh>
 #include <Bomb.hh>
 #include <SceneManager.hh>
+#include <PhysicSolid.hh>
 
 Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN), _name(name), _dir(DOWN)
 {
@@ -40,7 +41,9 @@ void		Bomberman::moveRight()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - RIGHT));
       this->_dir = RIGHT;
     }
-  this->translate(glm::vec3(1, 0, 0) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -51,7 +54,9 @@ void		Bomberman::moveLeft()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - LEFT));
       this->_dir = LEFT;
     }
-  this->translate(glm::vec3(-1, 0, 0) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -62,7 +67,9 @@ void		Bomberman::moveBack()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - DOWN));
       this->_dir = DOWN;
     }
-  this->translate(glm::vec3(0, 0, 1) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -73,7 +80,9 @@ void		Bomberman::moveFront()
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - UP));
       this->_dir = UP;
     }
-  this->translate(glm::vec3(0, 0, -1) * this->_speed);
+  float		acele = this->getAcceleration();
+  this->setAcceleration(acele + 0.01);
+  this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -90,4 +99,9 @@ void	       	Bomberman::draw(RenderManager & rm)
     throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed() * 2);
 
+}
+
+void		Bomberman::isReleased()
+{
+  printf("RELEASEED TIME: %d\n", time(NULL));
 }
