@@ -5,11 +5,12 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 22:34:17 2015 Joris Bertomeu
+// Last update Thu Jun 11 16:17:03 2015 Valérian Polizzi
 //
 
 #include		<GameEvent.hh>
 #include		<Pavement.hh>
+#include		<MainMenu.hh>
 
 GameEvent::GameEvent()
 {
@@ -55,6 +56,7 @@ void			GameEvent::up(Scene* scene)
 {
   std::list<AEntity*>	list;
   glm::vec3		bomberman_position_old;
+  int			height;
 
   list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
@@ -69,12 +71,19 @@ void			GameEvent::up(Scene* scene)
       	  this->updatePlayerCamera((*it)->getPos());
       	}
     }
+
+  height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
+  if (height >= 300)
+    height = (300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()));
+  else
+    height += 300;
+  dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
+  std::cout << height << std::endl;
 }
 
 void			GameEvent::click(Scene* scene)
 {
   (void)scene;
-  std::cout << "Click" << std::endl;
 
 }
 
@@ -82,6 +91,7 @@ void			GameEvent::down(Scene* scene)
 {
   std::list<AEntity*>	list;
   glm::vec3		bomberman_position_old;
+  int			height;
 
   list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
@@ -95,8 +105,14 @@ void			GameEvent::down(Scene* scene)
       	    dynamic_cast<Bomberman*>((*it))->setPos(bomberman_position_old);
 	  this->updatePlayerCamera((*it)->getPos());
 	}
-
     }
+
+  height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
+  if (height <= 300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()))
+    height = 300;
+  else
+    height -= 300;
+  dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
 }
 
 
@@ -118,6 +134,7 @@ void			GameEvent::right(Scene* scene)
 	  this->updatePlayerCamera((*it)->getPos());
 	}
     }
+
 }
 
 void			GameEvent::left(Scene* scene)
