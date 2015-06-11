@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 21:47:08 2015 Joris Bertomeu
+// Last update Thu Jun 11 01:22:32 2015 Joris Bertomeu
 //
 
 #include	<CameraManager.hh>
@@ -15,6 +15,7 @@ Scene::Scene(CameraManager* cm) : _cm(cm)
 {
   this->_eventHandler = NULL;
   this->_first = true;
+  this->_renderManager = NULL;
 }
 
 Scene::~Scene()
@@ -54,6 +55,12 @@ IEvent*		Scene::getEventHandler()
 
 void  	      	Scene::draw(RenderManager & rm)
 {
+  if (!this->_first) {
+    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->setVolume(0);
+    this->_first = true;
+  }
+  if (!this->_renderManager)
+    this->_renderManager = &rm;
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
 }
