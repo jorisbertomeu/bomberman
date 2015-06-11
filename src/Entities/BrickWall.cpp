@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:17:23 2015 Nicolas Adès
-// Last update Wed Jun  3 20:14:29 2015 Geoffrey Merran
+// Last update Wed Jun 10 20:19:41 2015 Geoffrey Merran
 //
 
 #include <BrickWall.hh>

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Tue Jun  9 15:41:58 2015 Joris Bertomeu
+// Last update Tue Jun  9 18:59:55 2015 Joris Bertomeu
 //
 
 #ifndef		PAVEMENT_HH_
@@ -27,10 +27,13 @@ class		Pavement : public AEntity
 private:
   gdl::Geometry	_geometry;
   gdl::Texture	_textureO;
+  Hitbox	*_hitbox;
+
 public:
   explicit	Pavement(const glm::vec3 &, const std::string &);
   virtual	~Pavement();
   virtual void	draw(RenderManager &);
+  virtual Hitbox	*getHitbox() const;
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:21:36 2015 Joris Bertomeu
-// Last update Mon Jun  8 12:09:06 2015 Valérian Polizzi
+// Last update Tue Jun  9 18:59:49 2015 Joris Bertomeu
 //
 
 #include	<Pavement.hh>
@@ -70,6 +70,7 @@ Pavement::Pavement(const glm::vec3 &pos, const std::string& texture) : AEntity(p
   _geometry.pushUv(glm::vec2(1.0f, 1.0f));
   _geometry.pushUv(glm::vec2(0.0f, 1.0f));
   this->_geometry.build();
+  this->_hitbox = new Hitbox(this);
 }
 
 Pavement::~Pavement()
@@ -82,4 +83,9 @@ void		Pavement::draw(RenderManager &rm)
   this->_textureO.bind();
   this->_geometry.draw(rm.getGraphicManager().getContext().getShaders(), getTransformation(), GL_QUADS);
 
+}
+
+Hitbox		*Pavement::getHitbox() const
+{
+  return (this->_hitbox);
 }

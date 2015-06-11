@@ -33,6 +33,26 @@
       <online>0</online>
       <file>assets/sounds/jump.mp3</file>
     </sound>
+    <sound>
+      <id>WALK_SOUND</id>
+      <online>0</online>
+      <file>assets/sounds/jump.mp3</file>
+    </sound>
+    <sound>
+      <id>WALK_STOP_SOUND</id>
+      <online>0</online>
+      <file>assets/sounds/jump.mp3</file>
+    </sound>
+    <sound>
+      <id>DESCTRUCTION_SOUND</id>
+      <online>0</online>
+      <file>assets/sounds/jump.mp3</file>
+    </sound>
+    <sound>
+      <id>AMBIANT_SOUND</id>
+      <online>0</online>
+      <file>assets/sounds/jump.mp3</file>
+    </sound>
   </sound_pack>
   <common>
     <width>1000</width>
@@ -45,7 +65,7 @@
   <entities>
   <entity>
     <attribut>
-      <speed>10</speed>
+      <speed>250</speed>
       <jump>0</jump>
       <weight>200</weight>
       <friction>1</friction>
@@ -60,14 +80,14 @@
     <model>idBombermanModel</model>
     <texture>NULL</texture>
     <position>
-      <x>5</x>
+      <x>50</x>
       <y>0</y>
-      <z>5</z>
+      <z>80</z>
     </position>
     <size>
-      <x>0.3</x>
-      <y>0.3</y>
-      <z>0.3</z>
+      <x>0.1</x>
+      <y>0.1</y>
+      <z>0.1</z>
     </size>
   </entity>
   <entity>
@@ -1145,9 +1165,9 @@
       <z>300</z>
     </position>
     <size>
-      <x>0.3</x>
-      <y>0.3</y>
-      <z>0.3</z>
+      <x>1</x>
+      <y>1</y>
+      <z>1</z>
     </size>
   </entity>
   </entities>

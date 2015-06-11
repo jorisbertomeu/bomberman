@@ -3,22 +3,22 @@
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>255</jump>
-        <weight>-1</weight>
-        <friction>2.35123e-37</friction>
-        <move>255</move>
+        <jump>0</jump>
+        <weight>0</weight>
+        <friction>0</friction>
+        <move>0</move>
         <ability>NONE</ability>
-        <range>-nan</range>
+        <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>-1</health>
+      <health>0</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
       <texture></texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>-30</y>
         <z>0</z>
       </position>
       <size>
@@ -29,7 +29,7 @@
     </entity>
     <entity>
       <attribut>
-        <speed>10</speed>
+        <speed>250</speed>
         <jump>0</jump>
         <weight>0</weight>
         <friction>1</friction>
@@ -44,14 +44,14 @@
       <model>idBombermanModel</model>
       <texture>NULL</texture>
       <position>
-        <x>5</x>
+        <x>50</x>
         <y>0</y>
-        <z>5</z>
+        <z>80</z>
       </position>
       <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
+        <x>0.1</x>
+        <y>0.1</y>
+        <z>0.1</z>
       </size>
     </entity>
     <entity>
@@ -1129,9 +1129,9 @@
         <z>300</z>
       </position>
       <size>
-        <x>0.3</x>
-        <y>0.3</y>
-        <z>0.3</z>
+        <x>1</x>
+        <y>1</y>
+        <z>1</z>
       </size>
     </entity>
   </entities>
