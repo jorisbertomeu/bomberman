@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed Jun 10 21:40:33 2015 Joris Bertomeu
+// Last update Wed Jun 10 21:52:20 2015 Joris Bertomeu
 //
 
 #include <GameEngine.hh>
@@ -29,7 +29,7 @@ bool	GameEngine::initialize()
   if (!this->_renderManager.initialize(this->_parameters.getSize(), std::string("Bomberman")))
     return (false);
   this->_renderManager.getSoundManager().addSoundFromFile("assets/sounds/music.mp3", Sound::AMBIANT);
-  this->_renderManager.getSoundManager().getSoundOf(Sound::AMBIANT);
+  this->_renderManager.getSoundManager().getSoundOf(Sound::AMBIANT)->play();
   if (!this->_gameContext.initialize(&(this->_renderManager), this->_parameters.getSize(), &this->_running))
     return (false);
   return (true);
