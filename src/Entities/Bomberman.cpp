@@ -103,5 +103,28 @@ void	       	Bomberman::draw(RenderManager & rm)
 
 void		Bomberman::isReleased()
 {
-  printf("RELEASEED TIME: %d\n", time(NULL));
+  while (this->getAcceleration() >= 0)
+    {
+      if (this->_dir == UP)
+	{
+	  this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
+	  this->_hitbox->updateHitbox(this);
+	}
+      if (this->_dir == RIGHT)
+	{
+	  this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
+	  this->_hitbox->updateHitbox(this);
+	}
+      if (this->_dir == DOWN)
+	{
+	  this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
+	  this->_hitbox->updateHitbox(this);
+	}
+      if (this->_dir == LEFT)
+	{
+	  this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
+	  this->_hitbox->updateHitbox(this);
+	}
+      this->setAcceleration(this->getAcceleration() - 0.01);  
+    }
 }
