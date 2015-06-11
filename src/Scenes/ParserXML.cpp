@@ -5,10 +5,10 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue May 26 15:18:36 2015 Jérémy Mediavilla
-// Last update Wed Jun  3 16:51:16 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 17:44:41 2015 Jérémy Mediavilla
 //
 
-#include "ParserXML.hh"
+#include "ParserXML.hpp"
 #include <iostream>
 
 ParserXML::ParserXML()
@@ -223,4 +223,68 @@ bool			ParserXML::setPreviousNode()
 std::string		ParserXML::getNodeName()
 {
   return (std::string((char *) this->_node->name));
+}
+
+bool			ParserXML::isNum(const std::string &num)
+{
+  int			i;
+  const char		*str;
+
+  i = 0;
+  str = num.c_str();
+  while (str[i])
+    {
+      if (str[i] < '0' || str[i] > '9')
+	return (false);
+      i++;
+    }
+  return (true);
+}
+
+bool			ParserXML::isBool(const std::string &num)
+{
+  if (num.size() != 1)
+    return (false);
+  if (num != "0" && num != "1")
+    return (false);
+  return (true);
+}
+
+bool			ParserXML::isGoodEnd(const std::string &str, const std::string &extension)
+{
+  int			i;
+  int			delim;
+  const char		*ext;
+  const char		*name;
+
+  if (extension.size() >= str.size())
+    return (false);
+  delim = extension.size();
+  i = 0;
+  ext = extension.c_str();
+  name = str.c_str();
+  while (name[delim])
+    {
+      if (name[delim] != ext[i])
+	return (false);
+      delim++;
+      i++;
+    }
+  return (true);
+}
+
+bool			ParserXML::isFloatNum(const std::string &num)
+{
+  int			i;
+  const char		*str;
+
+  i = 0;
+  str = num.c_str();
+  while (str[i])
+    {
+      if ((str[i] < '0' || str[i] > '9') && str[i] != '.')
+	return (false);
+      i++;
+    }
+  return (true);
 }

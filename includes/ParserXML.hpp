@@ -5,11 +5,11 @@
 ** Login   <mediav_j@epitech.net>
 ** 
 ** Started on  Fri May 22 15:07:06 2015 Jérémy Mediavilla
-// Last update Tue Jun  2 18:02:35 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 17:47:11 2015 Jérémy Mediavilla
 */
 
-#ifndef		_PARSERXML_HH_
-# define	_PARSERXML_HH_
+#ifndef		_PARSERXML_HPP_
+# define	_PARSERXML_HPP_
 
 # include <stdlib.h>
 # include <libxml/parser.h>
@@ -45,10 +45,26 @@ public:
   bool			checkMultipleTag();
   bool			foreach(const std::string &);
   std::string		getNodeName();
+  bool			isNum(const std::string &);
+  bool			isFloatNum(const std::string &);
+  bool			isBool(const std::string &);
+  bool			isGoodEnd(const std::string &, const std::string &);
+  template<typename T>
+  bool			isBigger(T nbr,T other) {
+    if (nbr > other)
+      return (true);
+    return (false);
+  };
+  template<typename T>
+  bool			isSmaller(T nbr,T other) {
+    if (nbr < other)
+      return (true);
+    return (false);
+  };
 
 private:
   t_tag			*getMultipleTag();
   int			getTagPos(ParserXML::t_tag *, char *);
 };
 
-#endif		/* _PARSERXML_HH_ */
+#endif		/* _PARSERXML_HPP_ */

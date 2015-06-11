@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Tue Jun  9 20:58:03 2015 Joris Bertomeu
+// Last update Tue Jun  9 22:33:46 2015 Joris Bertomeu
 //
 
 #include <HitBox.hh>
@@ -28,6 +28,7 @@ void	Hitbox::updateHitbox(void *entityp)
   AEntity *entity = (AEntity *)entityp;
   AEntity::EntityType type = entity->getType();
   glm::vec3	pos = entity->getPos();
+
   if (type == AEntity::BOMBERMAN || type == AEntity::BOT)
     {
       this->_c1 = glm::vec3(pos.x, pos.y, pos.z);
@@ -61,18 +62,24 @@ void	Hitbox::updateHitbox(void *entityp)
       this->_c7 = glm::vec3(pos.x, 60 + pos.y, pos.z);
       this->_c8 = glm::vec3(60 + pos.x, 60 + pos.y, pos.z);
     }
-  else
+  else if (type == AEntity::PAVEMENT)
     {
-      printf("Entiti : %d\n", type);
-      return;
-      this->_c1 = glm::vec3(0, 0, 0 - dynamic_cast<Floor*>(entity)->getHeigth());
-      this->_c2 = glm::vec3(dynamic_cast<Floor*>(entity)->getWidth(), 0, 0 - dynamic_cast<Floor*>(entity)->getHeigth());
-      this->_c3 = glm::vec3(dynamic_cast<Floor*>(entity)->getWidth(), 0, 0);
-      this->_c4 = glm::vec3(dynamic_cast<Floor*>(entity)->getWidth(), 30, 0);
-      this->_c5 = glm::vec3(0, 30, 0);
-      this->_c6 = glm::vec3(0, 0, 0);
-      this->_c7 = glm::vec3(0, 30, 0 - dynamic_cast<Floor*>(entity)->getWidth());
-      this->_c8 = glm::vec3(dynamic_cast<Floor*>(entity)->getWidth(), 30, 0 - dynamic_cast<Floor*>(entity)->getHeigth());
+      this->_c1 = glm::vec3(pos.x + pos.x * dynamic_cast<Pavement*>(entity)->getScale().x / 2,
+			    pos.y + pos.y * dynamic_cast<Pavement*>(entity)->getScale().y / 2,
+			    pos.z + pos.z * dynamic_cast<Pavement*>(entity)->getScale().z / 2);
+      this->_c2 = glm::vec3(this->_c1.x + dynamic_cast<Pavement*>(entity)->getWidth(),
+			    this->_c1.y, this->_c1.z);
+      this->_c3 = glm::vec3(this->_c1.x + dynamic_cast<Pavement*>(entity)->getWidth(),
+			    this->_c1.y, this->_c1.z - dynamic_cast<Pavement*>(entity)->getDepth());
+      this->_c4 = glm::vec3(this->_c1.x + dynamic_cast<Pavement*>(entity)->getWidth(),
+			    this->_c1.y + dynamic_cast<Pavement*>(entity)->getHeigth(),
+			    this->_c1.z - dynamic_cast<Pavement*>(entity)->getDepth());
+      this->_c5 = glm::vec3(this->_c1.x, this->_c1.y + dynamic_cast<Pavement*>(entity)->getHeigth(),
+			    this->_c1.z - dynamic_cast<Pavement*>(entity)->getDepth());
+      this->_c6 = glm::vec3(this->_c1.x, this->_c1.y, this->_c1.z - dynamic_cast<Pavement*>(entity)->getDepth());
+      this->_c7 = glm::vec3(this->_c1.x, this->_c1.y + dynamic_cast<Pavement*>(entity)->getHeigth(), this->_c1.z);
+      this->_c8 = glm::vec3(this->_c1.x + dynamic_cast<Pavement*>(entity)->getWidth(),
+			    this->_c1.y + dynamic_cast<Pavement*>(entity)->getHeigth(), this->_c1.z);
     }
 }
 

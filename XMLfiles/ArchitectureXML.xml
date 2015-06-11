@@ -57,15 +57,18 @@
   <common>
     <width>1000</width>
     <height>1000</height>
-    <gravity></gravity>
+    <gravity>0</gravity>
     <friction>3</friction>
-    <skybox><online>0</online><file>NULL</file></skybox>
+    <skybox>
+      <online>0</online>
+      <file>NULL</file>
+    </skybox>
     <texture>idFloorTexture</texture>
   </common>
   <entities>
   <entity>
     <attribut>
-      <speed>250</speed>
+      <speed>2</speed>
       <jump>0</jump>
       <weight>200</weight>
       <friction>1</friction>

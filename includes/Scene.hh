@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 // 
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 18:30:45 2015 Jérémy Mediavilla
 //
 
 #ifndef			_SCENE_HH_
@@ -31,7 +31,7 @@ public:
   void			listAllEntities() const;
   std::list<AEntity *>	getEntities();
   void			draw(RenderManager & rm);
-  bool			save();
+  bool			save(RenderManager *);
 };
 
 #endif		// _SCENE_HH_

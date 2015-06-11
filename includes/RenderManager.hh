@@ -5,12 +5,13 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Wed Jun 10 14:26:38 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 18:04:13 2015 Jérémy Mediavilla
 //
 
 #ifndef			_RENDERMANAGER_HH_
 # define		_RENDERMANAGER_HH_
 
+# include		<fstream>
 # include		<SoundManager.hh>
 # include		<TextureManager.hh>
 # include		<GraphicManager.hh>
