@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Thu Jun 11 19:07:09 2015 Geoffrey Merran
+// Last update Thu Jun 11 19:59:05 2015 Geoffrey Merran
 //
 
 #ifndef		_TEXTURE_HPP_
@@ -32,6 +32,14 @@ public:
   virtual	~Texture(void) {
 
   }
+
+  gdl::Texture	getTexture()  {
+    return (this->_t);
+  }
+  std::string	getFilename() {
+    return (this->_filename);
+  }
+
   bool		save(std::fstream &fs) {
     fs << "TEXTURE" << std::endl;
     return (true);

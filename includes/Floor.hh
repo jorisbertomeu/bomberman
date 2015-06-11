@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed Jun  3 12:57:30 2015 Nicolas Adès
-// Last update Tue Jun  9 15:45:24 2015 Joris Bertomeu
+// Last update Thu Jun 11 19:50:05 2015 Geoffrey Merran
 //
 
 #ifndef __FLOOR_HH
@@ -20,7 +20,7 @@ private:
   int		_heigth;
 
 public:
-  Floor(const glm::vec3 & pos, const int & width, const int & heigth, const std::string &);
+  Floor(const glm::vec3 & pos, const int & width, const int & heigth, Texture*);
   virtual ~Floor();
 
   int		getWidth() const;

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:01:09 2015 Geoffrey Merran
+// Last update Thu Jun 11 19:39:37 2015 Geoffrey Merran
 //
 
 #ifndef		PAVEMENT_HH_
@@ -26,8 +26,8 @@ class		Pavement : public AEntity
 {
 private:
   gdl::Geometry	_geometry;
-  Texture*	_textureO;
-  Hitbox*	_hitbox;
+  gdl::Texture	_textureO;
+  Hitbox	*_hitbox;
   void		buildObject();
 
 public:

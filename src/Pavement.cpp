@@ -5,15 +5,22 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:21:36 2015 Joris Bertomeu
-// Last update Tue Jun  9 22:09:59 2015 Joris Bertomeu
+// Last update Thu Jun 11 20:02:23 2015 Geoffrey Merran
 //
 
 #include	<Pavement.hh>
 
 Pavement::Pavement(const glm::vec3 &pos, const std::string& texture) : AEntity(pos, AEntity::PAVEMENT)
 {
-  if (!_textureO.load(texture))
-    printf("Error while loading Texture for Pavement\n");
+  _textureO = new Texture(texture);
+  this->buildObject();
+}
+
+Pavement::Pavement(const glm::vec3 &pos, Texture* t) : AEntity(pos, AEntity::PAVEMENT)
+{
+  if (t == NULL)
+    throw(std::logic_error("Error while loading Texture for Pavement"));
+  _textureO = t;
   this->buildObject();
 }
 
@@ -85,9 +92,8 @@ void		Pavement::buildObject()
 
 void		Pavement::draw(RenderManager &rm)
 {
-  this->_textureO.bind();
+  this->_textureO->getTexture().bind();
   this->_geometry.draw(rm.getGraphicManager().getContext().getShaders(), getTransformation(), GL_QUADS);
-
 }
 
 Hitbox		*Pavement::getHitbox() const
