@@ -43,8 +43,8 @@ void		Bomberman::moveRight()
       this->_dir = RIGHT;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
+  this->setAcceleration(acele + 0.03);
+  this->translate(glm::vec3(1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -58,7 +58,7 @@ void		Bomberman::moveLeft()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
+  this->translate(glm::vec3(-1, 0, 0) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -72,7 +72,7 @@ void		Bomberman::moveBack()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
+  this->translate(glm::vec3(0, 0, 1) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -86,7 +86,7 @@ void		Bomberman::moveFront()
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.02);
-  this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
+  this->translate(glm::vec3(0, 0, -1) * ((this->_speed * this->getAcceleration()) - this->getFriction()));
   this->_hitbox->updateHitbox(this);
 }
 
@@ -124,9 +124,9 @@ void		Bomberman::isReleased(Scene *scene)
 {
   glm::vec3	old = this->_pos;
 
-  if (this->getAcceleration() <= 0)
+  if (this->getAcceleration() <= 0.01)
     return;
-  this->setAcceleration(this->getAcceleration() - 0.05);
+  this->setAcceleration(this->getAcceleration() - this->getFriction());
   switch (this->_dir)
     {
     case (Bomberman::UP) :
@@ -148,6 +148,6 @@ void		Bomberman::isReleased(Scene *scene)
     }
   if (this->getHitbox()->checkCollision(scene)) {
     this->setPos(old);
-    this->setAcceleration(0.0f);
+    this->setAcceleration(0.01f);
   }
 }

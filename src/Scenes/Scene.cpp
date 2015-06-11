@@ -113,3 +113,4 @@ void		*Scene::getBomberman()
     }
   return (NULL);
 }
+

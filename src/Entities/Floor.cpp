@@ -12,6 +12,7 @@
 
 Floor::Floor(const glm::vec3 & pos, const int & width, const int & heigth, Texture *texture) : Pavement(pos, texture), _width(width), _heigth(heigth)
 {
+  this->setFriction(0.015);
   this->_scale = glm::vec3(this->_width, 10, this->_heigth);
   this->_pos = glm::vec3(483, 0 - 25, 483);
 }
