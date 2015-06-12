@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:34:31 2015 mari_f
-// Last update Wed Jun 10 02:34:26 2015 Joris Bertomeu
+// Last update Fri Jun 12 20:46:12 2015 Geoffrey Merran
 //
 
 #ifndef			_IEVENT_HH__
@@ -13,6 +13,7 @@
 
 # include	       	<SDL_keycode.h>
 # include		<Input.hh>
+# include		<Clock.hh>
 
 class			IEvent;
 
@@ -23,7 +24,7 @@ class			IEvent
 {
 public:
   virtual		~IEvent() {};
-  virtual bool	       	isCatch(gdl::Input &input, SceneManager*, CameraManager&) = 0;
+  virtual bool	       	isCatch(gdl::Input &input, gdl::Clock&, SceneManager*, CameraManager&) = 0;
 };
 
 #endif

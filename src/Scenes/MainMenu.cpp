@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 19:35:27 2015 Geoffrey Merran
+// Last update Tue Jun  9 20:52:02 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>
@@ -61,7 +61,7 @@ std::list<GameButton*>::iterator 	MainMenu::getCurrent()
   return (this->_buttons.end());
 }
 
-void			MainMenu::moveCursor()
+void			MainMenu::moveCursorDown()
 {
   std::list<GameButton*>::iterator it = this->getCurrent();
   glm::vec3 pos;
@@ -74,6 +74,27 @@ void			MainMenu::moveCursor()
     }
   else
     {
+      (*it)->setCurrent(true);
+      pos = (*it)->getPos();
+    }
+  pos.x = -500;
+  this->_cursor->setPos(pos);
+}
+
+void			MainMenu::moveCursorUp()
+{
+  std::list<GameButton*>::iterator it = this->getCurrent();
+  glm::vec3 pos;
+
+  (*it)->setCurrent(false);
+  if (it == this->_buttons.begin())
+    {
+      this->_buttons.back()->setCurrent(true);
+      pos = this->_buttons.back()->getPos();
+    }
+  else
+    {
+      it--;
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
     }
