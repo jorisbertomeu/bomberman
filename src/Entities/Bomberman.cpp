@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 14:56:11 2015 Geoffrey Merran
+// Last update Wed Jun 10 07:48:11 2015 Joris Bertomeu
 //
 
 #include <Bomberman.hh>
@@ -13,7 +13,7 @@
 #include <SceneManager.hh>
 #include <PhysicSolid.hh>
 
-Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN), _name(name), _dir(DOWN)
+Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_scale = glm::vec3(0.1, 0.1, 0.1);
