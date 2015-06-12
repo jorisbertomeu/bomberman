@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Wed Jun  3 21:29:29 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:43:19 2015 Geoffrey Merran
 //
 
 #ifndef _BOMB_H_
@@ -27,6 +27,7 @@ public:
   void		setDamage(const int &);
   void		update();
   virtual void	draw(RenderManager & rm);
+  virtual void 	update(gdl::Clock &);
 };
 
 #endif // _BOMB_H_

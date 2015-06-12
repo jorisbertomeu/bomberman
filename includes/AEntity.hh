@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun 10 19:38:25 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:37:12 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -72,8 +72,9 @@ public:
   glm::mat4			getTransformation();
 
   virtual void			draw(RenderManager & rm) = 0;
-  void				save(std::fstream &);
-  virtual Hitbox			*getHitbox() const;
+  virtual void			update(gdl::Clock &) = 0;
+  virtual void		       	save(std::fstream &);
+  virtual Hitbox	       	*getHitbox() const;
 };
 
 #endif // _AENTITY_H_

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed Jun  3 13:01:29 2015 Nicolas Adès
-// Last update Thu Jun 11 19:50:23 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:40:28 2015 Geoffrey Merran
 //
 
 #include <Floor.hh>

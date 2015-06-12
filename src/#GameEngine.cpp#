@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:54:22 2015 Geoffrey Merran
+// Last update Thu Jun 11 20:17:00 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -51,6 +51,7 @@ void	GameEngine::draw()
 
 bool	GameEngine::run()
 {
+  this->_gameContext.addScene("XMLfiles/map.xml");
   while (this->_running)
     {
       this->update();

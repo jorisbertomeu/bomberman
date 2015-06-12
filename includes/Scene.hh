@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 17:32:39 2015 Valérian Polizzi
+// Last update Fri Jun 12 03:36:07 2015 Geoffrey Merran
 //
 
 #ifndef			_SCENE_HH_
@@ -23,12 +23,14 @@ class			Scene
 {
 private:
   std::list<AEntity*>	_entityList;
+  std::string		_name;
+
 public:
   explicit		Scene();
   virtual		~Scene();
   bool			addEntity(AEntity *);
-  void			listAllEntities() const;
   std::list<AEntity *>	getEntities();
+  void			updateEntities(gdl::Clock & clock);
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
 };

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:21:36 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:08:57 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:39:54 2015 Geoffrey Merran
 //
 
 #include	<Pavement.hh>
@@ -90,12 +90,6 @@ void		Pavement::buildObject()
   this->_hitbox = new Hitbox(this);
 }
 
-void		Pavement::draw(RenderManager &rm)
-{
-  this->_textureO->getTexture().bind();
-  this->_geometry.draw(rm.getGraphicManager().getContext().getShaders(), getTransformation(), GL_QUADS);
-}
-
 Hitbox		*Pavement::getHitbox() const
 {
   return (this->_hitbox);
@@ -114,4 +108,15 @@ float		Pavement::getWidth()
 float		Pavement::getDepth()
 {
   return (0.5 * this->getScale().z);
+}
+
+void		Pavement::draw(RenderManager &rm)
+{
+  this->_textureO->getTexture().bind();
+  this->_geometry.draw(rm.getGraphicManager().getContext().getShaders(), getTransformation(), GL_QUADS);
+}
+
+void		Pavement::update(gdl::Clock & clock)
+{
+  (void) clock;
 }

@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:18:15 2015 Nicolas Adès
-// Last update Wed Jun  3 20:12:14 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:42:01 2015 Geoffrey Merran
 //
 
 #ifndef _BRICKWALL_H_
@@ -19,6 +19,7 @@ public:
   ~BrickWall();
 
   virtual void			draw(RenderManager & rm);
+  virtual void			update(gdl::Clock &);
 };
 
 #endif // _BRICKWALL_H_

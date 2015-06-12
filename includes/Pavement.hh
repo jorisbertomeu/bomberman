@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:17:18 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:01:09 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:46:34 2015 Geoffrey Merran
 //
 
 #ifndef		PAVEMENT_HH_
@@ -22,23 +22,26 @@
 
 # include		<AEntity.hh>
 
-class		Pavement : public AEntity
+class			Pavement : public AEntity
 {
 private:
-  gdl::Geometry	_geometry;
-  Texture*	_textureO;
-  Hitbox*	_hitbox;
-  void		buildObject();
+  gdl::Geometry		_geometry;
+  Texture*		_textureO;
+  Hitbox*		_hitbox;
+  void			buildObject();
 
 public:
 			Pavement(const glm::vec3 &, const std::string &);
 			Pavement(const glm::vec3 &, Texture* t);
   virtual		~Pavement();
-  virtual void		draw(RenderManager &);
+
   virtual Hitbox	*getHitbox() const;
   float			getHeigth();
   float			getWidth();
   float			getDepth();
+
+  virtual void		draw(RenderManager &);
+  virtual void		update(gdl::Clock &);
 };
 
 #endif

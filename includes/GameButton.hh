@@ -5,25 +5,27 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:40:47 2015 Valérian Polizzi
-// Last update Tue Jun  9 14:11:38 2015 Joris Bertomeu
+// Last update Fri Jun 12 04:00:38 2015 Geoffrey Merran
 //
 
 #ifndef _GAMEBUTTON_HH_
 # define _GAMEBUTTON_HH_
-# include	"AEntity.hh"
-# include	<SDL/SDL.h>
-# include	<SDL/SDL_ttf.h>
 
-class GameButton : public AEntity
+# include		<Pavement.hh>
+
+class			GameButton : public Pavement
 {
 public:
-  GameButton(glm::vec3 pos, const glm::vec3 scale);
+  GameButton(const glm::vec3 &, const std::string &);
   ~GameButton();
+
+  virtual void	       	update(gdl::Clock &);
+
+  void			setCurrent(const bool &);
+  const bool &      	getCurrent();
+
 private:
-  SDL_Rect	_btn;
-  SDL_Rect	*_texture;
-  virtual void		draw(RenderManager &rm);
-  void			setTexture(const std::string &path);
+  bool			_current;
 };
 
 #endif // _GAMEBUTTON_HH_

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Thu Jun 11 19:07:56 2015 Geoffrey Merran
+// Last update Fri Jun 12 03:44:45 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -100,30 +100,37 @@ void	       	Bomberman::draw(RenderManager & rm)
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
 }
 
+void		Bomberman::update(gdl::Clock & clock)
+{
+  (void) clock;
+}
+
 void		Bomberman::isReleased()
 {
+  // return ;
+
   while (this->getAcceleration() >= 0)
     {
       if (this->_dir == UP)
 	{
-	  this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
+	  // this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
 	  this->_hitbox->updateHitbox(this);
 	}
       if (this->_dir == RIGHT)
 	{
-	  this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
+	  // this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
 	  this->_hitbox->updateHitbox(this);
 	}
       if (this->_dir == DOWN)
 	{
-	  this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
+	  // this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
 	  this->_hitbox->updateHitbox(this);
 	}
       if (this->_dir == LEFT)
 	{
-	  this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
+	  // this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
 	  this->_hitbox->updateHitbox(this);
 	}
-      this->setAcceleration(this->getAcceleration() - 0.01);  
+      this->setAcceleration(this->getAcceleration() - 0.01);
     }
 }

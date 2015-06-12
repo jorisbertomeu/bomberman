@@ -5,26 +5,33 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:43:04 2015 Valérian Polizzi
-// Last update Mon Jun  8 01:08:42 2015 Valérian Polizzi
+// Last update Fri Jun 12 04:07:39 2015 Geoffrey Merran
 //
 
 #include "GameButton.hh"
 
-GameButton::GameButton(glm::vec3 pos, glm::vec3 scale) : AEntity(pos, AEntity::BUTTON)
+GameButton::GameButton(const glm::vec3 & pos, const std::string & texture) : Pavement(pos, texture), _current(false)
 {
-  (void)scale;
+
 }
 
 GameButton::~GameButton()
 {
+
 }
 
-void		GameButton::setTexture(const std::string &path)
+void			GameButton::update(gdl::Clock & clock)
 {
-  (void)path;
+  if (this->_current)
+    this->rotate(glm::vec3(1, 0, 0), (50 * clock.getElapsed()));
 }
 
-void		GameButton::draw(RenderManager &rm)
+void			GameButton::setCurrent(const bool & isCurrent)
 {
-  rm = rm;
+  this->_current = isCurrent;
+}
+
+const bool &      	GameButton::getCurrent()
+{
+  return (this->_current);
 }

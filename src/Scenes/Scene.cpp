@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 19:00:28 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 03:36:24 2015 Geoffrey Merran
 //
 
 #include	"Scene.hh"
@@ -31,21 +31,16 @@ bool		Scene::addEntity(AEntity *entity)
   return(true);
 }
 
-void		Scene::listAllEntities() const
-{
-  // for (std::list<AEntity>::iterator it = this->_entityList.begin(); it =! this->_entityList.end(); it++)  {
-  //   if (*it->getType() == AEntity::BOMBERMAN)
-  //     std::cout << "Bomberman Insered with pos <" << *it->getPos().x << ", " << *it.getPos()->y << ", " << *it.getPos()->z << ">" << std::endl;
-  //   else if (*it->getType() == AEntity::BRICKWALL)
-  //     std::cout << "Brickwall Insered with pos <" << *it->getPos().x << ", " << *it->getPos().y << ", " << *it->getPos().z << ">" << std::endl;
-
-  // }
-}
-
 void  	      	Scene::draw(RenderManager & rm)
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
+}
+
+void		Scene::updateEntities(gdl::Clock & clock)
+{
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
+    (*it)->update(clock);
 }
 
 bool		Scene::save(RenderManager *rm)
