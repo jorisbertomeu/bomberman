@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 04:11:06 2015 Geoffrey Merran
+// Last update Fri Jun 12 14:45:11 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -39,6 +39,7 @@ void		Bomberman::moveRight()
   if (this->_dir != RIGHT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - RIGHT));
+      this->isTurningBack(this->_dir - RIGHT);
       this->_dir = RIGHT;
     }
   float		acele = this->getAcceleration();
@@ -52,6 +53,7 @@ void		Bomberman::moveLeft()
   if (this->_dir != LEFT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - LEFT));
+      this->isTurningBack(this->_dir - LEFT);
       this->_dir = LEFT;
     }
   float		acele = this->getAcceleration();
@@ -65,6 +67,7 @@ void		Bomberman::moveBack()
   if (this->_dir != DOWN)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - DOWN));
+      this->isTurningBack(this->_dir - DOWN);
       this->_dir = DOWN;
     }
   float		acele = this->getAcceleration();
@@ -78,12 +81,19 @@ void		Bomberman::moveFront()
   if (this->_dir != UP)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - UP));
+      this->isTurningBack(this->_dir - UP);
       this->_dir = UP;
     }
   float		acele = this->getAcceleration();
   this->setAcceleration(acele + 0.01);
   this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
+}
+
+void		Bomberman::isTurningBack(const int & d)
+{
+  if (d == 2 || d == -2)
+    this->setAcceleration(0.0f);
 }
 
 void		Bomberman::jump()
@@ -111,7 +121,7 @@ void		Bomberman::isReleased(Scene *scene)
 
   if (this->getAcceleration() <= 0)
     return;
-  this->setAcceleration(this->getAcceleration() - 0.01);
+  this->setAcceleration(this->getAcceleration() - 0.05);
   switch (this->_dir)
     {
     case (Bomberman::UP) :

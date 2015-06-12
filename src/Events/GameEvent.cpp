@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Wed Jun 10 04:51:34 2015 Joris Bertomeu
+// Last update Fri Jun 12 14:38:22 2015 Geoffrey Merran
 //
 
 #include		<GameEvent.hh>
@@ -44,8 +44,14 @@ bool			GameEvent::isCatch(gdl::Input &input, SceneManager* sm, CameraManager& ca
   list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
        it++)
-    if ((*it)->getType() == AEntity::BOMBERMAN)
-      dynamic_cast<Bomberman*>((*it))->isReleased(scene);
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	{
+	  dynamic_cast<Bomberman*>((*it))->isReleased(scene);
+	  this->updatePlayerCamera((*it)->getPos());
+	  return (false);
+	}
+    }
   return (false);
 }
 
