@@ -24,10 +24,10 @@ public:
   virtual bool			isCatch(gdl::Input &input, gdl::Clock&, SceneManager*, CameraManager&);
 
 private:
+  void				resetKeyCatch();
   void				up(SceneManager*);
   void				down(SceneManager*);
   void				space(SceneManager*);
-  void				resetKeyCatch();
 
   float				_nextKeyCatch;
   std::map<int, eventHandler>	_events;

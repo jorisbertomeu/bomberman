@@ -12,6 +12,7 @@
 
 EscapeMenu::EscapeMenu(CameraManager &cm) : Scene(&cm)
 {
+  this->_btnNb = 0;
   this->_buttons.push_back(new GameButton(glm::vec3(0, 300, 0), std::string("assets/textures/resume.tga")));
   this->_buttons.front()->setCurrent(true);
   this->_buttons.push_back(new GameButton(glm::vec3(0, 0, 0), std::string("assets/textures/save.tga")));
@@ -51,11 +52,13 @@ void					EscapeMenu::moveCursor()
     {
       this->_buttons.front()->setCurrent(true);
       pos = this->_buttons.front()->getPos();
+      this->_btnNb = 0;
     }
   else
     {
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
+      this->_btnNb++;
     }
   pos.x = -500;
   this->_cursor->setPos(pos);
@@ -83,6 +86,20 @@ int					EscapeMenu::getListSize() const
 
 void					EscapeMenu::selectButton(SceneManager *sm)
 {
-  if (!sm->setCurrentScene(std::string("gameScene")))
-    std::cerr << "Error while loading scene Game" << std::endl;
+  switch (this->_btnNb)
+    {
+    case 0:
+      if (!sm->setCurrentScene(std::string("gameScene")))
+	std::cerr << "Error while loading scene Game" << std::endl;      
+      break;
+    case 1:
+      std::cout << "Save GAME" << std::endl;
+      break;
+    case 2:
+      if (!sm->setCurrentScene(std::string("mainMenu")))
+	std::cerr << "Error while loading scene Game" << std::endl;      
+      if (!sm->removeScene(std::string("gameScene")))
+	std::cerr << "Error while removing scene Game" << std::endl;
+	break;
+    }
 }
