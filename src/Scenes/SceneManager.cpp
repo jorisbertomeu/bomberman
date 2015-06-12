@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 04:18:41 2015 Joris Bertomeu
+// Last update Fri Jun 12 19:35:05 2015 Geoffrey Merran
 //
 
 #include	<SceneManager.hh>
@@ -24,8 +24,9 @@ SceneManager::~SceneManager()
 
 }
 
-void	SceneManager::setRenderManager(RenderManager *rm)
+void   	SceneManager::initialize(CameraManager* cm, RenderManager *rm)
 {
+  this->_cm = cm;
   this->_renderManager = rm;
 }
 
@@ -33,14 +34,13 @@ bool	SceneManager::loadSceneFromFile(const std::string &sceneId,
 					const std::string &filename)
 {
   SceneParser	newSceneParser;
-  Scene		*newScene = new Scene();
+  Scene		*newScene;
 
   newSceneParser.load(filename);
-  newScene = newSceneParser.getScene(this->_renderManager);
+  newScene = newSceneParser.getScene(this->_renderManager, this->_cm);
   newScene->setEventHandler(new GameEvent());
   this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, newScene));
-  //this->_currentScene = newScene;
-  newScene->save(this->_renderManager);
+  // newScene->save(this->_renderManager);
   return (true);
 }
 
@@ -52,6 +52,7 @@ bool	SceneManager::setCurrentScene(std::string sceneId)
       this->_inputManager->removeEvents();
       this->_inputManager->addEvent(new CommonEvent());
       this->_inputManager->addEvent(this->getCurrentScene()->getEventHandler());
+      this->_currentScene->initialize();
       return (true);
     }
   }
@@ -67,6 +68,7 @@ bool	SceneManager::setCurrentScene(std::string sceneId, Scene *scene)
   this->_inputManager->removeEvents();
   this->_inputManager->addEvent(new CommonEvent());
   this->_inputManager->addEvent(this->getCurrentScene()->getEventHandler());
+  this->_currentScene->initialize();
   return (true);
 }
 

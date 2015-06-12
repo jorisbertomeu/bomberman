@@ -5,12 +5,11 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:05:59 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:22:30 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:39:43 2015 Geoffrey Merran
 // Last update Tue Jun  9 20:27:28 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
-#include	<iostream>
 
 CameraManager::CameraManager() : _pos(glm::vec3(0, 500, 1200)), _point(glm::vec3(0, 0, 0)), _defaultPos(_pos)
 {
@@ -55,4 +54,9 @@ const glm::vec3 &    	CameraManager::getPoint() const
 const glm::vec3 &	CameraManager::getDefaultPos() const
 {
   return (this->_defaultPos);
+}
+
+void			CameraManager::setDefaultPos(const glm::vec3 & pos)
+{
+  this->_defaultPos = pos;
 }

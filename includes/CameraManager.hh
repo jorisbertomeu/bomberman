@@ -5,17 +5,16 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:02:41 2015 Joris Bertomeu
-// Last update Fri Jun 12 04:46:32 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:39:55 2015 Geoffrey Merran
 //
 
 #ifndef			_CAMERAMANAGER_HH_
 # define		_CAMERAMANAGER_HH_
 
-# include		<Game.hh>
-# include		<SdlContext.hh>
-
 class			CameraManager;
 
+# include		<Game.hh>
+# include		<SdlContext.hh>
 # include		<RenderManager.hh>
 
 class			CameraManager
@@ -38,6 +37,8 @@ public:
   const glm::vec3 &    	getPos() const;
   const glm::vec3 &    	getPoint() const;
   const glm::vec3 &	getDefaultPos() const;
+
+  void			setDefaultPos(const glm::vec3 & pos);
 };
 
 #endif		/* _CAMERAMANAGER_HH_ */

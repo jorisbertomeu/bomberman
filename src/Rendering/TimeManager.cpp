@@ -5,10 +5,10 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Thu May 21 14:10:07 2015 Valérian Polizzi
-// Last update Thu Jun  4 00:08:48 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:39:17 2015 Geoffrey Merran
 //
 
-#include "TimeManager.hh"
+#include <TimeManager.hh>
 
 TimeManager::TimeManager() : _fpsTimeCounter(0), _fps(0)
 {

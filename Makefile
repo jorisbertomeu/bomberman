@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Wed Jun 10 08:44:02 2015 Joris Bertomeu
+## Last update Fri Jun 12 19:15:25 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -30,7 +30,6 @@ SRC		=	src/main.cpp				\
 			src/Scenes/ParserXML.cpp		\
 			src/Scenes/Scene.cpp			\
 			src/Scenes/SceneParser.cpp		\
-			src/Scenes/GameMenu.cpp			\
 			src/Scenes/MainMenu.cpp			\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
