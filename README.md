@@ -13,12 +13,12 @@ Introduction
 Bomberman is a project from Epitech. This project must be written in C++.
 > **Dev Team :**
 
-> - Joris Bertomeu
 > - Florian Mari
+> - Geoffrey Merran
 > - Nicolas Ades
 > - Jeremy Mediavilla
 > - Valerian Polizzi
-> - Geoffrey Merran
+> - Joris Bertomeu
 
 Support our Team !
 --------------------------

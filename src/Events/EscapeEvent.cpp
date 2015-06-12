@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:55:54 2015 Geoffrey Merran
-// Last update Fri Jun 12 23:44:15 2015 Geoffrey Merran
+// Last update Sat Jun 13 02:28:24 2015 Geoffrey Merran
 //
 
 #include <EscapeEvent.hh>
@@ -44,7 +44,7 @@ bool			EscapeEvent::isCatch(gdl::Input &input, gdl::Clock& clock, SceneManager* 
 
 void			EscapeEvent::resetKeyCatch()
 {
-  this->_nextKeyCatch = 0.35;
+  this->_nextKeyCatch = 0.2;
 }
 
 void			EscapeEvent::up(SceneManager* sm)
