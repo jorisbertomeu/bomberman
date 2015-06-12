@@ -8,10 +8,10 @@ TEXTURE
         <speed>0</speed>
         <jump>0</jump>
         <weight>0</weight>
-        <friction>2.74884e-37</friction>
+        <friction>1.93124e-37</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>2.74884e-37</range>
+        <range>1.93124e-37</range>
         <bonus>NONE</bonus>
       </attribut>
       <health>0</health>

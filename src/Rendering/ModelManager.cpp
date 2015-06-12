@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Wed Jun  3 14:54:49 2015 Geoffrey Merran
-// Last update Thu Jun 11 20:32:25 2015 Geoffrey Merran
+// Last update Fri Jun 12 14:49:51 2015 Geoffrey Merran
 //
 
 #include "ModelManager.hh"
