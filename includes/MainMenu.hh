@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 11:12:51 2015 Joris Bertomeu
-// Last update Fri Jun 12 21:43:47 2015 Geoffrey Merran
+// Last update Fri Jun 12 22:37:35 2015 Geoffrey Merran
 //
 
 #ifndef		_MAINMENU_HPP_
@@ -23,6 +23,13 @@ private:
   GameButton*				_cursor;
 
 public:
+  enum ButtonId
+    {
+      PLAY,
+      LOAD,
+      QUIT
+    };
+
   explicit				MainMenu(CameraManager & cm);
   virtual				~MainMenu();
 
