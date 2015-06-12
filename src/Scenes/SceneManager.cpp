@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:50:56 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 12:19:34 2015 Joris Bertomeu
 //
 
 #include	<SceneManager.hh>
@@ -83,4 +83,20 @@ void	SceneManager::addEntityToCurrentScene(AEntity *entity_)
 void	SceneManager::setInputManager(InputManager *im)
 {
   this->_inputManager = im;
+}
+
+void	SceneManager::addScene(std::string sceneId, Scene* scene)
+{
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene));
+}
+
+bool	SceneManager::removeScene(const std::string &sceneId)
+{
+  for(std::map<std::string, Scene *>::iterator it = this->_scenes.begin(); it != this->_scenes.end(); ++it) {
+    if ((*it).first == sceneId) {
+      this->_scenes.erase(it);
+      return (true);
+    }
+  }
+  return (false);
 }

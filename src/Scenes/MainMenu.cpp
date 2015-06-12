@@ -5,17 +5,17 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 23:00:32 2015 mari_f
+// Last update Fri Jun 12 23:03:15 2015 mari_f
 //
 
 #include	<MainMenu.hh>
 
 MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
-  this->_buttons.push_back(new GameButton(glm::vec3(0, 50, 0), std::string("assets/textures/play.tga")));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, 50, 0), std::string("assets/textures/play.tga"), MainMenu::PLAY));
   this->_buttons.front()->setCurrent(true);
-  this->_buttons.push_back(new GameButton(glm::vec3(0, -150, 0), std::string("assets/textures/load.tga")));
-  this->_buttons.push_back(new GameButton(glm::vec3(0, -350, 0), std::string("assets/textures/quit.tga")));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, -150, 0), std::string("assets/textures/load.tga"), MainMenu::LOAD));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, -350, 0), std::string("assets/textures/quit.tga"), MainMenu::QUIT));
   this->_eventHandler = new MenuEvent();
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
     {
@@ -61,7 +61,7 @@ std::list<GameButton*>::iterator 	MainMenu::getCurrent()
   return (this->_buttons.end());
 }
 
-void			MainMenu::moveCursor()
+void			MainMenu::moveCursorDown()
 {
   std::list<GameButton*>::iterator it = this->getCurrent();
   glm::vec3 pos;
@@ -81,8 +81,43 @@ void			MainMenu::moveCursor()
   this->_cursor->setPos(pos);
 }
 
+void			MainMenu::moveCursorUp()
+{
+  std::list<GameButton*>::iterator it = this->getCurrent();
+  glm::vec3 pos;
+
+  (*it)->setCurrent(false);
+  if (it == this->_buttons.begin())
+    {
+      this->_buttons.back()->setCurrent(true);
+      pos = this->_buttons.back()->getPos();
+    }
+  else
+    {
+      it--;
+      (*it)->setCurrent(true);
+      pos = (*it)->getPos();
+    }
+  pos.x = -500;
+  this->_cursor->setPos(pos);
+}
+
 void			MainMenu::selectButton(SceneManager *sm)
 {
-  if (!sm->setCurrentScene(std::string("gameScene")))
-    std::cerr << "Error while loading scene Game" << std::endl;
+  std::string		nextScene;
+
+  switch ((*this->getCurrent())->getId())
+    {
+    case PLAY:
+      nextScene = "gameScene";
+      break;
+    case LOAD:
+      nextScene = "load";
+      break;
+    case QUIT:
+      return ;
+      break;
+    }
+  if (!sm->setCurrentScene(nextScene))
+    std::cerr << "Error while loading scene" << nextScene << std::endl;
 }

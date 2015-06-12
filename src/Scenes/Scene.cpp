@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:50:48 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 12:19:47 2015 Joris Bertomeu
 //
 
 #include	<CameraManager.hh>
@@ -55,7 +55,9 @@ IEvent*		Scene::getEventHandler()
 void  	      	Scene::draw(RenderManager & rm)
 {
   if (this->_first) {
-    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->play();
+    Sound* s = rm.getSoundManager().getSoundOf(Sound::AMBIANT);
+    if (s)
+      s->play();
     this->_first = false;
   }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
@@ -102,12 +104,18 @@ void		Scene::spacePress(SceneManager *sm)
     std::cerr << "Error while loading menu Scene" << std::endl;
 }
 
+void		Scene::escapePress(SceneManager *sm)
+{
+  if (!sm->setCurrentScene(std::string("escapeMenu")))
+    std::cerr << "Error while loading menu Scene" << std::endl;
+}
+
 void		*Scene::getBomberman()
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
 	return (*it);
-    }  
+    }
   return (NULL);
 }

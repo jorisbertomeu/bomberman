@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 19:50:38 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 12:20:02 2015 Joris Bertomeu
 //
 
 #include <Bomberman.hh>
@@ -13,7 +13,7 @@
 #include <SceneManager.hh>
 #include <PhysicSolid.hh>
 
-Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _name(name), _dir(DOWN)
+Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _nbBombs(1), _fireRange(2), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_scale = glm::vec3(0.1, 0.1, 0.1);
@@ -112,12 +112,12 @@ void	       	Bomberman::draw(RenderManager & rm)
 
 void		Bomberman::update(gdl::Clock & clock, Scene *scene)
 {
+  (void) clock;
+  (void) scene;
   // gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
   // if (this->getAcceleration <= 0)
   //   model.setCurrentAnim("stop", false);
-  (void) clock;
-  (void)scene;
 }
 
 void		Bomberman::isReleased(Scene *scene)
