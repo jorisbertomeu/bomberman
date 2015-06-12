@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:50:56 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 23:10:04 2015 Geoffrey Merran
 //
 
 #include	<SceneManager.hh>
@@ -24,10 +24,11 @@ SceneManager::~SceneManager()
 
 }
 
-void   	SceneManager::initialize(CameraManager* cm, RenderManager *rm)
+void   	SceneManager::initialize(CameraManager* cm, RenderManager *rm, int* running)
 {
   this->_cm = cm;
   this->_renderManager = rm;
+  this->_running = running;
 }
 
 bool	SceneManager::loadSceneFromFile(const std::string &sceneId,
@@ -87,7 +88,7 @@ void	SceneManager::setInputManager(InputManager *im)
 
 void	SceneManager::addScene(std::string sceneId, Scene* scene)
 {
-  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene)); 
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene));
 }
 
 bool	SceneManager::removeScene(const std::string &sceneId)
@@ -99,4 +100,9 @@ bool	SceneManager::removeScene(const std::string &sceneId)
     }
   }
   return (false);
+}
+
+void	SceneManager::stopGame()
+{
+  *this->_running = 0;
 }

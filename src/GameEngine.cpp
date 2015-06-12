@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:54:22 2015 Geoffrey Merran
+// Last update Fri Jun 12 22:57:25 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -28,7 +28,7 @@ bool	GameEngine::initialize()
 {
   if (!this->_renderManager.initialize(this->_parameters.getSize(), std::string("Bomberman")))
     return (false);
-  if (!this->_gameContext.initialize(&(this->_renderManager), this->_parameters.getSize()))
+  if (!this->_gameContext.initialize(&(this->_renderManager), this->_parameters.getSize(), &this->_running))
     return (false);
   return (true);
 }
