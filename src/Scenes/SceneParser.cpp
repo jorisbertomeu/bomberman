@@ -5,11 +5,12 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 08:49:38 2015 Joris Bertomeu
+// Last update Fri Jun 12 17:35:22 2015 Jérémy Mediavilla
 //
 
 #include	<SceneParser.hh>
 #include	<Bomberman.hh>
+#include	<Bot.hh>
 #include	<BrickWall.hh>
 #include	<Floor.hh>
 
@@ -182,6 +183,27 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())),
 				 name);
+	  this->_parser.setPreviousNode();
+	}
+      else if (this->_parser.getValueOf("type") == "BOT")
+	{
+	  std::cout << "BOT !" << std::endl;
+	  std::string	name = this->_parser.getValueOf("name");
+	  this->_parser.setNode("position");
+	  if (this->_parser.checkMultipleTag() == false)
+	    std::cout << this->_parser.getError();
+	  if (this->_parser.isNum(this->_parser.getValueOf("x")) == false
+	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
+	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
+	    {
+	      std::cout << "Error in entity : positions must be numbers" << std::endl;
+	      this->_parser.setPreviousNode();
+	      continue;
+	    }
+	  entity = new Bot(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+	  			     atof(this->_parser.getValueOf("y").c_str()),
+	  			     atof(this->_parser.getValueOf("z").c_str())),
+	  		   name);
 	  this->_parser.setPreviousNode();
 	}
       else if (this->_parser.getValueOf("type") == "BRICK_WALL" || this->_parser.getValueOf("type") == "WOOD_WALL")

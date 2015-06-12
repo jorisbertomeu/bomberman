@@ -5,13 +5,12 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Wed Jun 10 02:46:01 2015 Joris Bertomeu
+// Last update Fri Jun 12 18:55:22 2015 Jérémy Mediavilla
 //
 
 #ifndef _AENTITY_H_
 # define _AENTITY_H_
 
-# include <Game.hh>
 
 # include <stdexcept>
 # include <iostream>
@@ -20,6 +19,7 @@
 
 class				AEntity;
 
+# include <Game.hh>
 # include <ASolid.hh>
 # include <RenderManager.hh>
 # include <HitBox.hh>
@@ -70,7 +70,7 @@ public:
   glm::mat4			getTransformation();
 
   virtual void			draw(RenderManager & rm) = 0;
-  virtual void			update(gdl::Clock &) = 0;
+  virtual void			update(gdl::Clock &, Scene *) = 0;
   virtual void		       	save(std::fstream &);
   virtual Hitbox	       	*getHitbox() const;
 };

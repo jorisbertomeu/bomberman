@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:17:23 2015 Nicolas Adès
-// Last update Fri Jun 12 03:42:31 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:05:30 2015 Jérémy Mediavilla
 //
 
 #include <BrickWall.hh>
@@ -29,7 +29,8 @@ void	       	BrickWall::draw(RenderManager & rm)
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
 }
 
-void		BrickWall::update(gdl::Clock & clock)
+void		BrickWall::update(gdl::Clock & clock, Scene *scene)
 {
+  (void)scene;
   (void) clock;
 }

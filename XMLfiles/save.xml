@@ -8,10 +8,10 @@ TEXTURE
         <speed>0</speed>
         <jump>0</jump>
         <weight>0</weight>
-        <friction>1.81762e-37</friction>
+        <friction>1.02451e-36</friction>
         <move>0</move>
         <ability>NONE</ability>
-        <range>1.81762e-37</range>
+        <range>1.02451e-36</range>
         <bonus>NONE</bonus>
       </attribut>
       <health>0</health>
@@ -2944,6 +2944,33 @@ TEXTURE
         <x>0.4</x>
         <y>0.4</y>
         <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>5</speed>
+        <jump>1</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>1</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBombermanModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>75</x>
+        <y>0</y>
+        <z>75</z>
+      </position>
+      <size>
+        <x>0.1</x>
+        <y>0.1</y>
+        <z>0.1</z>
       </size>
     </entity>
   </entities>

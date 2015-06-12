@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:43:04 2015 Valérian Polizzi
-// Last update Fri Jun 12 04:07:39 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:32:47 2015 Jérémy Mediavilla
 //
 
 #include "GameButton.hh"
@@ -20,8 +20,9 @@ GameButton::~GameButton()
 
 }
 
-void			GameButton::update(gdl::Clock & clock)
+void			GameButton::update(gdl::Clock & clock, Scene *scene)
 {
+  (void)scene;
   if (this->_current)
     this->rotate(glm::vec3(1, 0, 0), (50 * clock.getElapsed()));
 }

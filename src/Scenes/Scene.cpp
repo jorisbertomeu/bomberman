@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 04:37:01 2015 Joris Bertomeu
+// Last update Fri Jun 12 19:07:22 2015 Jérémy Mediavilla
 //
 
 #include	"Scene.hh"
@@ -34,7 +34,7 @@ bool		Scene::addEntity(AEntity *entity)
 void		Scene::updateEntities(gdl::Clock & clock)
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
-    (*it)->update(clock);
+    (*it)->update(clock, this);
 }
 
 IEvent*		Scene::getEventHandler()
@@ -88,4 +88,14 @@ void		Scene::spacePress(SceneManager *sm)
 {
   if (!sm->setCurrentScene(std::string("mainMenu")))
     std::cerr << "Error while loading menu Scene" << std::endl;
+}
+
+void		*Scene::getBomberman()
+{
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	return (*it);
+    }  
+  return (NULL);
 }
