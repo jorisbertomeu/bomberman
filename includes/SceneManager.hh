@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Fri Jun 12 18:36:01 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:44:40 2015 Geoffrey Merran
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -35,17 +35,18 @@ private:
   Scene				*_currentScene;
   RenderManager			*_renderManager;
   InputManager			*_inputManager;
+  CameraManager			*_cm;
 
 public:
   explicit			SceneManager();
   virtual			~SceneManager();
+  void				initialize(CameraManager* cm, RenderManager* rm);
   bool				loadSceneFromFile(const std::string &,
 						  const std::string &);
   bool				setCurrentScene(std::string);
   bool				setCurrentScene(std::string, Scene *);
   Scene				*getCurrentScene() const;
   void				addEntityToCurrentScene(AEntity *);
-  void				setRenderManager(RenderManager *);
   void				setInputManager(InputManager *);
 };
 

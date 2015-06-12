@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:09:44 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 02:46:49 2015 Joris Bertomeu
+// Last update Fri Jun 12 19:10:52 2015 Geoffrey Merran
 //
 
 #ifndef		_SCENEPARSER_HH_
@@ -27,7 +27,7 @@ public:
   explicit	SceneParser();
   virtual	~SceneParser();
   bool		load(const std::string &);
-  Scene		*getScene(RenderManager *);
+  Scene		*getScene(RenderManager *, CameraManager*);
 };
 
 #endif		// _SCENEPARSER_HH_
