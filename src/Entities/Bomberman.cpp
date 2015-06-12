@@ -43,7 +43,7 @@ void		Bomberman::moveRight()
       this->_dir = RIGHT;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.02);
   this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -57,7 +57,7 @@ void		Bomberman::moveLeft()
       this->_dir = LEFT;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.02);
   this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -71,7 +71,7 @@ void		Bomberman::moveBack()
       this->_dir = DOWN;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.01);
+  this->setAcceleration(acele + 0.02);
   this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -85,7 +85,7 @@ void		Bomberman::moveFront()
       this->_dir = UP;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.02);
   this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
