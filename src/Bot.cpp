@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Fri Jun 12 19:14:05 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:30:27 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -50,3 +50,8 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
   this->ia(scene);
   (void)clock;
 }
+
+void	        Bot::moveToPos(const glm::vec3 &pos)
+{
+  (void)pos;
+} 
