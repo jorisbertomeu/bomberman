@@ -35,6 +35,7 @@ private:
   void				right(SceneManager*);
   void				left(SceneManager*);
   void				space(SceneManager*);
+  void				escape(SceneManager*);
   void				updatePlayerCamera(const glm::vec3 & point);
 
   CameraManager			_camera;

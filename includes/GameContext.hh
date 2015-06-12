@@ -18,6 +18,7 @@
 # include	<CommonEvent.hh>
 # include	<MainMenu.hh>
 # include	<GameEvent.hh>
+# include	<EscapeMenu.hh>
 
 class		GameContext
 {

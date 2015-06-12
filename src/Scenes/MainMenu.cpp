@@ -5,8 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 22:42:13 2015 Geoffrey Merran
-// Last update Tue Jun  9 20:52:02 2015 Geoffrey Merran
+// Last update Fri Jun 12 22:44:50 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>

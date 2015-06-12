@@ -27,6 +27,7 @@ bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
   this->_sceneManager.setInputManager(&(this->_inputManager));
   this->_cameraManager.initialize(rm, windowSize);
   this->_sceneManager.loadSceneFromFile(std::string("gameScene"), std::string("XMLfiles/big.xml"));
+  this->_sceneManager.addScene(std::string("escapeMenu"), new EscapeMenu(this->_cameraManager));
   this->_sceneManager.setCurrentScene(std::string("mainMenu"), new MainMenu(this->_cameraManager));
   //this->_sceneManager.setCurrentScene(std::string("gameScene"));
   return (true);

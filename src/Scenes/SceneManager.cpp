@@ -84,3 +84,8 @@ void	SceneManager::setInputManager(InputManager *im)
 {
   this->_inputManager = im;
 }
+
+void	SceneManager::addScene(std::string sceneId, Scene* scene)
+{
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene)); 
+}

@@ -19,6 +19,7 @@ GameEvent::GameEvent()
   this->_events[SDLK_LEFT] = &GameEvent::left;
   this->_events[SDLK_RIGHT] = &GameEvent::right;
   this->_events[SDLK_SPACE] = &GameEvent::space;
+  this->_events[SDLK_ESCAPE] = &GameEvent::escape;
 }
 
 GameEvent::~GameEvent()
@@ -111,4 +112,10 @@ void			GameEvent::space(SceneManager* sm)
 {
   (void) sm;
   //dynamic_cast<Scene*>(sm->getCurrentScene())->spacePress(sm);
+}
+
+void			GameEvent::escape(SceneManager* sm)
+{
+  (void) sm;
+  dynamic_cast<Scene*>(sm->getCurrentScene())->escapePress(sm);
 }
