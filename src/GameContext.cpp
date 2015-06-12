@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Fri Jun 12 03:35:43 2015 Geoffrey Merran
+// Last update Fri Jun 12 04:25:44 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -27,7 +27,7 @@ bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
   this->_cameraManager.initialize(rm, windowSize);
   this->_inputManager.addEvent(new CommonEvent());
   this->_inputManager.addEvent(new GameEvent());
-  this->_sceneManager.setCurrentScene(new MainMenu());
+  this->_sceneManager.setCurrentScene(new MainMenu(this->_cameraManager));
   return (true);
 }
 
@@ -38,7 +38,6 @@ Scene		*GameContext::getCurrentScene() const
 
 bool		GameContext::addScene(const std::string &path)
 {
-  (void)path;
   return (this->_sceneManager.loadSceneFromFile(SceneManager::MAP, path));
 }
 

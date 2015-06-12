@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 11:12:51 2015 Joris Bertomeu
-// Last update Fri Jun 12 03:53:26 2015 Geoffrey Merran
+// Last update Fri Jun 12 04:26:14 2015 Geoffrey Merran
 //
 
 #ifndef		_MAINMENU_HPP_
@@ -22,9 +22,11 @@ class				MainMenu : public Scene
 {
 private:
   std::list<GameButton*>	_buttons;
-  GameButton			*_cursor;
+  GameButton*			_cursor;
+  CameraManager			_cm;
+
 public:
-  explicit			MainMenu();
+  explicit			MainMenu(CameraManager & cm);
   virtual			~MainMenu();
 
   void				initialize();

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 03:44:45 2015 Geoffrey Merran
+// Last update Fri Jun 12 04:11:06 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -105,32 +105,34 @@ void		Bomberman::update(gdl::Clock & clock)
   (void) clock;
 }
 
-void		Bomberman::isReleased()
+void		Bomberman::isReleased(Scene *scene)
 {
-  // return ;
+  glm::vec3	old = this->_pos;
 
-  while (this->getAcceleration() >= 0)
+  if (this->getAcceleration() <= 0)
+    return;
+  this->setAcceleration(this->getAcceleration() - 0.01);
+  switch (this->_dir)
     {
-      if (this->_dir == UP)
-	{
-	  // this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
-	  this->_hitbox->updateHitbox(this);
-	}
-      if (this->_dir == RIGHT)
-	{
-	  // this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
-	  this->_hitbox->updateHitbox(this);
-	}
-      if (this->_dir == DOWN)
-	{
-	  // this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
-	  this->_hitbox->updateHitbox(this);
-	}
-      if (this->_dir == LEFT)
-	{
-	  // this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
-	  this->_hitbox->updateHitbox(this);
-	}
-      this->setAcceleration(this->getAcceleration() - 0.01);
+    case (Bomberman::UP) :
+      this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
+      this->_hitbox->updateHitbox(this);
+      break;
+    case (Bomberman::RIGHT) :
+      this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
+      this->_hitbox->updateHitbox(this);
+      break;
+    case (Bomberman::DOWN) :
+      this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
+      this->_hitbox->updateHitbox(this);
+      break;
+    case (Bomberman::LEFT) :
+      this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
+      this->_hitbox->updateHitbox(this);
+      break;
     }
+  if (this->getHitbox()->checkCollision(scene)) {
+    this->setPos(old);
+    this->setAcceleration(0.0f);
+  }
 }

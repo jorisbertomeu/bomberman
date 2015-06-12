@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Fri Jun 12 03:38:13 2015 Geoffrey Merran
+// Last update Fri Jun 12 04:10:31 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
@@ -35,7 +35,7 @@ public:
   void		moveBack();
   void		moveFront();
   void		jump();
-  void		isReleased();
+  void		isReleased(Scene *);
 
   virtual void 	draw(RenderManager & rm);
   virtual void 	update(gdl::Clock &);
