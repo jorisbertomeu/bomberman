@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.eu>
 //
 // Started on  Fri Jun 12 11:12:51 2015 Nicolas Adès
-// Last update Fri Jun 12 02:32:36 2015 Nicolas Adès
+// Last update Fri Jun 12 23:36:15 2015 mari_f
 //
 
 #include <EscapeMenu.hh>
@@ -28,7 +28,7 @@ EscapeMenu::EscapeMenu(CameraManager &cm) : Scene(&cm)
   this->_cursor->setCurrent(true);
   this->addEntity(this->_cursor);
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
-  background->setScale(glm::vec3(2500, 2500, 0));
+  background->setScale(glm::vec3(2500, 1300, 0));
   this->addEntity(background);
 }
 
@@ -46,7 +46,7 @@ void					EscapeMenu::moveCursor()
 {
   std::list<GameButton*>::iterator it = this->getCurrent();
   glm::vec3 pos;
-  
+
   (*it)->setCurrent(false);
   if (++it == this->_buttons.end())
     {
@@ -90,14 +90,14 @@ void					EscapeMenu::selectButton(SceneManager *sm)
     {
     case 0:
       if (!sm->setCurrentScene(std::string("gameScene")))
-	std::cerr << "Error while loading scene Game" << std::endl;      
+	std::cerr << "Error while loading scene Game" << std::endl;
       break;
     case 1:
       std::cout << "Save GAME" << std::endl;
       break;
     case 2:
       if (!sm->setCurrentScene(std::string("mainMenu")))
-	std::cerr << "Error while loading scene Game" << std::endl;      
+	std::cerr << "Error while loading scene Game" << std::endl;
       if (!sm->removeScene(std::string("gameScene")))
 	std::cerr << "Error while removing scene Game" << std::endl;
 	break;
