@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Wed Jun 10 03:17:07 2015 Joris Bertomeu
+// Last update Fri Jun 12 19:32:45 2015 mari_f
 //
 
 #ifndef				_GAMEEVENT_HH__
@@ -34,7 +34,6 @@ private:
   void				down(SceneManager*);
   void				right(SceneManager*);
   void				left(SceneManager*);
-  void				click(SceneManager*);
   void				space(SceneManager*);
 
   void				updatePlayerCamera(const glm::vec3 & point);
