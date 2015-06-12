@@ -5,7 +5,11 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 04:35:15 2015 Joris Bertomeu
+<<<<<<< HEAD
+// Last update Wed Jun 10 11:23:53 2015 Joris Bertomeu
+=======
+// Last update Fri Jun 12 19:00:04 2015 Jérémy Mediavilla
+>>>>>>> 9990dd80438a077895b8bfeb8b7b5fedf8a6541c
 //
 
 #ifndef			_SCENE_HH_
@@ -27,6 +31,7 @@ protected:
   std::list<AEntity*>	_entityList;
   std::string		_name;
   IEvent*		_eventHandler;
+  bool			_first;
 
 public:
   explicit		Scene();
@@ -40,6 +45,7 @@ public:
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
   void			spacePress(SceneManager *sm);
+  void			*getBomberman();
 };
 
 #endif		// _SCENE_HH_
