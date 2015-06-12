@@ -28,8 +28,8 @@ float	PhysicSolid::getAcceleration()
 void		PhysicSolid::setAcceleration(const float & acceleration)
 {
   this->_acceleration = acceleration;
-  if (this->_acceleration >= 1.5)
-    this->_acceleration = 1.5;
+  if (this->_acceleration >= 1.2)
+    this->_acceleration = 1.2;
 }
 
 float		PhysicSolid::getWeight()

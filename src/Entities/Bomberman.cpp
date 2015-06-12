@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 19:44:53 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:50:38 2015 Jérémy Mediavilla
 //
 
 #include <Bomberman.hh>

@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 20:36:28 2015 Geoffrey Merran
+// Last update Fri Jun 12 21:59:40 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
@@ -110,6 +110,6 @@ void		*Scene::getBomberman()
     {
       if ((*it)->getType() == AEntity::BOMBERMAN)
 	return (*it);
-    }  
+    }
   return (NULL);
 }
