@@ -24,7 +24,8 @@ class					EscapeMenu : public Scene
 private:
   std::list<GameButton*>		_buttons;
   GameButton*				_cursor;
-
+  int					_btnNb;
+  
 public:
   explicit				EscapeMenu(CameraManager &cm);
   virtual				~EscapeMenu();

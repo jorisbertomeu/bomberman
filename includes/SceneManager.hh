@@ -50,6 +50,7 @@ public:
   void				addEntityToCurrentScene(AEntity *);
   void				setInputManager(InputManager *);
   void				addScene(std::string, Scene*);
+  bool				removeScene(const std::string &);
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

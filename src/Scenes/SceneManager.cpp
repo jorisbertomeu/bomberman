@@ -89,3 +89,14 @@ void	SceneManager::addScene(std::string sceneId, Scene* scene)
 {
   this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene)); 
 }
+
+bool	SceneManager::removeScene(const std::string &sceneId)
+{
+  for(std::map<std::string, Scene *>::iterator it = this->_scenes.begin(); it != this->_scenes.end(); ++it) {
+    if ((*it).first == sceneId) {
+      this->_scenes.erase(it);
+      return (true);
+    }
+  }
+  return (false);
+}
