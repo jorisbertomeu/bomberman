@@ -50,7 +50,7 @@
   <entities>
   <entity>
     <attribut>
-      <speed>5</speed>
+      <speed>15</speed>
       <jump>1</jump>
       <weight>200</weight>
       <friction>1</friction>
