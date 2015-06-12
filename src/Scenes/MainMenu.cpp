@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 23:03:15 2015 mari_f
+// Last update Fri Jun 12 23:17:18 2015 mari_f
 //
 
 #include	<MainMenu.hh>
@@ -22,8 +22,8 @@ MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
       (*it)->setScale(glm::vec3(300, 100, 100));
       this->addEntity((*it));
     }
-  this->_cursor = new GameButton(glm::vec3(-300, 50, 0), std::string("assets/textures/wall_texture.tga"));
-  this->_cursor->setScale(glm::vec3(60, 60, 0));
+  this->_cursor = new GameButton(glm::vec3(-250, 50, 0), std::string("assets/textures/hat.tga"));
+  this->_cursor->setScale(glm::vec3(120, 120, 0));
   this->_cursor->setCurrent(false);
   this->addEntity(this->_cursor);
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
@@ -77,7 +77,7 @@ void			MainMenu::moveCursorDown()
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
     }
-  pos.x = -500;
+  pos.x = -250;
   this->_cursor->setPos(pos);
 }
 
@@ -98,7 +98,7 @@ void			MainMenu::moveCursorUp()
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
     }
-  pos.x = -500;
+  pos.x = -250;
   this->_cursor->setPos(pos);
 }
 
