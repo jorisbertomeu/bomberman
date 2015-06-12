@@ -5,29 +5,29 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 23:24:43 2015 Geoffrey Merran
+// Last update Fri Jun 12 23:26:39 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>
 
 MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
-  this->_buttons.push_back(new GameButton(glm::vec3(0, 300, 0), std::string("assets/textures/play.tga"), MainMenu::PLAY));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, 50, 0), std::string("assets/textures/play.tga"), MainMenu::PLAY));
   this->_buttons.front()->setCurrent(true);
-  this->_buttons.push_back(new GameButton(glm::vec3(0, 0, 0), std::string("assets/textures/load.tga"), MainMenu::LOAD));
-  this->_buttons.push_back(new GameButton(glm::vec3(0, -300, 0), std::string("assets/textures/quit.tga"), MainMenu::QUIT));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, -150, 0), std::string("assets/textures/load.tga"), MainMenu::LOAD));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, -350, 0), std::string("assets/textures/quit.tga"), MainMenu::QUIT));
   this->_eventHandler = new MenuEvent();
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
     {
-      (*it)->setScale(glm::vec3(800, 200, 200));
+      (*it)->setScale(glm::vec3(300, 100, 100));
       this->addEntity((*it));
     }
-  this->_cursor = new GameButton(glm::vec3(-500, 300, 0), std::string("assets/textures/wall_texture.tga"));
-  this->_cursor->setScale(glm::vec3(60, 60, 60));
-  this->_cursor->setCurrent(true);
+  this->_cursor = new GameButton(glm::vec3(-250, 50, 0), std::string("assets/textures/hat.tga"));
+  this->_cursor->setScale(glm::vec3(120, 120, 0));
+  this->_cursor->setCurrent(false);
   this->addEntity(this->_cursor);
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
-  background->setScale(glm::vec3(2500, 2500, 0));
+  background->setScale(glm::vec3(2500, 1300, 0));
   this->addEntity(background);
 }
 
@@ -77,7 +77,7 @@ void			MainMenu::moveCursorDown()
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
     }
-  pos.x = -500;
+  pos.x = -250;
   this->_cursor->setPos(pos);
 }
 
@@ -98,7 +98,7 @@ void			MainMenu::moveCursorUp()
       (*it)->setCurrent(true);
       pos = (*it)->getPos();
     }
-  pos.x = -500;
+  pos.x = -250;
   this->_cursor->setPos(pos);
 }
 
