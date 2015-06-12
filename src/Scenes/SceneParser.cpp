@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 02:47:19 2015 Joris Bertomeu
+// Last update Wed Jun 10 07:08:51 2015 Joris Bertomeu
 //
 
 #include	<SceneParser.hh>
@@ -183,7 +183,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 				 name);
 	  this->_parser.setPreviousNode();
 	}
-      else if (this->_parser.getValueOf("type") == "BRICK_WALL")
+      else if (this->_parser.getValueOf("type") == "BRICK_WALL" || this->_parser.getValueOf("type") == "WOOD_WALL")
 	{
 	  this->_parser.setNode("position");
 	  if (this->_parser.checkMultipleTag() == false)
