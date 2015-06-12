@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:12:21 2015 Geoffrey Merran
-// Last update Sat Jun 13 03:18:09 2015 Geoffrey Merran
+// Last update Sat Jun 13 03:47:43 2015 Geoffrey Merran
 //
 
 #ifndef __NEW_GAME_MENU_HH
@@ -15,12 +15,16 @@
 # include				<GameButton.hh>
 # include				<list>
 # include				<NewGameEvent.hh>
+# include				<MapSelector.hh>
 
 class					NewGameMenu : public Scene
 {
 private:
   std::list<GameButton*>		_buttons;
   GameButton*				_cursor;
+  bool					_initialized;
+  std::string				_folderPath;
+  MapSelector*				_mapSelector;
 
 public:
   enum ButtonId

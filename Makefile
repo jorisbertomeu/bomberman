@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Sat Jun 13 03:26:27 2015 Geoffrey Merran
+## Last update Sat Jun 13 03:50:45 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -32,6 +32,7 @@ SRC		=	src/main.cpp				\
 			src/Scenes/EscapeMenu.cpp		\
 			src/Scenes/MainMenu.cpp			\
 			src/Scenes/NewGameMenu.cpp		\
+			src/Scenes/MapSelector.cpp		\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
 			src/Physics/HitBox.cpp			\

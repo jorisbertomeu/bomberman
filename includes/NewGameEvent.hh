@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:30:57 2015 Geoffrey Merran
-// Last update Sat Jun 13 02:23:03 2015 Geoffrey Merran
+// Last update Sat Jun 13 03:41:46 2015 Geoffrey Merran
 //
 
 #ifndef __NEW_GAME_EVENT_HH
