@@ -5,13 +5,14 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Tue Jun  9 23:34:41 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 16:37:28 2015 Jérémy Mediavilla
 //
 
 #ifndef				_SOUND_HH_
 # define			_SOUND_HH_
 
 # include			<string>
+# include			<fmod.h>
 
 class				Sound
 {
@@ -32,12 +33,17 @@ protected:
   std::string			_filename;
   bool				_online;
   SoundType			_type;
+  FMOD_SOUND			*_rawSound;
 
 public:
   explicit			Sound(const Sound::SoundType &type, const bool &online, const std::string &filename) {
     this->_filename = filename;
     this->_online = online;
     this->_type = type;
+    // if (this->_type == Sound::AMBIANT)
+    //   FMOD_System_CreateSound();
+    // else
+    //   FMOD_System_CreateSound();
   }
 
   virtual			~Sound() {

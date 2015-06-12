@@ -5,7 +5,11 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
+<<<<<<< HEAD
 // Last update Fri Jun 12 15:03:14 2015 Geoffrey Merran
+=======
+// Last update Wed Jun 10 07:48:11 2015 Joris Bertomeu
+>>>>>>> bc242574b2de80e3973f56ebbffbe10dd41dcaab
 //
 
 #include <Bomberman.hh>
@@ -13,7 +17,7 @@
 #include <SceneManager.hh>
 #include <PhysicSolid.hh>
 
-Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(pos, AEntity::BOMBERMAN), _name(name), _dir(DOWN)
+Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_scale = glm::vec3(0.1, 0.1, 0.1);
@@ -43,7 +47,11 @@ void		Bomberman::moveRight()
       this->_dir = RIGHT;
     }
   float		acele = this->getAcceleration();
+<<<<<<< HEAD
   this->setAcceleration(acele + 0.01);
+=======
+  this->setAcceleration(acele + 0.02);
+>>>>>>> bc242574b2de80e3973f56ebbffbe10dd41dcaab
   this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -57,7 +65,11 @@ void		Bomberman::moveLeft()
       this->_dir = LEFT;
     }
   float		acele = this->getAcceleration();
+<<<<<<< HEAD
   this->setAcceleration(acele + 0.01);
+=======
+  this->setAcceleration(acele + 0.02);
+>>>>>>> bc242574b2de80e3973f56ebbffbe10dd41dcaab
   this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -71,7 +83,7 @@ void		Bomberman::moveBack()
       this->_dir = DOWN;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.01);
+  this->setAcceleration(acele + 0.02);
   this->translate(glm::vec3(0, 0, 1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -85,7 +97,11 @@ void		Bomberman::moveFront()
       this->_dir = UP;
     }
   float		acele = this->getAcceleration();
+<<<<<<< HEAD
   this->setAcceleration(acele + 0.01);
+=======
+  this->setAcceleration(acele + 0.02);
+>>>>>>> bc242574b2de80e3973f56ebbffbe10dd41dcaab
   this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }

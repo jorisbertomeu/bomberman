@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 19:52:05 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 17:04:27 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -35,4 +35,11 @@ std::string	Bot::getColor() const
 void		Bot::setColor(const std::string &color)
 {
   this->_color = color;
+}
+
+void		Bot::ia(SceneManager *sm)
+{
+  Scene		*scene;
+
+  scene = sm->getCurrentScene();
 }

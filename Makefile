@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Fri Jun 12 14:25:49 2015 Geoffrey Merran
+## Last update Wed Jun 10 08:44:02 2015 Joris Bertomeu
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
 
 RM		=	rm -f
 
@@ -57,7 +57,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L./libxml2/.libs/ -lxml2
+		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L./libxml2/.libs/ -lxml2 -L./fmod/ -lfmod
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:

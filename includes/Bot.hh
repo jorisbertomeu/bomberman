@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Tue Jun  9 19:51:25 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 17:00:49 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOT_H_
@@ -29,6 +29,7 @@ private:
   bool		canPlaceBomb();
   glm::vec3	targetBomberman(const Bomberman &);
   bool		isFrontOfWall();
+  void		ia(SceneManager *);
 };
 
 #endif // _BOT_H_

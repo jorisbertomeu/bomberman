@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 07:08:51 2015 Joris Bertomeu
+// Last update Wed Jun 10 08:49:38 2015 Joris Bertomeu
 //
 
 #include	<SceneParser.hh>
@@ -110,6 +110,7 @@ else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
 	rm->getSoundManager().addSound(Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
     }
   this->_parser.resetNode();
+  std::cout << "MODELS" << std::endl;
   this->_parser.setNode("scene");
   this->_parser.setNode("model_pack");
   while (this->_parser.foreach("model"))
