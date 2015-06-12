@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:40:47 2015 Valérian Polizzi
-// Last update Fri Jun 12 22:38:39 2015 Geoffrey Merran
+// Last update Fri Jun 12 23:32:59 2015 Geoffrey Merran
 //
 
 #ifndef _GAMEBUTTON_HH_

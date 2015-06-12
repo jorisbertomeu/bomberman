@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:55:54 2015 Geoffrey Merran
-// Last update Wed Jun 10 09:22:54 2015 Joris Bertomeu
+// Last update Fri Jun 12 23:44:15 2015 Geoffrey Merran
 //
 
 #include <EscapeEvent.hh>
@@ -24,8 +24,6 @@ EscapeEvent::~EscapeEvent()
 
 bool			EscapeEvent::isCatch(gdl::Input &input, gdl::Clock& clock, SceneManager* sm, CameraManager& cm)
 {
-  Scene			*scene = sm->getCurrentScene();
-
   (void) cm;
   if (this->_nextKeyCatch > 0.0f)
     {
@@ -51,11 +49,12 @@ void			EscapeEvent::resetKeyCatch()
 
 void			EscapeEvent::up(SceneManager* sm)
 {
+  dynamic_cast<EscapeMenu*>(sm->getCurrentScene())->moveCursorUp();
 }
 
 void			EscapeEvent::down(SceneManager* sm)
 {
-  dynamic_cast<EscapeMenu*>(sm->getCurrentScene())->moveCursor();
+  dynamic_cast<EscapeMenu*>(sm->getCurrentScene())->moveCursorDown();
 }
 
 void			EscapeEvent::space(SceneManager* sm)
