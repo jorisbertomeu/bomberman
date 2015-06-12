@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 14:56:11 2015 Geoffrey Merran
+// Last update Fri Jun 12 15:03:14 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -43,7 +43,7 @@ void		Bomberman::moveRight()
       this->_dir = RIGHT;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.01);
   this->translate(glm::vec3(1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -57,7 +57,7 @@ void		Bomberman::moveLeft()
       this->_dir = LEFT;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.01);
   this->translate(glm::vec3(-1, 0, 0) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -85,7 +85,7 @@ void		Bomberman::moveFront()
       this->_dir = UP;
     }
   float		acele = this->getAcceleration();
-  this->setAcceleration(acele + 0.03);
+  this->setAcceleration(acele + 0.01);
   this->translate(glm::vec3(0, 0, -1) * (this->_speed * this->getAcceleration()));
   this->_hitbox->updateHitbox(this);
 }
@@ -115,7 +115,7 @@ void		Bomberman::update(gdl::Clock & clock)
   // gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
   // if (this->getAcceleration <= 0)
-  //   model.setCurrentAnim(""
+  //   model.setCurrentAnim("stop", false);
   (void) clock;
 }
 
