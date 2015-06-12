@@ -5,10 +5,10 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Mon May 25 16:25:37 2015 Geoffrey Merran
-// Last update Wed Jun  3 11:17:04 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:38:13 2015 Geoffrey Merran
 //
 
-#include "GraphicContext.hh"
+#include <GraphicContext.hh>
 
 GraphicContext::GraphicContext(void)
 {

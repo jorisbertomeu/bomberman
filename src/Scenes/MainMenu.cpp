@@ -5,30 +5,19 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 17:00:11 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:35:27 2015 Geoffrey Merran
 // Last update Tue Jun  9 20:52:02 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>
 
-MainMenu::MainMenu(CameraManager & cm)
+MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
   this->_buttons.push_back(new GameButton(glm::vec3(0, 300, 0), std::string("assets/textures/play.tga")));
   this->_buttons.front()->setCurrent(true);
   this->_buttons.push_back(new GameButton(glm::vec3(0, 0, 0), std::string("assets/textures/load.tga")));
   this->_buttons.push_back(new GameButton(glm::vec3(0, -300, 0), std::string("assets/textures/quit.tga")));
-  this->_cm = cm;
   this->_eventHandler = new MenuEvent();
-  this->initialize();
-}
-
-MainMenu::~MainMenu()
-{
-
-}
-
-void			MainMenu::initialize()
-{
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
     {
       (*it)->setScale(glm::vec3(800, 200, 200));
@@ -41,7 +30,16 @@ void			MainMenu::initialize()
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
   background->setScale(glm::vec3(2500, 2500, 0));
   this->addEntity(background);
-  this->_cm.moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
+}
+
+MainMenu::~MainMenu()
+{
+
+}
+
+void			MainMenu::initialize()
+{
+  this->_cm->moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
 }
 
 int			MainMenu::getListSize() const

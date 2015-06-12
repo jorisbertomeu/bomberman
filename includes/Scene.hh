@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:32:22 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:50:26 2015 Jérémy Mediavilla
 //
 
 #ifndef			_SCENE_HH_
@@ -27,12 +27,14 @@ protected:
   std::list<AEntity*>	_entityList;
   std::string		_name;
   IEvent*		_eventHandler;
+  CameraManager*       	_cm;
   bool			_first;
 
 public:
-  explicit		Scene();
+  explicit		Scene(CameraManager* cm);
   virtual		~Scene();
 
+  virtual void	       	initialize();
   bool			addEntity(AEntity *);
   std::list<AEntity *>	getEntities();
   void			updateEntities(gdl::Clock & clock);

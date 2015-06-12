@@ -5,12 +5,13 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:32:38 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:50:48 2015 Jérémy Mediavilla
 //
 
-#include	"Scene.hh"
+#include	<CameraManager.hh>
+#include	<Scene.hh>
 
-Scene::Scene()
+Scene::Scene(CameraManager* cm) : _cm(cm)
 {
   this->_eventHandler = NULL;
   this->_first = true;
@@ -19,6 +20,12 @@ Scene::Scene()
 Scene::~Scene()
 {
 
+}
+
+void				Scene::initialize()
+{
+  this->_cm->moveTo(glm::vec3(0, 500, 200), glm::vec3(0, 0, 0));
+  this->_cm->setDefaultPos(glm::vec3(0, 500, 200));
 }
 
 std::list<AEntity*>		Scene::getEntities()

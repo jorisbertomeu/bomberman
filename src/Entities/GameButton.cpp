@@ -5,10 +5,10 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:43:04 2015 Valérian Polizzi
-// Last update Fri Jun 12 18:32:47 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 19:45:11 2015 Geoffrey Merran
 //
 
-#include "GameButton.hh"
+#include <GameButton.hh>
 
 GameButton::GameButton(const glm::vec3 & pos, const std::string & texture) : Pavement(pos, texture), _current(false)
 {
