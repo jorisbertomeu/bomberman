@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Fri Jun 12 03:47:48 2015 Geoffrey Merran
+## Last update Fri Jun 12 04:56:46 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -45,6 +45,7 @@ SRC		=	src/main.cpp				\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
+			src/Events/MenuEvent.cpp		\
 			src/Bot.cpp				\
 			src/Pavement.cpp			\
 

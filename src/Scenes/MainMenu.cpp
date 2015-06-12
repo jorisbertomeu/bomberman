@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Fri Jun 12 04:30:36 2015 Geoffrey Merran
+// Last update Fri Jun 12 05:25:39 2015 Geoffrey Merran
 // Last update Tue Jun  9 20:52:02 2015 Geoffrey Merran
 //
 
@@ -18,6 +18,7 @@ MainMenu::MainMenu(CameraManager & cm)
   this->_buttons.push_back(new GameButton(glm::vec3(0, 0, 0), std::string("assets/textures/load.tga")));
   this->_buttons.push_back(new GameButton(glm::vec3(0, -300, 0), std::string("assets/textures/quit.tga")));
   this->_cm = cm;
+  this->_eventHandler = new MenuEvent();
   this->initialize();
 }
 
@@ -53,7 +54,32 @@ GameButton*		MainMenu::getCursor() const
   return (this->_cursor);
 }
 
+std::list<GameButton*>::iterator 	MainMenu::getCurrent()
+{
+  for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
+    {
+      if ((*it)->getCurrent())
+	return (it);
+    }
+  return (this->_buttons.end());
+}
+
 void			MainMenu::moveCursor()
 {
-  this->_cursor->setPos(glm::vec3(-500, 0, 0));
+  std::list<GameButton*>::iterator it = this->getCurrent();
+  glm::vec3 pos;
+
+  (*it)->setCurrent(false);
+  if (++it == this->_buttons.end())
+    {
+      this->_buttons.front()->setCurrent(true);
+      pos = this->_buttons.front()->getPos();
+    }
+  else
+    {
+      (*it)->setCurrent(true);
+      pos = (*it)->getPos();
+    }
+  pos.x = -500;
+  this->_cursor->setPos(pos);
 }

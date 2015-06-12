@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Tue Jun  9 23:33:13 2015 Joris Bertomeu
+// Last update Fri Jun 12 04:51:39 2015 Geoffrey Merran
 //
 
 #include		<GameEvent.hh>
@@ -32,12 +32,6 @@ bool			GameEvent::isCatch(gdl::Input &input, Scene* scene, CameraManager& camera
   this->_camera = camera;
   for (std::map<int, GameEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
-      // if (input.getKey(SDL_BUTTON_LEFT))
-      // 	{
-      // 	  std::cout << "x :" << input.getMousePosition().x << std::endl;
-      // 	  std::cout << "y : " << input.getMousePosition().y << std::endl;
-      // 	  return (true);
-      // 	}
       if (input.getKey((*found).first))
 	{
 	  (this->*this->_events[(*found).first])(scene);
@@ -62,7 +56,6 @@ void			GameEvent::up(Scene* scene)
 {
   std::list<AEntity*>	list;
   glm::vec3		bomberman_position_old;
-  int			height;
 
   list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
@@ -77,14 +70,6 @@ void			GameEvent::up(Scene* scene)
       	  this->updatePlayerCamera((*it)->getPos());
       	}
     }
-
-  // height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
-  // if (height >= 300)
-  //   height = (300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()));
-  // else
-  //   height += 300;
-  // dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
-  // std::cout << height << std::endl;
 }
 
 void			GameEvent::click(Scene* scene)
@@ -96,7 +81,6 @@ void			GameEvent::down(Scene* scene)
 {
   std::list<AEntity*>	list;
   glm::vec3		bomberman_position_old;
-  int			height;
 
   list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end();
@@ -111,13 +95,6 @@ void			GameEvent::down(Scene* scene)
 	  this->updatePlayerCamera((*it)->getPos());
 	}
     }
-
-  // height = dynamic_cast<MainMenu*>(scene)->getCursor()->getPos().y;
-  // if (height <= 300 - (300 * dynamic_cast<MainMenu*>(scene)->getListSize()))
-  //   height = 300;
-  // else
-  //   height -= 300;
-  // dynamic_cast<MainMenu*>(scene)->getCursor()->setPos(glm::vec3(-500, height, 0));
 }
 
 

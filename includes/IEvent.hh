@@ -5,13 +5,17 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:34:31 2015 mari_f
-// Last update Sat Jun  6 19:45:52 2015 Geoffrey Merran
+// Last update Fri Jun 12 05:07:22 2015 Geoffrey Merran
 //
 
 #ifndef			_IEVENT_HH__
 # define		_IEVENT_HH__
 
+# include	       	<SDL_keycode.h>
 # include		<Input.hh>
+
+class			IEvent;
+
 # include		<Scene.hh>
 # include		<CameraManager.hh>
 

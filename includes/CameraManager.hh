@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:02:41 2015 Joris Bertomeu
-// Last update Sun Jun  7 00:08:44 2015 Geoffrey Merran
+// Last update Fri Jun 12 04:46:32 2015 Geoffrey Merran
 //
 
 #ifndef			_CAMERAMANAGER_HH_
@@ -13,6 +13,9 @@
 
 # include		<Game.hh>
 # include		<SdlContext.hh>
+
+class			CameraManager;
+
 # include		<RenderManager.hh>
 
 class			CameraManager

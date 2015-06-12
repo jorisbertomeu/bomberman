@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 04:15:51 2015 Geoffrey Merran
+// Last update Fri Jun 12 05:01:55 2015 Geoffrey Merran
 //
 
 #include	"Scene.hh"
@@ -31,16 +31,21 @@ bool		Scene::addEntity(AEntity *entity)
   return(true);
 }
 
-void  	      	Scene::draw(RenderManager & rm)
-{
-  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
-    (*it)->draw(rm);
-}
-
 void		Scene::updateEntities(gdl::Clock & clock)
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->update(clock);
+}
+
+IEvent*		Scene::getEventHandler()
+{
+  return (this->_eventHandler);
+}
+
+void  	      	Scene::draw(RenderManager & rm)
+{
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
+    (*it)->draw(rm);
 }
 
 bool		Scene::save(RenderManager *rm)

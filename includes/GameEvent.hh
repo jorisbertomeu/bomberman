@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Mon Jun  8 12:33:07 2015 Valérian Polizzi
+// Last update Fri Jun 12 05:07:28 2015 Geoffrey Merran
 //
 
 #ifndef				_GAMEEVENT_HH__
@@ -14,9 +14,8 @@
 # include			<string>
 # include			<iostream>
 # include			<map>
-# include			<list>
 
-# include			<SDL_keycode.h>
+class				GameEvent;
 
 # include			<IEvent.hh>
 # include			<Bomberman.hh>
