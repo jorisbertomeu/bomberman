@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 10:21:36 2015 Joris Bertomeu
-// Last update Fri Jun 12 03:39:54 2015 Geoffrey Merran
+// Last update Fri Jun 12 18:30:50 2015 Jérémy Mediavilla
 //
 
 #include	<Pavement.hh>
@@ -116,7 +116,8 @@ void		Pavement::draw(RenderManager &rm)
   this->_geometry.draw(rm.getGraphicManager().getContext().getShaders(), getTransformation(), GL_QUADS);
 }
 
-void		Pavement::update(gdl::Clock & clock)
+void		Pavement::update(gdl::Clock & clock, Scene *scene)
 {
+  (void)scene;
   (void) clock;
 }

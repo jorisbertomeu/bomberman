@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Fri Jun 12 18:14:48 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:44:53 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -110,13 +110,14 @@ void	       	Bomberman::draw(RenderManager & rm)
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
 }
 
-void		Bomberman::update(gdl::Clock & clock)
+void		Bomberman::update(gdl::Clock & clock, Scene *scene)
 {
   // gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
   // if (this->getAcceleration <= 0)
   //   model.setCurrentAnim("stop", false);
   (void) clock;
+  (void)scene;
 }
 
 void		Bomberman::isReleased(Scene *scene)

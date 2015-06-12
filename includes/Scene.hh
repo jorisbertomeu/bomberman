@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:22:15 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:44:26 2015 Geoffrey Merran
 //
 
 #ifndef			_SCENE_HH_
@@ -28,6 +28,7 @@ protected:
   std::string		_name;
   IEvent*		_eventHandler;
   CameraManager*       	_cm;
+  bool			_first;
 
 public:
   explicit		Scene(CameraManager* cm);
@@ -42,6 +43,7 @@ public:
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
   void			spacePress(SceneManager *sm);
+  void			*getBomberman();
 };
 
 #endif		// _SCENE_HH_

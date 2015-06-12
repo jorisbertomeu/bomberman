@@ -5,11 +5,12 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:14:37 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:45:49 2015 Geoffrey Merran
 //
 
 #include	<SceneParser.hh>
 #include	<Bomberman.hh>
+#include	<Bot.hh>
 #include	<BrickWall.hh>
 #include	<Floor.hh>
 
@@ -93,21 +94,21 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
       if (this->_parser.checkMultipleTag() == false)
 	std::cout << this->_parser.getError();
       if (this->_parser.getValueOf("id") == "WALK_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::WALK, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::WALK, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else if (this->_parser.getValueOf("id") == "EXPLOSION_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::EXPLOSION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::EXPLOSION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else if (this->_parser.getValueOf("id") == "WALK_STOP_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::WALK_STOP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "DESTRUCTION_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::DESTRUCTION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "DEAD_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::DEAD, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "AMBIANT_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::AMBIANT, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
-else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
-	rm->getSoundManager().addSound(Sound(Sound::JUMP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::WALK_STOP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "DESTRUCTION_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::DESTRUCTION, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "DEAD_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::DEAD, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "AMBIANT_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::AMBIANT, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
+      else if (this->_parser.getValueOf("id") == "JUMP_SOUND")
+	rm->getSoundManager().addSound(new Sound(Sound::JUMP, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
       else
-	rm->getSoundManager().addSound(Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file")));
+	rm->getSoundManager().addSound(new Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
     }
   this->_parser.resetNode();
   std::cout << "MODELS" << std::endl;
@@ -182,6 +183,27 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())),
 				 name);
+	  this->_parser.setPreviousNode();
+	}
+      else if (this->_parser.getValueOf("type") == "BOT")
+	{
+	  std::cout << "BOT !" << std::endl;
+	  std::string	name = this->_parser.getValueOf("name");
+	  this->_parser.setNode("position");
+	  if (this->_parser.checkMultipleTag() == false)
+	    std::cout << this->_parser.getError();
+	  if (this->_parser.isNum(this->_parser.getValueOf("x")) == false
+	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
+	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
+	    {
+	      std::cout << "Error in entity : positions must be numbers" << std::endl;
+	      this->_parser.setPreviousNode();
+	      continue;
+	    }
+	  entity = new Bot(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+	  			     atof(this->_parser.getValueOf("y").c_str()),
+	  			     atof(this->_parser.getValueOf("z").c_str())),
+	  		   name);
 	  this->_parser.setPreviousNode();
 	}
       else if (this->_parser.getValueOf("type") == "BRICK_WALL" || this->_parser.getValueOf("type") == "WOOD_WALL")

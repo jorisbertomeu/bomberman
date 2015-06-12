@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:40:45 2015 Geoffrey Merran
+// Last update Fri Jun 12 19:45:22 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
@@ -14,6 +14,7 @@
 Scene::Scene(CameraManager* cm) : _cm(cm)
 {
   this->_eventHandler = NULL;
+  this->_first = true;
 }
 
 Scene::~Scene()
@@ -41,7 +42,7 @@ bool		Scene::addEntity(AEntity *entity)
 void		Scene::updateEntities(gdl::Clock & clock)
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
-    (*it)->update(clock);
+    (*it)->update(clock, this);
 }
 
 IEvent*		Scene::getEventHandler()
@@ -53,6 +54,10 @@ IEvent*		Scene::getEventHandler()
 
 void  	      	Scene::draw(RenderManager & rm)
 {
+  if (this->_first) {
+    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->play();
+    this->_first = false;
+  }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
 }
@@ -95,4 +100,14 @@ void		Scene::spacePress(SceneManager *sm)
 {
   if (!sm->setCurrentScene(std::string("mainMenu")))
     std::cerr << "Error while loading menu Scene" << std::endl;
+}
+
+void		*Scene::getBomberman()
+{
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
+    {
+      if ((*it)->getType() == AEntity::BOMBERMAN)
+	return (*it);
+    }  
+  return (NULL);
 }
