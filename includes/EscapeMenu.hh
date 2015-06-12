@@ -14,7 +14,7 @@
 # include	<SceneManager.hh>
 # include	<GameButton.hh>
 # include	<list>
-# include	<MenuEvent.hh>
+# include	<EscapeEvent.hh>
 
 # define	TOP_HEIGHT	800;
 # define	MARGIN		200;
@@ -24,7 +24,6 @@ class					EscapeMenu : public Scene
 private:
   std::list<GameButton*>		_buttons;
   GameButton*				_cursor;
-  CameraManager				_cm;
 
 public:
   explicit				EscapeMenu(CameraManager &cm);

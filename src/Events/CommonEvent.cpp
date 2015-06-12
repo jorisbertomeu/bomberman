@@ -12,7 +12,7 @@
 
 CommonEvent::CommonEvent()
 {
-  this->_events[SDLK_ESCAPE] = &CommonEvent::escape;
+  //this->_events[SDLK_ESCAPE] = &CommonEvent::escape;
   this->_events[SDL_QUIT] = &CommonEvent::escape;
 }
 

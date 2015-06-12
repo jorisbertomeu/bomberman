@@ -43,6 +43,7 @@ public:
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
   void			spacePress(SceneManager *sm);
+  void			escapePress(SceneManager *sm);
   void			*getBomberman();
 };
 

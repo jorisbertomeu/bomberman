@@ -10,18 +10,13 @@
 
 #include <EscapeMenu.hh>
 
-EscapeMenu::EscapeMenu(CameraManager &cm)
+EscapeMenu::EscapeMenu(CameraManager &cm) : Scene(&cm)
 {
-
-}
-
-EscapeMenu::~EscapeMenu()
-{
-
-}
-
-void					EscapeMenu::initialize()
-{
+  this->_buttons.push_back(new GameButton(glm::vec3(0, 300, 0), std::string("assets/textures/resume.tga")));
+  this->_buttons.front()->setCurrent(true);
+  this->_buttons.push_back(new GameButton(glm::vec3(0, 0, 0), std::string("assets/textures/save.tga")));
+  this->_buttons.push_back(new GameButton(glm::vec3(0, -300, 0), std::string("assets/textures/quit.tga")));
+  this->_eventHandler = new EscapeEvent();
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
     {
       (*it)->setScale(glm::vec3(800, 200, 200));
@@ -34,7 +29,16 @@ void					EscapeMenu::initialize()
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
   background->setScale(glm::vec3(2500, 2500, 0));
   this->addEntity(background);
-  this->_cm.moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
+}
+
+EscapeMenu::~EscapeMenu()
+{
+
+}
+
+void					EscapeMenu::initialize()
+{
+  this->_cm->moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
 }
 
 void					EscapeMenu::moveCursor()

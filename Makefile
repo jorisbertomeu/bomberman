@@ -8,7 +8,7 @@
 ## Last update Fri Jun 12 19:43:53 2015 Geoffrey Merran
 ##
 
-CXX		=	g++
+CXX		=	clang++
 
 CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
 
@@ -47,6 +47,8 @@ SRC		=	src/main.cpp				\
 			src/Events/MenuEvent.cpp		\
 			src/Bot.cpp				\
 			src/Pavement.cpp			\
+			src/Scenes/EscapeMenu.cpp		\
+			src/Events/EscapeEvent.cpp		\
 
 OBJ		=	$(SRC:.cpp=.o)
 

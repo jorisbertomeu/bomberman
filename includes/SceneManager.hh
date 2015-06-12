@@ -48,6 +48,7 @@ public:
   Scene				*getCurrentScene() const;
   void				addEntityToCurrentScene(AEntity *);
   void				setInputManager(InputManager *);
+  void				addScene(std::string, Scene*);
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

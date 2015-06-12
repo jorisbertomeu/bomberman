@@ -102,6 +102,12 @@ void		Scene::spacePress(SceneManager *sm)
     std::cerr << "Error while loading menu Scene" << std::endl;
 }
 
+void		Scene::escapePress(SceneManager *sm)
+{
+  if (!sm->setCurrentScene(std::string("escapeMenu")))
+    std::cerr << "Error while loading menu Scene" << std::endl;
+}
+
 void		*Scene::getBomberman()
 {
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
