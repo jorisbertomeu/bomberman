@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:07:04 2015 Joris Bertomeu
-// Last update Wed Jun 10 10:53:41 2015 Joris Bertomeu
+// Last update Wed Jun 10 21:40:13 2015 Joris Bertomeu
 //
 
 #ifndef			_SOUNDMANAGER_HH_
@@ -27,7 +27,7 @@ public:
   virtual		~SoundManager();
   bool			initialize();
   bool			addSound(Sound *);
-  bool			addSoundFromFile(const std::string &);
+  bool			addSoundFromFile(const std::string &, const Sound::SoundType &);
   FMOD_SYSTEM		*getSystem() const;
   Sound			*getSoundOf(Sound::SoundType type);
 };

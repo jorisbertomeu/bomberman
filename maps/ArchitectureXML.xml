@@ -44,7 +44,7 @@
    <width>1000</width>
    <height>1000</height>
    <gravity>1</gravity>
-   <friction>3</friction>
+   <friction>0.015</friction>
    <skybox><online>0</online><file>NULL</file></skybox>
    <texture>idFloorTexture</texture>
  </common>
@@ -54,7 +54,7 @@
       <speed>15</speed>
       <jump>1</jump>
       <weight>200</weight>
-      <friction>1</friction>
+      <friction>0.01</friction>
       <move>1</move>
       <ability>NONE</ability>
       <range>0</range>

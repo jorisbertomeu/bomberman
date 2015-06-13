@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sat Jun 13 16:53:42 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 21:47:08 2015 Joris Bertomeu
 //
 
 #include	<CameraManager.hh>
@@ -54,12 +54,6 @@ IEvent*		Scene::getEventHandler()
 
 void  	      	Scene::draw(RenderManager & rm)
 {
-  if (this->_first) {
-    Sound* s = rm.getSoundManager().getSoundOf(Sound::AMBIANT);
-    if (s)
-      s->play();
-    this->_first = false;
-  }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
 }
@@ -119,3 +113,4 @@ void		*Scene::getBomberman()
     }
   return (NULL);
 }
+

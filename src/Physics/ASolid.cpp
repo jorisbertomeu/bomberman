@@ -12,7 +12,7 @@
 
 ASolid::ASolid() : _speed(0)
 {
-
+  this->_friction = 0.015f;
 }
 
 ASolid::~ASolid()

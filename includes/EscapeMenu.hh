@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.eu>
 //
 // Started on  Fri Jun 12 11:12:51 2015 Nicolas Adès
-// Last update Fri Jun 12 23:34:56 2015 Geoffrey Merran
+// Last update Sat Jun 13 19:21:49 2015 mari_f
 //
 
 #ifndef		_ESCAPEMENU_HH_
@@ -13,6 +13,7 @@
 
 # include	<SceneManager.hh>
 # include	<GameButton.hh>
+# include	<Cloud.hh>
 # include	<list>
 # include	<EscapeEvent.hh>
 

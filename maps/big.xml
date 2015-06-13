@@ -48,7 +48,7 @@
       <speed>2</speed>
       <jump>1</jump>
       <weight>200</weight>
-      <friction>1</friction>
+      <friction>0.015</friction>
       <move>1</move>
       <ability>NONE</ability>
       <range>0</range>
@@ -102,7 +102,7 @@
       <speed>0</speed>
       <jump>0</jump>
       <weight>200</weight>
-      <friction>1</friction>
+      <friction>0.015</friction>
       <move>0</move>
       <ability>NONE</ability>
       <range>0</range>
@@ -156,7 +156,7 @@
       <speed>0</speed>
       <jump>0</jump>
       <weight>200</weight>
-      <friction>1</friction>
+      <friction>0.015</friction>
       <move>0</move>
       <ability>NONE</ability>
       <range>0</range>
@@ -183,7 +183,7 @@
       <speed>0</speed>
       <jump>0</jump>
       <weight>200</weight>
-      <friction>1</friction>
+      <friction>0.015</friction>
       <move>0</move>
       <ability>NONE</ability>
       <range>0</range>

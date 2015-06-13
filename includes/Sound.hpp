@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Wed Jun 10 11:43:56 2015 Joris Bertomeu
+// Last update Wed Jun 10 21:29:19 2015 Joris Bertomeu
 //
 
 #ifndef				_SOUND_HH_
@@ -36,6 +36,8 @@ protected:
   SoundType			_type;
   FMOD_SOUND			*_rawSound;
   FMOD_SYSTEM			*_system;
+  FMOD_CHANNEL			*_channel;
+  FMOD_CHANNELGROUP		*_channelMaster;
 
 public:
   explicit			Sound(const Sound::SoundType &type, const bool &online, const std::string &filename, FMOD_SYSTEM *system) {
@@ -53,6 +55,7 @@ public:
 	std::cerr << "Unable to load sound " << filename << std::endl;
 	this->_rawSound = NULL;
       }
+    FMOD_System_GetMasterChannelGroup(this->_system, &(this->_channelMaster));
   }
 
   virtual			~Sound() {
@@ -88,8 +91,33 @@ public:
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
-    FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, NULL);
+    FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, &(this->_channel));
   };
+
+  void				pause() {
+    if (!this->_rawSound) {
+      std::cerr << "Unable to play Sound" << std::endl;
+      return;
+    }
+    FMOD_ChannelGroup_SetPaused(this->_channelMaster, 1);
+  }
+  void				resume() {
+    if (!this->_rawSound) {
+      std::cerr << "Unable to play Sound" << std::endl;
+      return;
+    }
+    FMOD_ChannelGroup_SetPaused(this->_channelMaster, 0);
+  }
+  void				setVolume(const int & volume) {
+    float			vol;
+
+    vol = static_cast<float>(volume);
+    if (!this->_rawSound) {
+      std::cerr << "Unable to play Sound" << std::endl;
+      return;
+    }
+    FMOD_ChannelGroup_SetVolume(this->_channelMaster, (vol));
+  }
 };
 
 #endif				/* _SOUND_HH_ */
