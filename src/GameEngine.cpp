@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 09:32:34 2015 Joris Bertomeu
-// Last update Wed Jun 10 21:52:20 2015 Joris Bertomeu
+// Last update Sun Jun 14 00:13:35 2015 Geoffrey Merran
 //
 
 #include <GameEngine.hh>
@@ -45,7 +45,7 @@ bool	GameEngine::update()
 void	GameEngine::draw()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glClearColor(0.50f, 0.50f, 0.50f, 1.0f);
+  glClearColor(0.33f, 0.79f, 0.93f, 1.0f);
   glClearDepth(1.0f);
   this->_renderManager.draw(this->_gameContext.getCurrentScene());
   this->_renderManager.delay();

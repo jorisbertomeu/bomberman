@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sat Jun 13 21:50:59 2015 Geoffrey Merran
+// Last update Sun Jun 14 00:19:30 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
@@ -64,35 +64,44 @@ void					NewGameMenu::initialize()
 
 void					NewGameMenu::updateMaps()
 {
-  std::list<std::string>		textures = this->_mapSelector->get3Maps();
-  std::list<MapPreviewer*>::iterator   	itPreviewer = this->_previewers.begin();
-  for (std::list<std::string>::iterator it = textures.begin(); it != textures.end(); it++)
+  if (this->_mapSelector != NULL)
     {
-      if ((*it) == "hidden")
-	(*itPreviewer)->setHidden(true);
-      else
+      std::list<std::string>		textures = this->_mapSelector->get3Maps();
+      std::list<MapPreviewer*>::iterator   	itPreviewer = this->_previewers.begin();
+      for (std::list<std::string>::iterator it = textures.begin(); it != textures.end(); it++)
 	{
-	  (*itPreviewer)->setHidden(false);
-	  (*itPreviewer)->changeMap((*it));
+	  if ((*it) == "hidden")
+	    (*itPreviewer)->setHidden(true);
+	  else
+	    {
+	      (*itPreviewer)->setHidden(false);
+	      (*itPreviewer)->changeMap((*it));
+	    }
+	  itPreviewer++;
 	}
-      itPreviewer++;
     }
 }
 
 
 void					NewGameMenu::moveNextMap()
 {
-  (*this->getCurrent())->setCurrent(false);
-  this->_buttons.back()->setCurrent(true);
-  this->_mapSelector->nextMap();
+  if (this->_mapSelector != NULL)
+    {
+      (*this->getCurrent())->setCurrent(false);
+      this->_buttons.back()->setCurrent(true);
+      this->_mapSelector->nextMap();
+    }
   this->updateMaps();
 }
 
 void					NewGameMenu::movePrevMap()
 {
-  (*this->getCurrent())->setCurrent(false);
-  this->_buttons.front()->setCurrent(true);
-  this->_mapSelector->prevMap();
+  if (this->_mapSelector != NULL)
+    {
+      (*this->getCurrent())->setCurrent(false);
+      this->_buttons.front()->setCurrent(true);
+      this->_mapSelector->prevMap();
+    }
   this->updateMaps();
 }
 
