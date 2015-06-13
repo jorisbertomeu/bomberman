@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Wed Jun 10 12:37:06 2015 Joris Bertomeu
+// Last update Thu Jun 11 01:10:40 2015 Joris Bertomeu
 //
 
 #ifndef			_SCENE_HH_
@@ -20,6 +20,7 @@ class			Scene;
 # include		<RenderManager.hh>
 # include		<CameraManager.hh>
 # include		<IEvent.hh>
+# include		<Sound.hpp>
 
 class			Scene
 {
@@ -29,6 +30,7 @@ protected:
   IEvent*		_eventHandler;
   CameraManager*       	_cm;
   bool			_first;
+  RenderManager		*_renderManager;
 
 public:
   explicit		Scene(CameraManager* cm);

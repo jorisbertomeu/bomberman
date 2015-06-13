@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Wed Jun 10 21:29:19 2015 Joris Bertomeu
+// Last update Thu Jun 11 01:22:00 2015 Joris Bertomeu
 //
 
 #ifndef				_SOUND_HH_
