@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Sat Jun 13 02:14:49 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:40:28 2015 Geoffrey Merran
 //
 
 #include	<GameContext.hh>
@@ -26,7 +26,6 @@ bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize, in
   this->_sceneManager.initialize(&this->_cameraManager, rm, running);
   this->_sceneManager.setInputManager(&(this->_inputManager));
   this->_cameraManager.initialize(rm, windowSize);
-  // this->_sceneManager.loadSceneFromFile("gameScene", std::string("XMLfiles/valer.xml"));
   this->_sceneManager.addScene("escapeMenu", new EscapeMenu(this->_cameraManager));
   this->_sceneManager.addScene("newGame", new NewGameMenu(this->_cameraManager, "maps/"));
   this->_sceneManager.setCurrentScene("mainMenu", new MainMenu(this->_cameraManager));

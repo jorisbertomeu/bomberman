@@ -5,12 +5,12 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:34:22 2015 Geoffrey Merran
-// Last update Sat Jun 13 02:28:17 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:03:31 2015 Geoffrey Merran
 //
 
 #include <NewGameEvent.hh>
 
-NewGameEvent::NewGameEvent()
+NewGameEvent::NewGameEvent() : _nextKeyCatch(0.2)
 {
   this->_events[SDLK_SPACE] = &NewGameEvent::space;
   this->_events[SDLK_RIGHT] = &NewGameEvent::right;

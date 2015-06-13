@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sat Jun 13 03:58:47 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:44:36 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
@@ -41,7 +41,7 @@ void					NewGameMenu::initialize()
   if (!this->_initialized)
     {
       this->_mapSelector = new MapSelector(this->_folderPath);
-      if (this->_mapSelector == false)
+      if (this->_mapSelector->hasFoundMap() == false)
 	{
 	  delete _mapSelector;
 	  _mapSelector = NULL;
@@ -75,15 +75,17 @@ std::list<GameButton*>::iterator    	NewGameMenu::getCurrent()
 
 void					NewGameMenu::selectMap(SceneManager* sm)
 {
-  if (this->_mapSelector != NULL)
-    {
+  // if (this->_mapSelector != NULL)
+  //   {
       // add depuis chemin de la map
       sm->loadSceneFromFile("gameScene", "maps/big.xml");
-    }
+      if (!sm->setCurrentScene("gameScene"))
+	std::cerr << "[ERROR] loading scene [gameScene]: not found." << std::endl;
+    // }
 }
 
 void					NewGameMenu::back(SceneManager* sm) const
 {
   if (!sm->setCurrentScene("mainMenu"))
-    std::cerr << "Error while loading scene: [mainMenu]." << std::endl;
+    std::cerr << "[ERROR] loading scene [mainMenu]: not found." << std::endl;
 }

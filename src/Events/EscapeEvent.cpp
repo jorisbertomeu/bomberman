@@ -5,12 +5,12 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:55:54 2015 Geoffrey Merran
-// Last update Sat Jun 13 02:28:24 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:02:49 2015 Geoffrey Merran
 //
 
 #include <EscapeEvent.hh>
 
-EscapeEvent::EscapeEvent()
+EscapeEvent::EscapeEvent() : _nextKeyCatch(0.2)
 {
   this->_events[SDLK_UP] = &EscapeEvent::up;
   this->_events[SDLK_DOWN] = &EscapeEvent::down;

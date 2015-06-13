@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:05:59 2015 Joris Bertomeu
-// Last update Fri Jun 12 19:39:43 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:41:27 2015 Geoffrey Merran
 // Last update Tue Jun  9 20:27:28 2015 Geoffrey Merran
 //
 
@@ -25,7 +25,7 @@ bool			CameraManager::initialize(RenderManager *rm, const glm::vec2 &windowSize)
 {
   this->_renderManager = rm;
   this->_projection = glm::perspective(60.0f, static_cast<float>(windowSize.x) / static_cast<float>(windowSize.y), 0.1f, 5000.0f);
-  std::cout << "Camera Initialized" << std::endl;
+  std::cout << "[INITIALISATION] Camera: done." << std::endl;
   this->moveTo(this->_pos, this->_point);
   return (true);
 }

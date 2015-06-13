@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 22:58:47 2015 Valérian Polizzi
+// Last update Sat Jun 13 05:01:11 2015 Geoffrey Merran
 //
 
 #include	<SceneParser.hh>
@@ -42,30 +42,29 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
 
   try {
   this->_parser.setNode("scene");
-
-  std::cout << "PARAMETERS :" << std::endl;
+  std::cout << "[MAP_LOADING] .PARAMETERS." << std::endl;
   this->_parser.setNode("parameters");
   if (this->_parser.checkMultipleTag() == false)
     std::cout << this->_parser.getError();
-  std::cout << "author : " << this->_parser.getValueOf("author") << std::endl;
-  std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
+  std::cout << "[MAP_LOADING] >>> Author: " << this->_parser.getValueOf("author") << std::endl;
+  std::cout << "[MAP_LOADING] >>> Id: " << this->_parser.getValueOf("id") << std::endl;
   if (this->_parser.isNum(this->_parser.getValueOf("level")) == false)
-    std::cout << "Warning : \"level\" must be a number" << std::endl;
-  std::cout << "level : " << this->_parser.getValueOf("level") << std::endl;
-  std::cout << "date : " << this->_parser.getValueOf("date") << std::endl;
+    std::cout << "[WARNING] \"level\" must be a number" << std::endl;
+  std::cout << "[MAP_LOADING] >>> Level: " << this->_parser.getValueOf("level") << std::endl;
+  std::cout << "[MAP_LOADING] >>> Date: " << this->_parser.getValueOf("date") << std::endl;
   if (this->_parser.isNum(this->_parser.getValueOf("score")) == false)
-    std::cout << "Warning : \"score\" must be a number" << std::endl;
-  std::cout << "score : " << this->_parser.getValueOf("score") << std::endl;
+    std::cout << "[WARNING] : \"score\" must be a number" << std::endl;
+  std::cout << "[MAP_LOADING] >>> Score: " << this->_parser.getValueOf("score") << std::endl;
   if (this->_parser.isNum(this->_parser.getValueOf("bots")) == false)
-    std::cout << "Warning : \"score\" must be a number" << std::endl;
-  std::cout << "bots : " << this->_parser.getValueOf("bots") << std::endl;
+    std::cout << "[WARNING] : \"score\" must be a number" << std::endl;
+  std::cout << "[MAP_LOADING] >>> Bots: " << this->_parser.getValueOf("bots") << std::endl;
   if (this->_parser.isNum(this->_parser.getValueOf("ia_difficulty")) == false)
-    std::cout << "Warning : \"ia_difficulty\" must be a number" << std::endl;
-  std::cout << "ia_difficulty : " << this->_parser.getValueOf("ia_difficulty") << std::endl;
+    std::cout << "[WARNING] : \"ia_difficulty\" must be a number" << std::endl;
+  std::cout << "[MAP_LOADING] >>> Ia_difficulty: " << this->_parser.getValueOf("ia_difficulty") << std::endl;
 
   this->_parser.resetNode();
   this->_parser.setNode("scene");
-  std::cout << std::endl << "TEXTURE_PACK :" << std::endl;
+  std::cout << "[MAP_LOADING] .TEXTURE PACK." << std::endl;
   this->_parser.setNode("texture_pack");
   while (this->_parser.foreach("texture"))
     {
@@ -74,13 +73,13 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
       if (this->_parser.isBool(this->_parser.getValueOf("online")) == false)
 	  throw (std::runtime_error("Error in texture : \"" + this->_parser.getValueOf("online") + "\" online tag must be a boolean"));
       rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"));
-      std::cout << "id : " << this->_parser.getValueOf("id") << std::endl;
-      std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
-      std::cout << "file : " << this->_parser.getValueOf("file") << std::endl << std::endl;
+      std::cout << "[MAP_LOADING] >>> Id: " << this->_parser.getValueOf("id") << std::endl;
+      std::cout << "[MAP_LOADING] >>> Online: " << this->_parser.getValueOf("online") << std::endl;
+      std::cout << "[MAP_LOADING] >>> File: " << this->_parser.getValueOf("file") << std::endl;
     }
   this->_parser.resetNode();
   this->_parser.setNode("scene");
-  std::cout << std::endl << "SOUND_PACK :" << std::endl;
+  std::cout << "[MAP_LOADING] .SOUND_PACK." << std::endl;
   this->_parser.setNode("sound_pack");
   while (this->_parser.foreach("sound"))
     {
@@ -106,7 +105,7 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
 	rm->getSoundManager().addSound(new Sound(Sound::UNKNOWN, atoi(this->_parser.getValueOf("online").c_str()), this->_parser.getValueOf("file"), rm->getSoundManager().getSystem()));
     }
   this->_parser.resetNode();
-  std::cout << "MODELS" << std::endl;
+  std::cout << "[MAP_LOADING] .MODELS." << std::endl;
   this->_parser.setNode("scene");
   this->_parser.setNode("model_pack");
   while (this->_parser.foreach("model"))
@@ -119,7 +118,7 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
     }
   this->_parser.resetNode();
   this->_parser.setNode("scene");
-  std::cout << std::endl << "COMMON :" << std::endl;
+  std::cout << "[MAP_LOADING] .COMMON." << std::endl;
   this->_parser.setNode("common");
   if (this->_parser.checkMultipleTag() == false)
     std::cout << this->_parser.getError();
@@ -136,22 +135,21 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 
  if (this->_parser.isFloatNum(this->_parser.getValueOf("gravity")) == false)
    throw (std::runtime_error("Error in entity : gravity must be a number"));
- std::cout << "gravity : " << this->_parser.getValueOf("gravity") << std::endl;
+ std::cout << "[MAP_LOADING] >>> Gravity: " << this->_parser.getValueOf("gravity") << std::endl;
  if (this->_parser.isFloatNum(this->_parser.getValueOf("friction")) == false)
    throw (std::runtime_error("Error in entity : friction must be a number"));
- std::cout << "friction : " << this->_parser.getValueOf("friction") << std::endl;
- std::cout << "texture : " << this->_parser.getValueOf("texture") << std::endl;
+ std::cout << "[MAP_LOADING] >>> Friction: " << this->_parser.getValueOf("friction") << std::endl;
+ std::cout << "[MAP_LOADING] >>> Texture: " << this->_parser.getValueOf("texture") << std::endl;
   this->_parser.setNode("skybox");
   if (this->_parser.checkMultipleTag() == false)
     std::cout << this->_parser.getError();
       if (this->_parser.isBool(this->_parser.getValueOf("online")) == false)
 	throw (std::runtime_error("Error in common : online tag must be a boolean"));
-  std::cout << "online : " << this->_parser.getValueOf("online") << std::endl;
-  std::cout << "file : " << this->_parser.getValueOf("file") << std::endl;
-
+  std::cout << "[MAP_LOADING] >>> Online: " << this->_parser.getValueOf("online") << std::endl;
+  std::cout << "[MAP_LOADING] >>> File: " << this->_parser.getValueOf("file") << std::endl;
   this->_parser.resetNode();
   this->_parser.setNode("scene");
-  std::cout << std::endl << "ENTITIES :" << std::endl;
+  std::cout << "[MAP_LOADING] .ENTITIES." << std::endl;
   this->_parser.setNode("entities");
   while (this->_parser.foreach("entity"))
     {
@@ -179,7 +177,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	}
       else if (this->_parser.getValueOf("type") == "BOT")
 	{
-	  std::cout << "BOT !" << std::endl;
+	  std::cout << "[MAP_LOADING] >>> BOT !" << std::endl;
 	  std::string	name = this->_parser.getValueOf("name");
 	  this->_parser.setNode("position");
 	  if (this->_parser.checkMultipleTag() == false)
