@@ -10,7 +10,7 @@
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
+CXXFLAGS	+=	-W -Wextra -O3 -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
 
 RM		=	rm -f
 
