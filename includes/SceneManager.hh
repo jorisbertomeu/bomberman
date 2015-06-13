@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Fri Jun 12 23:10:18 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:57:33 2015 Geoffrey Merran
 //
 
 #ifndef				_SCENEMANAGER_HH_

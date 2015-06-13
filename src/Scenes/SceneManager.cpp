@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Sat Jun 13 05:52:47 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:58:21 2015 Geoffrey Merran
 //
 
 #include	<SceneManager.hh>
