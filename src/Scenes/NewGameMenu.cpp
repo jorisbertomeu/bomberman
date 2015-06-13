@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sat Jun 13 21:43:29 2015 Geoffrey Merran
+// Last update Sat Jun 13 21:50:59 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>

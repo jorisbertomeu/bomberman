@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 01:08:53 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 20:14:54 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOT_H_
@@ -17,6 +17,7 @@ class		Bot : public Bomberman
 {
 protected:
   std::string	_color;
+  std::list<glm::vec2>	_posList;
 
 public:
   Bot(glm::vec3 pos, const std::string &name);
@@ -24,7 +25,11 @@ public:
 
   std::string	getColor() const;
   void		setColor(const std::string &color);
-  void		moveToPos(const glm::vec3 &);
+  void		setPosList(const std::list<glm::vec2>&);
+  std::list<glm::vec2>	getPosList() const;
+  void		popFront();
+  void		popBack();
+  void		moveToPos(const glm::vec2 &);
   void		stopMove();
   bool		canPlaceBomb();
   bool		isFrontOfWall();
