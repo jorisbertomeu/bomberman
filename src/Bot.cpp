@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 20:20:26 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 20:34:46 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -186,6 +186,7 @@ void		Bot::ia(Scene *scene)
 
 void		Bot::update(gdl::Clock &clock, Scene *scene)
 {
+  glm::vec3	oldPos;
   static int	i = 0;
   if (i == 0)
     {
@@ -194,11 +195,18 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
     }
   if (!this->_posList.empty())
     {
+      oldPos = this->getPos();
       this->moveToPos(this->getPosList().front());
+      if (this->getHitbox()->checkCollision(scene))
+	{
+	  this->setPos(oldPos);
+	  this->ia(scene);
+	}
       this->popFront();
     }
   else
     this->ia(scene);
+  this->_hitbox->updateHitbox(this);
   (void)clock;
 }
 
