@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Fri Jun 12 20:48:35 2015 Geoffrey Merran
+// Last update Sun Jun 14 01:34:58 2015 Geoffrey Merran
 //
 
 #ifndef				_GAMEEVENT_HH__
@@ -38,6 +38,7 @@ private:
   void				escape(SceneManager*);
   void				updatePlayerCamera(const glm::vec3 & point);
 
+  gdl::Clock			_clock;
   CameraManager			_camera;
   std::map<int, eventHandler>	_events;
 };
