@@ -161,6 +161,6 @@ void		Bomberman::isReleased(Scene *scene, gdl::Clock &clock)
     }
   if (this->getHitbox()->checkCollision(scene)) {
     this->setPos(old);
-    this->setAcceleration(0.01f);
+    this->setAcceleration(0.01);
   }
 }
