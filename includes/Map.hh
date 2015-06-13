@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 18:54:23 2015 Geoffrey Merran
-// Last update Sat Jun 13 21:42:23 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:16:22 2015 Geoffrey Merran
 //
 
 #ifndef __MAP_H
@@ -24,9 +24,11 @@ public:
   void			setCurrent(const bool &);
   const bool &	       	isCorrupted();
   const std::string&   	getFilename() const;
-  const std::string&	getFilepreview() const;
+  const std::string&	getFilepreview();
+  void			load();
 
 private:
+  bool			_loaded;
   bool			_corrupted;
   bool			_current;
   std::string		_filename;

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 20:34:46 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 23:05:46 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -158,23 +158,13 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
   (void)a;
 }
 
-void	        Bot::moveToPos(const glm::vec2 &pos)
-{
-  // std::cout << "moving to (" << pos.x << ";" << this->getPos().y << ";" << pos.y << ")" << std::endl;
-  this->setPos(glm::vec3(pos.x, this->getPos().y, pos.y));
-} 
-
 void		Bot::ia(Scene *scene)
 {
   Bomberman	*bomberman;
   std::list<glm::vec2> posList;
   
   bomberman = static_cast<Bomberman *>(scene->getBomberman());
-  std::cout << "BOMBERMAN  : " << bomberman->getPos().x << " - " << bomberman->getPos().z << std::endl;
-  std::cout << "BOT  : " << this->getPos().x << " - " << this->getPos().z << std::endl;
   posList = this->directTrajectory(this->getPos().x, this->getPos().z, bomberman->getPos().x, bomberman->getPos().z);
-  std::cout << "POS  : " << posList.front().x << " - " << posList.front().y << std::endl;
-  std::cout << "POS  : " << posList.back().x << " - " << posList.back().y << std::endl;
   if (((posList.front().x == this->getPos().x && posList.front().y == this->getPos().z)) || (posList.back().x == bomberman->getPos().x && posList.back().y == bomberman->getPos().z))
     this->setPosList(posList);
   else
@@ -209,6 +199,11 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
   this->_hitbox->updateHitbox(this);
   (void)clock;
 }
+
+void	        Bot::moveToPos(const glm::vec2 &pos)
+{
+  this->setPos(glm::vec3(pos.x, this->getPos().y, pos.y));
+} 
 
 void		Bot::setPosList(const std::list<glm::vec2> &pos)
 {

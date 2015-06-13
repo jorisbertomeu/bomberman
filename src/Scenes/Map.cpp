@@ -5,12 +5,52 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 19:01:36 2015 Geoffrey Merran
-// Last update Sat Jun 13 21:48:58 2015 Geoffrey Merran
+// Last update Sat Jun 13 23:16:19 2015 Geoffrey Merran
 //
 
 #include <Map.hh>
 
-Map::Map(std::string filename) : _corrupted(false), _current(false), _filename("maps/" + filename), _author("mabm")
+Map::Map(std::string filename) : _loaded(false), _corrupted(false), _current(false), _filename("maps/" + filename), _author("mabm")
+{
+
+}
+
+Map::~Map()
+{
+
+}
+
+const bool &		Map::getCurrent() const
+{
+  return (this->_current);
+}
+
+void			Map::setCurrent(const bool & cur)
+{
+  this->_current = cur;
+}
+
+const std::string&     	Map::getFilename() const
+{
+  return (this->_filename);
+}
+
+const std::string&	Map::getFilepreview()
+{
+  if (!this->_loaded)
+    {
+      this->load();
+      this->_loaded = true;
+    }
+  return (this->_filepreview);
+}
+
+const bool &	       	Map::isCorrupted()
+{
+  return (this->_corrupted);
+}
+
+void			Map::load()
 {
   ParserXML	pxml;
 
@@ -38,34 +78,4 @@ Map::Map(std::string filename) : _corrupted(false), _current(false), _filename("
       this->_corrupted = true;
       this->_filepreview = "assets/textures/corrupted.tga";
     }
-}
-
-Map::~Map()
-{
-
-}
-
-const bool &		Map::getCurrent() const
-{
-  return (this->_current);
-}
-
-void			Map::setCurrent(const bool & cur)
-{
-  this->_current = cur;
-}
-
-const std::string&     	Map::getFilename() const
-{
-  return (this->_filename);
-}
-
-const std::string&	Map::getFilepreview() const
-{
-  return (this->_filepreview);
-}
-
-const bool &	       	Map::isCorrupted()
-{
-  return (this->_corrupted);
 }
