@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Thu Jun 11 01:06:10 2015 Joris Bertomeu
+// Last update Sun Jun 14 01:48:33 2015 Geoffrey Merran
 //
 
 #include		<GameEvent.hh>
@@ -31,7 +31,7 @@ bool			GameEvent::isCatch(gdl::Input &input, gdl::Clock& clock, SceneManager* sm
 {
   Scene			*scene = sm->getCurrentScene();
 
-  (void) clock;
+  this->_clock = clock;
   this->_camera = camera;
   for (std::map<int, GameEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
@@ -42,7 +42,7 @@ bool			GameEvent::isCatch(gdl::Input &input, gdl::Clock& clock, SceneManager* sm
 	}
     }
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
-  bomberman->isReleased(scene);
+  bomberman->isReleased(scene, clock);
   this->updatePlayerCamera(bomberman->getPos());
   return (false);
 
@@ -60,7 +60,7 @@ void			GameEvent::up(SceneManager* sm)
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
 
   bomberman_position_old = bomberman->getPos();
-  bomberman->moveFront();
+  bomberman->moveFront(this->_clock);
   if (bomberman->getHitbox()->checkCollision(scene))
     bomberman->setPos(bomberman_position_old);
   this->updatePlayerCamera(bomberman->getPos());
@@ -73,7 +73,7 @@ void			GameEvent::down(SceneManager* sm)
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
 
   bomberman_position_old = bomberman->getPos();
-  bomberman->moveBack();
+  bomberman->moveBack(this->_clock);
   if (bomberman->getHitbox()->checkCollision(scene))
     bomberman->setPos(bomberman_position_old);
   this->updatePlayerCamera(bomberman->getPos());
@@ -88,7 +88,7 @@ void			GameEvent::right(SceneManager* sm)
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
 
   bomberman_position_old = bomberman->getPos();
-  bomberman->moveRight();
+  bomberman->moveRight(this->_clock);
   if (bomberman->getHitbox()->checkCollision(scene))
     bomberman->setPos(bomberman_position_old);
   this->updatePlayerCamera(bomberman->getPos());
@@ -101,7 +101,7 @@ void			GameEvent::left(SceneManager* sm)
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
 
   bomberman_position_old = bomberman->getPos();
-  bomberman->moveLeft();
+  bomberman->moveLeft(this->_clock);
   if (bomberman->getHitbox()->checkCollision(scene))
     bomberman->setPos(bomberman_position_old);
   this->updatePlayerCamera(bomberman->getPos());
@@ -110,8 +110,10 @@ void			GameEvent::left(SceneManager* sm)
 
 void			GameEvent::space(SceneManager* sm)
 {
-  (void) sm;
-  //dynamic_cast<Scene*>(sm->getCurrentScene())->spacePress(sm);
+  Scene			*scene = sm->getCurrentScene();
+  Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
+
+  bomberman->dropBomb(scene);
 }
 
 void			GameEvent::escape(SceneManager* sm)

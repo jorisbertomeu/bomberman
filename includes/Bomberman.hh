@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Fri Jun 12 22:20:00 2015 Geoffrey Merran
+// Last update Sun Jun 14 01:48:27 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
@@ -13,6 +13,7 @@
 
 class		Bomberman;
 
+# include <Clock.hh>
 # include <AEntity.hh>
 # include <Scene.hh>
 
@@ -32,12 +33,12 @@ public:
 
   std::string	getName() const;
   void		dropBomb(Scene*);
-  void		moveRight();
-  void		moveLeft();
-  void		moveBack();
-  void		moveFront();
+  void		moveRight(gdl::Clock&);
+  void		moveLeft(gdl::Clock&);
+  void		moveBack(gdl::Clock&);
+  void		moveFront(gdl::Clock&);
   void		jump();
-  void		isReleased(Scene *);
+void		isReleased(Scene *, gdl::Clock&);
   void		isTurningBack(const int &);
 
   virtual void 	draw(RenderManager & rm);
