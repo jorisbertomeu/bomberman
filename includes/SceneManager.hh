@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Fri Jun 12 19:44:40 2015 Geoffrey Merran
+// Last update Fri Jun 12 23:10:18 2015 Geoffrey Merran
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -36,11 +36,12 @@ private:
   RenderManager			*_renderManager;
   InputManager			*_inputManager;
   CameraManager			*_cm;
+  int				*_running;
 
 public:
   explicit			SceneManager();
   virtual			~SceneManager();
-  void				initialize(CameraManager* cm, RenderManager* rm);
+  void				initialize(CameraManager* cm, RenderManager* rm, int *running);
   bool				loadSceneFromFile(const std::string &,
 						  const std::string &);
   bool				setCurrentScene(std::string);
@@ -48,6 +49,9 @@ public:
   Scene				*getCurrentScene() const;
   void				addEntityToCurrentScene(AEntity *);
   void				setInputManager(InputManager *);
+  void				addScene(std::string, Scene*);
+  bool				removeScene(const std::string &);
+  void				stopGame();
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

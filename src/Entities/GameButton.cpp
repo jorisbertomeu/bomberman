@@ -5,12 +5,12 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Jun  5 14:43:04 2015 Valérian Polizzi
-// Last update Fri Jun 12 19:45:11 2015 Geoffrey Merran
+// Last update Fri Jun 12 22:29:50 2015 Geoffrey Merran
 //
 
 #include <GameButton.hh>
 
-GameButton::GameButton(const glm::vec3 & pos, const std::string & texture) : Pavement(pos, texture), _current(false)
+GameButton::GameButton(const glm::vec3 & pos, const std::string & texture, const int & id) : Pavement(pos, texture), _id(id), _current(false)
 {
 
 }
@@ -32,7 +32,12 @@ void			GameButton::setCurrent(const bool & isCurrent)
   this->_current = isCurrent;
 }
 
-const bool &      	GameButton::getCurrent()
+const bool &      	GameButton::getCurrent() const
 {
   return (this->_current);
+}
+
+const int &	GameButton::getId() const
+{
+  return (this->_id);
 }

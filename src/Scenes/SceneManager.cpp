@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:50:56 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 05:52:47 2015 Geoffrey Merran
 //
 
 #include	<SceneManager.hh>
@@ -24,10 +24,11 @@ SceneManager::~SceneManager()
 
 }
 
-void   	SceneManager::initialize(CameraManager* cm, RenderManager *rm)
+void   	SceneManager::initialize(CameraManager* cm, RenderManager *rm, int* running)
 {
   this->_cm = cm;
   this->_renderManager = rm;
+  this->_running = running;
 }
 
 bool	SceneManager::loadSceneFromFile(const std::string &sceneId,
@@ -37,6 +38,7 @@ bool	SceneManager::loadSceneFromFile(const std::string &sceneId,
   Scene		*newScene;
 
   newSceneParser.load(filename);
+  std::cout << "[MAP_LOADING] NEW MAP LOADED FROM: " << filename << std::endl;
   newScene = newSceneParser.getScene(this->_renderManager, this->_cm);
   newScene->setEventHandler(new GameEvent());
   this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, newScene));
@@ -83,4 +85,25 @@ void	SceneManager::addEntityToCurrentScene(AEntity *entity_)
 void	SceneManager::setInputManager(InputManager *im)
 {
   this->_inputManager = im;
+}
+
+void	SceneManager::addScene(std::string sceneId, Scene* scene)
+{
+  this->_scenes.insert(std::pair<std::string, Scene*>(sceneId, scene));
+}
+
+bool	SceneManager::removeScene(const std::string &sceneId)
+{
+  for(std::map<std::string, Scene *>::iterator it = this->_scenes.begin(); it != this->_scenes.end(); ++it) {
+    if ((*it).first == sceneId) {
+      this->_scenes.erase(it);
+      return (true);
+    }
+  }
+  return (false);
+}
+
+void	SceneManager::stopGame()
+{
+  *this->_running = 0;
 }

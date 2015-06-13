@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Fri Jun 12 21:06:52 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 16:53:30 2015 Jérémy Mediavilla
 //
 
 #include	<GameContext.hh>
@@ -20,15 +20,15 @@ GameContext::~GameContext()
 
 }
 
-bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize)
+bool		GameContext::initialize(RenderManager *rm, const glm::vec2 &windowSize, int* running)
 {
   this->_renderManager = rm;
-  this->_sceneManager.initialize(&this->_cameraManager, rm);
+  this->_sceneManager.initialize(&this->_cameraManager, rm, running);
   this->_sceneManager.setInputManager(&(this->_inputManager));
   this->_cameraManager.initialize(rm, windowSize);
-  this->_sceneManager.loadSceneFromFile(std::string("gameScene"), std::string("XMLfiles/ArchitectureXML.xml"));
-  this->_sceneManager.setCurrentScene(std::string("mainMenu"), new MainMenu(this->_cameraManager));
-  //this->_sceneManager.setCurrentScene(std::string("gameScene"));
+  this->_sceneManager.addScene("escapeMenu", new EscapeMenu(this->_cameraManager));
+  this->_sceneManager.addScene("newGame", new NewGameMenu(this->_cameraManager, "maps/"));
+  this->_sceneManager.setCurrentScene("mainMenu", new MainMenu(this->_cameraManager));
   return (true);
 }
 
@@ -44,6 +44,6 @@ bool		GameContext::addScene(const std::string &path)
 
 void		GameContext::updateScene(gdl::Input & input)
 {
-  this->_inputManager.handleEvent(input, &this->_sceneManager, this->_cameraManager);
+  this->_inputManager.handleEvent(input, this->_renderManager->getTimeManager().getClock(),&this->_sceneManager, this->_cameraManager);
   this->getCurrentScene()->updateEntities(this->_renderManager->getTimeManager().getClock());
 }

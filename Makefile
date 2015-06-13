@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Sat Jun 13 01:13:35 2015 Jérémy Mediavilla
+## Last update Sat Jun 13 16:52:44 2015 Jérémy Mediavilla
 ##
 
 CXX		=	clang++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
 
 RM		=	rm -f
 
@@ -26,11 +26,13 @@ SRC		=	src/main.cpp				\
 			src/Rendering/TimeManager.cpp		\
 			src/Rendering/CameraManager.cpp		\
 			src/Scenes/SceneManager.cpp		\
-			src/Scenes/SceneFactory.cpp		\
 			src/Scenes/ParserXML.cpp		\
 			src/Scenes/Scene.cpp			\
 			src/Scenes/SceneParser.cpp		\
+			src/Scenes/EscapeMenu.cpp		\
 			src/Scenes/MainMenu.cpp			\
+			src/Scenes/NewGameMenu.cpp		\
+			src/Scenes/MapSelector.cpp		\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
 			src/Physics/HitBox.cpp			\
@@ -41,12 +43,16 @@ SRC		=	src/main.cpp				\
 			src/Entities/WoodWall.cpp		\
 			src/Entities/BrickWall.cpp		\
 			src/Entities/GameButton.cpp		\
+			src/Entities/Pavement.cpp		\
+			src/Entities/Cloud.cpp			\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
 			src/Events/MenuEvent.cpp		\
+			src/Events/EscapeEvent.cpp		\
+			src/Events/NewGameEvent.cpp		\
 			src/Bot.cpp				\
-			src/Pavement.cpp			\
+			src/HttpRequest.cpp			\
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -56,7 +62,7 @@ all:		$(NOM)
 
 $(NOM):		$(OBJ)
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN EN COURS\n"
-		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L./libxml2/.libs/ -lxml2 -L./fmod/ -lfmod
+		$(CXX) -o $(NOM) $(OBJ) -L./LibBomberman_linux_x64/libs/ -lgdl_gl -lGLEW -lrt -lfbxsdk -lSDL2 -lpthread -lstdc++ -lm -ldl -lGL -L./libxml2/.libs/ -lxml2 -L./fmod/ -lfmod `pkg-config --libs libcurl`
 		@echo -e "\n > COMPILATION DES .C BOMBERMAN TERMINEE"
 
 clean:

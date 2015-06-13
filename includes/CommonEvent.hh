@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:40:00 2015 mari_f
-// Last update Wed Jun 10 03:51:54 2015 Joris Bertomeu
+// Last update Fri Jun 12 20:50:38 2015 Geoffrey Merran
 //
 
 #ifndef				_COMMON_EVENT_HH
@@ -30,8 +30,7 @@ public:
   virtual			~CommonEvent(void);
 
   void				escape(SceneManager*);
-  virtual bool			isCatch(gdl::Input &input, SceneManager*, CameraManager&);
-
+  virtual bool			isCatch(gdl::Input &input, gdl::Clock&, SceneManager*, CameraManager&);
 private:
   std::map<int, eventHandler>	_events;
 };

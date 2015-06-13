@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Fri Jun 12 19:50:26 2015 Jérémy Mediavilla
+// Last update Wed Jun 10 12:37:06 2015 Joris Bertomeu
 //
 
 #ifndef			_SCENE_HH_
@@ -43,6 +43,7 @@ public:
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
   void			spacePress(SceneManager *sm);
+  void			escapePress(SceneManager *sm);
   void			*getBomberman();
 };
 

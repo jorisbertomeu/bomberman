@@ -5,7 +5,7 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Fri Jun 12 18:55:32 2015 Jérémy Mediavilla
+// Last update Fri Jun 12 22:20:00 2015 Geoffrey Merran
 //
 
 #ifndef _BOMBERMAN_H_
@@ -44,6 +44,8 @@ public:
   virtual void 	update(gdl::Clock &, Scene *);
 
 protected:
+  int		_nbBombs;
+  int		_fireRange;
   std::string	_name;
   Dir		_dir;
 };

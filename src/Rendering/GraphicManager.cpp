@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:36:01 2015 Joris Bertomeu
-// Last update Sat Jun  6 14:14:36 2015 Geoffrey Merran
+// Last update Sat Jun 13 04:41:43 2015 Geoffrey Merran
 //
 
 #include	<GraphicManager.hh>
@@ -23,7 +23,7 @@ GraphicManager::~GraphicManager()
 
 bool			GraphicManager::initialize(const glm::vec2 &windowSize, const std::string &name)
 {
-  std::cout << "Initialisation GraphicManager <" << windowSize.x << ", " << windowSize.y << "> with Title " << name << std::endl;
+  std::cout << "[INITIALISATION] GraphicManager <" << windowSize.x << ", " << windowSize.y << "> with Title " << name << ": done." << std::endl;
   if (!this->_context.getSdlContext().start(windowSize.x, windowSize.y, name))
     return (false);
   if (!this->_context.getShaders().load("./LibBomberman_linux_x64/shaders/basic.fp", GL_FRAGMENT_SHADER)

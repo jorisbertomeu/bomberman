@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Fri Jun 12 19:40:15 2015 mari_f
+// Last update Fri Jun 12 20:52:17 2015 Geoffrey Merran
 //
 
 #include		<GameEvent.hh>
@@ -19,6 +19,7 @@ GameEvent::GameEvent()
   this->_events[SDLK_LEFT] = &GameEvent::left;
   this->_events[SDLK_RIGHT] = &GameEvent::right;
   this->_events[SDLK_SPACE] = &GameEvent::space;
+  this->_events[SDLK_ESCAPE] = &GameEvent::escape;
 }
 
 GameEvent::~GameEvent()
@@ -26,11 +27,11 @@ GameEvent::~GameEvent()
 
 }
 
-bool			GameEvent::isCatch(gdl::Input &input, SceneManager* sm, CameraManager& camera)
+bool			GameEvent::isCatch(gdl::Input &input, gdl::Clock& clock, SceneManager* sm, CameraManager& camera)
 {
   Scene			*scene = sm->getCurrentScene();
 
-
+  (void) clock;
   this->_camera = camera;
   for (std::map<int, GameEvent::eventHandler>::iterator found = this->_events.begin(); found != this->_events.end(); found++)
     {
@@ -111,4 +112,10 @@ void			GameEvent::space(SceneManager* sm)
 {
   (void) sm;
   //dynamic_cast<Scene*>(sm->getCurrentScene())->spacePress(sm);
+}
+
+void			GameEvent::escape(SceneManager* sm)
+{
+  (void) sm;
+  dynamic_cast<Scene*>(sm->getCurrentScene())->escapePress(sm);
 }
