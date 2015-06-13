@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 03:48:15 2015 Geoffrey Merran
-// Last update Sat Jun 13 04:36:57 2015 Geoffrey Merran
+// Last update Sat Jun 13 20:57:49 2015 Geoffrey Merran
 //
 
 #ifndef __MAP_SELECTOR_HH
@@ -13,7 +13,7 @@
 # include <iostream>
 # include <dirent.h>
 # include <list>
-# include <ParserXML.hpp>
+# include <Map.hh>
 
 class				MapSelector
 {
@@ -22,9 +22,13 @@ public:
   ~MapSelector();
 
   bool				hasFoundMap() const;
+  void			        nextMap();
+  void				prevMap();
+  std::list<Map>::iterator	getCurrent();
+  std::list<std::string>	get3Maps();
 
 private:
-  std::list<std::string>	_maps;
+  std::list<Map>		_maps;
 };
 
 #endif /* __MAP_SELECTOR_HH */

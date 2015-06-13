@@ -5,10 +5,10 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Sat Jun 13 16:52:44 2015 Jérémy Mediavilla
+## Last update Sat Jun 13 19:45:46 2015 Geoffrey Merran
 ##
 
-CXX		=	clang++
+CXX		=	g++
 
 CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
 
@@ -33,6 +33,7 @@ SRC		=	src/main.cpp				\
 			src/Scenes/MainMenu.cpp			\
 			src/Scenes/NewGameMenu.cpp		\
 			src/Scenes/MapSelector.cpp		\
+			src/Scenes/Map.cpp			\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
 			src/Physics/HitBox.cpp			\
@@ -45,6 +46,7 @@ SRC		=	src/main.cpp				\
 			src/Entities/GameButton.cpp		\
 			src/Entities/Pavement.cpp		\
 			src/Entities/Cloud.cpp			\
+			src/Entities/MapPreviewer.cpp		\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\

@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sat Jun 13 04:44:36 2015 Geoffrey Merran
+// Last update Sat Jun 13 21:43:29 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
@@ -19,11 +19,19 @@ NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : S
   this->_buttons.back()->setScale(glm::vec3(300, 100, 100));
   this->_buttons.push_back(new GameButton(glm::vec3(300, -350, 100), std::string("assets/textures/right.tga"), RIGHT));
   this->_buttons.back()->setScale(glm::vec3(100, 100, 100));
+
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(-600, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(0, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.back()->setCurrent(true);
+  this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(600, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
   this->_eventHandler = new NewGameEvent();
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
-    {
-      this->addEntity((*it));
-    }
+    this->addEntity((*it));
+  for (std::list<MapPreviewer*>::iterator it = this->_previewers.begin(); it != this->_previewers.end(); it++)
+    this->addEntity((*it));
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
   background->setScale(glm::vec3(2500, 1300, 0));
   this->addEntity(background);
@@ -47,20 +55,45 @@ void					NewGameMenu::initialize()
 	  _mapSelector = NULL;
 	}
       else
-	this->_initialized = true;
+	{
+	  this->_initialized = true;
+	  this->updateMaps();
+	}
     }
 }
+
+void					NewGameMenu::updateMaps()
+{
+  std::list<std::string>		textures = this->_mapSelector->get3Maps();
+  std::list<MapPreviewer*>::iterator   	itPreviewer = this->_previewers.begin();
+  for (std::list<std::string>::iterator it = textures.begin(); it != textures.end(); it++)
+    {
+      if ((*it) == "hidden")
+	(*itPreviewer)->setHidden(true);
+      else
+	{
+	  (*itPreviewer)->setHidden(false);
+	  (*itPreviewer)->changeMap((*it));
+	}
+      itPreviewer++;
+    }
+}
+
 
 void					NewGameMenu::moveNextMap()
 {
   (*this->getCurrent())->setCurrent(false);
   this->_buttons.back()->setCurrent(true);
+  this->_mapSelector->nextMap();
+  this->updateMaps();
 }
 
 void					NewGameMenu::movePrevMap()
 {
   (*this->getCurrent())->setCurrent(false);
   this->_buttons.front()->setCurrent(true);
+  this->_mapSelector->prevMap();
+  this->updateMaps();
 }
 
 std::list<GameButton*>::iterator    	NewGameMenu::getCurrent()
@@ -75,13 +108,14 @@ std::list<GameButton*>::iterator    	NewGameMenu::getCurrent()
 
 void					NewGameMenu::selectMap(SceneManager* sm)
 {
-  // if (this->_mapSelector != NULL)
-  //   {
-      // add depuis chemin de la map
-      sm->loadSceneFromFile("gameScene", "maps/big.xml");
+  if (this->_mapSelector != NULL)
+    {
+      std::list<Map>::iterator it = this->_mapSelector->getCurrent();
+      if (!(*it).isCorrupted())
+	sm->loadSceneFromFile("gameScene", (*it).getFilename());
       if (!sm->setCurrentScene("gameScene"))
-	std::cerr << "[ERROR] loading scene [gameScene]: not found." << std::endl;
-    // }
+	std::cerr << "[ERROR] loading scene [gameScene]: not found. (maybe map corrupted)" << std::endl;
+    }
 }
 
 void					NewGameMenu::back(SceneManager* sm) const
