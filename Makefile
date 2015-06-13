@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Sat Jun 13 23:43:34 2015 Geoffrey Merran
+## Last update Sun Jun 14 01:23:53 2015 mari_f
 ##
 
 CXX		=	g++
@@ -48,6 +48,7 @@ SRC		=	src/main.cpp				\
 			src/Entities/Pavement.cpp		\
 			src/Entities/Cloud.cpp			\
 			src/Entities/MapPreviewer.cpp		\
+			src/Entities/Balloon.cpp		\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\

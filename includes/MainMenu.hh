@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue Jun  9 11:12:51 2015 Joris Bertomeu
-// Last update Sat Jun 13 23:59:36 2015 Geoffrey Merran
+// Last update Sun Jun 14 01:26:10 2015 mari_f
 //
 
 #ifndef		_MAINMENU_HPP_
@@ -14,6 +14,7 @@
 # include				<SceneManager.hh>
 # include				<GameButton.hh>
 # include				<Cloud.hh>
+# include				<Balloon.hh>
 # include				<list>
 # include				<MenuEvent.hh>
 # include				<LoadingScene.hh>

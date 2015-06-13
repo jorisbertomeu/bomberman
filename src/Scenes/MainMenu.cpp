@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sat Jun 13 23:52:21 2015 Geoffrey Merran
+// Last update Sun Jun 14 01:25:26 2015 mari_f
 //
 
 #include	<MainMenu.hh>
@@ -13,15 +13,16 @@
 MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
   Cloud		*cloud;
+  Balloon	*balloon;
 
   this->_buttons.push_back(new GameButton(glm::vec3(0, 50, 0), std::string("assets/textures/play.tga"), MainMenu::PLAY));
   dynamic_cast<GameButton*>(this->_buttons.front())->setCurrent(true);
   this->_buttons.push_back(new GameButton(glm::vec3(0, -150, 0), std::string("assets/textures/load.tga"), MainMenu::LOAD));
   this->_buttons.push_back(new GameButton(glm::vec3(0, -350, 0), std::string("assets/textures/quit.tga"), MainMenu::QUIT));
 
-  cloud = new Cloud(glm::vec3(-500, -300, 0), std::string("assets/textures/cloud.tga"));
-  cloud->setScale(glm::vec3(250, 150, 0));
-  this->addEntity(cloud);
+  // cloud = new Cloud(glm::vec3(-500, -300, 0), std::string("assets/textures/cloud.tga"));
+  // cloud->setScale(glm::vec3(250, 150, 0));
+  // this->addEntity(cloud);
   cloud = new Cloud(glm::vec3(-700, 300, 0), std::string("assets/textures/cloud.tga"), 0.5f, 40.0f);
   cloud->setScale(glm::vec3(400, 240, 0));
   this->addEntity(cloud);
@@ -34,6 +35,11 @@ MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
   cloud = new Cloud(glm::vec3(300, -500, 0), std::string("assets/textures/cloud.tga"), 0.5f, 10.0f);
   cloud->setScale(glm::vec3(230, 180, 0));
   this->addEntity(cloud);
+
+
+  balloon = new Balloon(glm::vec3(-530, -90, 0), std::string("assets/textures/balloon.tga"), 0.5f, 10.0f);
+  balloon->setScale(glm::vec3(400, 469, 0));
+  this->addEntity(balloon);
 
   this->_eventHandler = new MenuEvent();
   for (std::list<Pavement*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
