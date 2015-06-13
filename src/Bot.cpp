@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 19:41:33 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 20:20:26 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -49,8 +49,6 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
   int		x;
   int		y;
 
-  std::cout << "pos bot x : " << xStart << " - y : " << yStart << std::endl;
-  std::cout << "pos joueur x : " << xEnd << " - y : " << yEnd << std::endl;
   dx = abs(xEnd - xStart);
   dy = abs(yEnd - yStart);
   std::cout << dx << " - " << dy << std::endl;
@@ -88,7 +86,6 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
     {
       if (dx >= dy && dx != 0 && dy != 0)
 	{
-	  std::cout << "if numero 1" << std::endl;
 	  if (xStart > xEnd)
 	    {
 	      tmp = xStart;
@@ -109,7 +106,6 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
 	}
       if (dx < dy && dy != 0 && dx != 0)
 	{
-	  std::cout << "if numero 2" << std::endl;
 	  if (yStart > yEnd)
 	    {
 	      tmp = yStart;
@@ -130,14 +126,12 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
 	}
       if (dx == 0)
 	{
-	  std::cout << "if numero 3" << std::endl;
 	  if (xStart > xEnd)
 	    {
 	      tmp = xStart;
 	      xStart = xEnd;
 	      xEnd = tmp;
 	    }
-	  std::cout << "--> " << yStart <<" - " << yEnd << std::endl;
 	  for (int i = yStart; i < (yEnd + 1); i++)
 	    {
 	      x = xStart;
@@ -146,7 +140,6 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
 	}
       if (dy == 0)
 	{
-	  std::cout << "if numero 4" << std::endl;
 	  if (yStart > yEnd)
 	    {
 	      tmp = yStart;
@@ -165,6 +158,12 @@ std::list<glm::vec2>		Bot::directTrajectory(int xStart, int yStart, int xEnd, in
   (void)a;
 }
 
+void	        Bot::moveToPos(const glm::vec2 &pos)
+{
+  // std::cout << "moving to (" << pos.x << ";" << this->getPos().y << ";" << pos.y << ")" << std::endl;
+  this->setPos(glm::vec3(pos.x, this->getPos().y, pos.y));
+} 
+
 void		Bot::ia(Scene *scene)
 {
   Bomberman	*bomberman;
@@ -177,11 +176,12 @@ void		Bot::ia(Scene *scene)
   std::cout << "POS  : " << posList.front().x << " - " << posList.front().y << std::endl;
   std::cout << "POS  : " << posList.back().x << " - " << posList.back().y << std::endl;
   if (((posList.front().x == this->getPos().x && posList.front().y == this->getPos().z)) || (posList.back().x == bomberman->getPos().x && posList.back().y == bomberman->getPos().z))
-    for (std::list<glm::vec2>::iterator it = posList.begin(); it!= posList.end(); it++)
-      std::cout << (*it).x << " - " << (*it).y << std::endl;
+    this->setPosList(posList);
   else
-    for (std::list<glm::vec2>::iterator it = posList.end(); it!= posList.begin(); it--)
-      std::cout << (*it).x << " - " << (*it).y << std::endl;
+    {
+      posList.reverse();
+      this->setPosList(posList);
+    }
 }
 
 void		Bot::update(gdl::Clock &clock, Scene *scene)
@@ -192,10 +192,32 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
       this->ia(scene);
       i++;
     }
+  if (!this->_posList.empty())
+    {
+      this->moveToPos(this->getPosList().front());
+      this->popFront();
+    }
+  else
+    this->ia(scene);
   (void)clock;
 }
 
-void	        Bot::moveToPos(const glm::vec3 &pos)
+void		Bot::setPosList(const std::list<glm::vec2> &pos)
 {
-  (void)pos;
-} 
+  this->_posList = pos;
+}
+
+std::list<glm::vec2>	Bot::getPosList() const
+{
+  return (this->_posList);
+}
+
+void		Bot::popBack()
+{
+  this->_posList.pop_back();
+}
+
+void		Bot::popFront()
+{
+  this->_posList.pop_front();
+}

@@ -62,6 +62,33 @@
     <position>
       <x>80</x>
       <y>0</y>
+      <z>80</z>
+    </position>
+    <size>
+      <x>0.1</x>
+      <y>0.1</y>
+      <z>0.1</z>
+    </size>
+  </entity>
+  <entity>
+    <attribut>
+      <speed>2</speed>
+      <jump>1</jump>
+      <weight>200</weight>
+      <friction>1</friction>
+      <move>1</move>
+      <ability>NONE</ability>
+      <range>0</range>
+      <bonus>NONE</bonus>
+    </attribut>
+    <health>100</health>
+    <type>BOT</type>
+    <name>Tony</name>
+    <model>idBombermanModel</model>
+    <texture>NULL</texture>
+    <position>
+      <x>80</x>
+      <y>0</y>
       <z>800</z>
     </position>
     <size>
@@ -87,7 +114,7 @@
     <model>idBombermanModel</model>
     <texture>NULL</texture>
     <position>
-      <x>95</x>
+      <x>400</x>
       <y>0</y>
       <z>800</z>
     </position>
