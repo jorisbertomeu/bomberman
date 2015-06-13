@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.eu>
 //
 // Started on  Fri Jun 12 11:12:51 2015 Nicolas Adès
-// Last update Sat Jun 13 00:01:44 2015 mari_f
+// Last update Sat Jun 13 03:58:27 2015 Geoffrey Merran
 //
 
 #include <EscapeMenu.hh>
@@ -112,6 +112,7 @@ void					EscapeMenu::selectButton(SceneManager *sm)
       nextScene = "gameScene";
       break;
     case SAVE:
+      nextScene = "save";
       break;
     case QUIT:
       nextScene = "mainMenu";

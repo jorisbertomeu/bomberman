@@ -5,12 +5,12 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sat Jun 13 03:22:01 2015 Geoffrey Merran
+// Last update Sat Jun 13 03:58:47 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
 
-NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : Scene(&cm)
+NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : Scene(&cm), _initialized(false), _folderPath(folderPath), _mapSelector(NULL)
 {
   this->_buttons.push_back(new GameButton(glm::vec3(-300, -350, 100), std::string("assets/textures/left.tga"), LEFT));
   this->_buttons.back()->setScale(glm::vec3(100, 100, 100));
@@ -31,12 +31,24 @@ NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : S
 
 NewGameMenu::~NewGameMenu()
 {
-
+  if (_mapSelector)
+    delete _mapSelector;
 }
 
 void					NewGameMenu::initialize()
 {
   this->_cm->moveTo(glm::vec3(0, 0, 1000), glm::vec3(0, 0, 0));
+  if (!this->_initialized)
+    {
+      this->_mapSelector = new MapSelector(this->_folderPath);
+      if (this->_mapSelector == false)
+	{
+	  delete _mapSelector;
+	  _mapSelector = NULL;
+	}
+      else
+	this->_initialized = true;
+    }
 }
 
 void					NewGameMenu::moveNextMap()
@@ -63,7 +75,11 @@ std::list<GameButton*>::iterator    	NewGameMenu::getCurrent()
 
 void					NewGameMenu::selectMap(SceneManager* sm)
 {
-
+  if (this->_mapSelector != NULL)
+    {
+      // add depuis chemin de la map
+      sm->loadSceneFromFile("gameScene", "maps/big.xml");
+    }
 }
 
 void					NewGameMenu::back(SceneManager* sm) const
