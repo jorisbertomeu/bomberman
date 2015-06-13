@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:35:50 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 01:10:40 2015 Joris Bertomeu
+// Last update Sun Jun 14 07:17:58 2015 Geoffrey Merran
 //
 
 #ifndef			_SCENE_HH_
@@ -31,6 +31,7 @@ protected:
   CameraManager*       	_cm;
   bool			_first;
   RenderManager		*_renderManager;
+  bool			_isSplit;
 
 public:
   explicit		Scene(CameraManager* cm);
@@ -42,6 +43,7 @@ public:
   void			updateEntities(gdl::Clock & clock);
   IEvent*		getEventHandler();
   void			setEventHandler(IEvent *);
+  virtual void		moveSplitScreenCamera() const;
   void			draw(RenderManager & rm);
   bool			save(RenderManager *);
   void			spacePress(SceneManager *sm);

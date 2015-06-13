@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Tue May 26 17:47:30 2015 Geoffrey Merran
-// Last update Thu Jun 11 19:39:01 2015 Geoffrey Merran
+// Last update Sun Jun 14 03:53:39 2015 Geoffrey Merran
 //
 
 #include <TextureManager.hh>
@@ -35,7 +35,9 @@ bool	TextureManager::addTextureFromFile(const std::string & name, const std::str
 {
   std::map<std::string, Texture* >::iterator it = this->_textures.find(name);
   if (it != this->_textures.end())
-    throw(std::logic_error("Error texture already loaded for " + name));
+    {
+      delete this->_textures[name];
+    }
   this->_textures[name] = new Texture(filename);
   return (true);
 }

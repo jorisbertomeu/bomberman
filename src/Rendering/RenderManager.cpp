@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 14:23:22 2015 Joris Bertomeu
-// Last update Thu Jun 11 18:05:58 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 07:08:52 2015 Geoffrey Merran
 //
 
 #include <RenderManager.hh>
@@ -74,4 +74,14 @@ SoundManager&		RenderManager::getSoundManager()
 TextureManager&		RenderManager::getTextureManager()
 {
   return (this->_textureManager);
+}
+
+CameraManager*		RenderManager::getCameraManager() const
+{
+  return (this->_cameraManager);
+}
+
+void			RenderManager::setCameraManager(CameraManager* cm)
+{
+  this->_cameraManager = cm;
 }

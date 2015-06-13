@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sun Jun 14 00:19:30 2015 Geoffrey Merran
+// Last update Sun Jun 14 07:48:25 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
@@ -20,18 +20,22 @@ NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : S
   this->_buttons.push_back(new GameButton(glm::vec3(300, -350, 100), std::string("assets/textures/right.tga"), RIGHT));
   this->_buttons.back()->setScale(glm::vec3(100, 100, 100));
 
-  this->_previewers.push_back(new MapPreviewer(glm::vec3(-600, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(-600, 0, 0), std::string("assets/textures/nothumb.tga")));
   this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
-  this->_previewers.push_back(new MapPreviewer(glm::vec3(0, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(0, 0, 0), std::string("assets/textures/nothumb.tga")));
   this->_previewers.back()->setCurrent(true);
   this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
-  this->_previewers.push_back(new MapPreviewer(glm::vec3(600, 0, 0), std::string("assets/textures/preview.tga")));
+  this->_previewers.push_back(new MapPreviewer(glm::vec3(600, 0, 0), std::string("assets/textures/nothumb.tga")));
   this->_previewers.back()->setScale(glm::vec3(350, 350, 350));
   this->_eventHandler = new NewGameEvent();
   for (std::list<GameButton*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
     this->addEntity((*it));
   for (std::list<MapPreviewer*>::iterator it = this->_previewers.begin(); it != this->_previewers.end(); it++)
     this->addEntity((*it));
+  this->_cursor = new GameButton(glm::vec3(0, -290, 0), std::string("assets/textures/merran.tga"));
+  this->_cursor->setScale(glm::vec3(120, 120, 0));
+  this->_cursor->setCurrent(false);
+  this->addEntity(this->_cursor);
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
   background->setScale(glm::vec3(2500, 1300, 0));
   this->addEntity(background);
@@ -85,23 +89,27 @@ void					NewGameMenu::updateMaps()
 
 void					NewGameMenu::moveNextMap()
 {
+  (*this->getCurrent())->setCurrent(false);
+  this->_buttons.back()->setCurrent(true);
+  glm::vec3 pos = this->_buttons.back()->getPos();
+  pos.y += 60;
+  pos.z = 0;
+  this->_cursor->setPos(pos);
   if (this->_mapSelector != NULL)
-    {
-      (*this->getCurrent())->setCurrent(false);
-      this->_buttons.back()->setCurrent(true);
-      this->_mapSelector->nextMap();
-    }
+    this->_mapSelector->nextMap();
   this->updateMaps();
 }
 
 void					NewGameMenu::movePrevMap()
 {
+  (*this->getCurrent())->setCurrent(false);
+  this->_buttons.front()->setCurrent(true);
+  glm::vec3 pos = this->_buttons.front()->getPos();
+  pos.y += 60;
+  pos.z = 0;
+  this->_cursor->setPos(pos);
   if (this->_mapSelector != NULL)
-    {
-      (*this->getCurrent())->setCurrent(false);
-      this->_buttons.front()->setCurrent(true);
-      this->_mapSelector->prevMap();
-    }
+    this->_mapSelector->prevMap();
   this->updateMaps();
 }
 
