@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.eu>
 //
 // Started on  Fri Jun 12 11:12:51 2015 Nicolas Adès
-// Last update Sat Jun 13 19:21:11 2015 mari_f
+// Last update Sat Jun 13 20:04:41 2015 mari_f
 //
 
 #include <EscapeMenu.hh>
@@ -40,7 +40,7 @@ EscapeMenu::EscapeMenu(CameraManager &cm) : Scene(&cm)
       (*it)->setScale(glm::vec3(300, 100, 100));
       this->addEntity((*it));
     }
-  this->_cursor = new GameButton(glm::vec3(-250, 50, 0), std::string("assets/textures/hat.tga"));
+  this->_cursor = new GameButton(glm::vec3(-250, 50, 0), std::string("assets/textures/valer.tga"));
   this->_cursor->setScale(glm::vec3(120, 120, 0));
   this->_cursor->setCurrent(false);
   this->addEntity(this->_cursor);
