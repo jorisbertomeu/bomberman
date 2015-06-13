@@ -5,7 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Fri Jun 12 22:45:25 2015 Geoffrey Merran
+## Last update Sat Jun 13 01:37:46 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
@@ -26,11 +26,12 @@ SRC		=	src/main.cpp				\
 			src/Rendering/TimeManager.cpp		\
 			src/Rendering/CameraManager.cpp		\
 			src/Scenes/SceneManager.cpp		\
-			src/Scenes/SceneFactory.cpp		\
 			src/Scenes/ParserXML.cpp		\
 			src/Scenes/Scene.cpp			\
 			src/Scenes/SceneParser.cpp		\
+			src/Scenes/EscapeMenu.cpp		\
 			src/Scenes/MainMenu.cpp			\
+			src/Scenes/NewGameMenu.cpp		\
 			src/Physics/ASolid.cpp			\
 			src/Physics/PhysicSolid.cpp		\
 			src/Physics/HitBox.cpp			\
@@ -41,14 +42,14 @@ SRC		=	src/main.cpp				\
 			src/Entities/WoodWall.cpp		\
 			src/Entities/BrickWall.cpp		\
 			src/Entities/GameButton.cpp		\
+			src/Entities/Pavement.cpp		\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\
 			src/Events/MenuEvent.cpp		\
-			src/Bot.cpp				\
-			src/Pavement.cpp			\
-			src/Scenes/EscapeMenu.cpp		\
 			src/Events/EscapeEvent.cpp		\
+			src/Events/NewGameEvent.cpp		\
+			src/Bot.cpp				\
 
 OBJ		=	$(SRC:.cpp=.o)
 

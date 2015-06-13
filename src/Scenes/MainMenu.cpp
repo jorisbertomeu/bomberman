@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Wed Jun 10 12:41:59 2015 Joris Bertomeu
+// Last update Sat Jun 13 02:17:30 2015 Geoffrey Merran
 //
 
 #include	<MainMenu.hh>
@@ -109,10 +109,10 @@ void			MainMenu::selectButton(SceneManager *sm)
   switch ((*this->getCurrent())->getId())
     {
     case PLAY:
-      nextScene = "gameScene";
+      nextScene = "newGame";
       break;
     case LOAD:
-      nextScene = "load";
+      nextScene = "loadMap";
       break;
     case QUIT:
       sm->stopGame();
@@ -120,5 +120,5 @@ void			MainMenu::selectButton(SceneManager *sm)
       break;
     }
   if (!sm->setCurrentScene(nextScene))
-    std::cerr << "Error while loading scene" << nextScene << std::endl;
+    std::cerr << "Error while loading scene: " << nextScene << std::endl;
 }

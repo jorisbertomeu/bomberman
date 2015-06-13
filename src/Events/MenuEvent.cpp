@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 //
 // Started on  Fri Jun 12 04:55:54 2015 Geoffrey Merran
-// Last update Fri Jun 12 21:42:10 2015 Geoffrey Merran
+// Last update Sat Jun 13 02:27:38 2015 Geoffrey Merran
 //
 
 #include <MenuEvent.hh>
@@ -44,7 +44,7 @@ bool			MenuEvent::isCatch(gdl::Input &input, gdl::Clock &clock, SceneManager* sm
 
 void			MenuEvent::resetKeyCatch()
 {
-  this->_nextKeyCatch = 0.35;
+  this->_nextKeyCatch = 0.2;
 }
 
 void			MenuEvent::up(SceneManager* sm)
