@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:47:58 2015 Joris Bertomeu
-// Last update Fri Jun 12 19:35:39 2015 Geoffrey Merran
+// Last update Fri Jun 12 21:06:52 2015 Jérémy Mediavilla
 //
 
 #include	<GameContext.hh>

@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Fri Jun 12 19:20:51 2015 Jérémy Mediavilla
+// Last update Sat Jun 13 01:08:53 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOT_H_
@@ -27,10 +27,10 @@ public:
   void		moveToPos(const glm::vec3 &);
   void		stopMove();
   bool		canPlaceBomb();
-  glm::vec3	targetBomberman(const Bomberman &);
   bool		isFrontOfWall();
   void		ia(Scene *);
   virtual void 	update(gdl::Clock &, Scene *);
+  std::list<glm::vec2>		directTrajectory(int, int, int, int);
 };
 
 #endif // _BOT_H_
