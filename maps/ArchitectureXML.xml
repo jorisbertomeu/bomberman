@@ -2982,9 +2982,9 @@
     <model>idBombermanModel</model>
     <texture>NULL</texture>
     <position>
-      <x>75</x>
+      <x>80</x>
       <y>0</y>
-      <z>75</z>
+      <z>175</z>
     </position>
     <size>
       <x>0.1</x>
