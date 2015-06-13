@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:08:29 2015 Joris Bertomeu
-// Last update Fri Jun 12 20:49:18 2015 Geoffrey Merran
+// Last update Sat Jun 13 05:48:36 2015 Geoffrey Merran
 //
 
 #ifndef		_INPUTMANAGER_HH_
@@ -26,7 +26,7 @@ class			InputManager;
 
 class			InputManager
 {
-private:
+public:
   std::list<IEvent*>	_events;
 public:
   explicit	InputManager();

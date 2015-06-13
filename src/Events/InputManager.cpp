@@ -5,13 +5,14 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 13:09:39 2015 Joris Bertomeu
-// Last update Fri Jun 12 20:49:56 2015 Geoffrey Merran
+// Last update Sat Jun 13 05:59:04 2015 Geoffrey Merran
 //
 
 #include	<InputManager.hh>
 
 InputManager::InputManager()
 {
+
 }
 
 InputManager::~InputManager()
@@ -28,7 +29,8 @@ void			InputManager::handleEvent(gdl::Input &input, gdl::Clock &clock, SceneMana
 {
   for(std::list<IEvent *>::iterator it = this->_events.begin(); it != this->_events.end(); it++)
     {
-      (*it)->isCatch(input, clock, sm, camera);
+      if ((*it)->isCatch(input, clock, sm, camera))
+	return ;
     }
 }
 

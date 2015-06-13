@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Wed Jun 10 17:45:54 2015 Joris Bertomeu
+## Last update Sat Jun 13 05:59:45 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -O3 -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
 
 RM		=	rm -f
 
