@@ -1,0 +1,21 @@
+//
+// Model.hh for  in /home/mediav_j/mabm/bomberman
+// 
+// Made by Jérémy Mediavilla
+// Login   <mediav_j@epitech.net>
+// 
+// Started on  Sun Jun 14 20:45:41 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 20:47:12 2015 Jérémy Mediavilla
+//
+
+#ifndef			_MODEL_HH_
+# define		_MODEL_HH_
+
+class			Model
+{
+private:
+  int			_online;
+  std::string		_filename;
+};
+
+#endif			// _MODEL_HH_
