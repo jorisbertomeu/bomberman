@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Fri Jun 12 18:55:22 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 08:38:49 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -49,6 +49,7 @@ protected:
   std::string			_modelId;
   EntityType			_type;
   Hitbox			*_hitbox;
+  bool				_destroy;
 
 public:
   explicit			AEntity(glm::vec3 pos, EntityType type);

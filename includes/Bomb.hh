@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Sun Jun 14 08:04:35 2015 Geoffrey Merran
+// Last update Sun Jun 14 08:30:01 2015 Geoffrey Merran
 //
 
 #ifndef _BOMB_H_
@@ -17,12 +17,13 @@ class		Bomb : public AEntity
 protected:
   float		_explodeTime;
   int		_damage;
+  bool		_exploded;
 
 public:
   Bomb(glm::vec3 pos);
   ~Bomb();
 
-  void		explode() const;
+  void		explode(Scene*);
   int		getDamage() const;
   void		setDamage(const int &);
   virtual void	draw(RenderManager & rm);

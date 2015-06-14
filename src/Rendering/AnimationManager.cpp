@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Tue May 26 14:52:09 2015 Nicolas Adès
-// Last update Sun Jun 14 03:02:42 2015 Nicolas Adès
+// Last update Sun Jun 14 08:17:43 2015 Geoffrey Merran
 //
 
 #include <AnimationManager.hh>
@@ -56,5 +56,5 @@ void		AnimationManager::setAnimToDisplay(const std::string &name)
 	return;
       }
   }
-  return; 
+  return;
 }
