@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sun Jun 14 02:07:10 2015 mari_f
+// Last update Sun Jun 14 02:09:59 2015 mari_f
 //
 
 #include	<MainMenu.hh>
@@ -26,9 +26,9 @@ MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
   cloud = new Cloud(glm::vec3(-700, 300, 0), std::string("assets/textures/cloud.tga"), 0.5f, 40.0f);
   cloud->setScale(glm::vec3(400, 240, 0));
   this->addEntity(cloud);
-  // cloud = new Cloud(glm::vec3(500, 250, 0), std::string("assets/textures/cloud.tga"), 0.7f, 60.0f);
-  // cloud->setScale(glm::vec3(150, 100, 0));
-  // this->addEntity(cloud);
+  cloud = new Cloud(glm::vec3(500, 250, 0), std::string("assets/textures/cloud.tga"), 0.7f, 60.0f);
+  cloud->setScale(glm::vec3(150, 100, 0));
+  this->addEntity(cloud);
   cloud = new Cloud(glm::vec3(400, -200, 0), std::string("assets/textures/cloud.tga"), 0.2f, 10.0f);
   cloud->setScale(glm::vec3(170, 110, 0));
   this->addEntity(cloud);
@@ -41,9 +41,9 @@ MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
   balloon->setScale(glm::vec3(400, 469, 0));
   this->addEntity(balloon);
 
-  balloon = new Balloon(glm::vec3(570, 370, 0), std::string("assets/textures/up.tga"), 0.5f, 10.0f);
-  balloon->setScale(glm::vec3(200, 269, 0));
-  this->addEntity(balloon);
+  // balloon = new Balloon(glm::vec3(570, 370, 0), std::string("assets/textures/up.tga"), 0.5f, 10.0f);
+  // balloon->setScale(glm::vec3(200, 269, 0));
+  // this->addEntity(balloon);
 
   this->_eventHandler = new MenuEvent();
   for (std::list<Pavement*>::iterator it = this->_buttons.begin(); it != this->_buttons.end(); it++)
