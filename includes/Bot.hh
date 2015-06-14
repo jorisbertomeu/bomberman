@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 02:19:16 2015 Geoffrey Merran
+// Last update Sun Jun 14 03:22:13 2015 Geoffrey Merran
 //
 
 #ifndef _BOT_H_
@@ -18,6 +18,7 @@ class		Bot : public Bomberman
 protected:
   std::string	_color;
   std::list<glm::vec2>	_posList;
+  bool		_first;
 
 public:
   Bot(glm::vec3 pos, const std::string &name, ModelManager&);
@@ -36,6 +37,7 @@ public:
   void		ia(Scene *);
   virtual void 	update(gdl::Clock &, Scene *);
   std::list<glm::vec2>		directTrajectory(int, int, int, int);
+  float		calcAngle(const glm::vec3 &, const glm::vec3 &, const glm::vec3 &);
 };
 
 #endif // _BOT_H_
