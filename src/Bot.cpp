@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 10:35:55 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 13:34:30 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -189,8 +189,10 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
       this->getPos().x < static_cast<Bomberman*>(scene->getBomberman())->getPos().x + 10 &&
       this->getPos().z > static_cast<Bomberman*>(scene->getBomberman())->getPos().z - 10 &&
       this->getPos().z < static_cast<Bomberman*>(scene->getBomberman())->getPos().z + 10 &&
-      !this->_isBusy)
+      !this->_isBusy) { 
+    this->_isArrived = true;
     return(this->goAwayFromBomb(scene, cadrant));
+  }
   oldPos = this->_pos;
   cadrant = 0;
   if (pos.z < this->_pos.z && pos.x > this->_pos.x)
@@ -336,33 +338,39 @@ float		Bot::calcAngle(const glm::vec3 &a, const glm::vec3 &b, const glm::vec3 &c
 
 void		Bot::goAwayFromBomb(Scene *scene, const int &cadrant)
 {
-  if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z - 40)) && this->_nextCadrant != 1)
+  if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z - 50)) && this->_nextCadrant != 1)
     {
       this->_currentCadrant = 1;
       this->_pointToGo = glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z - 40);
       this->_isBusy = true;
+      printf("En haut à droite\n");
     }
-  else if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z + 40)) && this->_nextCadrant != 2)
+  else if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z + 50)) && this->_nextCadrant != 2)
     {
       this->_currentCadrant = 2;
       this->_pointToGo = glm::vec3(this->_pos.x + 400, this->_pos.y, this->_pos.z + 40);
       this->_isBusy = true;
+      printf("En bas à droite\n");
     }
-  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z + 40)) && this->_nextCadrant != 3)
+  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 50, this->_pos.y, this->_pos.z + 50)) && this->_nextCadrant != 3)
     {
       this->_currentCadrant = 3;
       this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z + 40);
       this->_isBusy = true;
+      printf("En bas à gauche\n");
     }
-  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 45, this->_pos.y, this->_pos.z - 40)) &&  this->_nextCadrant != 4)
+  else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 50, this->_pos.y, this->_pos.z - 50)) &&  this->_nextCadrant != 4)
     {
       this->_currentCadrant = 4;
       this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z - 40);
       this->_isBusy = true;
+      printf("En haut à gauche\n");
     }
   else
     {
       this->_nextCadrant = 0;
+      this->_isBusy = false;
+      printf("Je suis keblo\n");
       return;
     }
   this->dropBomb(scene);

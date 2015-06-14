@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Thu Jun 11 01:22:00 2015 Joris Bertomeu
+// Last update Sun Jun 14 12:46:33 2015 Jérémy Mediavilla
 //
 
 #ifndef				_SOUND_HH_
@@ -56,6 +56,7 @@ public:
 	this->_rawSound = NULL;
       }
     FMOD_System_GetMasterChannelGroup(this->_system, &(this->_channelMaster));
+    std::cerr << "Soud " << filename << " created." << std::endl;
   }
 
   virtual			~Sound() {
@@ -91,6 +92,7 @@ public:
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
+    std::cout << "2" << std::endl;
     FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, &(this->_channel));
   };
 

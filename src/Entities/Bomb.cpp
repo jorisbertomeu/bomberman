@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Sun Jun 14 10:12:32 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 14:22:50 2015 Jérémy Mediavilla
 //
 
 #include <Bomb.hh>
@@ -54,12 +54,13 @@ void		Bomb::update(gdl::Clock & clock, Scene *scene)
 {
   this->_explodeTime -= 1;
   (void)scene;
-  (void) clock;
+  (void)clock;
 }
 
 bool		Bomb::freshBomb(void *ptr) const
 {
-  if (this->_parent == ptr && time(NULL) - this->_droppedTime <= 1)
+  if (this->_parent == ptr && time(NULL) - this->_droppedTime <= 2)
     return (true);
+  //printf("FreshBomb false cause %p != %p and elapsed = %d\n", this->_parent, ptr, time(NULL) - this->_droppedTime);
   return (false);
 }

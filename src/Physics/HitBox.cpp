@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Sun Jun 14 11:15:22 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 14:19:12 2015 Jérémy Mediavilla
 //
 
 #include <HitBox.hh>
@@ -104,7 +104,10 @@ bool	Hitbox::checkCollisionForPointForEntities(void *scenep, glm::vec3 point)
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
     if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL && (*it)->getType() != AEntity::BOMB)
       continue;
+    if ((*it)->getType() == AEntity::BOMB && static_cast<Bomb*>(*it)->freshBomb(this))
+      continue;
     if ((*it)->getHitbox()->checkCollisionForPoint(point)) {
+      std::cout << "Type collised : " << (*it)->getType() << std::endl;
       return (true);
     } else {
       continue;
