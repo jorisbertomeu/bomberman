@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 02:04:34 2015 Joris Bertomeu
+// Last update Sun Jun 14 04:27:38 2015 Jérémy Mediavilla
 //
 
 #include	<CameraManager.hh>
@@ -39,6 +39,7 @@ std::list<AEntity*>		Scene::getEntities()
 
 bool		Scene::addEntity(AEntity *entity)
 {
+  std::cout << "adding entity size : " << this->_entityList.size() << std::endl;
   this->_entityList.push_back(entity);
   return(true);
 }

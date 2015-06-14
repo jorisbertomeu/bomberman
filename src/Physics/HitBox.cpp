@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Wed Jun 10 05:41:55 2015 Joris Bertomeu
+// Last update Sun Jun 14 07:39:38 2015 Jérémy Mediavilla
 //
 
 #include <HitBox.hh>
@@ -85,14 +85,31 @@ void	Hitbox::updateHitbox(void *entityp)
 
 bool	Hitbox::checkCollisionForPoint(glm::vec3 point)
 {
-  if ((point.x >= this->_c6.x &&
-       point.x <= this->_c8.x &&
-       point.y >= this->_c6.y &&
-       point.y <= this->_c8.y &&
-       point.z >= this->_c6.z &&
-       point.z <= this->_c8.z))
+  if (((int)point.x >= (int)this->_c6.x &&
+       (int)point.x <= (int)this->_c8.x &&
+       (int)point.y >= (int)this->_c6.y &&
+       (int)point.y <= (int)this->_c8.y &&
+       (int)point.z >= (int)this->_c6.z &&
+       (int)point.z <= (int)this->_c8.z))
     return (true);
   return (false);
+}
+
+bool	Hitbox::checkCollisionForPointForEntities(void *scenep, glm::vec3 point)
+{
+  Scene *scene = (Scene*) scenep;
+
+  std::list<AEntity*> list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
+    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL && (*it)->getType() != AEntity::BOMB)
+      continue;
+    if ((*it)->getHitbox()->checkCollisionForPoint(point)) {
+      return (true);
+    } else {
+      continue;
+    }
+  }
+  return (false);  
 }
 
 bool	Hitbox::checkCollision(void *scenep)

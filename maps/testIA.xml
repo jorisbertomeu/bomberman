@@ -31,6 +31,11 @@
       <online>0</online>
       <file>assets/models/marvin.fbx</file>
     </model>
+    <model>
+      <id>idBombModel</id>
+      <online>0</online>
+      <file>assets/models/bomb.fbx</file>
+    </model>
   </model_pack>
   <sound_pack>
    <sound>
