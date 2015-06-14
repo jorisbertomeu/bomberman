@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 12:48:47 2015 Joris Bertomeu
-// Last update Sun Jun 14 12:23:12 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 22:48:01 2015 Jérémy Mediavilla
 //
 
 #ifndef				_SCENEMANAGER_HH_
@@ -54,6 +54,7 @@ public:
   void				addScene(std::string, Scene*);
   bool				removeScene(const std::string &);
   void				stopGame();
+  Scene				*getScene(const std::string &);
 };
 
 #endif				/* _SCENEMANAGER_HH_ */

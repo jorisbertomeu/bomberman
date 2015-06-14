@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Tue Jun  9 19:36:17 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 19:02:34 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 22:48:03 2015 Jérémy Mediavilla
 //
 
 #include	<SceneManager.hh>
@@ -107,3 +107,13 @@ void	SceneManager::stopGame()
 {
   *this->_running = 0;
 }
+
+Scene		*SceneManager::getScene(const std::string &id)
+{
+   for(std::map<std::string, Scene *>::iterator it = this->_scenes.begin(); it != this->_scenes.end(); ++it) {
+     if ((*it).first == id)
+       return ((*it).second);
+   } 
+   return (NULL);
+}
+
