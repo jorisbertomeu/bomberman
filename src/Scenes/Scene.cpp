@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 19:37:08 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 21:06:02 2015 Jérémy Mediavilla
 //
 
 #include	<CameraManager.hh>
@@ -105,10 +105,22 @@ bool		Scene::save(RenderManager *rm)
   std::map<std::string, Texture *> textureList = rm->getTextureManager().getTextures();
   for (std::map<std::string, Texture*>::iterator it = textureList.begin(); it != textureList.end(); ++it)
     {
-      std::cout << "save texture" << std::endl;
       (*it->second).save(fs);
     }
   fs << "  </texture_pack>" << std::endl;
+
+  fs << "  <model_pack>" << std::endl;
+  std::map<std::string, Model *> modelList = rm->getModelManager().getModelsMap();
+  for (std::map<std::string, Model *>::iterator it = modelList.begin(); it != modelList.end(); ++it)
+    {
+      fs << "    <model>" << std::endl;
+      fs << "      <id>" << (it->first) << "</id>" << std::endl;
+      fs << "      <online>" << (*it->second).getOnline() << "</online>" << std::endl;
+      fs << "      <file>" << (*it->second).getFilename() << "</file>" << std::endl;
+      fs << "    </model>" << std::endl;
+    }
+  fs << "  </model_pack>" << std::endl;
+
   fs << "  <entities>" << std::endl;
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); ++it)
     {

@@ -2,33 +2,45 @@
   <texture_pack>
     <texture>
       <id>idFloorTexture</id>
-      <online>1</online>
-      <file>assets/textures/floor_grass.tga</file>
-    </texture>
-    <texture>
-      <id>idFloorTexture2</id>
-      <online>1</online>
-      <file>assets/textures/floor_grass.tga</file>
-    </texture>
-    <texture>
-      <id>idFloorTexture3</id>
-      <online>1</online>
+      <online>0</online>
       <file>assets/textures/floor_grass.tga</file>
     </texture>
   </texture_pack>
+  <model_pack>
+    <model>
+      <id>idBombModel</id>
+      <online>0</online>
+      <file>assets/models/bomb.fbx</file>
+    </model>
+    <model>
+      <id>idBombermanModel</id>
+      <online>0</online>
+      <file>assets/models/marvin.fbx</file>
+    </model>
+    <model>
+      <id>idBoxBrickModel</id>
+      <online>0</online>
+      <file>assets/models/BrickedBox02.fbx</file>
+    </model>
+    <model>
+      <id>idBoxWoodModel</id>
+      <online>0</online>
+      <file>assets/models/WoodenBox02.fbx</file>
+    </model>
+  </model_pack>
   <entities>
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>1</jump>
+        <jump>0</jump>
         <weight>0</weight>
         <friction>0.015</friction>
-        <move>25</move>
+        <move>237</move>
         <ability>NONE</ability>
         <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>280</health>
+      <health>236</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
