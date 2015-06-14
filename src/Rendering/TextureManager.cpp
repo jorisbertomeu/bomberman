@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Tue May 26 17:47:30 2015 Geoffrey Merran
-// Last update Sun Jun 14 03:53:39 2015 Geoffrey Merran
+// Last update Sun Jun 14 19:29:07 2015 Jérémy Mediavilla
 //
 
 #include <TextureManager.hh>
@@ -24,21 +24,20 @@ bool	TextureManager::initialize()
 {
   return (true);
 }
-
 bool	TextureManager::addTexture(const Texture &texture)
 {
   (void) texture;
   return (true);
 }
 
-bool	TextureManager::addTextureFromFile(const std::string & name, const std::string &filename)
+bool	TextureManager::addTextureFromFile(const std::string & name, const std::string &filename, int online)
 {
   std::map<std::string, Texture* >::iterator it = this->_textures.find(name);
   if (it != this->_textures.end())
     {
       delete this->_textures[name];
     }
-  this->_textures[name] = new Texture(filename);
+  this->_textures[name] = new Texture(filename, online, name);
   return (true);
 }
 

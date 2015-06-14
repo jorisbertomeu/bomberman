@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 12:30:57 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 19:30:29 2015 Jérémy Mediavilla
 //
 
 #include	<SceneParser.hh>
@@ -73,7 +73,7 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
 	std::cout << this->_parser.getError();
       if (this->_parser.isBool(this->_parser.getValueOf("online")) == false)
 	  throw (std::runtime_error("Error in texture : \"" + this->_parser.getValueOf("online") + "\" online tag must be a boolean"));
-      rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"));
+      rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"), this->_parser.isBool(this->_parser.getValueOf("online")));
       std::cout << "[MAP_LOADING] >>> Id: " << this->_parser.getValueOf("id") << std::endl;
       std::cout << "[MAP_LOADING] >>> Online: " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "[MAP_LOADING] >>> File: " << this->_parser.getValueOf("file") << std::endl;
