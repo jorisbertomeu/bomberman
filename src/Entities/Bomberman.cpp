@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Sun Jun 14 01:48:20 2015 Geoffrey Merran
+// Last update Sun Jun 14 03:03:37 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -13,7 +13,7 @@
 #include <SceneManager.hh>
 #include <PhysicSolid.hh>
 
-Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _nbBombs(1), _fireRange(2), _name(name), _dir(DOWN)
+Bomberman::Bomberman(glm::vec3 pos, const std::string &name, ModelManager& m) : AEntity(glm::vec3(pos.x, pos.y - 0, pos.z), AEntity::BOMBERMAN), _init(false), _currentAnim(""), _animToDisplay(""), _modelManager(m), _nbBombs(1), _fireRange(2), _name(name), _dir(DOWN)
 {
   std::cout << "New bomberman created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_scale = glm::vec3(0.1, 0.1, 0.1);
@@ -22,6 +22,17 @@ Bomberman::Bomberman(glm::vec3 pos, const std::string &name) : AEntity(glm::vec3
 Bomberman::~Bomberman()
 {
 
+}
+
+void		Bomberman::initialize()
+{
+  gdl::Model*	model = this->_modelManager.getModel(this->_modelId);
+
+  if (model == NULL)
+    throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
+  model->createSubAnim(0, "run", 13, 60);
+  model->createSubAnim(0, "stop", 60, 120);
+  this->_init = true;
 }
 
 std::string	Bomberman::getName() const
@@ -36,6 +47,7 @@ void		Bomberman::dropBomb(Scene* scene)
 
 void		Bomberman::moveRight(gdl::Clock& clock)
 {
+  this->_animToDisplay = "run";
   if (this->_dir != RIGHT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - RIGHT));
@@ -50,6 +62,7 @@ void		Bomberman::moveRight(gdl::Clock& clock)
 
 void		Bomberman::moveLeft(gdl::Clock& clock)
 {
+  this->_animToDisplay = "run";
   if (this->_dir != LEFT)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - LEFT));
@@ -64,6 +77,7 @@ void		Bomberman::moveLeft(gdl::Clock& clock)
 
 void		Bomberman::moveBack(gdl::Clock& clock)
 {
+  this->_animToDisplay = "run";
   if (this->_dir != DOWN)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - DOWN));
@@ -78,6 +92,7 @@ void		Bomberman::moveBack(gdl::Clock& clock)
 
 void		Bomberman::moveFront(gdl::Clock& clock)
 {
+  this->_animToDisplay = "run";
   if (this->_dir != UP)
     {
       this->rotate(glm::vec3(0, 1, 0), 90 * (this->_dir - UP));
@@ -105,8 +120,6 @@ void	       	Bomberman::draw(RenderManager & rm)
 {
   gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
 
-  if (model == NULL)
-    throw (std::logic_error(std::string("Can't load bomberman model: ") + this->_modelId));
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), rm.getTimeManager().getClock().getElapsed());
 }
 
@@ -114,16 +127,24 @@ void		Bomberman::update(gdl::Clock & clock, Scene *scene)
 {
   (void) clock;
   (void) scene;
-  // gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
-
-  // if (this->getAcceleration <= 0)
-  //   model.setCurrentAnim("stop", false);
+  if (!this->_init)
+    this->initialize();
+  gdl::Model*	model = this->_modelManager.getModel(this->_modelId);
+  if (this->_animToDisplay != this->_currentAnim)
+    {
+      this->_currentAnim = this->_animToDisplay;
+      if (this->_animToDisplay == "run")
+	model->setCurrentSubAnim(this->_animToDisplay, true);
+      if (this->_animToDisplay == "stop")
+	model->setCurrentSubAnim(this->_animToDisplay, false);
+    }
 }
 
 void		Bomberman::isReleased(Scene *scene, gdl::Clock &clock)
 {
   glm::vec3	old = this->_pos;
 
+  this->_animToDisplay = "stop";
   if (this->getAcceleration() <= 0.01)
     return;
   this->setAcceleration(this->getAcceleration() - this->getFriction());

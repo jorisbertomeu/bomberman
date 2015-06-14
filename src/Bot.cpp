@@ -5,12 +5,12 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 03:32:24 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 03:45:47 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
 
-Bot::Bot(glm::vec3 pos, const std::string &name) : Bomberman(pos, name)
+Bot::Bot(glm::vec3 pos, const std::string &name, ModelManager& modelManager) : Bomberman(pos, name, modelManager)
 {
   std::cout << "New Bot created : <" << pos.x <<", "<< pos.y << ", "<< pos.z <<"> " << name << std::endl;
   this->_name = name;
