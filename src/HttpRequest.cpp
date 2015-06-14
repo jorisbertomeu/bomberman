@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Wed Jun 10 17:34:08 2015 Joris Bertomeu
-// Last update Sun Jun 14 07:23:43 2015 Geoffrey Merran
+// Last update Sun Jun 14 10:46:19 2015 Jérémy Mediavilla
 //
 
 #include	<HttpRequest.hh>
@@ -40,6 +40,7 @@ bool	HttpRequest::exec()
   if (curl) {
     fp = fopen(this->_file.c_str(), "wb");
     curl_easy_setopt(curl, CURLOPT_URL, this->_url.c_str());
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
     res = curl_easy_perform(curl);

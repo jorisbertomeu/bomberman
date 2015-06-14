@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Sun Jun 14 10:09:22 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 11:15:22 2015 Jérémy Mediavilla
 //
 
 #include <HitBox.hh>

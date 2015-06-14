@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 10:18:35 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 10:35:55 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -276,7 +276,6 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
   int		cadrant;
 
   Bomberman::update(clock, scene);
-  printf("timedropped : %d\n", this->_timeDropped);
   if (this->_timeDropped != 0)
     if (time(NULL) - this->_timeDropped >= 4 && this->_isArrived) {
       this->_isBusy = false;
@@ -342,33 +341,28 @@ void		Bot::goAwayFromBomb(Scene *scene, const int &cadrant)
       this->_currentCadrant = 1;
       this->_pointToGo = glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z - 40);
       this->_isBusy = true;
-      printf("on peut se placer en haut à droite\n");
     }
   else if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 40, this->_pos.y, this->_pos.z + 40)) && this->_nextCadrant != 2)
     {
       this->_currentCadrant = 2;
       this->_pointToGo = glm::vec3(this->_pos.x + 400, this->_pos.y, this->_pos.z + 40);
       this->_isBusy = true;
-      printf("on peut se placer en bas à droite\n");
     }
   else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z + 40)) && this->_nextCadrant != 3)
     {
       this->_currentCadrant = 3;
       this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z + 40);
       this->_isBusy = true;
-      printf("on peut se placer en bas à gauche\n");
     }
   else if (!this->checkCollisionForLine(scene, this->_pos,  glm::vec3(this->_pos.x - 45, this->_pos.y, this->_pos.z - 40)) &&  this->_nextCadrant != 4)
     {
       this->_currentCadrant = 4;
       this->_pointToGo = glm::vec3(this->_pos.x - 40, this->_pos.y, this->_pos.z - 40);
       this->_isBusy = true;
-      printf("on peut se placer en haut à gauche\n");      
     }
   else
     {
       this->_nextCadrant = 0;
-      printf("peut pas\n");
       return;
     }
   this->dropBomb(scene);
