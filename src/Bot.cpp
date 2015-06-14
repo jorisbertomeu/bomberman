@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 23:05:46 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 02:12:47 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -177,27 +177,46 @@ void		Bot::ia(Scene *scene)
 void		Bot::update(gdl::Clock &clock, Scene *scene)
 {
   glm::vec3	oldPos;
-  static int	i = 0;
-  if (i == 0)
+
+  if (!this->_first)
     {
       this->ia(scene);
-      i++;
+      this->_first = false;
     }
-  if (!this->_posList.empty())
+  if (this->_posList.back().y < this->_pos.z && this->_posList.back().x > this->_pos.x)
     {
-      oldPos = this->getPos();
-      this->moveToPos(this->getPosList().front());
-      if (this->getHitbox()->checkCollision(scene))
-	{
-	  this->setPos(oldPos);
-	  this->ia(scene);
-	}
-      this->popFront();
+      
+      printf("en haut à droite :%f - %f\n", this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50), this->_pos, glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y))),       	  this->calcAngle(glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)));
+      if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
+      	{
+      	  this->moveRight(clock);
+      	  this->ia(scene);
+      	}
+      else
+      	{
+      	  this->moveFront(clock);
+      	  this->ia(scene);
+      	}
     }
-  else
-    this->ia(scene);
-  this->_hitbox->updateHitbox(this);
-  (void)clock;
+  else if (this->_posList.back().y > this->_pos.z && this->_posList.back().x > this->_pos.x)
+    {
+      std::cout << "en bas a droite" << std::endl;
+    }
+  else if (this->_posList.back().y > this->_pos.z && this->_posList.back().x < this->_pos.x)
+    {
+      std::cout << "en bas a gauche" << std::endl;
+    }
+  else if (this->_posList.back().y < this->_pos.z && this->_posList.back().x < this->_pos.x)
+    {
+      std::cout << "en haut a gauche" << std::endl;
+    }
 }
 
 void	        Bot::moveToPos(const glm::vec2 &pos)
@@ -223,4 +242,22 @@ void		Bot::popBack()
 void		Bot::popFront()
 {
   this->_posList.pop_front();
+}
+
+float		Bot::calcAngle(const glm::vec3 &a, const glm::vec3 &b, const glm::vec3 &c)
+{
+  glm::vec2	vecAB;
+  glm::vec2	vecBC;
+  float		AB;
+  float		BC;
+
+  vecAB.x = b.x - a.x;
+  vecAB.y = b.z - a.z;
+  vecBC.x = c.x - b.x;
+  vecBC.y = c.z - b.z;
+
+  AB = sqrt(pow(b.x - a.x ,2) + pow(b.z - a.z ,2));
+  BC = sqrt(pow(c.x - b.x ,2) + pow(c.z - b.z ,2));
+  printf("AB = %f - BC = %f\n", AB, BC);
+  return (cos((-1 * (vecAB.x * vecBC.x + vecAB.y * vecBC.y)) / (AB * BC)));
 }
