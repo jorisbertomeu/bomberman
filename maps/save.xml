@@ -1,28 +1,42 @@
 <scene>
   <texture_pack>
-TEXTURE
+    <texture>
+      <id>idFloorTexture</id>
+      <online>1</online>
+      <file>assets/textures/floor_grass.tga</file>
+    </texture>
+    <texture>
+      <id>idFloorTexture2</id>
+      <online>1</online>
+      <file>assets/textures/floor_grass.tga</file>
+    </texture>
+    <texture>
+      <id>idFloorTexture3</id>
+      <online>1</online>
+      <file>assets/textures/floor_grass.tga</file>
+    </texture>
   </texture_pack>
   <entities>
     <entity>
       <attribut>
         <speed>0</speed>
-        <jump>0</jump>
+        <jump>1</jump>
         <weight>0</weight>
-        <friction>1.04239e-37</friction>
-        <move>0</move>
+        <friction>0.015</friction>
+        <move>25</move>
         <ability>NONE</ability>
-        <range>1.04239e-37</range>
+        <range>0</range>
         <bonus>NONE</bonus>
       </attribut>
-      <health>0</health>
+      <health>280</health>
       <type>UNKNOWN</type>
       <name>NONE</name>
       <model></model>
       <texture></texture>
       <position>
-        <x>483</x>
+        <x>481.5</x>
         <y>-25</y>
-        <z>483</z>
+        <z>481.5</z>
       </position>
       <size>
         <x>1000</x>
@@ -32,10 +46,10 @@ TEXTURE
     </entity>
     <entity>
       <attribut>
-        <speed>5</speed>
+        <speed>150</speed>
         <jump>1</jump>
         <weight>200</weight>
-        <friction>1</friction>
+        <friction>0.03</friction>
         <move>1</move>
         <ability>NONE</ability>
         <range>0</range>
@@ -69,13 +83,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>40</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -96,13 +110,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>40</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -123,13 +137,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>80</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -150,13 +164,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>80</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -177,13 +191,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>120</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -204,13 +218,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>120</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -231,13 +245,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>160</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -258,13 +272,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>160</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -285,13 +299,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>200</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -312,13 +326,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>200</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -339,13 +353,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>240</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -366,13 +380,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>240</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -393,13 +407,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>280</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -420,13 +434,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>280</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -447,13 +461,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>320</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -474,13 +488,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>320</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -501,13 +515,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>360</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -528,13 +542,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>360</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -555,13 +569,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>400</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -582,13 +596,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>400</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -609,13 +623,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>440</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -636,13 +650,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>440</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -663,13 +677,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>480</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -690,13 +704,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>480</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -717,13 +731,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>520</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -744,13 +758,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>520</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -771,13 +785,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>560</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -798,13 +812,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>560</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -825,13 +839,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>600</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -852,13 +866,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>600</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -879,13 +893,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>640</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -906,13 +920,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>640</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -933,13 +947,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>680</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -960,13 +974,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>680</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -987,13 +1001,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>720</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1014,13 +1028,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>720</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1041,13 +1055,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>760</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1068,13 +1082,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>760</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1095,13 +1109,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>800</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1122,13 +1136,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>800</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1149,13 +1163,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>840</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1176,13 +1190,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>840</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1203,13 +1217,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>880</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1230,13 +1244,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>880</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1257,13 +1271,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>920</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -1284,13 +1298,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>920</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -1311,13 +1325,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>40</z>
       </position>
       <size>
@@ -1338,13 +1352,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>40</z>
       </position>
       <size>
@@ -1365,13 +1379,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>80</z>
       </position>
       <size>
@@ -1392,13 +1406,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>80</z>
       </position>
       <size>
@@ -1419,13 +1433,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>120</z>
       </position>
       <size>
@@ -1446,13 +1460,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>120</z>
       </position>
       <size>
@@ -1473,13 +1487,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>160</z>
       </position>
       <size>
@@ -1500,13 +1514,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>160</z>
       </position>
       <size>
@@ -1527,13 +1541,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>200</z>
       </position>
       <size>
@@ -1554,13 +1568,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>200</z>
       </position>
       <size>
@@ -1581,13 +1595,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>240</z>
       </position>
       <size>
@@ -1608,13 +1622,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>240</z>
       </position>
       <size>
@@ -1635,13 +1649,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>280</z>
       </position>
       <size>
@@ -1662,13 +1676,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>280</z>
       </position>
       <size>
@@ -1689,13 +1703,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>320</z>
       </position>
       <size>
@@ -1716,13 +1730,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>320</z>
       </position>
       <size>
@@ -1743,13 +1757,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>360</z>
       </position>
       <size>
@@ -1770,13 +1784,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>360</z>
       </position>
       <size>
@@ -1797,13 +1811,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>400</z>
       </position>
       <size>
@@ -1824,13 +1838,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>400</z>
       </position>
       <size>
@@ -1851,13 +1865,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>440</z>
       </position>
       <size>
@@ -1878,13 +1892,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>440</z>
       </position>
       <size>
@@ -1905,13 +1919,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>480</z>
       </position>
       <size>
@@ -1932,13 +1946,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>480</z>
       </position>
       <size>
@@ -1959,13 +1973,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>520</z>
       </position>
       <size>
@@ -1986,13 +2000,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>520</z>
       </position>
       <size>
@@ -2013,13 +2027,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>560</z>
       </position>
       <size>
@@ -2040,13 +2054,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>560</z>
       </position>
       <size>
@@ -2067,13 +2081,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>600</z>
       </position>
       <size>
@@ -2094,13 +2108,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>600</z>
       </position>
       <size>
@@ -2121,13 +2135,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>640</z>
       </position>
       <size>
@@ -2148,13 +2162,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>640</z>
       </position>
       <size>
@@ -2175,13 +2189,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>680</z>
       </position>
       <size>
@@ -2202,13 +2216,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>680</z>
       </position>
       <size>
@@ -2229,13 +2243,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>720</z>
       </position>
       <size>
@@ -2256,13 +2270,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>720</z>
       </position>
       <size>
@@ -2283,13 +2297,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>760</z>
       </position>
       <size>
@@ -2310,13 +2324,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>760</z>
       </position>
       <size>
@@ -2337,13 +2351,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>800</z>
       </position>
       <size>
@@ -2364,13 +2378,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>800</z>
       </position>
       <size>
@@ -2391,13 +2405,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>840</z>
       </position>
       <size>
@@ -2418,13 +2432,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>840</z>
       </position>
       <size>
@@ -2445,13 +2459,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>880</z>
       </position>
       <size>
@@ -2472,13 +2486,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>880</z>
       </position>
       <size>
@@ -2499,13 +2513,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>920</z>
       </position>
       <size>
@@ -2526,13 +2540,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>920</z>
       </position>
       <size>
@@ -2553,13 +2567,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -2580,13 +2594,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -2607,13 +2621,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>0</z>
       </position>
       <size>
@@ -2634,13 +2648,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>960</x>
-        <y>0</y>
+        <y>10</y>
         <z>960</z>
       </position>
       <size>
@@ -2661,67 +2675,13 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>120</x>
-        <y>0</y>
-        <z>40</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>480</x>
-        <y>0</y>
-        <z>40</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>480</x>
-        <y>0</y>
+        <y>10</y>
         <z>120</z>
       </position>
       <size>
@@ -2742,13 +2702,2038 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>200</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>240</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
       <texture>NULL</texture>
       <position>
         <x>320</x>
-        <y>0</y>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>240</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>200</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>760</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>720</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>720</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>760</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>600</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>600</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>400</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>360</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>360</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>400</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>560</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>560</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>440</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>440</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>520</x>
+        <y>10</y>
+        <z>120</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>520</x>
+        <y>10</y>
+        <z>160</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>520</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>560</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>600</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>720</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>760</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>760</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>720</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>600</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>560</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>520</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>440</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>440</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>400</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>360</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>240</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>200</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>840</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>200</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>240</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>360</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>400</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>760</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>720</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
         <z>600</z>
       </position>
       <size>
@@ -2769,181 +4754,2287 @@ TEXTURE
         <bonus>NONE</bonus>
       </attribut>
       <health>100</health>
-      <type>BRICK_WALL</type>
+      <type>UNKNOWN</type>
       <name>NONE</name>
-      <model>idBoxModel</model>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>200</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>240</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>280</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>400</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>560</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>520</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>160</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>400</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>280</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>240</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>200</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>520</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>560</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>600</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>720</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>120</x>
+        <y>10</y>
+        <z>760</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>520</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>560</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>600</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>720</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>760</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>760</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>720</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>600</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>560</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>520</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>440</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>400</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>280</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>240</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>200</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>200</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>280</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>240</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>400</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>840</x>
+        <y>10</y>
+        <z>440</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>520</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>440</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>400</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>560</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>520</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>560</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>440</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>400</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>600</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>360</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxBrickModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>600</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>320</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>280</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>640</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>680</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>360</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>640</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>680</x>
+        <y>10</y>
+        <z>320</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>480</x>
+        <y>10</y>
+        <z>800</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>800</x>
+        <y>10</y>
+        <z>480</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>40</x>
+        <y>10</y>
+        <z>920</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>0</speed>
+        <jump>0</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>0</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBoxWoodModel</model>
+      <texture>NULL</texture>
+      <position>
+        <x>80</x>
+        <y>10</y>
+        <z>880</z>
+      </position>
+      <size>
+        <x>0.4</x>
+        <y>0.4</y>
+        <z>0.4</z>
+      </size>
+    </entity>
+    <entity>
+      <attribut>
+        <speed>150</speed>
+        <jump>1</jump>
+        <weight>200</weight>
+        <friction>1</friction>
+        <move>1</move>
+        <ability>NONE</ability>
+        <range>0</range>
+        <bonus>NONE</bonus>
+      </attribut>
+      <health>100</health>
+      <type>UNKNOWN</type>
+      <name>NONE</name>
+      <model>idBombermanModel</model>
       <texture>NULL</texture>
       <position>
         <x>600</x>
         <y>0</y>
-        <z>360</z>
+        <z>750</z>
       </position>
       <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>280</x>
-        <y>0</y>
-        <z>680</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>680</x>
-        <y>0</y>
-        <z>640</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>320</x>
-        <y>0</y>
-        <z>640</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>440</x>
-        <y>0</y>
-        <z>800</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>800</x>
-        <y>0</y>
-        <z>760</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
-      </size>
-    </entity>
-    <entity>
-      <attribut>
-        <speed>0</speed>
-        <jump>0</jump>
-        <weight>200</weight>
-        <friction>1</friction>
-        <move>0</move>
-        <ability>NONE</ability>
-        <range>0</range>
-        <bonus>NONE</bonus>
-      </attribut>
-      <health>100</health>
-      <type>BRICK_WALL</type>
-      <name>NONE</name>
-      <model>idBoxModel</model>
-      <texture>NULL</texture>
-      <position>
-        <x>760</x>
-        <y>0</y>
-        <z>240</z>
-      </position>
-      <size>
-        <x>0.4</x>
-        <y>0.4</y>
-        <z>0.4</z>
+        <x>0.1</x>
+        <y>0.1</y>
+        <z>0.1</z>
       </size>
     </entity>
   </entities>

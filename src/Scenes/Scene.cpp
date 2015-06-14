@@ -5,7 +5,11 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
+<<<<<<< HEAD
 // Last update Sun Jun 14 17:44:15 2015 Geoffrey Merran
+=======
+// Last update Sun Jun 14 19:37:08 2015 Jérémy Mediavilla
+>>>>>>> 8d11ec863f3d50bbfdb11fbb25ed756d6b5f0be6
 //
 
 #include	<CameraManager.hh>
@@ -103,10 +107,10 @@ bool		Scene::save(RenderManager *rm)
 {
   std::fstream	fs;
 
-  fs.open("XMLfiles/save.xml", std::fstream::in | std::fstream::out | std::fstream::trunc);
+  fs.open("maps/save.xml", std::fstream::in | std::fstream::out | std::fstream::trunc);
   if (!fs.is_open())
     {
-      std::cout << "Error on open while saving map.xml" << std::endl;
+      std::cout << "Error on open while saving save.xml" << std::endl;
       return (false);
     }
   fs << "<scene>" << std::endl;
@@ -114,6 +118,7 @@ bool		Scene::save(RenderManager *rm)
   std::map<std::string, Texture *> textureList = rm->getTextureManager().getTextures();
   for (std::map<std::string, Texture*>::iterator it = textureList.begin(); it != textureList.end(); ++it)
     {
+      std::cout << "save texture" << std::endl;
       (*it->second).save(fs);
     }
   fs << "  </texture_pack>" << std::endl;
@@ -154,4 +159,3 @@ void		*Scene::getBomberman()
     }
   return (NULL);
 }
-
