@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Sun Jun 14 17:37:46 2015 Geoffrey Merran
+// Last update Sun Jun 14 20:05:08 2015 Geoffrey Merran
 //
 
 #include <Bomb.hh>
@@ -28,9 +28,28 @@ void		Bomb::explode(Scene* scene)
 {
   this->_destroy = true;
   glm::vec3 pos = this->_pos;
+  scene->addEntity(new Fire(pos));
   for (int i = 0; i < 2; i++)
     {
-      pos.x += 20;
+      pos.x += 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.x -= 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.z += 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.z -= 40;
       scene->addEntity(new Fire(pos));
     }
 }
@@ -53,7 +72,6 @@ void		Bomb::draw(RenderManager & rm)
   if (model == NULL)
     throw (std::logic_error(std::string("Can't load model brickwall:  ") + this->_modelId));
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
-  model->setCurrentAnim(0, true);
 }
 
 void		Bomb::update(gdl::Clock & clock, Scene *scene)

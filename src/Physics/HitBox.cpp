@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Sun Jun 14 17:07:23 2015 Geoffrey Merran
+// Last update Sun Jun 14 19:53:33 2015 Geoffrey Merran
 //
 
 #include <HitBox.hh>
@@ -41,7 +41,7 @@ void	Hitbox::updateHitbox(void *entityp)
       this->_c7 = glm::vec3(pos.x, 20 + pos.y, pos.z);
       this->_c8 = glm::vec3(20 + pos.x, 20 + pos.y, pos.z);
     }
-  else if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
+  else if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL || type == AEntity::FIRE)
     {
       this->_c1 = glm::vec3(pos.x, pos.y, pos.z);
       this->_c2 = glm::vec3(20 + pos.x, pos.y, pos.z);
@@ -102,18 +102,34 @@ bool	Hitbox::checkCollisionForPointForEntities(void *scenep, glm::vec3 point)
 
   std::list<AEntity*> list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
-    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL && (*it)->getType() != AEntity::BOMB)
+    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL // && (*it)->getType() != AEntity::BOMB
+	)
       continue;
     if ((*it)->getType() == AEntity::BOMB && static_cast<Bomb*>(*it)->freshBomb(this))
       continue;
     if ((*it)->getHitbox()->checkCollisionForPoint(point)) {
-      // std::cout << "Type collised : " << (*it)->getType() << std::endl;
+      std::cout << "Type collised : " << (*it)->getType() << std::endl;
       return (true);
     } else {
       continue;
     }
   }
   return (false);
+}
+
+int	Hitbox::getCollisionType(void *scenep, glm::vec3 point)
+{
+  Scene *scene = (Scene*) scenep;
+
+  std::list<AEntity*> list = scene->getEntities();
+  for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++)
+    {
+      if ((*it)->getDestroy() || (*it)->getType() == AEntity::FIRE)
+	continue;
+      if ((*it)->getHitbox()->checkCollisionForPoint(point))
+	return ((*it)->getType());
+    }
+  return (AEntity::UNKNOWN);
 }
 
 bool	Hitbox::checkCollision(void *scenep)
@@ -150,4 +166,136 @@ bool	Hitbox::checkCollision(void *scenep)
     }
   }
   return (false);
+}
+
+bool		Hitbox::checkCollisionForLine(void *scenep, glm::vec3 start, glm::vec3 end)
+{
+  std::list<glm::vec2>	posList;
+  Scene		*scene = (Scene *)scenep;
+
+  posList = this->directTrajectory(glm::vec2(start.x, start.z), glm::vec2(end.x, end.z));
+  for (std::list<glm::vec2>::iterator it = posList.begin(); it != posList.end(); ++it) {
+    if (this->checkCollisionForPointForEntities(scenep, glm::vec3((*it).x, end.y, (*it).y)))
+      return (true);
+  }
+  return (false);
+}
+
+std::list<glm::vec2>		Hitbox::directTrajectory(glm::vec2 start, glm::vec2 end)
+{
+  std::list<glm::vec2> posList;
+
+  float		a = 0;
+  int		tmp = 0;
+  int		dx;
+  int		dy;
+  int		x;
+  int		y;
+
+  dx = abs(end.x - start.x);
+  dy = abs(end.y - start.y);
+  if (start.x == end.x)
+    {
+      if (start.y < end.y + 1)
+	while (start.y != end.y + 1)
+	  {
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.y++;
+	  }
+      else
+	while (start.y != end.y)
+	  {
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.y--;
+	  }
+    }
+  else if (start.y == end.y)
+    {
+      if (start.x < end.x + 1)
+	while (start.x != end.x + 1)
+	  {
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.x++;
+	  }
+      else
+	while (start.x != end.x + 1)
+	  {
+	    posList.push_back(glm::vec2(start.x, start.y));
+	    start.x--;
+	  }
+    }
+  else
+    {
+      if (dx >= dy && dx != 0 && dy != 0)
+	{
+	  if (start.x > end.x)
+	    {
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
+
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
+	    }
+	  a = ((float)(end.y - start.y) / (end.x - start.x));
+	  for (int i = 0; i < (dx + 1); i++)
+	    {
+	      x = i + start.x;
+	      y = start.y + (a * i);
+	      posList.push_back(glm::vec2(x, y));
+	    }
+	}
+      if (dx < dy && dy != 0 && dx != 0)
+	{
+	  if (start.y > end.y)
+	    {
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
+
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
+	    }
+	  a = ((float)(end.x - start.x) / (end.y - start.y));
+	  for (int i = 0; i < (dy + 1); i++)
+	    {
+	      x = start.x + (i * a);
+	      y = i + start.y;
+	      posList.push_back(glm::vec2(x, y));
+	    }
+	}
+      if (dx == 0)
+	{
+	  if (start.x > end.x)
+	    {
+	      tmp = start.x;
+	      start.x = end.x;
+	      end.x = tmp;
+	    }
+	  for (int i = start.y; i < (end.y + 1); i++)
+	    {
+	      x = start.x;
+	      posList.push_back(glm::vec2(x, i));
+	    }
+	}
+      if (dy == 0)
+	{
+	  if (start.y > end.y)
+	    {
+	      tmp = start.y;
+	      start.y = end.y;
+	      end.y = tmp;
+	    }
+	  for (int i = start.x; i < (end.x + 1); i++)
+	    {
+	      x = i;
+	      y = start.y;
+	      posList.push_back(glm::vec2(x, y));
+	    }
+	}
+    }
+  return (posList);
+  (void)a;
 }

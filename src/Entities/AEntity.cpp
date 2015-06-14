@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Sun Jun 14 17:03:20 2015 Geoffrey Merran
+// Last update Sun Jun 14 18:44:09 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
@@ -15,7 +15,7 @@ AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type), _d
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
-  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
+  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL || type == AEntity::FIRE)
     this->_pos = glm::vec3(pos.x, pos.y + 10, pos.z);
   else
     this->_pos = glm::vec3(pos.x, pos.y, pos.z);
