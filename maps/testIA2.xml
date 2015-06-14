@@ -3445,7 +3445,7 @@
     <model>idBombermanModel</model>
     <texture>NULL</texture>
     <position>
-      <x>300</x>
+      <x>600</x>
       <y>0</y>
       <z>800</z>
     </position>
