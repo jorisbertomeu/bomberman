@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Fri Jun 12 18:06:19 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 08:03:53 2015 Geoffrey Merran
 //
 
 #ifndef _BOMB_H_
@@ -15,7 +15,7 @@
 class		Bomb : public AEntity
 {
 protected:
-  int		_explodeTime;
+  float		_explodeTime;
   int		_damage;
 
 public:
