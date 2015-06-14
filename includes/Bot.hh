@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sat Jun 13 20:14:54 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 02:19:16 2015 Geoffrey Merran
 //
 
 #ifndef _BOT_H_
@@ -20,7 +20,7 @@ protected:
   std::list<glm::vec2>	_posList;
 
 public:
-  Bot(glm::vec3 pos, const std::string &name);
+  Bot(glm::vec3 pos, const std::string &name, ModelManager&);
   ~Bot();
 
   std::string	getColor() const;

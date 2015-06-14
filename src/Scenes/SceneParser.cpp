@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Sat Jun 13 05:01:11 2015 Geoffrey Merran
+// Last update Sun Jun 14 02:20:06 2015 Geoffrey Merran
 //
 
 #include	<SceneParser.hh>
@@ -172,7 +172,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  entity = new Bomberman(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					   atof(this->_parser.getValueOf("y").c_str()),
 					   atof(this->_parser.getValueOf("z").c_str())),
-				 name);
+				 name, rm->getModelManager());
 	  this->_parser.setPreviousNode();
 	}
       else if (this->_parser.getValueOf("type") == "BOT")
@@ -193,7 +193,7 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  entity = new Bot(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 	  			     atof(this->_parser.getValueOf("y").c_str()),
 	  			     atof(this->_parser.getValueOf("z").c_str())),
-	  		   name);
+	  		   name, rm->getModelManager());
 	  this->_parser.setPreviousNode();
 	}
       else if (this->_parser.getValueOf("type") == "BRICK_WALL" || this->_parser.getValueOf("type") == "WOOD_WALL")
