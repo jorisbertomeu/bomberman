@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 07:10:26 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 09:04:51 2015 Jérémy Mediavilla
 //
 
 #ifndef _BOT_H_
@@ -21,6 +21,10 @@ protected:
   bool		_first;
   bool		_isBusy;
   glm::vec3	_pointToGo;
+  int		_timeDropped;
+  bool		_isArrived;
+  int		_currentCadrant;
+  int		_nextCadrant;
 
 public:
   Bot(glm::vec3 pos, const std::string &name, ModelManager&);

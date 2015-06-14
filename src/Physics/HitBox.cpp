@@ -5,13 +5,14 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Sun Jun 14 07:39:38 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 17:07:23 2015 Geoffrey Merran
 //
 
 #include <HitBox.hh>
 #include <AEntity.hh>
 #include <Floor.hh>
 #include <Scene.hh>
+#include <Bomb.hh>
 
 Hitbox::Hitbox(void *entityp)
 {
@@ -103,13 +104,16 @@ bool	Hitbox::checkCollisionForPointForEntities(void *scenep, glm::vec3 point)
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
     if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL && (*it)->getType() != AEntity::BOMB)
       continue;
+    if ((*it)->getType() == AEntity::BOMB && static_cast<Bomb*>(*it)->freshBomb(this))
+      continue;
     if ((*it)->getHitbox()->checkCollisionForPoint(point)) {
+      // std::cout << "Type collised : " << (*it)->getType() << std::endl;
       return (true);
     } else {
       continue;
     }
   }
-  return (false);  
+  return (false);
 }
 
 bool	Hitbox::checkCollision(void *scenep)
@@ -118,7 +122,12 @@ bool	Hitbox::checkCollision(void *scenep)
 
   std::list<AEntity*> list = scene->getEntities();
   for (std::list<AEntity*>::iterator it = list.begin(); it != list.end(); it++) {
-    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL)
+    if ((*it)->getDestroy())
+      continue;
+    if ((*it)->getType() != AEntity::WOODWALL && (*it)->getType() != AEntity::BRICKWALL
+	&& (*it)->getType() != AEntity::BOMB)
+      continue;
+    if ((*it)->getType() == AEntity::BOMB && static_cast<Bomb*>(*it)->freshBomb(this))
       continue;
     if (this->checkCollisionForPoint((*it)->getHitbox()->_c1)) {
       return (true);

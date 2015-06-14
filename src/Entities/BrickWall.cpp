@@ -5,13 +5,14 @@
 // Login   <parallels@epitech.net>
 // 
 // Started on  Wed May 27 13:17:23 2015 Nicolas Adès
-// Last update Sat Jun 13 04:47:52 2015 Geoffrey Merran
+// Last update Sun Jun 14 17:32:26 2015 Geoffrey Merran
 //
 
 #include <BrickWall.hh>
 
 BrickWall::BrickWall(glm::vec3 pos) : AEntity(pos, AEntity::BRICKWALL)
 {
+
 }
 
 BrickWall::~BrickWall()

@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Thu Jun 11 01:22:00 2015 Joris Bertomeu
+// Last update Sun Jun 14 17:35:00 2015 Geoffrey Merran
 //
 
 #ifndef				_SOUND_HH_
@@ -56,6 +56,7 @@ public:
 	this->_rawSound = NULL;
       }
     FMOD_System_GetMasterChannelGroup(this->_system, &(this->_channelMaster));
+    std::cerr << "Soud " << filename << " created." << std::endl;
   }
 
   virtual			~Sound() {
@@ -92,6 +93,8 @@ public:
       return;
     }
     FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, &(this->_channel));
+    if (FMOD_Channel_SetPaused(this->_channel, false) != FMOD_OK)
+      std::cerr << "Unable to Pause Sound, sorry .." << std::endl;
   };
 
   void				pause() {
@@ -99,14 +102,14 @@ public:
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
-    FMOD_ChannelGroup_SetPaused(this->_channelMaster, 1);
+    FMOD_Channel_SetPaused(this->_channel, false);
   }
   void				resume() {
     if (!this->_rawSound) {
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
-    FMOD_ChannelGroup_SetPaused(this->_channelMaster, 0);
+    FMOD_Channel_SetPaused(this->_channel, 0);
   }
   void				setVolume(const int & volume) {
     float			vol;
@@ -116,7 +119,7 @@ public:
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
-    FMOD_ChannelGroup_SetVolume(this->_channelMaster, (vol));
+    FMOD_Channel_SetVolume(this->_channel, (vol));
   }
 };
 

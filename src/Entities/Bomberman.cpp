@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Sun Jun 14 08:06:12 2015 Geoffrey Merran
+// Last update Sun Jun 14 17:09:42 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -42,8 +42,8 @@ std::string	Bomberman::getName() const
 
 void		Bomberman::dropBomb(Scene* scene)
 {
-  Bomb		*bomb = new Bomb(this->_pos);
-  std::cout << "drop bomb : " << bomb->getModelId() << std::endl;
+  Bomb		*bomb = new Bomb(this->getHitbox(), this->_pos);
+
   scene->addEntity(bomb);
 }
 
@@ -115,7 +115,6 @@ void		Bomberman::isTurningBack(const int & d)
 
 void		Bomberman::jump()
 {
-  std::cout << "Bomberman : " << this->getName() << " jump" << std::endl;
 }
 
 void	       	Bomberman::draw(RenderManager & rm)
@@ -163,6 +162,6 @@ void		Bomberman::isReleased(Scene *scene, gdl::Clock &clock)
     }
   if (this->getHitbox()->checkCollision(scene)) {
     this->setPos(old);
-    this->setAcceleration(0.01f);
+    this->setAcceleration(0.01);
   }
 }

@@ -5,17 +5,18 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Sun Jun 14 08:49:10 2015 Geoffrey Merran
+// Last update Sun Jun 14 17:37:46 2015 Geoffrey Merran
 //
 
 #include <Bomb.hh>
 
-Bomb::Bomb(glm::vec3 pos) : AEntity(pos, AEntity::BOMB), _explodeTime(3.0f), _damage(50)
+Bomb::Bomb(void* ptr, glm::vec3 pos) : AEntity(pos, AEntity::BOMB), _explodeTime(3.0f), _damage(50)
 {
   this->_explodeTime = 3.0f;
   this->_damage = 50;
   this->_modelId = "idBombModel";
   this->setScale(glm::vec3(0.1, 0.1, 0.1));
+  this->_parent = ptr;
 }
 
 Bomb::~Bomb()
@@ -23,9 +24,15 @@ Bomb::~Bomb()
 
 }
 
-void		Bomb::explode(Scene*)
+void		Bomb::explode(Scene* scene)
 {
   this->_destroy = true;
+  glm::vec3 pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.x += 20;
+      scene->addEntity(new Fire(pos));
+    }
 }
 
 int		Bomb::getDamage() const
@@ -56,4 +63,12 @@ void		Bomb::update(gdl::Clock & clock, Scene *scene)
     this->explode(scene);
   (void) scene;
   (void) clock;
+}
+
+bool		Bomb::freshBomb(void *ptr) const
+{
+  if (this->_parent == ptr && this->_explodeTime >= 1.0f)
+    return (true);
+  //printf("FreshBomb false cause %p != %p and elapsed = %d\n", this->_parent, ptr, time(NULL) - this->_droppedTime);
+  return (false);
 }

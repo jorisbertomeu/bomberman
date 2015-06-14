@@ -5,13 +5,14 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 02:20:06 2015 Geoffrey Merran
+// Last update Sun Jun 14 12:30:57 2015 Jérémy Mediavilla
 //
 
 #include	<SceneParser.hh>
 #include	<Bomberman.hh>
 #include	<Bot.hh>
 #include	<BrickWall.hh>
+#include	<WoodWall.hh>
 #include	<Floor.hh>
 #include	<stdexcept>
 
@@ -205,9 +206,14 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
 	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
 	    throw (std::runtime_error("Error in entity : positions must be numbers"));
-	  entity = new BrickWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
-					   atof(this->_parser.getValueOf("y").c_str()),
-					   atof(this->_parser.getValueOf("z").c_str())));
+	  if (this->_parser.getValueOf("type") == "BRICK_WALL")
+ 	    entity = new BrickWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+					     atof(this->_parser.getValueOf("y").c_str()),
+					     atof(this->_parser.getValueOf("z").c_str())));
+	  else
+	    entity = new WoodWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
+					     atof(this->_parser.getValueOf("y").c_str()),
+					     atof(this->_parser.getValueOf("z").c_str())));
 	  this->_parser.setPreviousNode();
 	}
       else

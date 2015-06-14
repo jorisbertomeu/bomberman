@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 08:04:53 2015 Geoffrey Merran
+// Last update Sun Jun 14 17:44:15 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
@@ -39,7 +39,6 @@ std::list<AEntity*>		Scene::getEntities()
 
 bool		Scene::addEntity(AEntity *entity)
 {
-  std::cout << "adding entity size : " << this->_entityList.size() << std::endl;
   this->_entityList.push_back(entity);
   return(true);
 }
@@ -52,6 +51,16 @@ void		Scene::updateEntities(gdl::Clock & clock)
   }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->update(clock, this);
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end();)
+    {
+      if ((*it)->getDestroy())
+	{
+	  delete (*it);
+	  it = this->_entityList.erase(it);
+	}
+      else
+	it++;
+    }
 }
 
 IEvent*		Scene::getEventHandler()
@@ -68,6 +77,10 @@ void		Scene::moveSplitScreenCamera() const
 
 void  	      	Scene::draw(RenderManager & rm)
 {
+  if (!this->_first) {
+    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->pause();
+    this->_first = true;
+  }
   if (!this->_renderManager)
     this->_renderManager = &rm;
   if (this->_isSplit)

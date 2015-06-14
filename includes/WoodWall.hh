@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:15:36 2015 Nicolas Adès
-// Last update Wed Jun  3 21:29:33 2015 Geoffrey Merran
+// Last update Sun Jun 14 10:41:36 2015 Jérémy Mediavilla
 //
 
 #ifndef _WOODWALL_H_
@@ -19,6 +19,7 @@ public:
   ~WoodWall();
 
   virtual void			draw(RenderManager & rm);
+  virtual void			update(gdl::Clock &, Scene *);
 };
 
 #endif // _WOODWALL_H_
