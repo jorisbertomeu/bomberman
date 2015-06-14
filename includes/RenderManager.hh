@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 10:49:21 2015 Joris Bertomeu
-// Last update Fri Jun 12 18:49:22 2015 Geoffrey Merran
+// Last update Sun Jun 14 07:08:01 2015 Geoffrey Merran
 //
 
 #ifndef			_RENDERMANAGER_HH_
@@ -13,14 +13,14 @@
 
 # include		<fstream>
 
+class			RenderManager;
+
 # include		<SoundManager.hh>
 # include		<TextureManager.hh>
 # include		<GraphicManager.hh>
 # include		<ModelManager.hh>
 # include		<TimeManager.hh>
-
-class			RenderManager;
-
+# include		<CameraManager.hh>
 # include		<Scene.hh>
 
 class			RenderManager
@@ -31,6 +31,7 @@ protected:
   GraphicManager	_graphicManager;
   ModelManager		_modelManager;
   TimeManager		_timeManager;
+  CameraManager		*_cameraManager;
 
 public:
   explicit		RenderManager();
@@ -42,7 +43,8 @@ public:
   void			stop();
   void			draw(Scene *);
 
-
+  CameraManager*	getCameraManager() const;
+  void			setCameraManager(CameraManager*);
   GraphicManager&	getGraphicManager();
   ModelManager&		getModelManager();
   TimeManager&		getTimeManager();

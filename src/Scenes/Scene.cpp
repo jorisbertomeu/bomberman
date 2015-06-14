@@ -5,13 +5,13 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Thu Jun 11 02:04:34 2015 Joris Bertomeu
+// Last update Sun Jun 14 07:29:48 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
 #include	<Scene.hh>
 
-Scene::Scene(CameraManager* cm) : _cm(cm)
+Scene::Scene(CameraManager* cm) : _cm(cm), _isSplit(false)
 {
   this->_eventHandler = NULL;
   this->_first = true;
@@ -45,6 +45,10 @@ bool		Scene::addEntity(AEntity *entity)
 
 void		Scene::updateEntities(gdl::Clock & clock)
 {
+  if (!this->_first) {
+    this->_renderManager->getSoundManager().getSoundOf(Sound::AMBIANT)->setVolume(0);
+    this->_first = true;
+  }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->update(clock, this);
 }
@@ -56,14 +60,27 @@ IEvent*		Scene::getEventHandler()
   return (this->_eventHandler);
 }
 
+void		Scene::moveSplitScreenCamera() const
+{
+
+}
+
 void  	      	Scene::draw(RenderManager & rm)
 {
-  if (!this->_first) {
-    rm.getSoundManager().getSoundOf(Sound::AMBIANT)->setVolume(0);
-    this->_first = true;
-  }
   if (!this->_renderManager)
     this->_renderManager = &rm;
+  if (this->_isSplit)
+    {
+      this->_renderManager->getCameraManager()->splitScreen(true);
+      glm::vec2 ws = this->_renderManager->getCameraManager()->getWindowSize();
+      glViewport(0, 0, ws.x / 2, ws.y);
+      for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
+	(*it)->draw(rm);
+      glViewport(ws.x / 2, 0, ws.x / 2, ws.y);
+      this->moveSplitScreenCamera();
+    }
+  else
+    this->_renderManager->getCameraManager()->splitScreen(false);
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->draw(rm);
 }

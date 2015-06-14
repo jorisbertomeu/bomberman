@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Wed May 27 12:18:17 2015 Nicolas Adès
-// Last update Sun Jun 14 03:03:37 2015 Geoffrey Merran
+// Last update Sun Jun 14 03:31:26 2015 Geoffrey Merran
 //
 
 #include <Bomberman.hh>
@@ -134,9 +134,9 @@ void		Bomberman::update(gdl::Clock & clock, Scene *scene)
     {
       this->_currentAnim = this->_animToDisplay;
       if (this->_animToDisplay == "run")
-	model->setCurrentSubAnim(this->_animToDisplay, true);
+      	model->setCurrentSubAnim(this->_animToDisplay, true);
       if (this->_animToDisplay == "stop")
-	model->setCurrentSubAnim(this->_animToDisplay, false);
+      	model->setCurrentSubAnim(this->_animToDisplay, false);
     }
 }
 

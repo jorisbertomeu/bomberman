@@ -53,7 +53,7 @@
       <speed>150</speed>
       <jump>1</jump>
       <weight>200</weight>
-      <friction>0.1</friction>
+      <friction>0.03</friction>
       <move>1</move>
       <ability>NONE</ability>
       <range>0</range>
