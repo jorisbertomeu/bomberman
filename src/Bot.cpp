@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 17:06:24 2015 Geoffrey Merran
+// Last update Sun Jun 14 20:12:33 2015 Geoffrey Merran
 //
 
 #include <Bot.hh>
@@ -164,6 +164,7 @@ std::list<glm::vec2>		Bot::directTrajectory(glm::vec2 start, glm::vec2 end)
 
 void		Bot::ia(Scene *scene)
 {
+  (void) scene;
   // Bomberman	*bomberman;
   // std::list<glm::vec2> posList;
   
@@ -275,8 +276,6 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
 
 void		Bot::update(gdl::Clock &clock, Scene *scene)
 {
-  int		cadrant;
-
   Bomberman::update(clock, scene);
   if (this->_timeDropped != 0)
     if (time(NULL) - this->_timeDropped >= 4 && this->_isArrived) {
@@ -290,7 +289,6 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
     }
   else if (this->_isBusy)
     return;
-  cadrant = 0;
   this->goTo(clock, static_cast<Bomberman *>(scene->getBomberman())->getPos(), scene);
 }
 
@@ -338,6 +336,7 @@ float		Bot::calcAngle(const glm::vec3 &a, const glm::vec3 &b, const glm::vec3 &c
 
 void		Bot::goAwayFromBomb(Scene *scene, const int &cadrant)
 {
+  (void) cadrant;
   if (!this->checkCollisionForLine(scene, this->_pos, glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z - 50)) && this->_nextCadrant != 1)
     {
       this->_currentCadrant = 1;

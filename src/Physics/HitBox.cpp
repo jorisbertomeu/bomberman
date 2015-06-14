@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:39:55 2015 Nicolas Adès
-// Last update Sun Jun 14 19:53:33 2015 Geoffrey Merran
+// Last update Sun Jun 14 20:10:43 2015 Geoffrey Merran
 //
 
 #include <HitBox.hh>
@@ -172,6 +172,7 @@ bool		Hitbox::checkCollisionForLine(void *scenep, glm::vec3 start, glm::vec3 end
 {
   std::list<glm::vec2>	posList;
   Scene		*scene = (Scene *)scenep;
+  (void) scene;
 
   posList = this->directTrajectory(glm::vec2(start.x, start.z), glm::vec2(end.x, end.z));
   for (std::list<glm::vec2>::iterator it = posList.begin(); it != posList.end(); ++it) {

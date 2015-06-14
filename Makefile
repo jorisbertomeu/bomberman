@@ -5,11 +5,7 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-<<<<<<< HEAD
-## Last update Sun Jun 14 17:38:01 2015 Geoffrey Merran
-=======
-## Last update Sun Jun 14 19:24:07 2015 Valérian Polizzi
->>>>>>> 8d11ec863f3d50bbfdb11fbb25ed756d6b5f0be6
+## Last update Sun Jun 14 20:09:28 2015 Geoffrey Merran
 ##
 
 CXX		=	g++

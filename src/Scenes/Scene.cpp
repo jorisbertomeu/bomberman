@@ -5,11 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-<<<<<<< HEAD
-// Last update Sun Jun 14 17:44:15 2015 Geoffrey Merran
-=======
-// Last update Sun Jun 14 19:37:08 2015 Jérémy Mediavilla
->>>>>>> 8d11ec863f3d50bbfdb11fbb25ed756d6b5f0be6
+// Last update Sun Jun 14 20:09:38 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
