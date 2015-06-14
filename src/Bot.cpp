@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 03:22:25 2015 Geoffrey Merran
+// Last update Sun Jun 14 03:45:47 2015 Jérémy Mediavilla
 //
 
 #include <Bot.hh>
@@ -178,44 +178,66 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
 {
   glm::vec3	oldPos;
 
-  if (!this->_first)
+  if (static_cast<Bomberman *>(scene->getBomberman())->getPos().z < this->_pos.z && static_cast<Bomberman *>(scene->getBomberman())->getPos().x > this->_pos.x)
     {
-      this->ia(scene);
-      this->_first = false;
-    }
-  if (this->_posList.back().y < this->_pos.z && this->_posList.back().x > this->_pos.x)
-    {
-      
-      printf("en haut à droite :%f - %f\n", this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50), this->_pos, glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y))),       	  this->calcAngle(glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y)),
-      			  this->_pos, 
-      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)));
+      std::cout << "en haut a droite" << std::endl;
       if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
       			  this->_pos, 
-      			  glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y))) >
-      	  this->calcAngle(glm::vec3(glm::vec3(this->_posList.back().x, 0, this->_posList.back().y)),
+      			  glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z)),
       			  this->_pos, 
       			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
       	{
-      	  this->moveRight(clock);
-      	  this->ia(scene);
+	  this->moveRight(clock);
       	}
       else
-      	{
-      	  this->moveFront(clock);
-      	  this->ia(scene);
-      	}
+	this->moveFront(clock);
     }
-  else if (this->_posList.back().y > this->_pos.z && this->_posList.back().x > this->_pos.x)
+  else if (static_cast<Bomberman *>(scene->getBomberman())->getPos().z > this->_pos.z && static_cast<Bomberman *>(scene->getBomberman())->getPos().x > this->_pos.x)
     {
+      printf("En bas à droite\n");
+      if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
+      	{
+	  this->moveBack(clock);
+      	}
+      else
+	this->moveRight(clock);
       std::cout << "en bas a droite" << std::endl;
     }
-  else if (this->_posList.back().y > this->_pos.z && this->_posList.back().x < this->_pos.x)
+  else if (static_cast<Bomberman *>(scene->getBomberman())->getPos().z > this->_pos.z && static_cast<Bomberman *>(scene->getBomberman())->getPos().x < this->_pos.x)
     {
       std::cout << "en bas a gauche" << std::endl;
+      if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
+      	{
+	  this->moveLeft(clock);
+      	}
+      else
+	this->moveBack(clock);
     }
-  else if (this->_posList.back().y < this->_pos.z && this->_posList.back().x < this->_pos.x)
+  else if (static_cast<Bomberman *>(scene->getBomberman())->getPos().z < this->_pos.z && static_cast<Bomberman *>(scene->getBomberman())->getPos().x < this->_pos.x)
     {
       std::cout << "en haut a gauche" << std::endl;
+      if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
+      			  this->_pos, 
+      			  glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z))) >
+      	  this->calcAngle(glm::vec3(glm::vec3(static_cast<Bomberman *>(scene->getBomberman())->getPos().x, 0, static_cast<Bomberman *>(scene->getBomberman())->getPos().z)),
+      			  this->_pos, 
+      			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
+	{
+	  this->moveFront(clock);
+	}
+      else
+	this->moveLeft(clock);
     }
 }
 
@@ -259,5 +281,5 @@ float		Bot::calcAngle(const glm::vec3 &a, const glm::vec3 &b, const glm::vec3 &c
   AB = sqrt(pow(b.x - a.x ,2) + pow(b.z - a.z ,2));
   BC = sqrt(pow(c.x - b.x ,2) + pow(c.z - b.z ,2));
   printf("AB = %f - BC = %f\n", AB, BC);
-  return (cos((-1 * (vecAB.x * vecBC.x + vecAB.y * vecBC.y)) / (AB * BC)));
+  return (cos((-1 * (vecAB.x * vecBC.x + vecAB.y * vecBC.y)) / (AB * BC)) * 180 / 3.14159265f);
 }
