@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sun Jun 14 02:09:59 2015 mari_f
+// Last update Sun Jun 14 19:24:21 2015 Valérian Polizzi
 //
 
 #include	<MainMenu.hh>
@@ -35,8 +35,6 @@ MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
   cloud = new Cloud(glm::vec3(300, -500, 0), std::string("assets/textures/cloud.tga"), 0.5f, 10.0f);
   cloud->setScale(glm::vec3(230, 180, 0));
   this->addEntity(cloud);
-
-
   balloon = new Balloon(glm::vec3(-530, -90, 0), std::string("assets/textures/balloon.tga"), 0.5f, 10.0f);
   balloon->setScale(glm::vec3(400, 469, 0));
   this->addEntity(balloon);

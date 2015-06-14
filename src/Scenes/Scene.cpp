@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 19:16:23 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 19:37:08 2015 Jérémy Mediavilla
 //
 
 #include	<CameraManager.hh>
@@ -146,4 +146,3 @@ void		*Scene::getBomberman()
     }
   return (NULL);
 }
-

@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Fri Jun 12 20:51:52 2015 Geoffrey Merran
+// Last update Sun Jun 14 18:47:38 2015 Valérian Polizzi
 //
 
 # include		<CommonEvent.hh>
