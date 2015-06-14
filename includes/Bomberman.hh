@@ -17,6 +17,7 @@ class		Bomberman;
 # include <AEntity.hh>
 # include <Scene.hh>
 # include <ModelManager.hh>
+# include <AnimationManager.hh>
 
 class		Bomberman : public AEntity
 {
@@ -55,6 +56,7 @@ protected:
   int		_fireRange;
   std::string	_name;
   Dir		_dir;
+  AnimationManager	*_am;
 };
 
 #endif // _BOMBERMAN_H_

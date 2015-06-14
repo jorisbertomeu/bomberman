@@ -8,7 +8,7 @@
 ## Last update Sun Jun 14 01:23:53 2015 mari_f
 ##
 
-CXX		=	g++
+CXX		=	clang++
 
 CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
 
@@ -25,6 +25,8 @@ SRC		=	src/main.cpp				\
 			src/Rendering/ModelManager.cpp		\
 			src/Rendering/TimeManager.cpp		\
 			src/Rendering/CameraManager.cpp		\
+			src/Rendering/AnimationManager.cpp	\
+			src/Rendering/Animation.cpp		\
 			src/Scenes/SceneManager.cpp		\
 			src/Scenes/ParserXML.cpp		\
 			src/Scenes/Scene.cpp			\

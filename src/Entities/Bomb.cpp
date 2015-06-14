@@ -5,14 +5,14 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Fri Jun 12 18:06:29 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 07:58:46 2015 Geoffrey Merran
 //
 
 #include <Bomb.hh>
 
 Bomb::Bomb(glm::vec3 pos) : AEntity(pos, AEntity::BOMB)
 {
-  this->_explodeTime = 4;
+  this->_explodeTime = 4.0f;
   this->_damage = 50;
 }
 
