@@ -5,11 +5,10 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Mon Jun  8 09:29:53 2015 Valérian Polizzi
-// Last update Sun Jun 14 05:15:02 2015 Valérian Polizzi
+// Last update Sun Jun 14 19:24:21 2015 Valérian Polizzi
 //
 
 #include	<MainMenu.hh>
-#include	<ScoreManager.hh>
 
 MainMenu::MainMenu(CameraManager & cm) : Scene(&cm)
 {
