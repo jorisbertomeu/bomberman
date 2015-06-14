@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Fri Jun 12 18:55:22 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 17:31:20 2015 Geoffrey Merran
 //
 
 #ifndef _AENTITY_H_
@@ -38,7 +38,8 @@ public:
       BUTTON			= 6,
       BOT			= 7,
       RECTANGLE			= 8,
-      PAVEMENT			= 9
+      PAVEMENT			= 9,
+      FIRE			= 10
     }				EntityType;
 
 protected:
@@ -49,6 +50,7 @@ protected:
   std::string			_modelId;
   EntityType			_type;
   Hitbox			*_hitbox;
+  bool				_destroy;
 
 public:
   explicit			AEntity(glm::vec3 pos, EntityType type);
@@ -60,6 +62,7 @@ public:
   void				setPos(const glm::vec3 &);
   void				setScale(const glm::vec3 & scale);
   glm::vec3			getScale();
+  const bool &			getDestroy() const;
 
   void				setModelId(const std::string &);
   std::string			getModelId() const;

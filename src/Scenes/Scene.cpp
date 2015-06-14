@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 21:06:02 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 21:07:32 2015 Jérémy Mediavilla
 //
 
 #include	<CameraManager.hh>
@@ -39,7 +39,6 @@ std::list<AEntity*>		Scene::getEntities()
 
 bool		Scene::addEntity(AEntity *entity)
 {
-  std::cout << "adding entity size : " << this->_entityList.size() << std::endl;
   this->_entityList.push_back(entity);
   return(true);
 }
@@ -52,6 +51,16 @@ void		Scene::updateEntities(gdl::Clock & clock)
   }
   for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end(); it++)
     (*it)->update(clock, this);
+  for (std::list<AEntity*>::iterator it = this->_entityList.begin(); it != this->_entityList.end();)
+    {
+      if ((*it)->getDestroy())
+	{
+	  delete (*it);
+	  it = this->_entityList.erase(it);
+	}
+      else
+	it++;
+    }
 }
 
 IEvent*		Scene::getEventHandler()

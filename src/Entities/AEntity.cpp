@@ -5,17 +5,17 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Sun Jun 14 11:18:21 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 18:44:09 2015 Geoffrey Merran
 //
 
 #include <AEntity.hh>
 #include <Bomberman.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type)
+AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type), _destroy(false)
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
-  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
+  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL || type == AEntity::FIRE)
     this->_pos = glm::vec3(pos.x, pos.y + 10, pos.z);
   else
     this->_pos = glm::vec3(pos.x, pos.y, pos.z);
@@ -54,6 +54,11 @@ void			AEntity::setPos(const glm::vec3 & pos)
 void			AEntity::setScale(const glm::vec3 & scale)
 {
   this->_scale = scale;
+}
+
+const bool &		AEntity::getDestroy() const
+{
+  return (this->_destroy);
 }
 
 glm::vec3		AEntity::getScale()

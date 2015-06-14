@@ -5,19 +5,18 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:09 2015 Nicolas Adès
-// Last update Sun Jun 14 14:22:50 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 20:05:08 2015 Geoffrey Merran
 //
 
 #include <Bomb.hh>
 
-Bomb::Bomb(void *ptr, glm::vec3 pos) : AEntity(pos, AEntity::BOMB)
+Bomb::Bomb(void* ptr, glm::vec3 pos) : AEntity(pos, AEntity::BOMB), _explodeTime(3.0f), _damage(50)
 {
-  this->_explodeTime = 4.0f;
+  this->_explodeTime = 3.0f;
   this->_damage = 50;
   this->_modelId = "idBombModel";
   this->setScale(glm::vec3(0.1, 0.1, 0.1));
   this->_parent = ptr;
-  this->_droppedTime = time(NULL);
 }
 
 Bomb::~Bomb()
@@ -25,9 +24,34 @@ Bomb::~Bomb()
 
 }
 
-void		Bomb::explode() const
+void		Bomb::explode(Scene* scene)
 {
-
+  this->_destroy = true;
+  glm::vec3 pos = this->_pos;
+  scene->addEntity(new Fire(pos));
+  for (int i = 0; i < 2; i++)
+    {
+      pos.x += 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.x -= 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.z += 40;
+      scene->addEntity(new Fire(pos));
+    }
+  pos = this->_pos;
+  for (int i = 0; i < 2; i++)
+    {
+      pos.z -= 40;
+      scene->addEntity(new Fire(pos));
+    }
 }
 
 int		Bomb::getDamage() const
@@ -42,24 +66,26 @@ void		Bomb::setDamage(const int &damage)
 
 void		Bomb::draw(RenderManager & rm)
 {
+  if (this->_destroy)
+    return ;
   gdl::Model*	model = rm.getModelManager().getModel(this->_modelId);
-
   if (model == NULL)
     throw (std::logic_error(std::string("Can't load model brickwall:  ") + this->_modelId));
   model->draw(rm.getGraphicManager().getContext().getShaders(), this->getTransformation(), 0);
-  (void) rm;
 }
 
 void		Bomb::update(gdl::Clock & clock, Scene *scene)
 {
-  this->_explodeTime -= 1;
-  (void)scene;
-  (void)clock;
+  this->_explodeTime -= clock.getElapsed();
+  if (this->_explodeTime <= 0)
+    this->explode(scene);
+  (void) scene;
+  (void) clock;
 }
 
 bool		Bomb::freshBomb(void *ptr) const
 {
-  if (this->_parent == ptr && time(NULL) - this->_droppedTime <= 2)
+  if (this->_parent == ptr && this->_explodeTime >= 1.0f)
     return (true);
   //printf("FreshBomb false cause %p != %p and elapsed = %d\n", this->_parent, ptr, time(NULL) - this->_droppedTime);
   return (false);

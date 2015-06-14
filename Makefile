@@ -5,12 +5,12 @@
 ## Login   <mediav_j@epitech.net>
 ## 
 ## Started on  Tue Jun  9 19:35:05 2015 Jérémy Mediavilla
-## Last update Sun Jun 14 19:24:07 2015 Valérian Polizzi
+## Last update Sun Jun 14 20:09:28 2015 Geoffrey Merran
 ##
 
 CXX		=	g++
 
-CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl` -g3
+CXXFLAGS	+=	-W -Wextra -Wall -I./LibBomberman_linux_x64/includes/ -I./libxml2/include/ -Iincludes -I./fmod/includes `pkg-config --cflags libcurl`
 
 RM		=	rm -f
 
@@ -51,6 +51,7 @@ SRC		=	src/main.cpp				\
 			src/Entities/Cloud.cpp			\
 			src/Entities/MapPreviewer.cpp		\
 			src/Entities/Balloon.cpp		\
+			src/Entities/Fire.cpp			\
 			src/Events/GameEvent.cpp		\
 			src/Events/CommonEvent.cpp		\
 			src/Events/InputManager.cpp		\

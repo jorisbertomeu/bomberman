@@ -5,26 +5,27 @@
 // Login   <ades_n@epitech.net>
 // 
 // Started on  Wed May 27 13:08:29 2015 Nicolas Adès
-// Last update Sun Jun 14 09:59:20 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 17:38:26 2015 Geoffrey Merran
 //
 
 #ifndef _BOMB_H_
 # define _BOMB_H_
 # include <AEntity.hh>
+# include <Fire.hh>
 
 class		Bomb : public AEntity
 {
 protected:
   float		_explodeTime;
   int		_damage;
+  bool		_exploded;
   void		*_parent;
-  int		_droppedTime;
 
 public:
   Bomb(void *ptr, glm::vec3 pos);
   ~Bomb();
 
-  void		explode() const;
+  void		explode(Scene*);
   int		getDamage() const;
   void		setDamage(const int &);
   virtual void	draw(RenderManager & rm);
