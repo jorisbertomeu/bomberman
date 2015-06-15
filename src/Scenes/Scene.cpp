@@ -5,7 +5,7 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:32:58 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 22:36:21 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 23:25:28 2015 Geoffrey Merran
 //
 
 #include	<CameraManager.hh>
@@ -104,7 +104,7 @@ bool		Scene::save(RenderManager *rm)
 {
   std::fstream	fs;
 
-  fs.open("maps/save.xml", std::fstream::in | std::fstream::out | std::fstream::trunc);
+  fs.open("saves/save.xml", std::fstream::in | std::fstream::out | std::fstream::trunc);
   if (!fs.is_open())
     {
       std::cout << "Error on open while saving save.xml" << std::endl;

@@ -5,12 +5,12 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 19:01:36 2015 Geoffrey Merran
-// Last update Sat Jun 13 23:16:19 2015 Geoffrey Merran
+// Last update Sun Jun 14 23:28:06 2015 Geoffrey Merran
 //
 
 #include <Map.hh>
 
-Map::Map(std::string filename) : _loaded(false), _corrupted(false), _current(false), _filename("maps/" + filename), _author("mabm")
+Map::Map(std::string filename) : _loaded(false), _corrupted(false), _current(false), _filename(filename), _author("xomabm")
 {
 
 }

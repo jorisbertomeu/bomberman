@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Wed Jun  3 14:54:49 2015 Geoffrey Merran
-// Last update Sun Jun 14 21:00:52 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 23:23:19 2015 Geoffrey Merran
 //
 
 #include <ModelManager.hh>
@@ -47,6 +47,7 @@ std::map<std::string, gdl::Model*>	ModelManager::getModels()
 
 void				ModelManager::save(std::fstream &fs)
 {
+  (void) fs;
   std::cout << "on save un model" << std::endl;
 }
 

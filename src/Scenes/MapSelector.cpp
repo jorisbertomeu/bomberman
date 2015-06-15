@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 03:47:52 2015 Geoffrey Merran
-// Last update Sun Jun 14 00:13:55 2015 Geoffrey Merran
+// Last update Sun Jun 14 23:28:29 2015 Geoffrey Merran
 //
 
 #include <MapSelector.hh>
@@ -24,6 +24,7 @@ MapSelector::MapSelector(const std::string & folderPath)
 	  if (filename.substr(filename.find_last_of(".") + 1) == "xml")
 	    {
 	      std::cout << "[MAP FOUND] : " << filename << std::endl;
+	      filename = folderPath + filename;
 	      this->_maps.push_back(Map(filename));
 	    }
 	}
