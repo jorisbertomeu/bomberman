@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Tue May 26 12:24:45 2015 Nicolas Adès
-// Last update Sun Jun 14 05:33:36 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 19:04:17 2015 Geoffrey Merran
 //
 
 #ifndef	 _HITBOX_H_
@@ -38,6 +38,9 @@ public:
   bool		checkCollisionForPoint(glm::vec3);
   virtual	~Hitbox();
   bool		checkCollisionForPointForEntities(void *, glm::vec3);
+  int		getCollisionType(void *scenep, glm::vec3 point);
+  std::list<glm::vec2>		directTrajectory(glm::vec2 start, glm::vec2 end);
+  bool				checkCollisionForLine(void *scenep, glm::vec3 start, glm::vec3 end);
 };
 
 #endif

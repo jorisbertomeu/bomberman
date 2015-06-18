@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:10:43 2015 Joris Bertomeu
-// Last update Thu Jun 11 05:25:45 2015 Joris Bertomeu
+// Last update Sun Jun 14 17:35:00 2015 Geoffrey Merran
 //
 
 #ifndef				_SOUND_HH_
@@ -92,7 +92,6 @@ public:
       std::cerr << "Unable to play Sound" << std::endl;
       return;
     }
-    std::cout << "2" << std::endl;
     FMOD_System_PlaySound(this->_system, this->_rawSound, NULL, 0, &(this->_channel));
     if (FMOD_Channel_SetPaused(this->_channel, false) != FMOD_OK)
       std::cerr << "Unable to Pause Sound, sorry .." << std::endl;

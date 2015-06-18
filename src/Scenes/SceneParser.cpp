@@ -5,11 +5,12 @@
 // Login   <mediav_j@epitech.net>
 //
 // Started on  Mon Jun  1 15:13:39 2015 Jérémy Mediavilla
-// Last update Sun Jun 14 12:30:57 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 23:06:46 2015 Jérémy Mediavilla
 //
 
 #include	<SceneParser.hh>
 #include	<Bomberman.hh>
+#include	<Bomb.hh>
 #include	<Bot.hh>
 #include	<BrickWall.hh>
 #include	<WoodWall.hh>
@@ -73,7 +74,7 @@ Scene		*SceneParser::getScene(RenderManager *rm, CameraManager* cm)
 	std::cout << this->_parser.getError();
       if (this->_parser.isBool(this->_parser.getValueOf("online")) == false)
 	  throw (std::runtime_error("Error in texture : \"" + this->_parser.getValueOf("online") + "\" online tag must be a boolean"));
-      rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"));
+      rm->getTextureManager().addTextureFromFile(this->_parser.getValueOf("id"), this->_parser.getValueOf("file"), atoi(this->_parser.getValueOf("online").c_str()));
       std::cout << "[MAP_LOADING] >>> Id: " << this->_parser.getValueOf("id") << std::endl;
       std::cout << "[MAP_LOADING] >>> Online: " << this->_parser.getValueOf("online") << std::endl;
       std::cout << "[MAP_LOADING] >>> File: " << this->_parser.getValueOf("file") << std::endl;
@@ -162,9 +163,9 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  this->_parser.setNode("position");
 	  if (this->_parser.checkMultipleTag() == false)
 	    std::cout << this->_parser.getError();
-	  if (this->_parser.isNum(this->_parser.getValueOf("x")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
+	  if (this->_parser.isFloatNum(this->_parser.getValueOf("x")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("y")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("z")) == false)
 	    {
 	      throw (std::runtime_error("Error in entity : positions must be numbers"));
 	      this->_parser.setPreviousNode();
@@ -183,9 +184,9 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  this->_parser.setNode("position");
 	  if (this->_parser.checkMultipleTag() == false)
 	    std::cout << this->_parser.getError();
-	  if (this->_parser.isNum(this->_parser.getValueOf("x")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
+	  if (this->_parser.isFloatNum(this->_parser.getValueOf("x")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("y")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("z")) == false)
 	    {
 	      throw (std::runtime_error("Error in entity : positions must be numbers"));
 	      this->_parser.setPreviousNode();
@@ -202,20 +203,23 @@ if (this->_parser.isNum(this->_parser.getValueOf("width")) == false
 	  this->_parser.setNode("position");
 	  if (this->_parser.checkMultipleTag() == false)
 	    std::cout << this->_parser.getError();
-	  if (this->_parser.isNum(this->_parser.getValueOf("x")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("y")) == false
-	      || this->_parser.isNum(this->_parser.getValueOf("z")) == false)
+	  if (this->_parser.isFloatNum(this->_parser.getValueOf("x")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("y")) == false
+	      || this->_parser.isFloatNum(this->_parser.getValueOf("z")) == false)
 	    throw (std::runtime_error("Error in entity : positions must be numbers"));
 	  if (this->_parser.getValueOf("type") == "BRICK_WALL")
  	    entity = new BrickWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					     atof(this->_parser.getValueOf("y").c_str()),
 					     atof(this->_parser.getValueOf("z").c_str())));
+
 	  else
 	    entity = new WoodWall(glm::vec3(atof(this->_parser.getValueOf("x").c_str()),
 					     atof(this->_parser.getValueOf("y").c_str()),
 					     atof(this->_parser.getValueOf("z").c_str())));
 	  this->_parser.setPreviousNode();
 	}
+      else if (this->_parser.getValueOf("type") == "BOMB")
+	continue;
       else
 	throw (std::runtime_error("Unknown type : " + this->_parser.getValueOf("type")));
       this->_parser.setNode("attribut");

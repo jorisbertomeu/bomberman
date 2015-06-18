@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:17:49 2015 Joris Bertomeu
-// Last update Thu Jun 11 19:39:59 2015 Geoffrey Merran
+// Last update Sun Jun 14 20:03:51 2015 Jérémy Mediavilla
 //
 
 #ifndef				_TEXTUREMANAGER_HH_
@@ -28,8 +28,7 @@ public:
   virtual			~TextureManager();
   bool				initialize();
   bool				addTexture(const Texture &);
-  bool				addTextureFromFile(const std::string & name, const std::string &filename);
-  // void				save(std::fstream &);
+  bool				addTextureFromFile(const std::string & name, const std::string &filename, int online = 0);
   std::map<std::string, Texture *>		getTextures();
   Texture*		       	getTexture(const std::string & name);
 };

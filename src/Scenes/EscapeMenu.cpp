@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.eu>
 //
 // Started on  Fri Jun 12 11:12:51 2015 Nicolas Adès
-// Last update Sat Jun 13 20:04:41 2015 mari_f
+// Last update Sun Jun 14 22:47:56 2015 Jérémy Mediavilla
 //
 
 #include <EscapeMenu.hh>
@@ -123,6 +123,7 @@ int					EscapeMenu::getListSize() const
 void					EscapeMenu::selectButton(SceneManager *sm)
 {
   std::string				nextScene = "";
+  Scene					*scene;
 
   switch ((*this->getCurrent())->getId())
     {
@@ -130,6 +131,8 @@ void					EscapeMenu::selectButton(SceneManager *sm)
       nextScene = "gameScene";
       break;
     case SAVE:
+      if ((scene = sm->getScene("gameScene")))
+	scene->save(sm->_renderManager);
       nextScene = "save";
       break;
     case QUIT:

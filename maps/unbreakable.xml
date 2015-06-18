@@ -27,6 +27,11 @@
       <file>assets/models/BrickedBox02.fbx</file>
     </model>
     <model>
+      <id>idFireModel</id>
+      <online>0</online>
+      <file>assets/models/fire.fbx</file>
+    </model>
+    <model>
       <id>idBombermanModel</id>
       <online>0</online>
       <file>assets/models/marvin.fbx</file>

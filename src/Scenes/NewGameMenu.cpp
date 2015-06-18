@@ -5,7 +5,7 @@
 // Login   <merran_g@epitech.net>
 // 
 // Started on  Sat Jun 13 01:38:42 2015 Geoffrey Merran
-// Last update Sun Jun 14 07:48:25 2015 Geoffrey Merran
+// Last update Sun Jun 14 20:07:44 2015 Geoffrey Merran
 //
 
 #include <NewGameMenu.hh>
@@ -35,7 +35,6 @@ NewGameMenu::NewGameMenu(CameraManager & cm, const std::string & folderPath) : S
   this->_cursor = new GameButton(glm::vec3(0, -290, 0), std::string("assets/textures/merran.tga"));
   this->_cursor->setScale(glm::vec3(120, 120, 0));
   this->_cursor->setCurrent(false);
-  this->addEntity(this->_cursor);
   Pavement*	background = new Pavement(glm::vec3(0, 0, 0), std::string("assets/textures/background.tga"));
   background->setScale(glm::vec3(2500, 1300, 0));
   this->addEntity(background);

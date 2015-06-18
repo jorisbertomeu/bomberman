@@ -5,7 +5,7 @@
 // Login   <jobertomeu@epitech.net>
 //
 // Started on  Tue May 19 11:19:32 2015 Joris Bertomeu
-// Last update Thu Jun 11 20:09:27 2015 Geoffrey Merran
+// Last update Sun Jun 14 19:35:08 2015 Jérémy Mediavilla
 //
 
 #ifndef		_TEXTURE_HPP_
@@ -20,11 +20,15 @@ class		Texture
 {
 private:
   std::string	_filename;
+  int		_online;
+  std::string	_id;
   gdl::Texture	_t;
 
 public:
-  explicit	Texture(const std::string &filename) {
+  explicit	Texture(const std::string &filename, int online = 0, const std::string &id = "") {
     this->_filename = filename;
+    this->_online = online;
+    this->_id = id;
     if (!this->_t.load(filename))
       throw(std::logic_error("Error texture, can't load "  + filename));
   }
@@ -41,7 +45,11 @@ public:
   }
 
   bool		save(std::fstream &fs) {
-    fs << "TEXTURE" << std::endl;
+    fs << "    <texture>" << std::endl;
+    fs << "      <id>" << this->_id << "</id>" << std::endl;
+    fs << "      <online>" << this->_online << "</online>" << std::endl;
+    fs << "      <file>" << this->_filename << "</file>" << std::endl;
+    fs << "    </texture>" << std::endl;
     return (true);
   }
 };

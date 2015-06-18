@@ -5,17 +5,19 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:06:53 2015 parallels
-// Last update Sun Jun 14 11:18:21 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 22:32:25 2015 Jérémy Mediavilla
 //
 
 #include <AEntity.hh>
 #include <Bomberman.hh>
+#include <Bot.hh>
+#include <Bomb.hh>
 
-AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type)
+AEntity::AEntity(glm::vec3 pos, EntityType type) : _modelId(""), _type(type), _destroy(false)
 {
   this->_rotation = glm::vec3(0, 0, 0);
   this->_scale = glm::vec3(1, 1, 1);
-  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL)
+  if (type == AEntity::BRICKWALL || type == AEntity::WOODWALL || type == AEntity::FIRE)
     this->_pos = glm::vec3(pos.x, pos.y + 10, pos.z);
   else
     this->_pos = glm::vec3(pos.x, pos.y, pos.z);
@@ -54,6 +56,11 @@ void			AEntity::setPos(const glm::vec3 & pos)
 void			AEntity::setScale(const glm::vec3 & scale)
 {
   this->_scale = scale;
+}
+
+const bool &		AEntity::getDestroy() const
+{
+  return (this->_destroy);
 }
 
 glm::vec3		AEntity::getScale()
@@ -121,6 +128,21 @@ void			AEntity::save(std::fstream &fs)
     {
       fs << "      <type>BOMBERMAN</type>" << std::endl;
       fs << "      <name>" << dynamic_cast<Bomberman *>(this)->getName() << "</name>" << std::endl;
+    }
+  else if (this->getType() == AEntity::WOODWALL)
+    {
+     fs << "      <type>WOOD_WALL</type>" << std::endl;
+     fs << "<name>NONE</name>" << std::endl;
+    }
+  else if (this->getType() == AEntity::BOT)
+    {
+      fs << "      <type>BOT</type>" << std::endl;
+      fs << "      <name>" << dynamic_cast<Bot *>(this)->getName() << "</name>" << std::endl;
+    }
+  else if (this->getType() == AEntity::BOMB)
+    {
+      fs << "      <type>BOMB</type>" << std::endl;
+      fs << "      <name>NONE</name>" << std::endl;
     }
   else
     {

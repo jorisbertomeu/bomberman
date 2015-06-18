@@ -5,7 +5,7 @@
 // Login   <mari_f@epitech.net>
 //
 // Started on  Wed Jun  3 13:43:17 2015 mari_f
-// Last update Sun Jun 14 12:36:06 2015 Jérémy Mediavilla
+// Last update Sun Jun 14 17:36:32 2015 Geoffrey Merran
 //
 
 #include		<GameEvent.hh>
@@ -114,7 +114,6 @@ void			GameEvent::space(SceneManager* sm)
   Bomberman*		bomberman = static_cast<Bomberman*>(scene->getBomberman());
   Sound			*sound;
 
-  printf("1\n");
   if ((sound = sm->_renderManager->getSoundManager().getSoundOf(Sound::JUMP)))
     sound->play();
   bomberman->dropBomb(scene);
