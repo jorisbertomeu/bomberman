@@ -5,7 +5,7 @@
 // Login   <ades_n@epitech.net>
 //
 // Started on  Mon May 25 14:12:07 2015 Nicolas Adès
-// Last update Sun Jun 14 13:34:30 2015 Jérémy Mediavilla
+// Last update Thu Jun 11 05:37:53 2015 Joris Bertomeu
 //
 
 #include <Bot.hh>
@@ -166,7 +166,7 @@ void		Bot::ia(Scene *scene)
 {
   // Bomberman	*bomberman;
   // std::list<glm::vec2> posList;
-  
+
   // bomberman = static_cast<Bomberman *>(scene->getBomberman());
   // posList = this->directTrajectory(this->getPos().x, this->getPos().z, bomberman->getPos().x, bomberman->getPos().z);
   // if (((posList.front().x == this->getPos().x && posList.front().y == this->getPos().z)) || (posList.back().x == bomberman->getPos().x && posList.back().y == bomberman->getPos().z))
@@ -189,7 +189,7 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
       this->getPos().x < static_cast<Bomberman*>(scene->getBomberman())->getPos().x + 10 &&
       this->getPos().z > static_cast<Bomberman*>(scene->getBomberman())->getPos().z - 10 &&
       this->getPos().z < static_cast<Bomberman*>(scene->getBomberman())->getPos().z + 10 &&
-      !this->_isBusy) { 
+      !this->_isBusy) {
     this->_isArrived = true;
     return(this->goAwayFromBomb(scene, cadrant));
   }
@@ -198,10 +198,10 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
   if (pos.z < this->_pos.z && pos.x > this->_pos.x)
     {
       if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
       	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
       	{
 	  this->moveRight(clock);
@@ -213,10 +213,10 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
   else if (pos.z > this->_pos.z && pos.x > this->_pos.x)
     {
       if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
       	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
       	{
 	  this->moveBack(clock);
@@ -228,10 +228,10 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
   else if (pos.z > this->_pos.z && pos.x < this->_pos.x)
     {
       if (this->calcAngle(glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
       	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z)))
       	{
 	  this->moveLeft(clock);
@@ -243,10 +243,10 @@ void		Bot::goTo(gdl::Clock &clock, const glm::vec3 &pos, void *scenep)
   else if (pos.z < this->_pos.z && pos.x < this->_pos.x)
     {
       if (this->calcAngle(glm::vec3(this->_pos.x + 50, this->_pos.y, this->_pos.z),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(glm::vec3(pos.x, 0, pos.z))) >
       	  this->calcAngle(glm::vec3(glm::vec3(pos.x, 0, pos.z)),
-      			  this->_pos, 
+      			  this->_pos,
       			  glm::vec3(this->_pos.x, this->_pos.y, this->_pos.z + 50)))
 	{
 	  this->moveFront(clock);
@@ -297,7 +297,7 @@ void		Bot::update(gdl::Clock &clock, Scene *scene)
 void	        Bot::moveToPos(const glm::vec2 &pos)
 {
   this->setPos(glm::vec3(pos.x, this->getPos().y, pos.y));
-} 
+}
 
 void		Bot::setPosList(const std::list<glm::vec2> &pos)
 {
@@ -370,7 +370,7 @@ void		Bot::goAwayFromBomb(Scene *scene, const int &cadrant)
     {
       this->_nextCadrant = 0;
       this->_isBusy = false;
-      printf("Je suis keblo\n");
+      //printf("Je suis keblo\n");
       return;
     }
   this->dropBomb(scene);
